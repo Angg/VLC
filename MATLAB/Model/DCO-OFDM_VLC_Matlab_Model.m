@@ -22,6 +22,8 @@ clc
 %
 Nfft = 64;
 Ncp = Nfft/4;
+Nact = 28; % Number of active subcarrier
+Nburst = 10;
 Nmod = 4; %QPSK modulation order
 % Shapiro-Rudin Sequence [1 1 1 -1] with Hermitian Symmetry to generate DMT
 ShapRudin64Seq = [[0 1 1 1 -1 1 1 1 -1 1 1 1 -1 1 1 1 -1 1 1 1 -1 1 1 1 -1 1 1 1 -1 0 0 0], 
@@ -91,3 +93,59 @@ dmt_sig_cp = vertcat(dmt_sig(Nfft-Ncp+1:Nfft), dmt_sig);
 
 % Transmitted signal + timing sequence
 TxSym = vertcat(OFDMPreamb', dmt_sig_cp);
+
+% Add symbol timing offset
+timeOff = repmat(.05,1,32)';
+TxSym_sto = vertcat(timeOff,TxSym);
+
+% Add AWGN noise
+% Loop with 5 dB interval to plot BER vs SNR
+for SNRdB=(0:5:SNRdBmax)
+    TxSym_sto_awgn = awgn(TxSym_sto,SNRdB,'measured');
+    
+    %
+    % Time synchronizing
+    %
+    TxSymLen = length(TxSym_sto_awgn);
+    % Modified Park Timing Estimation Method
+    i=1;P=zeros(1,TxSymLen-(2*Nfft+Ncp)+1);R=zeros(1,TxSymLen-(2*Nfft+Ncp)+1);
+    for d = (1+Nfft+Ncp:TxSymLen-Nfft)
+        for k = (1:Nfft)
+            P(i) = P(i) + TxSym_sto_awgn(d-k-Ncp)*TxSym_sto_awgn(d+k); 
+        end
+        P(i) = TxSym(d)^2 + P(i);
+        for k = (0:Nfft)
+            R(i) = R(i) + abs(TxSym_sto_awgn(d+k))*abs(TxSym_sto_awgn(d+k));
+        end
+        M(i) = abs(P(i))^2 / R(i)^2;
+        i=i+1;
+    end
+    % Plot the timing metric
+    % Highest magnitude in the metric shows the start position of the first
+    % timing sequence symbol after its cyclic prefix
+    %plot(TxSym_sto_awgn);figure;plot(M);
+    % Get the maximum value of timing metric and its index
+    [M_maxval, M_maxidx] = max(M);
+    % Get the index of start position of data signal in the frame
+    Preamb_len = length(OFDMPreamb);
+    DataStartPos = M_maxidx + Preamb_len - Ncp;
+    
+    
+    TxSym_sto_awgn_sim = vertcat(TxSym_sto_awgn, repmat(TxSym_sto_awgn(DataStartPos:TxSymLen),9,1));
+    % Remove the cyclic prefix of each data burst
+    % Stack each data symbol of data burst into the array column
+    % Array size :  Nrow = Nfft,
+    %               Ncol = Amount of data symbol in burst frame = Nburst
+    DataSymbolArray = zeros(Nfft, Nburst);
+    pos = DataStartPos;
+    for c=(1:Nburst)
+        pos = pos + Ncp;
+        for r=(1:Nfft)
+           DataSymbolArray(r,c) =  TxSym_sto_awgn_sim(pos+r-1);
+        end
+        if (c<Nburst)
+            pos = pos+Nfft;
+        end
+    end
+    
+end
