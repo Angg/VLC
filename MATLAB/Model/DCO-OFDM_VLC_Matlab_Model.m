@@ -21,7 +21,9 @@ clc
 % Parameter definition
 %
 Nfft = 64;
+conv_coderate = 2;
 Ncp = Nfft/4;
+Nce = 4; % Number of channel estimation symbol
 Nact = 28; % Number of active subcarrier
 Nburst = 10;
 Nmod = 4; %QPSK modulation order
@@ -58,7 +60,7 @@ OFDMPreamb = [ShapRudin64TimeSynchSym ShapRudin64ChannelEst];
 % Generate random binary data input
 datain=randi([0 1],1,2800);
 
-framedat = datain(1:28);
+framedat = datain(1:Nact*Nburst);
 % Convolutional encoding
 % Uses industry-standard generator polynomial g0=133, g1=171
 % Code rate : 1/2
@@ -68,28 +70,44 @@ trellis = poly2trellis(constr_len,gen_poly);
 codeword = convenc(framedat,trellis);
 
 % Data interleaving
-% Uses block interleaver with (Nrow=8, Ncol=7)
-intrlvd = matintrlv(codeword',8,7);
+% Uses block interleaver with (Nrow=8, Ncol=70)
+intrlvd = matintrlv(codeword',8,70);
 
 % Reshape binary data into decimal for QPSK modulation
-% Interleaved data reshaped into matrix with Nrow=2. Ncol=28
-mod_in_bin = reshape(intrlvd, 2, 28);
+% Interleaved data reshaped into matrix with Nrow=2. Ncol=280
+mod_in_bin = reshape(intrlvd, 2, 280);
 mod_in_dec = bi2de(mod_in_bin','right-msb');
 
 % QPSK modulation
 mod_data = qammod(mod_in_dec,Nmod);
+mod_data = reshape(mod_data,Nact,Nburst);
 %scatterplot(mod_data);
 
-% IFFT
-ifft_in = zeros(64,1);
-ifft_in(2:29) = mod_data;
-for i=(1:28)
-    ifft_in(36+i)=ifft_in(30-i)'; % Hermitian symmetry
+% IFFTing the modulated data
+% Copy the modulated data into array with Nrow = Nfft and Ncol = Nburst
+% Modulated data copied into active subcarrier part of FFT, carrier 2 to 29
+ifft_in = zeros(Nfft,Nburst);
+dmt_sig = zeros(Nfft,Nburst);
+for c=(1:Nburst)
+    ifft_in(2:29,c) = mod_data(:,c);
 end
-dmt_sig = ifft(ifft_in,Nfft);
+for c=(1:Nburst)
+    for i=(1:28)
+        ifft_in(36+i,c)=ifft_in(30-i,c)'; % Hermitian symmetry
+    end
+end
+for c=(1:Nburst)
+    dmt_sig(:,c) = ifft(ifft_in(:,c),Nfft);
+end
 
 % Add cyclic prefix
-dmt_sig_cp = vertcat(dmt_sig(Nfft-Ncp+1:Nfft), dmt_sig);
+dmt_sig_cp = zeros(Nfft+Ncp, Nburst);
+for c=(1:Nburst)
+    dmt_sig_cp(:,c) = vertcat(dmt_sig(Nfft-Ncp+1:Nfft,c), dmt_sig(:,c));
+end
+
+% Reshape dmt signal with cp into queue vector
+dmt_sig_cp = reshape(dmt_sig_cp,(Nfft+Ncp)*Nburst,1);
 
 % Transmitted signal + timing sequence
 TxSym = vertcat(OFDMPreamb', dmt_sig_cp);
@@ -129,9 +147,29 @@ for SNRdB=(0:5:SNRdBmax)
     % Get the index of start position of data signal in the frame
     Preamb_len = length(OFDMPreamb);
     DataStartPos = M_maxidx + Preamb_len - Ncp;
+    CEpos = M_maxidx - Ncp;
     
+    % Dummy, just ignore...
+    %TxSym_sto_awgn_sim = vertcat(TxSym_sto_awgn, repmat(TxSym_sto_awgn(DataStartPos:TxSymLen),9,1));
+    % Dummy, just ignore...
     
-    TxSym_sto_awgn_sim = vertcat(TxSym_sto_awgn, repmat(TxSym_sto_awgn(DataStartPos:TxSymLen),9,1));
+    % Get the channel estimation symbol
+    channel_est_sym = zeros(Nfft,Nce);
+    for c=(1:2)
+        CEpos = CEpos + Ncp;
+        for r=(1:Nfft)
+            channel_est_sym(r,c) = TxSym_sto_awgn(CEpos+r-1);
+        end
+        CEpos = CEpos + Nfft;
+    end
+    for c=(3:4)
+        CEpos = CEpos + Ncp + Nfft + Ncp;
+        for r=(1:Nfft)
+            channel_est_sym(r,c) = TxSym_sto_awgn(CEpos+r-1);
+        end
+        CEpos = CEpos + Nfft;
+    end 
+    
     % Remove the cyclic prefix of each data burst
     % Stack each data symbol of data burst into the array column
     % Array size :  Nrow = Nfft,
@@ -141,11 +179,80 @@ for SNRdB=(0:5:SNRdBmax)
     for c=(1:Nburst)
         pos = pos + Ncp;
         for r=(1:Nfft)
-           DataSymbolArray(r,c) =  TxSym_sto_awgn_sim(pos+r-1);
+           DataSymbolArray(r,c) =  TxSym_sto_awgn(pos+r-1);
         end
         if (c<Nburst)
             pos = pos+Nfft;
         end
     end
+    
+    %FFTing channel estimation sequence
+    fft_out_ce = zeros(Nfft, Nce);
+    for c=(1:Nce)
+        fft_out_ce(:,c) = fft(channel_est_sym(:,c),Nfft);
+    end
+    
+    % FFTing data symbol
+    fft_out_data = zeros(Nfft, Nburst);
+    for c=(1:Nburst)
+        fft_out_data(:,c) = fft(DataSymbolArray(:,c),Nfft);
+    end
+    
+    % Separates the active subcarrier of channel estimation symbol
+    CEcarrier = zeros(Nact, Nce);
+    for c=(1:Nce)
+        for r=(1:Nact)
+            CEcarrier(r,c) = fft_out_ce(r+1,c);
+        end
+    end
+    CEcarrier_re = real(CEcarrier);
+    
+    % Separates the active subcarrier of data symbol
+    datacarrier = zeros(Nact, Nburst);
+    for c=(1:Nburst)
+        for r=(1:Nact)
+            datacarrier(r,c) = fft_out_data(r+1,c);
+        end
+    end
+    
+    % Channel estimating
+    channel_est = zeros(Nact,1);
+    for r=(1:Nact)
+        channel_est(r,1) = (CEcarrier_re(r,1)+CEcarrier_re(r,2)+CEcarrier_re(r,3)+CEcarrier_re(r,4))/4;
+    end
+    channel_est = abs(channel_est);
+    
+    % Equalizing
+    eq_out = zeros(Nact,Nburst);
+    for c=(1:Nburst)
+        for r=(1:Nact)
+            eq_out(r,c) = datacarrier(r,c)/channel_est(r,1);
+        end
+    end
+    
+    % QPSK demodulation
+    demod_data = zeros(Nact,Nburst);
+    for c=(1:Nburst)
+        for r=(1:Nact)
+            demod_data(r,c) = qamdemod(eq_out(r,c),Nmod);
+        end
+    end
+    
+    % Reshape burst array into queue vector
+    demod_data = reshape(demod_data, 1, Nact*Nburst);
+    
+    % Convert into binary
+    % Shape into queue vector
+    demod_data_bin = de2bi(demod_data)';
+    demod_data_bin = reshape(demod_data_bin, Nact*Nburst*Nmod/2,1);
+    
+    % Data deinterleaving
+    % Uses block deinterleaver with (Nrow=70, Ncol=8)
+    % Dimension of this block deinterleaver is the opposite of block
+    % interleaver, which is (Nrow=8, Ncol=70)
+    deintrlvd = matintrlv(demod_data_bin,70,8)';
+    
+    % Viterbi decoding
+    dataout = vitdec(deintrlvd,trellis,5,'trunc','hard');
     
 end
