@@ -6,11 +6,11 @@
 %   Active subcarrier   : 28
 %   Modulation          : QPSK
 %   Coding              : Convolutional/Viterbi
-%   Single frame size   :
-%       Time Synch      :
-%       Data + CP       :
-%   Burst               :
-%   Total frame         :
+%   Single frame size   : 1280
+%       TimeSynch + CE  : 480
+%       Data + CP       : 80 * 10
+%   Burst               : 10 data symbol
+%   Total frame         : 10 frame for 1 simulation
 
 % Clear workspace
 close all
@@ -20,12 +20,14 @@ clc
 %
 % Parameter definition
 %
+SNRdBmax = 30;
 Nfft = 64;
 conv_coderate = 2;
 Ncp = Nfft/4;
 Nce = 4; % Number of channel estimation symbol
 Nact = 28; % Number of active subcarrier
 Nburst = 10;
+Nframe = 10; % Number of total frame for simulation
 Nmod = 4; %QPSK modulation order
 % Shapiro-Rudin Sequence [1 1 1 -1] with Hermitian Symmetry to generate DMT
 ShapRudin64Seq = [[0 1 1 1 -1 1 1 1 -1 1 1 1 -1 1 1 1 -1 1 1 1 -1 1 1 1 -1 1 1 1 -1 0 0 0], 
@@ -56,11 +58,35 @@ ShapRudin64ChannelEst = [ShapRudin64ChannelEst ShapRudin64ChannelEst];
 ShapRudin64TimeSynchSym = [ShapRudin64TimeSynchSym ShapRudin64TimeSynchSym];
 OFDMPreamb = [ShapRudin64TimeSynchSym ShapRudin64ChannelEst];
 
+% Initialize array to store the BER value for SNR simulation
+% SNR value range from 30 dB to 10 dB with interval of 5 dB
+% Array size is Nrow = (SNRdBmax/5dB) + 1, Ncol = Nframe
+% Array row store information of BER value for each SNR
+% The upper row contains BER value for higher SNR value
+% Array column store information of BER value for each fraction in a frame
+%           Frame 1     Frame 2  -----  Frame 10
+% SNR30dB
+% SNR25dB
+% SNR20dB
+% SNR15dB
+% SNR10dB
+% BERrow initialized before the start of SNR loop
+% BERcol initialized at frame loop
+BERsim = zeros(5,Nframe);
 
 % Generate random binary data input
 datain=randi([0 1],1,2800);
 
-framedat = datain(1:Nact*Nburst);
+% Start the frame loop
+for idx=(0:Nframe-1)
+
+% Initialize the BER column index
+BERcol = idx + 1;
+
+% Initialize the frame data for this loop
+frame_idx = idx*(Nact*Nburst)
+framedat = datain(frame_idx+1:frame_idx+(Nact*Nburst));
+
 % Convolutional encoding
 % Uses industry-standard generator polynomial g0=133, g1=171
 % Code rate : 1/2
@@ -116,9 +142,12 @@ TxSym = vertcat(OFDMPreamb', dmt_sig_cp);
 timeOff = repmat(.05,1,32)';
 TxSym_sto = vertcat(timeOff,TxSym);
 
+% Initialize BER row index for simulation
+BERrow = 1;
+
 % Add AWGN noise
 % Loop with 5 dB interval to plot BER vs SNR
-for SNRdB=(0:5:SNRdBmax)
+for SNRdB=(SNRdBmax:-5:10)
     TxSym_sto_awgn = awgn(TxSym_sto,SNRdB,'measured');
     
     %
@@ -254,5 +283,24 @@ for SNRdB=(0:5:SNRdBmax)
     
     % Viterbi decoding
     dataout = vitdec(deintrlvd,trellis,5,'trunc','hard');
+    diff = xor(framedat,dataout);
+    
+    % Store the BER value
+    % Increment the row index for next SNR value
+    BERsim(BERrow, BERcol) = nnz(diff);
+    if (SNRdB < SNRdBmax)
+        BERrow = BERrow + 1;
+    end
     
 end
+
+end
+% End of the frame loop
+
+% Calculate the bit error rate ratio
+% BER = No of error in burst frame / Total number of data in burst frame
+BER_sum = zeros(5,1);
+for r=(1:5)
+    BER_sum(r,1) = sum(BERsim(r,:),2)
+end
+BER = BER_sum/(Nact*Nburst*Nframe);
