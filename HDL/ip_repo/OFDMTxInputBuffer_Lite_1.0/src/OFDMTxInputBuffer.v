@@ -31,6 +31,9 @@ module OFDMTxInputBuffer(
     input dout_rready
     );
     
+    // IO registers
+    reg dout;
+    
     // Internal signals registers
     reg wrdy; 
     reg out_vld;

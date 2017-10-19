@@ -301,6 +301,6 @@ end
 % BER = No of error in burst frame / Total number of data in burst frame
 BER_sum = zeros(5,1);
 for r=(1:5)
-    BER_sum(r,1) = sum(BERsim(r,:),2)
+    BER_sum(r,1) = sum(BERsim(r,:),2);
 end
 BER = BER_sum/(Nact*Nburst*Nframe);

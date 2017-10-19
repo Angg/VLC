@@ -81,7 +81,7 @@
 		input wire  S_AXI_RREADY,
 		
 		// Additional output wire to transfer data from slv_reg to custom buffer IP
-		output wire [(C_S_AXI_DATA_WIDTH*7)-1 : 0] data_reg,
+		output reg [(C_S_AXI_DATA_WIDTH*7)-1 : 0] data_reg,
 		// Additional output data valid status
 		output wire data_valid,
 		// Additional input data ready status
@@ -479,7 +479,7 @@
     begin
         valid <= (stat_reg == 7'b1111111);
         
-        if ( stat_reg == 7'b1111111 && data_wready)
+        if ( stat_reg == 7'b1111111 && data_wready )
         begin
             data_reg[31:0] <= slv_reg0;
             data_reg[63:32] <= slv_reg1;
