@@ -53,13 +53,13 @@
 		output wire  m00_axis_tvalid,
 		output wire [C_M00_AXIS_TDATA_WIDTH-1 : 0] m00_axis_tdata,
 //		output wire [(C_M00_AXIS_TDATA_WIDTH/8)-1 : 0] m00_axis_tstrb,
-//		output wire  m00_axis_tlast,
+		output wire  m00_axis_tlast,
 		input wire  m00_axis_tready
 	);
 	
 	wire [(C_S00_AXI_DATA_WIDTH*7)-1 : 0] data;
 	wire valid;
-	wire ready;
+	wire wready;
 	
 // Instantiation of Axi Bus Interface S00_AXI
 	OFDMTxInputBuffer_Lite_v1_0_S00_AXI # ( 
@@ -107,13 +107,18 @@
 //	);
 
 	// Add user logic here
+	wire dout;
+	
+	assign m00_axis_tdata = {31'b0,dout};
+	
     OFDMTxInputBuffer OFDMTxInputBuffer_inst(
         .clk(aclk),
         .nreset(aresetn),
         .din(data),
         .din_valid(valid),
-        .din_wready(ready),
-        .dout(m00_axis_tdata),
+        .din_wready(wready),
+        .dout(dout),
+        .dout_last(m00_axis_tlast),
         .dout_valid(m00_axis_tvalid),
         .dout_rready(m00_axis_tready)
     );

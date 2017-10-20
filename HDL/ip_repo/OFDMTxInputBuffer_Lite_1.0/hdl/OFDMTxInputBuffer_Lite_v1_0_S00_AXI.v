@@ -477,9 +477,9 @@
 	// Add user logic here 
     always @( posedge S_AXI_ACLK )
     begin
-        valid <= (stat_reg == 7'b1111111);
-        
-        if ( stat_reg == 7'b1111111 && data_wready )
+    valid <= ((stat_reg == 7'b1111111) && ~data_wready);
+    
+    if ( stat_reg == 7'b1111111 && data_wready )
         begin
             data_reg[31:0] <= slv_reg0;
             data_reg[63:32] <= slv_reg1;
@@ -488,7 +488,24 @@
             data_reg[159:128] <= slv_reg4;
             data_reg[191:160] <= slv_reg5;
             data_reg[223:192] <= slv_reg6;
-            stat_reg <= 0;
+        end
+    else
+        begin
+            data_reg[31:0] <= data_reg[31:0];
+            data_reg[63:32] <= data_reg[63:32];
+            data_reg[95:64] <= data_reg[95:64];
+            data_reg[127:96] <= data_reg[127:96];
+            data_reg[159:128] <= data_reg[159:128];
+            data_reg[191:160] <= data_reg[191:160];
+            data_reg[223:192] <= data_reg[223:192];
+        end    
+    end
+    
+    always @( posedge S_AXI_ACLK )
+    begin
+        if ( data_wready )
+        begin
+            stat_reg <= 7'b0000000;
         end
     end
 	// User logic ends

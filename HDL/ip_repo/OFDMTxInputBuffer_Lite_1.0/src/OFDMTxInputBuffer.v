@@ -27,6 +27,7 @@ module OFDMTxInputBuffer(
     input din_valid,
     output din_wready,
     output dout,
+    output dout_last,
     output dout_valid,
     input dout_rready
     );
@@ -46,7 +47,7 @@ module OFDMTxInputBuffer(
     reg [7:0] cnt;
     
     //Internal wire
-    wire wren;
+    reg wren;
     
     // IO connections assignments
     assign din_wready = wrdy;
@@ -76,10 +77,21 @@ module OFDMTxInputBuffer(
       end
     end    
     
+    // Logic for write enable register
+    always @( posedge clk )
+    begin
+    if ( nreset == 1'b0 )
+      begin
+        wren <= 0;
+      end 
+    else
+      begin    
+        wren <= wrdy && din_valid;    
+      end    
+    end    
+    
     
     // Logic for data input
-    assign wren = wrdy && din_valid;
-    
     always @( posedge clk )
     begin
     if ( nreset == 1'b0 )
@@ -119,13 +131,15 @@ module OFDMTxInputBuffer(
       end 
     else
       begin    
-        if ( buff_full )
+        if ( buff_full && (cnt < 224) )
             out_vld <= 1;
         else           
            out_vld <= 0;
       end    
     end  
     
+    // Logic for data output last signal
+    assign dout_last = (cnt == 224)? 1 : 0;
     
     // Logic for data output buffering
     always @( posedge clk )
@@ -133,6 +147,7 @@ module OFDMTxInputBuffer(
     if ( nreset == 1'b0 )
       begin
         cnt <= 0;
+        dout <= 0;
       end 
     else
       begin    
