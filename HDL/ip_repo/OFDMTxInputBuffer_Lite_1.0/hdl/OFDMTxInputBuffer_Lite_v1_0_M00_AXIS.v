@@ -32,11 +32,18 @@
 		// TLAST indicates the boundary of a packet.
 		output wire  M_AXIS_TLAST,
 		// TREADY indicates that the slave can accept a transfer in the current cycle.
-		input wire  M_AXIS_TREADY
+		input wire  M_AXIS_TREADY,
+		
+        //Data FIFO buffer has been fully written if buff_full == 1
+        input wire    buff_full,
+        //Signal to connect read pointer of axis stream to data FIFO 
+        output wire [8-1:0] read_ptr,
+        //Signal to connect dout of data FIFO to axis stream interface
+        input wire dout
 	);
 	//Total number of output data.
 	// Total number of output data                                                 
-	localparam NUMBER_OF_OUTPUT_WORDS = 8;                                               
+	localparam NUMBER_OF_OUTPUT_WORDS = 224;                                               
 	                                                                                     
 	// function called clogb2 that returns an integer which has the                      
 	// value of the ceiling of the log base 2.                                           
@@ -84,6 +91,8 @@
 	wire  	tx_en;
 	//The master has issued all the streaming data stored in FIFO
 	reg  	tx_done;
+    
+    assign read_ptr = read_pointer;
 
 
 	// I/O Connections assignments
@@ -122,13 +131,13 @@
 	        // The slave starts accepting tdata when                          
 	        // there tvalid is asserted to mark the                           
 	        // presence of valid streaming data                               
-	        if ( count == C_M_START_COUNT - 1 )                               
+	        if ( buff_full  /*count == C_M_START_COUNT - 1*/ )                               
 	          begin                                                           
 	            mst_exec_state  <= SEND_STREAM;                               
 	          end                                                             
 	        else                                                              
 	          begin                                                           
-	            count <= count + 1;                                           
+//	            count <= count + 1;                                           
 	            mst_exec_state  <= INIT_COUNTER;                              
 	          end                                                             
 	                                                                          
@@ -218,7 +227,7 @@
 	        end                                          
 	      else if (tx_en)// && M_AXIS_TSTRB[byte_index]  
 	        begin                                        
-	          stream_data_out <= read_pointer + 32'b1;   
+	          stream_data_out <= {31'b0,dout}/*read_pointer + 32'b1*/;   
 	        end                                          
 	    end                                              
 

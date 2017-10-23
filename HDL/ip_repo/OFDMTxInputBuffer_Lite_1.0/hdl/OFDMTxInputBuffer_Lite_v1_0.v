@@ -25,8 +25,8 @@
 
 
 		// Ports of Axi Slave Bus Interface S00_AXI
-		input wire  aclk,
-		input wire  aresetn,
+		input wire  s00_axi_aclk,
+		input wire  s00_axi_aresetn,
 		input wire [C_S00_AXI_ADDR_WIDTH-1 : 0] s00_axi_awaddr,
 		input wire [2 : 0] s00_axi_awprot,
 		input wire  s00_axi_awvalid,
@@ -48,8 +48,8 @@
 		input wire  s00_axi_rready,
 
 		// Ports of Axi Master Bus Interface M00_AXIS
-//		input wire  m00_axis_aclk,
-//		input wire  m00_axis_aresetn,
+		input wire  m00_axis_aclk,
+		input wire  m00_axis_aresetn,
 		output wire  m00_axis_tvalid,
 		output wire [C_M00_AXIS_TDATA_WIDTH-1 : 0] m00_axis_tdata,
 //		output wire [(C_M00_AXIS_TDATA_WIDTH/8)-1 : 0] m00_axis_tstrb,
@@ -57,17 +57,20 @@
 		input wire  m00_axis_tready
 	);
 	
-	wire [(C_S00_AXI_DATA_WIDTH*7)-1 : 0] data;
-	wire valid;
-	wire wready;
+    wire in_wready;
+    wire in_valid;
+    wire [223:0] in_data;
+    wire bu_full;
+    wire [7:0] read_pointer;
+    wire out_data;
 	
 // Instantiation of Axi Bus Interface S00_AXI
 	OFDMTxInputBuffer_Lite_v1_0_S00_AXI # ( 
 		.C_S_AXI_DATA_WIDTH(C_S00_AXI_DATA_WIDTH),
 		.C_S_AXI_ADDR_WIDTH(C_S00_AXI_ADDR_WIDTH)
 	) OFDMTxInputBuffer_Lite_v1_0_S00_AXI_inst (
-		.S_AXI_ACLK(aclk),
-		.S_AXI_ARESETN(aresetn),
+		.S_AXI_ACLK(s00_axi_aclk),
+		.S_AXI_ARESETN(s00_axi_aresetn),
 		.S_AXI_AWADDR(s00_axi_awaddr),
 		.S_AXI_AWPROT(s00_axi_awprot),
 		.S_AXI_AWVALID(s00_axi_awvalid),
@@ -87,41 +90,40 @@
 		.S_AXI_RRESP(s00_axi_rresp),
 		.S_AXI_RVALID(s00_axi_rvalid),
 		.S_AXI_RREADY(s00_axi_rready),
-		.data_reg(data),
-		.data_valid(valid),
-		.data_wready(wready)
+		.data_wready(in_wready),
+        .data_valid(in_valid),
+        .data(in_data)
 	);
 
 // Instantiation of Axi Bus Interface M00_AXIS
-//	OFDMTxInputBuffer_Lite_v1_0_M00_AXIS # ( 
-//		.C_M_AXIS_TDATA_WIDTH(C_M00_AXIS_TDATA_WIDTH),
-//		.C_M_START_COUNT(C_M00_AXIS_START_COUNT)
-//	) OFDMTxInputBuffer_Lite_v1_0_M00_AXIS_inst (
-//		.M_AXIS_ACLK(m00_axis_aclk),
-//		.M_AXIS_ARESETN(m00_axis_aresetn),
-//		.M_AXIS_TVALID(m00_axis_tvalid),
-//		.M_AXIS_TDATA(m00_axis_tdata),
-//		.M_AXIS_TSTRB(m00_axis_tstrb),
-//		.M_AXIS_TLAST(m00_axis_tlast),
-//		.M_AXIS_TREADY(m00_axis_tready)
-//	);
+	OFDMTxInputBuffer_Lite_v1_0_M00_AXIS # ( 
+		.C_M_AXIS_TDATA_WIDTH(C_M00_AXIS_TDATA_WIDTH),
+		.C_M_START_COUNT(C_M00_AXIS_START_COUNT)
+	) OFDMTxInputBuffer_Lite_v1_0_M00_AXIS_inst (
+		.M_AXIS_ACLK(m00_axis_aclk),
+		.M_AXIS_ARESETN(m00_axis_aresetn),
+		.M_AXIS_TVALID(m00_axis_tvalid),
+		.M_AXIS_TDATA(m00_axis_tdata),
+		.M_AXIS_TSTRB(m00_axis_tstrb),
+		.M_AXIS_TLAST(m00_axis_tlast),
+		.M_AXIS_TREADY(m00_axis_tready),
+		.buff_full(bu_full),
+        .read_ptr(read_pointer),
+        .dout(out_data)
+	);
 
 	// Add user logic here
-	wire dout;
-	
-	assign m00_axis_tdata = {31'b0,dout};
 	
     OFDMTxInputBuffer OFDMTxInputBuffer_inst(
-        .clk(aclk),
-        .nreset(aresetn),
-        .din(data),
-        .din_valid(valid),
-        .din_wready(wready),
-        .dout(dout),
-        .dout_last(m00_axis_tlast),
-        .dout_valid(m00_axis_tvalid),
-        .dout_rready(m00_axis_tready)
-    );
+        .clk(s00_axi_aclk),
+        .nreset(s00_axi_aresetn),
+        .din(in_data),
+        .din_valid(in_valid),
+        .rd_pointer(read_pointer),
+        .din_wready(in_wready),
+        .dout(out_data),
+        .buff_full(bu_full)
+    );	
 	// User logic ends
 
 	endmodule

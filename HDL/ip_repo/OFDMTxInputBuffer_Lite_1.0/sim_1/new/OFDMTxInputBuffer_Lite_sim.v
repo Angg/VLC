@@ -49,7 +49,14 @@ wire            m00_axis_tlast;
 reg             m00_axis_tready;
 
 always
+begin
     #5  aclk = ~aclk;
+end
+
+always
+begin
+    #10  m00_axis_tready = ~m00_axis_tready;
+end
 
 initial begin
         aclk = 1;
@@ -78,7 +85,7 @@ initial begin
         s00_axi_arprot = 0;
         s00_axi_arvalid = 0;
         s00_axi_rready = 0;
-        m00_axis_tready = 1;
+//        m00_axis_tready = 1;
     #20 aresetn = 1;
         s00_axi_awaddr = 32'h43C0_0004;
         s00_axi_awprot = 0;
@@ -91,7 +98,7 @@ initial begin
         s00_axi_arprot = 0;
         s00_axi_arvalid = 0;
         s00_axi_rready = 0;
-        m00_axis_tready = 1;
+//        m00_axis_tready = 1;
     #20 aresetn = 1;
         s00_axi_awaddr = 32'h43C0_0008;
         s00_axi_awprot = 0;
@@ -104,7 +111,7 @@ initial begin
         s00_axi_arprot = 0;
         s00_axi_arvalid = 0;
         s00_axi_rready = 0;
-        m00_axis_tready = 1;
+//        m00_axis_tready = 1;
     #20 aresetn = 1;
         s00_axi_awaddr = 32'h43C0_000C;
         s00_axi_awprot = 0;
@@ -117,7 +124,7 @@ initial begin
         s00_axi_arprot = 0;
         s00_axi_arvalid = 0;
         s00_axi_rready = 0;
-        m00_axis_tready = 1;
+//        m00_axis_tready = 1;
     #20 aresetn = 1;
         s00_axi_awaddr = 32'h43C0_0010;
         s00_axi_awprot = 0;
@@ -130,7 +137,7 @@ initial begin
         s00_axi_arprot = 0;
         s00_axi_arvalid = 0;
         s00_axi_rready = 0;
-        m00_axis_tready = 1;
+//        m00_axis_tready = 1;
     #20 aresetn = 1;
         s00_axi_awaddr = 32'h43C0_0014;
         s00_axi_awprot = 0;
@@ -143,7 +150,7 @@ initial begin
         s00_axi_arprot = 0;
         s00_axi_arvalid = 0;
         s00_axi_rready = 0;
-        m00_axis_tready = 1;
+//        m00_axis_tready = 1;
     #20 aresetn = 1;
         s00_axi_awaddr = 32'h43C0_0018;
         s00_axi_awprot = 0;
@@ -156,7 +163,7 @@ initial begin
         s00_axi_arprot = 0;
         s00_axi_arvalid = 0;
         s00_axi_rready = 0;
-        m00_axis_tready = 1;
+//        m00_axis_tready = 1;
     #20 aresetn = 1;
         s00_axi_awaddr = 32'h43C0_0018;
         s00_axi_awprot = 0;
@@ -169,8 +176,9 @@ initial begin
         s00_axi_arprot = 0;
         s00_axi_arvalid = 0;
         s00_axi_rready = 0;
-        m00_axis_tready = 1;
-    #60 aresetn = 1;
+//        m00_axis_tready = 1;
+    #400 aresetn = 0;
+    #20 aresetn = 1;
             s00_axi_awaddr = 32'h43C0_0000;
             s00_axi_awprot = 0;
             s00_axi_awvalid = 1;
@@ -182,7 +190,7 @@ initial begin
             s00_axi_arprot = 0;
             s00_axi_arvalid = 0;
             s00_axi_rready = 0;
-            m00_axis_tready = 1;
+//            m00_axis_tready = 1;
         #20 aresetn = 1;
             s00_axi_awaddr = 32'h43C0_0004;
             s00_axi_awprot = 0;
@@ -195,7 +203,7 @@ initial begin
             s00_axi_arprot = 0;
             s00_axi_arvalid = 0;
             s00_axi_rready = 0;
-            m00_axis_tready = 1;
+//            m00_axis_tready = 1;
         #20 aresetn = 1;
             s00_axi_awaddr = 32'h43C0_0008;
             s00_axi_awprot = 0;
@@ -208,7 +216,7 @@ initial begin
             s00_axi_arprot = 0;
             s00_axi_arvalid = 0;
             s00_axi_rready = 0;
-            m00_axis_tready = 1;
+//            m00_axis_tready = 1;
         #20 aresetn = 1;
             s00_axi_awaddr = 32'h43C0_000C;
             s00_axi_awprot = 0;
@@ -221,7 +229,7 @@ initial begin
             s00_axi_arprot = 0;
             s00_axi_arvalid = 0;
             s00_axi_rready = 0;
-            m00_axis_tready = 1;
+//            m00_axis_tready = 1;
         #20 aresetn = 1;
             s00_axi_awaddr = 32'h43C0_0010;
             s00_axi_awprot = 0;
@@ -234,7 +242,7 @@ initial begin
             s00_axi_arprot = 0;
             s00_axi_arvalid = 0;
             s00_axi_rready = 0;
-            m00_axis_tready = 1;
+//            m00_axis_tready = 1;
         #20 aresetn = 1;
             s00_axi_awaddr = 32'h43C0_0014;
             s00_axi_awprot = 0;
@@ -247,7 +255,7 @@ initial begin
             s00_axi_arprot = 0;
             s00_axi_arvalid = 0;
             s00_axi_rready = 0;
-            m00_axis_tready = 1;
+//            m00_axis_tready = 1;
         #20 aresetn = 1;
             s00_axi_awaddr = 32'h43C0_0018;
             s00_axi_awprot = 0;
@@ -260,7 +268,7 @@ initial begin
             s00_axi_arprot = 0;
             s00_axi_arvalid = 0;
             s00_axi_rready = 0;
-            m00_axis_tready = 1;
+//            m00_axis_tready = 1;
         #20 aresetn = 1;
             s00_axi_awaddr = 32'h43C0_0018;
             s00_axi_awprot = 0;
@@ -273,7 +281,7 @@ initial begin
             s00_axi_arprot = 0;
             s00_axi_arvalid = 0;
             s00_axi_rready = 0;
-            m00_axis_tready = 1;
+//            m00_axis_tready = 1;
 end
 
 OFDMTxInputBuffer_Lite_v1_0 #
@@ -284,8 +292,8 @@ OFDMTxInputBuffer_Lite_v1_0 #
 		.C_M00_AXIS_START_COUNT(32)
 	) OFDMTxInputBuffer_Lite_v1_0_inst
 	(
-        .aclk(aclk),
-		.aresetn(aresetn),
+        .s00_axi_aclk(aclk),
+		.s00_axi_aresetn(aresetn),
 		.s00_axi_awaddr(s00_axi_awaddr),
 		.s00_axi_awprot(s00_axi_awprot),
 		.s00_axi_awvalid(s00_axi_awvalid),
@@ -305,6 +313,8 @@ OFDMTxInputBuffer_Lite_v1_0 #
 		.s00_axi_rresp(s00_axi_rresp),
 		.s00_axi_rvalid(s00_axi_rvalid),
 		.s00_axi_rready(s00_axi_rready),
+		.m00_axis_aclk(aclk),
+		.m00_axis_aresetn(aresetn),
         .m00_axis_tvalid(m00_axis_tvalid),
 		.m00_axis_tdata(m00_axis_tdata),
 		.m00_axis_tlast(m00_axis_tlast),

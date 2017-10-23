@@ -25,11 +25,13 @@ module OFDMTxInputBuffer(
     input nreset,
     input [223:0] din,
     input din_valid,
+    input [7:0] rd_pointer,
     output din_wready,
     output dout,
-    output dout_last,
-    output dout_valid,
-    input dout_rready
+//    output dout_last,
+//    output dout_valid,
+//    input dout_rready,
+    output buff_full
     );
     
     // IO registers
@@ -37,21 +39,21 @@ module OFDMTxInputBuffer(
     
     // Internal signals registers
     reg wrdy; 
-    reg out_vld;
+//    reg out_vld;
     
     // Internal data registers
     reg [223:0] data;
     
     // Internal status registers
     reg buff_full;
-    reg [7:0] cnt;
+//    reg [7:0] cnt;
     
     //Internal wire
     reg wren;
     
     // IO connections assignments
     assign din_wready = wrdy;
-    assign dout_valid = out_vld;
+//    assign dout_valid = out_vld;
     
     // Logic for write_ready signal output
     always @( posedge clk )
@@ -123,49 +125,54 @@ module OFDMTxInputBuffer(
     
     
     // Logic for data output valid signal
-    always @( posedge clk )
-    begin
-    if ( nreset == 1'b0 )
-      begin
-        out_vld <= 0;
-      end 
-    else
-      begin    
-        if ( buff_full && (cnt < 224) )
-            out_vld <= 1;
-        else           
-           out_vld <= 0;
-      end    
-    end  
+//    always @( posedge clk )
+//    begin
+//    if ( nreset == 1'b0 )
+//      begin
+//        out_vld <= 0;
+//      end 
+//    else
+//      begin    
+//        if ( buff_full && (cnt < 224) )
+//            out_vld <= 1;
+//        else           
+//           out_vld <= 0;
+//      end    
+//    end  
     
     // Logic for data output last signal
-    assign dout_last = (cnt == 224)? 1 : 0;
+//    assign dout_last = (cnt == 224)? 1 : 0;
     
     // Logic for data output buffering
-    always @( posedge clk )
-    begin
-    if ( nreset == 1'b0 )
-      begin
-        cnt <= 0;
-        dout <= 0;
-      end 
-    else
-      begin    
-        if ( dout_rready && buff_full )
-          begin
-            dout <= data[cnt];
-            if (cnt < 224) 
-                cnt <= cnt + 1;
-            else
-              begin
-                cnt <= 0;
-                buff_full <= 0;
-              end
-          end
-        else           
-           dout <= dout;
-      end    
-    end
+//    always @( posedge clk )
+//    begin
+//    if ( nreset == 1'b0 )
+//      begin
+//        cnt <= 0;
+//        dout <= 0;
+//      end 
+//    else
+//      begin    
+//        if ( dout_rready && buff_full )
+//          begin
+//            dout <= data[cnt];
+//            if (cnt < 224) 
+//                cnt <= cnt + 1;
+//            else
+//              begin
+//                cnt <= 0;
+//                buff_full <= 0;
+//              end
+//          end
+//        else           
+//           dout <= dout;
+//      end    
+//    end
     
+    // Logic for stream axis data output
+    always@( posedge clk )
+    begin
+        dout <= data[rd_pointer];
+    end
     
 endmodule

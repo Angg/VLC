@@ -80,12 +80,9 @@
     		// accept the read data and response information.
 		input wire  S_AXI_RREADY,
 		
-		// Additional output wire to transfer data from slv_reg to custom buffer IP
-		output reg [(C_S_AXI_DATA_WIDTH*7)-1 : 0] data_reg,
-		// Additional output data valid status
+		input wire  data_wready,
 		output wire data_valid,
-		// Additional input data ready status
-		input wire data_wready
+		output wire [223:0] data
 	);
 
 	// AXI4LITE signals
@@ -100,7 +97,10 @@
 	reg [1 : 0] 	axi_rresp;
 	reg  	axi_rvalid;
 	
+	// Additional output wire to transfer data from slv_reg to custom buffer IP
 	reg valid;
+	reg [(C_S_AXI_DATA_WIDTH*7)-1 : 0] data_reg;
+
 
 	// Example-specific design signals
 	// local parameter for addressing 32 bit / 64 bit C_S_AXI_DATA_WIDTH
@@ -146,6 +146,7 @@
 	assign S_AXI_RVALID	= axi_rvalid;
 	
 	assign data_valid = valid;
+	assign data = data_reg;
 	// Implement axi_awready generation
 	// axi_awready is asserted for one S_AXI_ACLK clock cycle when both
 	// S_AXI_AWVALID and S_AXI_WVALID are asserted. axi_awready is
@@ -508,6 +509,7 @@
             stat_reg <= 7'b0000000;
         end
     end
+    
 	// User logic ends
 
 	endmodule
