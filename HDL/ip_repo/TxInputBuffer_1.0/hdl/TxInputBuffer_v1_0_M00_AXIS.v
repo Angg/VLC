@@ -1,7 +1,7 @@
 
 `timescale 1 ns / 1 ps
 
-	module OFDMTxInputBuffer_v1_0_M00_AXIS #
+	module TxInputBuffer_v1_0_M00_AXIS #
 	(
 		// Users to add parameters here
 
@@ -15,7 +15,10 @@
 	)
 	(
 		// Users to add ports here
-
+		input wire data_buff,
+		input wire buff_full,
+        output wire [7:0] read_ptr,
+        output wire txdone,
 		// User ports ends
 		// Do not modify the ports beyond this line
 
@@ -36,7 +39,7 @@
 	);
 	//Total number of output data.
 	// Total number of output data                                                 
-	localparam NUMBER_OF_OUTPUT_WORDS = 8;                                               
+	localparam NUMBER_OF_OUTPUT_WORDS = 224;                                               
 	                                                                                     
 	// function called clogb2 that returns an integer which has the                      
 	// value of the ceiling of the log base 2.                                           
@@ -122,7 +125,7 @@
 	        // The slave starts accepting tdata when                          
 	        // there tvalid is asserted to mark the                           
 	        // presence of valid streaming data                               
-	        if ( count == C_M_START_COUNT - 1 )                               
+	        if ( buff_full /*count == C_M_START_COUNT - 1*/ )                               
 	          begin                                                           
 	            mst_exec_state  <= SEND_STREAM;                               
 	          end                                                             
@@ -218,12 +221,13 @@
 	        end                                          
 	      else if (tx_en)// && M_AXIS_TSTRB[byte_index]  
 	        begin                                        
-	          stream_data_out <= read_pointer + 32'b1;   
+	          stream_data_out <= data_buff;   
 	        end                                          
 	    end                                              
 
 	// Add user logic here
-
+	assign read_ptr = read_pointer;
+    assign txdone = tx_done;
 	// User logic ends
 
 	endmodule

@@ -1,6 +1,6 @@
 
 /***************************** Include Files *******************************/
-#include "OFDMTxInputBuffer.h"
+#include "TxInputBuffer.h"
 #include "xparameters.h"
 #include "stdio.h"
 #include "xil_io.h"
@@ -17,7 +17,7 @@
  * If the hardware system is not built correctly, this function may never
  * return to the caller.
  *
- * @param   baseaddr_p is the base address of the OFDMTXINPUTBUFFERinstance to be worked on.
+ * @param   baseaddr_p is the base address of the TXINPUTBUFFERinstance to be worked on.
  *
  * @return
  *
@@ -28,11 +28,12 @@
  * @note    Self test may fail if data memory and device are not on the same bus.
  *
  */
-XStatus OFDMTXINPUTBUFFER_Mem_SelfTest(void * baseaddr_p)
+XStatus TXINPUTBUFFER_Reg_SelfTest(void * baseaddr_p)
 {
-	int     Index;
 	u32 baseaddr;
-	u32 Mem32Value;
+	int write_loop_index;
+	int read_loop_index;
+	int Index;
 
 	baseaddr = (u32) baseaddr_p;
 
@@ -41,26 +42,19 @@ XStatus OFDMTXINPUTBUFFER_Mem_SelfTest(void * baseaddr_p)
 	xil_printf("******************************\n\n\r");
 
 	/*
-	 * Write data to user logic BRAMs and read back
+	 * Write to user logic slave module register(s) and read back
 	 */
-	xil_printf("User logic memory test...\n\r");
-	xil_printf("   - local memory address is 0x%08x\n\r", baseaddr);
-	xil_printf("   - write pattern to local BRAM and read back\n\r");
-	for ( Index = 0; Index < 16; Index++ )
-	{
-	  OFDMTXINPUTBUFFER_mWriteMemory(baseaddr+4*Index, (0xDEADBEEF % Index));
-	}
+	xil_printf("User logic slave module test...\n\r");
 
-	for ( Index = 0; Index < 16; Index++ )
-	{
-	  Mem32Value = OFDMTXINPUTBUFFER_mReadMemory(baseaddr+4*Index);
-	  if ( Mem32Value != (0xDEADBEEF % Index) )
-	  {
-	    xil_printf("   - write/read memory failed on address 0x%08x\n\r", baseaddr+4*Index);
+	for (write_loop_index = 0 ; write_loop_index < 4; write_loop_index++)
+	  TXINPUTBUFFER_mWriteReg (baseaddr, write_loop_index*4, (write_loop_index+1)*READ_WRITE_MUL_FACTOR);
+	for (read_loop_index = 0 ; read_loop_index < 4; read_loop_index++)
+	  if ( TXINPUTBUFFER_mReadReg (baseaddr, read_loop_index*4) != (read_loop_index+1)*READ_WRITE_MUL_FACTOR){
+	    xil_printf ("Error reading register value at address %x\n", (int)baseaddr + read_loop_index*4);
 	    return XST_FAILURE;
 	  }
-	}
-	xil_printf("   - write/read memory passed\n\n\r");
+
+	xil_printf("   - slave register write/read passed\n\n\r");
 
 	return XST_SUCCESS;
 }

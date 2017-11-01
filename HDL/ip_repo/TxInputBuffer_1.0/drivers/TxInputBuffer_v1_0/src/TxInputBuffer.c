@@ -1,6 +1,6 @@
 
 
 /***************************** Include Files *******************************/
-#include "OFDMTxInputBuffer.h"
+#include "TxInputBuffer.h"
 
 /************************** Function Definitions ***************************/

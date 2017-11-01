@@ -1,7 +1,7 @@
 
 `timescale 1 ns / 1 ps
 
-	module OFDMTxInputBuffer_v1_0 #
+	module TxInputBuffer_v1_0 #
 	(
 		// Users to add parameters here
 
@@ -10,14 +10,8 @@
 
 
 		// Parameters of Axi Slave Bus Interface S00_AXI
-		parameter integer C_S00_AXI_ID_WIDTH	= 1,
 		parameter integer C_S00_AXI_DATA_WIDTH	= 32,
-		parameter integer C_S00_AXI_ADDR_WIDTH	= 6,
-		parameter integer C_S00_AXI_AWUSER_WIDTH	= 0,
-		parameter integer C_S00_AXI_ARUSER_WIDTH	= 0,
-		parameter integer C_S00_AXI_WUSER_WIDTH	= 0,
-		parameter integer C_S00_AXI_RUSER_WIDTH	= 0,
-		parameter integer C_S00_AXI_BUSER_WIDTH	= 0,
+		parameter integer C_S00_AXI_ADDR_WIDTH	= 4,
 
 		// Parameters of Axi Master Bus Interface M00_AXIS
 		parameter integer C_M00_AXIS_TDATA_WIDTH	= 32,
@@ -33,48 +27,23 @@
 		// Ports of Axi Slave Bus Interface S00_AXI
 		input wire  s00_axi_aclk,
 		input wire  s00_axi_aresetn,
-		input wire [C_S00_AXI_ID_WIDTH-1 : 0] s00_axi_awid,
 		input wire [C_S00_AXI_ADDR_WIDTH-1 : 0] s00_axi_awaddr,
-		input wire [7 : 0] s00_axi_awlen,
-		input wire [2 : 0] s00_axi_awsize,
-		input wire [1 : 0] s00_axi_awburst,
-		input wire  s00_axi_awlock,
-		input wire [3 : 0] s00_axi_awcache,
 		input wire [2 : 0] s00_axi_awprot,
-		input wire [3 : 0] s00_axi_awqos,
-		input wire [3 : 0] s00_axi_awregion,
-		input wire [C_S00_AXI_AWUSER_WIDTH-1 : 0] s00_axi_awuser,
 		input wire  s00_axi_awvalid,
 		output wire  s00_axi_awready,
 		input wire [C_S00_AXI_DATA_WIDTH-1 : 0] s00_axi_wdata,
 		input wire [(C_S00_AXI_DATA_WIDTH/8)-1 : 0] s00_axi_wstrb,
-		input wire  s00_axi_wlast,
-		input wire [C_S00_AXI_WUSER_WIDTH-1 : 0] s00_axi_wuser,
 		input wire  s00_axi_wvalid,
 		output wire  s00_axi_wready,
-		output wire [C_S00_AXI_ID_WIDTH-1 : 0] s00_axi_bid,
 		output wire [1 : 0] s00_axi_bresp,
-		output wire [C_S00_AXI_BUSER_WIDTH-1 : 0] s00_axi_buser,
 		output wire  s00_axi_bvalid,
 		input wire  s00_axi_bready,
-		input wire [C_S00_AXI_ID_WIDTH-1 : 0] s00_axi_arid,
 		input wire [C_S00_AXI_ADDR_WIDTH-1 : 0] s00_axi_araddr,
-		input wire [7 : 0] s00_axi_arlen,
-		input wire [2 : 0] s00_axi_arsize,
-		input wire [1 : 0] s00_axi_arburst,
-		input wire  s00_axi_arlock,
-		input wire [3 : 0] s00_axi_arcache,
 		input wire [2 : 0] s00_axi_arprot,
-		input wire [3 : 0] s00_axi_arqos,
-		input wire [3 : 0] s00_axi_arregion,
-		input wire [C_S00_AXI_ARUSER_WIDTH-1 : 0] s00_axi_aruser,
 		input wire  s00_axi_arvalid,
 		output wire  s00_axi_arready,
-		output wire [C_S00_AXI_ID_WIDTH-1 : 0] s00_axi_rid,
 		output wire [C_S00_AXI_DATA_WIDTH-1 : 0] s00_axi_rdata,
 		output wire [1 : 0] s00_axi_rresp,
-		output wire  s00_axi_rlast,
-		output wire [C_S00_AXI_RUSER_WIDTH-1 : 0] s00_axi_ruser,
 		output wire  s00_axi_rvalid,
 		input wire  s00_axi_rready,
 
@@ -87,70 +56,55 @@
 		output wire  m00_axis_tlast,
 		input wire  m00_axis_tready
 	);
+	
+    wire [31:0] din;
+    wire wren;
+    wire tdone;
+    wire [1:0] wraddr;
+    wire dbuff;
+    wire [7:0] rptr;
+    wire bfull;
+	
 // Instantiation of Axi Bus Interface S00_AXI
-	OFDMTxInputBuffer_v1_0_S00_AXI # ( 
-		.C_S_AXI_ID_WIDTH(C_S00_AXI_ID_WIDTH),
+	TxInputBuffer_v1_0_S00_AXI # ( 
 		.C_S_AXI_DATA_WIDTH(C_S00_AXI_DATA_WIDTH),
-		.C_S_AXI_ADDR_WIDTH(C_S00_AXI_ADDR_WIDTH),
-		.C_S_AXI_AWUSER_WIDTH(C_S00_AXI_AWUSER_WIDTH),
-		.C_S_AXI_ARUSER_WIDTH(C_S00_AXI_ARUSER_WIDTH),
-		.C_S_AXI_WUSER_WIDTH(C_S00_AXI_WUSER_WIDTH),
-		.C_S_AXI_RUSER_WIDTH(C_S00_AXI_RUSER_WIDTH),
-		.C_S_AXI_BUSER_WIDTH(C_S00_AXI_BUSER_WIDTH)
-	) OFDMTxInputBuffer_v1_0_S00_AXI_inst (
+		.C_S_AXI_ADDR_WIDTH(C_S00_AXI_ADDR_WIDTH)
+	) TxInputBuffer_v1_0_S00_AXI_inst (
+	    .data_in(din),
+	    .write_en(wren),
+	    .write_addr(wraddr),
 		.S_AXI_ACLK(s00_axi_aclk),
 		.S_AXI_ARESETN(s00_axi_aresetn),
-		.S_AXI_AWID(s00_axi_awid),
 		.S_AXI_AWADDR(s00_axi_awaddr),
-		.S_AXI_AWLEN(s00_axi_awlen),
-		.S_AXI_AWSIZE(s00_axi_awsize),
-		.S_AXI_AWBURST(s00_axi_awburst),
-		.S_AXI_AWLOCK(s00_axi_awlock),
-		.S_AXI_AWCACHE(s00_axi_awcache),
 		.S_AXI_AWPROT(s00_axi_awprot),
-		.S_AXI_AWQOS(s00_axi_awqos),
-		.S_AXI_AWREGION(s00_axi_awregion),
-		.S_AXI_AWUSER(s00_axi_awuser),
 		.S_AXI_AWVALID(s00_axi_awvalid),
 		.S_AXI_AWREADY(s00_axi_awready),
 		.S_AXI_WDATA(s00_axi_wdata),
 		.S_AXI_WSTRB(s00_axi_wstrb),
-		.S_AXI_WLAST(s00_axi_wlast),
-		.S_AXI_WUSER(s00_axi_wuser),
 		.S_AXI_WVALID(s00_axi_wvalid),
 		.S_AXI_WREADY(s00_axi_wready),
-		.S_AXI_BID(s00_axi_bid),
 		.S_AXI_BRESP(s00_axi_bresp),
-		.S_AXI_BUSER(s00_axi_buser),
 		.S_AXI_BVALID(s00_axi_bvalid),
 		.S_AXI_BREADY(s00_axi_bready),
-		.S_AXI_ARID(s00_axi_arid),
 		.S_AXI_ARADDR(s00_axi_araddr),
-		.S_AXI_ARLEN(s00_axi_arlen),
-		.S_AXI_ARSIZE(s00_axi_arsize),
-		.S_AXI_ARBURST(s00_axi_arburst),
-		.S_AXI_ARLOCK(s00_axi_arlock),
-		.S_AXI_ARCACHE(s00_axi_arcache),
 		.S_AXI_ARPROT(s00_axi_arprot),
-		.S_AXI_ARQOS(s00_axi_arqos),
-		.S_AXI_ARREGION(s00_axi_arregion),
-		.S_AXI_ARUSER(s00_axi_aruser),
 		.S_AXI_ARVALID(s00_axi_arvalid),
 		.S_AXI_ARREADY(s00_axi_arready),
-		.S_AXI_RID(s00_axi_rid),
 		.S_AXI_RDATA(s00_axi_rdata),
 		.S_AXI_RRESP(s00_axi_rresp),
-		.S_AXI_RLAST(s00_axi_rlast),
-		.S_AXI_RUSER(s00_axi_ruser),
 		.S_AXI_RVALID(s00_axi_rvalid),
 		.S_AXI_RREADY(s00_axi_rready)
 	);
 
 // Instantiation of Axi Bus Interface M00_AXIS
-	OFDMTxInputBuffer_v1_0_M00_AXIS # ( 
+	TxInputBuffer_v1_0_M00_AXIS # ( 
 		.C_M_AXIS_TDATA_WIDTH(C_M00_AXIS_TDATA_WIDTH),
 		.C_M_START_COUNT(C_M00_AXIS_START_COUNT)
-	) OFDMTxInputBuffer_v1_0_M00_AXIS_inst (
+	) TxInputBuffer_v1_0_M00_AXIS_inst (
+	    .data_buff(dbuff),
+	    .buff_full(bfull),
+	    .read_ptr(rptr),
+	    .txdone(tdone),
 		.M_AXIS_ACLK(m00_axis_aclk),
 		.M_AXIS_ARESETN(m00_axis_aresetn),
 		.M_AXIS_TVALID(m00_axis_tvalid),
@@ -161,7 +115,16 @@
 	);
 
 	// Add user logic here
-
+    InBuff InBuff_inst(
+        .clk(s00_axi_aclk),
+        .din(din),
+        .write_ena(wren),
+        .tx_done(tdone),
+        .write_address(wraddr),
+        .dout(dbuff),
+        .read_ptr(rptr),
+        .buff_full(bfull)
+     );
 	// User logic ends
 
 	endmodule

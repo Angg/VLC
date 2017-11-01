@@ -14,7 +14,7 @@ LIBSOURCES=*.c
 OUTS = *.o
 
 libs:
-	echo "Compiling OFDMTxInputBuffer..."
+	echo "Compiling TxInputBuffer..."
 	$(COMPILER) $(COMPILER_FLAGS) $(EXTRA_COMPILER_FLAGS) $(INCLUDES) $(LIBSOURCES)
 	$(ARCHIVER) -r ${RELEASEDIR}/${LIB} ${OUTS}
 	make clean
