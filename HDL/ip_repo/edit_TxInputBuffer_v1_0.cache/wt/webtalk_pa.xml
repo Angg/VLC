@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<document>
+<!--The data in this file is primarily intended for consumption by Xilinx tools.
+The structure and the elements are likely to change over the next few releases.
+This means code written to parse this file will need to be revisited each subsequent release.-->
+<application name="pa" timeStamp="Tue Oct 31 12:52:23 2017">
+<section name="Project Information" visible="false">
+<property name="ProjectID" value="436c4bf754fb4709bfba79a02cc74a85" type="ProjectID"/>
+<property name="ProjectIteration" value="1" type="ProjectIteration"/>
+</section>
+<section name="PlanAhead Usage" visible="true">
+<item name="Project Data">
+<property name="SrcSetCount" value="1" type="SrcSetCount"/>
+<property name="ConstraintSetCount" value="1" type="ConstraintSetCount"/>
+<property name="DesignMode" value="RTL" type="DesignMode"/>
+<property name="SynthesisStrategy" value="Vivado Synthesis Defaults" type="SynthesisStrategy"/>
+<property name="ImplStrategy" value="Vivado Implementation Defaults" type="ImplStrategy"/>
+</item>
+<item name="Java Command Handlers">
+<property name="AddSources" value="2" type="JavaHandler"/>
+<property name="AutoAssignAddress" value="1" type="JavaHandler"/>
+<property name="CustomizeRSBBlock" value="3" type="JavaHandler"/>
+<property name="EditDelete" value="2" type="JavaHandler"/>
+<property name="IPPackagerHandler" value="1" type="JavaHandler"/>
+<property name="IPPackagerWizardHandler" value="1" type="JavaHandler"/>
+<property name="ManageCompositeTargets" value="2" type="JavaHandler"/>
+<property name="OpenBlockDesign" value="1" type="JavaHandler"/>
+<property name="ProjectSettingsCmdHandler" value="1" type="JavaHandler"/>
+<property name="RegenerateRSBLayout" value="1" type="JavaHandler"/>
+<property name="SaveFileProxyHandler" value="2" type="JavaHandler"/>
+<property name="SaveRSBDesign" value="3" type="JavaHandler"/>
+<property name="SimulationRun" value="2" type="JavaHandler"/>
+<property name="SimulationRunForTime" value="3" type="JavaHandler"/>
+<property name="ValidateRSBDesign" value="2" type="JavaHandler"/>
+</item>
+<item name="Gui Resources Info">
+<property name="APPLY, Apply" value="1" type="GuiResourceData"/>
+<property name="FINISH, Finish" value="3" type="GuiResourceData"/>
+<property name="InBuff.v, 1, 211" value="1" type="GuiResourceData"/>
+<property name="InBuff.v, 101, 175" value="1" type="GuiResourceData"/>
+<property name="InBuff.v, 102, 388" value="1" type="GuiResourceData"/>
+<property name="InBuff.v, 102, 399" value="1" type="GuiResourceData"/>
+<property name="InBuff.v, 105, 180" value="1" type="GuiResourceData"/>
+<property name="InBuff.v, 105, 303" value="1" type="GuiResourceData"/>
+<property name="InBuff.v, 106, 451" value="1" type="GuiResourceData"/>
+<property name="InBuff.v, 107, 474" value="1" type="GuiResourceData"/>
+<property name="InBuff.v, 112, 461" value="1" type="GuiResourceData"/>
+<property name="InBuff.v, 112, 462" value="1" type="GuiResourceData"/>
+<property name="InBuff.v, 112, 480" value="1" type="GuiResourceData"/>
+<property name="InBuff.v, 120, 483" value="1" type="GuiResourceData"/>
+<property name="InBuff.v, 125, 369" value="1" type="GuiResourceData"/>
+<property name="InBuff.v, 126, 132" value="1" type="GuiResourceData"/>
+<property name="InBuff.v, 128, 264" value="1" type="GuiResourceData"/>
+<property name="InBuff.v, 135, 133" value="1" type="GuiResourceData"/>
+<property name="InBuff.v, 136, 209, false, false, false, true, false" value="1" type="GuiResourceData"/>
+<property name="InBuff.v, 142, 260" value="1" type="GuiResourceData"/>
+<property name="InBuff.v, 144, 194" value="1" type="GuiResourceData"/>
+<property name="InBuff.v, 154, 264" value="1" type="GuiResourceData"/>
+<property name="InBuff.v, 158, 189" value="1" type="GuiResourceData"/>
+<property name="InBuff.v, 162, 377" value="1" type="GuiResourceData"/>
+<property name="InBuff.v, 163, 388" value="1" type="GuiResourceData"/>
+<property name="InBuff.v, 168, 451" value="1" type="GuiResourceData"/>
+<property name="InBuff.v, 169, 480" value="1" type="GuiResourceData"/>
+<property name="InBuff.v, 180, 330" value="1" type="GuiResourceData"/>
+<property name="InBuff.v, 193, 329" value="1" type="GuiResourceData"/>
+<property name="InBuff.v, 193, 94" value="1" type="GuiResourceData"/>
+<property name="InBuff.v, 194, 387" value="1" type="GuiResourceData"/>
+<property name="InBuff.v, 194, 395" value="1" type="GuiResourceData"/>
+<property name="InBuff.v, 196, 158" value="1" type="GuiResourceData"/>
+<property name="InBuff.v, 203, 521" value="1" type="GuiResourceData"/>
+<property name="InBuff.v, 204, 404" value="1" type="GuiResourceData"/>
+<property name="InBuff.v, 207, 220" value="1" type="GuiResourceData"/>
+<property name="InBuff.v, 207, 409" value="1" type="GuiResourceData"/>
+<property name="InBuff.v, 209, 290" value="1" type="GuiResourceData"/>
+<property name="InBuff.v, 212, 467" value="1" type="GuiResourceData"/>
+<property name="InBuff.v, 213, 284" value="1" type="GuiResourceData"/>
+<property name="InBuff.v, 216, 366" value="1" type="GuiResourceData"/>
+<property name="InBuff.v, 221, 189" value="1" type="GuiResourceData"/>
+<property name="InBuff.v, 224, 445" value="1" type="GuiResourceData"/>
+<property name="InBuff.v, 228, 395" value="1" type="GuiResourceData"/>
+<property name="InBuff.v, 228, 461" value="1" type="GuiResourceData"/>
+<property name="InBuff.v, 230, 173" value="1" type="GuiResourceData"/>
+<property name="InBuff.v, 237, 431" value="1" type="GuiResourceData"/>
+<property name="InBuff.v, 244, 195" value="1" type="GuiResourceData"/>
+<property name="InBuff.v, 251, 331" value="1" type="GuiResourceData"/>
+<property name="InBuff.v, 265, 414" value="1" type="GuiResourceData"/>
+<property name="InBuff.v, 271, 481" value="1" type="GuiResourceData"/>
+<property name="InBuff.v, 290, 227" value="1" type="GuiResourceData"/>
+<property name="InBuff.v, 303, 136" value="1" type="GuiResourceData"/>
+<property name="InBuff.v, 308, 208" value="1" type="GuiResourceData"/>
+<property name="InBuff.v, 321, 211" value="1" type="GuiResourceData"/>
+<property name="InBuff.v, 402, 351" value="1" type="GuiResourceData"/>
+<property name="InBuff.v, 403, 279" value="1" type="GuiResourceData"/>
+<property name="InBuff.v, 445, 68" value="1" type="GuiResourceData"/>
+<property name="InBuff.v, 455, 535" value="1" type="GuiResourceData"/>
+<property name="InBuff.v, 51, 279" value="1" type="GuiResourceData"/>
+<property name="InBuff.v, 52, 378" value="1" type="GuiResourceData"/>
+<property name="InBuff.v, 53, 378" value="1" type="GuiResourceData"/>
+<property name="InBuff.v, 53, 502" value="1" type="GuiResourceData"/>
+<property name="InBuff.v, 55, 332" value="1" type="GuiResourceData"/>
+<property name="InBuff.v, 56, 496" value="1" type="GuiResourceData"/>
+<property name="InBuff.v, 572, 193" value="1" type="GuiResourceData"/>
+<property name="InBuff.v, 58, 505" value="1" type="GuiResourceData"/>
+<property name="InBuff.v, 6, 208" value="1" type="GuiResourceData"/>
+<property name="InBuff.v, 63, 379" value="1" type="GuiResourceData"/>
+<property name="InBuff.v, 689, 471" value="1" type="GuiResourceData"/>
+<property name="InBuff.v, 84, 313" value="1" type="GuiResourceData"/>
+<property name="InBuff.v, 84, 370" value="1" type="GuiResourceData"/>
+<property name="InBuff.v, 9, 205" value="1" type="GuiResourceData"/>
+<property name="InBuff.v, 91, 541" value="1" type="GuiResourceData"/>
+<property name="InBuff.v, 94, 473" value="1" type="GuiResourceData"/>
+<property name="InBuff.v, 98, 245" value="1" type="GuiResourceData"/>
+<property name="InBuff.v, 99, 488" value="1" type="GuiResourceData"/>
+<property name="NEXT, Next " value="6" type="GuiResourceData"/>
+<property name="Number of Probes, 1, true" value="1" type="GuiResourceData"/>
+<property name="OFDMTxInputBuffer_Lite_sim.v, 0, 54" value="1" type="GuiResourceData"/>
+<property name="OFDMTxInputBuffer_Lite_sim.v, 117, 57" value="1" type="GuiResourceData"/>
+<property name="OFDMTxInputBuffer_Lite_sim.v, 151, 57" value="1" type="GuiResourceData"/>
+<property name="OFDMTxInputBuffer_Lite_sim.v, 169, 158" value="1" type="GuiResourceData"/>
+<property name="OFDMTxInputBuffer_Lite_sim.v, 240, 98" value="1" type="GuiResourceData"/>
+<property name="OFDMTxInputBuffer_Lite_sim.v, 264, 351" value="1" type="GuiResourceData"/>
+<property name="OFDMTxInputBuffer_Lite_sim.v, 265, 311" value="1" type="GuiResourceData"/>
+<property name="OFDMTxInputBuffer_Lite_sim.v, 265, 349" value="1" type="GuiResourceData"/>
+<property name="OFDMTxInputBuffer_Lite_sim.v, 266, 364" value="1" type="GuiResourceData"/>
+<property name="OFDMTxInputBuffer_Lite_sim.v, 266, 92" value="1" type="GuiResourceData"/>
+<property name="OFDMTxInputBuffer_Lite_sim.v, 267, 359" value="1" type="GuiResourceData"/>
+<property name="OFDMTxInputBuffer_Lite_sim.v, 267, 528" value="1" type="GuiResourceData"/>
+<property name="OFDMTxInputBuffer_Lite_sim.v, 270, 324" value="1" type="GuiResourceData"/>
+<property name="OFDMTxInputBuffer_Lite_sim.v, 70, 159" value="1" type="GuiResourceData"/>
+<property name="OK, OK" value="1" type="GuiResourceData"/>
+<property name="PAResourceAtoD.AddSrcWizard_SPECIFY_SIMULATION_SPECIFIC_HDL_FILES, Add or create simulation sources" value="1" type="GuiResourceData"/>
+<property name="PAResourceAtoD.AddressTreeTablePanel_ADDRESS_TREE_TABLE, null, -1, null, -1, false, false, false, false, true, false" value="1" type="GuiResourceData"/>
+<property name="PAResourceAtoD.CmdMsgDialog_OK, OK" value="3" type="GuiResourceData"/>
+<property name="PAResourceAtoD.CoreTreeTablePanel_CORE_TREE_TABLE, OFDMTxInputBuffer_Lite_v1.0, 0" value="1" type="GuiResourceData"/>
+<property name="PAResourceAtoD.CoreTreeTablePanel_CORE_TREE_TABLE, OFDMTxInputBuffer_Lite_v1.0, 0, OFDMTxInputBuffer_Lite_v1.0, 0, false" value="1" type="GuiResourceData"/>
+<property name="PAResourceAtoD.CoreTreeTablePanel_CORE_TREE_TABLE, OFDMTxInputBuffer_Lite_v1.0, 0, OFDMTxInputBuffer_Lite_v1.0, 0, false, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="PAResourceAtoD.CreateSrcFileDialog_FILE_NAME, InBuff" value="1" type="GuiResourceData"/>
+<property name="PAResourceCommand.PACommandNames_AUTO_ASSIGN_ADDRESS, Auto Assign Address" value="1" type="GuiResourceData"/>
+<property name="PAResourceCommand.PACommandNames_GENERATE_COMPOSITE_FILE, Generate Output Products..." value="1" type="GuiResourceData"/>
+<property name="PAResourceCommand.PACommandNames_IP_PACKAGER_WIZARD, Create and Package IP..." value="1" type="GuiResourceData"/>
+<property name="PAResourceCommand.PACommandNames_REGENERATE_LAYOUT, System_regenerate_rsb_layout" value="1" type="GuiResourceData"/>
+<property name="PAResourceCommand.PACommandNames_RESET_COMPOSITE_FILE, Reset Output Products..." value="1" type="GuiResourceData"/>
+<property name="PAResourceCommand.PACommandNames_SIMULATION_LIVE_RUN, simulation_live_run_for_time" value="3" type="GuiResourceData"/>
+<property name="PAResourceCommand.PACommandNames_SIMULATION_RUN_BEHAVIORAL, Run Behavioral Simulation" value="2" type="GuiResourceData"/>
+<property name="PAResourceCommand.PACommandNames_VALIDATE_RSB_DESIGN, System_validate_bd_design_rsb" value="3" type="GuiResourceData"/>
+<property name="PAResourceEtoH.FileSetPanel_0_CRITICAL_WARNING, 2 critical warnings" value="1" type="GuiResourceData"/>
+<property name="PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, [root, Design Sources, InBuff (InBuff.v" value="3" type="GuiResourceData"/>
+<property name="PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, [root, Design Sources, Syntax Error Files, InBuff.v], 2, false" value="1" type="GuiResourceData"/>
+<property name="PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, [root, Design Sources, Syntax Error Files, TxInputBuffer_v1_0_M00_AXIS.v], 2, false" value="1" type="GuiResourceData"/>
+<property name="PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, [root, Design Sources, Syntax Error Files], 1" value="2" type="GuiResourceData"/>
+<property name="PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, [root, Design Sources, TxInputBuffer_v1_0 (TxInputBuffer_v1_0.v" value="8" type="GuiResourceData"/>
+<property name="PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, [root, Design Sources, test1_wrapper (test1_wrapper.v" value="12" type="GuiResourceData"/>
+<property name="PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, [root, Simulation Sources, sim_1, OFDMTxInputBuffer_Lite_sim (OFDMTxInputBuffer_Lite_sim.v" value="3" type="GuiResourceData"/>
+<property name="PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, [root, Simulation Sources, sim_1, TxInputBuffer_v1_0 (TxInputBuffer_v1_0.v" value="3" type="GuiResourceData"/>
+<property name="PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, [root, Simulation Sources, sim_1], 8" value="1" type="GuiResourceData"/>
+<property name="PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, [, IP Integrator, Open Block Design], 7, false" value="1" type="GuiResourceData"/>
+<property name="PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, [, Project Manager, Add Sources], 2, false" value="2" type="GuiResourceData"/>
+<property name="PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, [, Simulation, Run Simulation], 12, false" value="4" type="GuiResourceData"/>
+<property name="PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, [, Simulation, Simulation Settings], 11, false" value="1" type="GuiResourceData"/>
+<property name="PAResourceEtoH.GettingStartedView_RECENT_PROJECTS, D:/Files/SoCProject/OFDMTxInputBuffer_Test/OFDMTxInputBuffer_Test.xpr, 0" value="1" type="GuiResourceData"/>
+<property name="PAResourceItoN.MainMenuMgr_EDIT, Edit" value="2" type="GuiResourceData"/>
+<property name="PAResourceItoN.MainMenuMgr_FLOW, Flow" value="4" type="GuiResourceData"/>
+<property name="PAResourceItoN.MainMenuMgr_REPORT, Report" value="1" type="GuiResourceData"/>
+<property name="PAResourceItoN.MainMenuMgr_TOOLS, Tools" value="6" type="GuiResourceData"/>
+<property name="PAResourceItoN.MainMenuMgr_VIEW, View" value="2" type="GuiResourceData"/>
+<property name="PAResourceItoN.MainMenuMgr_WINDOW, Window" value="6" type="GuiResourceData"/>
+<property name="PAResourceItoN.MessageBanner_CHANGES_DETECTED_IN_VIVADO_PROJECT_THAT, Merge changes from Customization Parameters Wizard" value="1" type="GuiResourceData"/>
+<property name="PAResourceItoN.MessageBanner_CHANGES_DETECTED_IN_VIVADO_PROJECT_THAT, Merge changes from File Groups Wizard" value="1" type="GuiResourceData"/>
+<property name="PAResourceItoN.MessageBanner_SEE_LIST_OF_WARNING_MESSAGES, 3 warnings" value="1" type="GuiResourceData"/>
+<property name="PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, [, Analysis Results, sources_1, [HDL 9-806] Syntax error near =. [d:/Files/SoCProject/ip_repo/TxInputBuffer_1.0/hdl/TxInputBuffer_v1_0_M00_AXIS.v:230]. ], 2, false" value="2" type="GuiResourceData"/>
+<property name="PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, [, Analysis Results, sources_1, [HDL 9-806] Syntax error near =. [d:/Files/SoCProject/ip_repo/TxInputBuffer_1.0/hdl/TxInputBuffer_v1_0_M00_AXIS.v:230]. ], 2, false, false, false, false, false, true" value="2" type="GuiResourceData"/>
+<property name="PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, [, Analysis Results, sources_1, [HDL 9-806] Syntax error near endmodule. [d:/files/socproject/ip_repo/edit_TxInputBuffer_v1_0.srcs/sources_1/new/InBuff.v:86]. ], 2, false" value="2" type="GuiResourceData"/>
+<property name="PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, [, Analysis Results, sources_1, [HDL 9-806] Syntax error near endmodule. [d:/files/socproject/ip_repo/edit_TxInputBuffer_v1_0.srcs/sources_1/new/InBuff.v:86]. ], 2, false, false, false, false, false, true" value="2" type="GuiResourceData"/>
+<property name="PAResourceItoN.NewIpWizard_ADD_NEW_INTERFACE, (String" value="1" type="GuiResourceData"/>
+<property name="PAResourceItoN.NewIpWizard_CREATE_NEW_AXI4_IP_CREATE_AXI4, Create a new AXI4 peripheral. Create an AXI4 IP, driver, software test application, IP Integrator AXI4 BFM simulation and debug demonstration design." value="1" type="GuiResourceData"/>
+<property name="PAResourceItoN.NewIpWizard_DESCRIPTION_MY_NEW_AXI_IP, Buffering 32*7 data input into 224 bit data output. Output data is 1 bit per clock." value="1" type="GuiResourceData"/>
+<property name="PAResourceItoN.NewIpWizard_EDIT_IP, Edit IP" value="1" type="GuiResourceData"/>
+<property name="PAResourceItoN.NewIpWizard_INTERFACES_TREE, [Interfaces, M00_AXIS], 2, false" value="2" type="GuiResourceData"/>
+<property name="PAResourceItoN.NewIpWizard_INTERFACES_TREE, [Interfaces, S00_AXI], 1, false" value="3" type="GuiResourceData"/>
+<property name="PAResourceItoN.NewIpWizard_INTERFACE_MODE, Master, 0" value="1" type="GuiResourceData"/>
+<property name="PAResourceItoN.NewIpWizard_INTERFACE_TYPE, Stream, 2" value="1" type="GuiResourceData"/>
+<property name="PAResourceItoN.NewIpWizard_NAME_MYIP, TxInputBuffer" value="1" type="GuiResourceData"/>
+<property name="PAResourceOtoP.PackagerStepsPanel_PACKAGER_STEPS_LIST, Addressing and Memory, 5" value="1" type="GuiResourceData"/>
+<property name="PAResourceOtoP.PackagerStepsPanel_PACKAGER_STEPS_LIST, Customization GUI, 6" value="1" type="GuiResourceData"/>
+<property name="PAResourceOtoP.PackagerStepsPanel_PACKAGER_STEPS_LIST, Customization Parameters, 3" value="1" type="GuiResourceData"/>
+<property name="PAResourceOtoP.PackagerStepsPanel_PACKAGER_STEPS_LIST, File Groups, 2" value="1" type="GuiResourceData"/>
+<property name="PAResourceOtoP.PackagerStepsPanel_PACKAGER_STEPS_LIST, Ports and Interfaces, 4" value="1" type="GuiResourceData"/>
+<property name="PAResourceOtoP.PackagerStepsPanel_PACKAGER_STEPS_LIST, Review and Package, 7" value="1" type="GuiResourceData"/>
+<property name="PAResourceOtoP.PortAndInterfaceFacetTable_PORT_AND_INTERFACE_FACET_TABLE, Clock and Reset Signals ;  ;  ;  ;  ;  ;  ;  ;  ;  ; , 2" value="2" type="GuiResourceData"/>
+<property name="PAResourceOtoP.ProjectSettingsSimulationPanel_TABBED_PANE, PAResourceOtoP.ProjectSettingsSimulationPanel_ELABORATION, Elaboration, 1" value="1" type="GuiResourceData"/>
+<property name="PAResourceQtoS.RSBApplyAutomationBar_RUN_CONNECTION_AUTOMATION, Run Connection Automation" value="1" type="GuiResourceData"/>
+<property name="PAResourceQtoS.ReviewContentPanel_RE_PACKAGE_IP, Re-Package IP" value="1" type="GuiResourceData"/>
+<property name="PAResourceQtoS.SimpleOutputProductDialog_GENERATE_OUTPUT_PRODUCTS_IMMEDIATELY, Generate" value="1" type="GuiResourceData"/>
+<property name="PAResourceQtoS.SimpleOutputProductDialog_RESET_OUTPUT_PRODUCTS, Reset" value="1" type="GuiResourceData"/>
+<property name="PAResourceQtoS.SrcChooserPanel_ADD_HDL_AND_NETLIST_FILES_TO_YOUR_PROJECT, Add Files" value="1" type="GuiResourceData"/>
+<property name="PAResourceQtoS.SrcChooserPanel_CREATE_FILE, Create File" value="1" type="GuiResourceData"/>
+<property name="PAResourceQtoS.SystemBuilderView_ADD_IP, System_RSB_ADD_IP" value="1" type="GuiResourceData"/>
+<property name="PAResourceTtoZ.TaskBanner_CLOSE, (String" value="1" type="GuiResourceData"/>
+<property name="Probe0 Width, 1" value="1" type="GuiResourceData"/>
+<property name="RDIResource.BaseDialog_CANCEL, Cancel" value="1" type="GuiResourceData"/>
+<property name="RDIResource.BaseDialog_OK, OK" value="6" type="GuiResourceData"/>
+<property name="RDIResource.GraphicalView_ZOOM_FIT, Waveform Viewer_zoom_fit" value="6" type="GuiResourceData"/>
+<property name="RDIResource.GraphicalView_ZOOM_IN, Waveform Viewer_zoom_in" value="6" type="GuiResourceData"/>
+<property name="RDIResource.GraphicalView_ZOOM_OUT, Waveform Viewer_zoom_out" value="1" type="GuiResourceData"/>
+<property name="RDIResource.MainWinMenuMgr_LAYOUT, Layout" value="4" type="GuiResourceData"/>
+<property name="RDIResource.RDIViews_WAVEFORM_VIEWER, 168, 597" value="1" type="GuiResourceData"/>
+<property name="RDIResource.RDIViews_WAVEFORM_VIEWER, 170, 588" value="1" type="GuiResourceData"/>
+<property name="RDIResource.RDIViews_WAVEFORM_VIEWER, 238, 576" value="1" type="GuiResourceData"/>
+<property name="RDIResource.RDIViews_WAVEFORM_VIEWER, 240, -58" value="1" type="GuiResourceData"/>
+<property name="RDIResource.RDIViews_WAVEFORM_VIEWER, 242, 576" value="1" type="GuiResourceData"/>
+<property name="RDIResource.RDIViews_WAVEFORM_VIEWER, 244, 580" value="1" type="GuiResourceData"/>
+<property name="RDIResource.RDIViews_WAVEFORM_VIEWER, 254, 653" value="1" type="GuiResourceData"/>
+<property name="RDIResource.RDIViews_WAVEFORM_VIEWER, 257, 651" value="1" type="GuiResourceData"/>
+<property name="RDIResource.RDIViews_WAVEFORM_VIEWER, 40, 556" value="1" type="GuiResourceData"/>
+<property name="RDIResource.RDIViews_WAVEFORM_VIEWER, 664, -57" value="1" type="GuiResourceData"/>
+<property name="RDIResource.RDIViews_WAVEFORM_VIEWER, 670, 579" value="1" type="GuiResourceData"/>
+<property name="RDIResourceCommand.RDICommands_COPY, Copy" value="3" type="GuiResourceData"/>
+<property name="Sample Data Depth (C_DATA_DEPTH" value="2" type="GuiResourceData"/>
+<property name="TxInputBuffer_v1_0.v, 11, 482" value="1" type="GuiResourceData"/>
+<property name="TxInputBuffer_v1_0.v, 111, 471" value="1" type="GuiResourceData"/>
+<property name="TxInputBuffer_v1_0.v, 112, 193" value="1" type="GuiResourceData"/>
+<property name="TxInputBuffer_v1_0.v, 114, 423" value="1" type="GuiResourceData"/>
+<property name="TxInputBuffer_v1_0.v, 131, 403" value="1" type="GuiResourceData"/>
+<property name="TxInputBuffer_v1_0.v, 132, 452" value="1" type="GuiResourceData"/>
+<property name="TxInputBuffer_v1_0.v, 132, 466" value="1" type="GuiResourceData"/>
+<property name="TxInputBuffer_v1_0.v, 133, 534" value="1" type="GuiResourceData"/>
+<property name="TxInputBuffer_v1_0.v, 134, 419" value="1" type="GuiResourceData"/>
+<property name="TxInputBuffer_v1_0.v, 134, 466" value="1" type="GuiResourceData"/>
+<property name="TxInputBuffer_v1_0.v, 137, 468" value="1" type="GuiResourceData"/>
+<property name="TxInputBuffer_v1_0.v, 139, 501" value="1" type="GuiResourceData"/>
+<property name="TxInputBuffer_v1_0.v, 142, 317" value="1" type="GuiResourceData"/>
+<property name="TxInputBuffer_v1_0.v, 146, 214" value="1" type="GuiResourceData"/>
+<property name="TxInputBuffer_v1_0.v, 149, 418" value="1" type="GuiResourceData"/>
+<property name="TxInputBuffer_v1_0.v, 173, 482" value="1" type="GuiResourceData"/>
+<property name="TxInputBuffer_v1_0.v, 174, 518" value="1" type="GuiResourceData"/>
+<property name="TxInputBuffer_v1_0.v, 181, 436" value="1" type="GuiResourceData"/>
+<property name="TxInputBuffer_v1_0.v, 2, 384" value="1" type="GuiResourceData"/>
+<property name="TxInputBuffer_v1_0.v, 221, 367" value="1" type="GuiResourceData"/>
+<property name="TxInputBuffer_v1_0.v, 287, 127" value="1" type="GuiResourceData"/>
+<property name="TxInputBuffer_v1_0.v, 294, 130" value="1" type="GuiResourceData"/>
+<property name="TxInputBuffer_v1_0.v, 52, 549" value="1" type="GuiResourceData"/>
+<property name="TxInputBuffer_v1_0.v, 85, 396" value="1" type="GuiResourceData"/>
+<property name="TxInputBuffer_v1_0.v, 86, 364" value="1" type="GuiResourceData"/>
+<property name="TxInputBuffer_v1_0.v, 90, 500" value="1" type="GuiResourceData"/>
+<property name="TxInputBuffer_v1_0.v, 91, 145" value="1" type="GuiResourceData"/>
+<property name="TxInputBuffer_v1_0_M00_AXIS.v, 119, 330" value="1" type="GuiResourceData"/>
+<property name="TxInputBuffer_v1_0_M00_AXIS.v, 130, 557" value="1" type="GuiResourceData"/>
+<property name="TxInputBuffer_v1_0_M00_AXIS.v, 141, 173" value="1" type="GuiResourceData"/>
+<property name="TxInputBuffer_v1_0_M00_AXIS.v, 164, 265" value="1" type="GuiResourceData"/>
+<property name="TxInputBuffer_v1_0_M00_AXIS.v, 167, 242" value="1" type="GuiResourceData"/>
+<property name="TxInputBuffer_v1_0_M00_AXIS.v, 171, 277" value="1" type="GuiResourceData"/>
+<property name="TxInputBuffer_v1_0_M00_AXIS.v, 201, 466" value="1" type="GuiResourceData"/>
+<property name="TxInputBuffer_v1_0_M00_AXIS.v, 211, 555" value="1" type="GuiResourceData"/>
+<property name="TxInputBuffer_v1_0_M00_AXIS.v, 217, 463" value="1" type="GuiResourceData"/>
+<property name="TxInputBuffer_v1_0_M00_AXIS.v, 224, 492" value="1" type="GuiResourceData"/>
+<property name="TxInputBuffer_v1_0_M00_AXIS.v, 225, 440" value="1" type="GuiResourceData"/>
+<property name="TxInputBuffer_v1_0_M00_AXIS.v, 235, 464" value="1" type="GuiResourceData"/>
+<property name="TxInputBuffer_v1_0_M00_AXIS.v, 254, 487" value="1" type="GuiResourceData"/>
+<property name="TxInputBuffer_v1_0_M00_AXIS.v, 256, 238" value="1" type="GuiResourceData"/>
+<property name="TxInputBuffer_v1_0_M00_AXIS.v, 289, 248" value="1" type="GuiResourceData"/>
+<property name="TxInputBuffer_v1_0_M00_AXIS.v, 370, 376" value="1" type="GuiResourceData"/>
+<property name="TxInputBuffer_v1_0_S00_AXI.v, 128, 489" value="1" type="GuiResourceData"/>
+<property name="TxInputBuffer_v1_0_S00_AXI.v, 136, 346" value="1" type="GuiResourceData"/>
+<property name="TxInputBuffer_v1_0_S00_AXI.v, 147, 452" value="1" type="GuiResourceData"/>
+<property name="TxInputBuffer_v1_0_S00_AXI.v, 149, 247" value="1" type="GuiResourceData"/>
+<property name="TxInputBuffer_v1_0_S00_AXI.v, 193, 255" value="1" type="GuiResourceData"/>
+<property name="TxInputBuffer_v1_0_S00_AXI.v, 203, 436" value="1" type="GuiResourceData"/>
+<property name="TxInputBuffer_v1_0_S00_AXI.v, 207, 446" value="1" type="GuiResourceData"/>
+<property name="TxInputBuffer_v1_0_S00_AXI.v, 241, 483" value="1" type="GuiResourceData"/>
+<property name="TxInputBuffer_v1_0_S00_AXI.v, 249, 471" value="1" type="GuiResourceData"/>
+<property name="TxInputBuffer_v1_0_S00_AXI.v, 250, 483" value="1" type="GuiResourceData"/>
+<property name="TxInputBuffer_v1_0_S00_AXI.v, 260, 332" value="1" type="GuiResourceData"/>
+<property name="TxInputBuffer_v1_0_S00_AXI.v, 276, 324" value="1" type="GuiResourceData"/>
+<property name="TxInputBuffer_v1_0_S00_AXI.v, 293, 495" value="1" type="GuiResourceData"/>
+<property name="TxInputBuffer_v1_0_S00_AXI.v, 295, 463" value="1" type="GuiResourceData"/>
+<property name="TxInputBuffer_v1_0_S00_AXI.v, 297, 473" value="1" type="GuiResourceData"/>
+<property name="TxInputBuffer_v1_0_S00_AXI.v, 370, 365" value="1" type="GuiResourceData"/>
+<property name="TxInputBuffer_v1_0_S00_AXI.v, 435, 452" value="1" type="GuiResourceData"/>
+<property name="TxInputBuffer_v1_0_S00_AXI.v, 440, 366, false, false, false, true, false" value="1" type="GuiResourceData"/>
+<property name="TxInputBuffer_v1_0_S00_AXI.v, 443, 463" value="1" type="GuiResourceData"/>
+<property name="TxInputBuffer_v1_0_S00_AXI.v, 444, 346, false, false, false, true, false" value="1" type="GuiResourceData"/>
+<property name="TxInputBuffer_v1_0_S00_AXI.v, 464, 473" value="1" type="GuiResourceData"/>
+<property name="TxInputBuffer_v1_0_S00_AXI.v, 517, 483" value="1" type="GuiResourceData"/>
+<property name="TxInputBuffer_v1_0_S00_AXI.v, 524, 487" value="1" type="GuiResourceData"/>
+<property name="TxInputBuffer_v1_0_S00_AXI.v, 600, 239" value="1" type="GuiResourceData"/>
+<property name="TxInputBuffer_v1_0_S00_AXI.v, 613, 279" value="1" type="GuiResourceData"/>
+<property name="TxInputBuffer_v1_0_S00_AXI.v, 613, 279, false, true, false, false, false" value="3" type="GuiResourceData"/>
+<property name="TxInputBuffer_v1_0_S00_AXI.v, 84, 477" value="1" type="GuiResourceData"/>
+</item>
+<item name="Other">
+<property name="GuiMode" value="32" type="GuiMode"/>
+<property name="BatchMode" value="0" type="BatchMode"/>
+<property name="TclMode" value="30" type="TclMode"/>
+</item>
+</section>
+</application>
+</document>

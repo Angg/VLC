@@ -1,0 +1,18 @@
+Vivado Simulator 2016.2
+Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
+Running: D:/Xilinx/Vivado/2016.2/bin/unwrapped/win64.o/xelab.exe -wto 8543624cb9da41b6ac97acb477a4262c --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot OFDMTxInputBuffer_Lite_sim_behav xil_defaultlib.OFDMTxInputBuffer_Lite_sim xil_defaultlib.glbl -log elaborate.log -cc clang 
+Using 2 slave threads.
+Starting static elaboration
+WARNING: [VRFC 10-278] actual bit length 32 differs from formal bit length 5 for port s00_axi_awaddr [d:/files/socproject/ip_repo/OFDMTxInputBuffer_Lite_1.0/sim_1/new/OFDMTxInputBuffer_Lite_sim.v:297]
+WARNING: [VRFC 10-278] actual bit length 32 differs from formal bit length 5 for port s00_axi_araddr [d:/files/socproject/ip_repo/OFDMTxInputBuffer_Lite_1.0/sim_1/new/OFDMTxInputBuffer_Lite_sim.v:308]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.TxInputBuffer_v1_0_S00_AXI(C_S_A...
+Compiling module xil_defaultlib.TxInputBuffer_v1_0_M00_AXIS(C_M_...
+Compiling module xil_defaultlib.InBuff
+Compiling module xil_defaultlib.TxInputBuffer_v1_0(C_S00_AXI_ADD...
+Compiling module xil_defaultlib.OFDMTxInputBuffer_Lite_sim
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot OFDMTxInputBuffer_Lite_sim_behav
