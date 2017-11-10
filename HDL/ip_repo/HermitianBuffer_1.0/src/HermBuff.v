@@ -20,14 +20,15 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module HermBuff(
+module HermBuff
+(
     input wire clk,
     input wire [15:0] din,
     input wire wren,
     input wire tx_done,
     input wire [9:0] read_ptr,
     output reg [15:0] dout,
-    output buff_full
+    output out_buff_full
     );
     
   localparam active_subcarr = 28;  // number of active OFDM subcarrier
@@ -68,16 +69,15 @@ module HermBuff(
   begin
       if ( tx_done ) begin
           cnt_in <= 0;
-          buff <= 0;
       end
       else begin
-          if ( (write_ena == 1) && !buff_full ) begin
+          if ( (wren == 1) && !in_buff_full ) begin
               buff[cnt_in] = din;
               buff_conj[cnt_in] = {din[15:8]*(-1),din[7:0]};
               cnt_in = cnt_in + 1;
           end
           else begin
-              buff <= buff;
+              buff[cnt_in] <= buff[cnt_in];
           end
       end
   end
@@ -120,7 +120,6 @@ module HermBuff(
   begin
    if ( tx_done ) begin
      cnt_out <= 0;
-     out_buff <= 0;
    end
    else if ( in_buff_full ) begin
     for (j = 0; j < symbol_num; j = j+1) begin

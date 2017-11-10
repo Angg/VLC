@@ -162,8 +162,8 @@
 	endgenerate
 
 	// Add user logic here
-    assign data_in = S_AXI_WDATA;
-    assign write_en = fifo_wren;
+    assign data_in = S_AXIS_TDATA;
+    assign write_en = S_AXIS_TVALID;
 	// User logic ends
 
 	endmodule

@@ -21,14 +21,6 @@
         </spirit:portMap>
         <spirit:portMap>
           <spirit:logicalPort>
-            <spirit:name>TSTRB</spirit:name>
-          </spirit:logicalPort>
-          <spirit:physicalPort>
-            <spirit:name>s00_axis_tstrb</spirit:name>
-          </spirit:physicalPort>
-        </spirit:portMap>
-        <spirit:portMap>
-          <spirit:logicalPort>
             <spirit:name>TLAST</spirit:name>
           </spirit:logicalPort>
           <spirit:physicalPort>
@@ -71,14 +63,6 @@
           </spirit:logicalPort>
           <spirit:physicalPort>
             <spirit:name>m00_axis_tdata</spirit:name>
-          </spirit:physicalPort>
-        </spirit:portMap>
-        <spirit:portMap>
-          <spirit:logicalPort>
-            <spirit:name>TSTRB</spirit:name>
-          </spirit:logicalPort>
-          <spirit:physicalPort>
-            <spirit:name>m00_axis_tstrb</spirit:name>
           </spirit:physicalPort>
         </spirit:portMap>
         <spirit:portMap>
@@ -224,7 +208,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>42a9a5d5</spirit:value>
+            <spirit:value>9b4b4ea4</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -240,7 +224,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>42a9a5d5</spirit:value>
+            <spirit:value>9b4b4ea4</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -280,23 +264,6 @@
           <spirit:direction>out</spirit:direction>
           <spirit:vector>
             <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_M00_AXIS_TDATA_WIDTH&apos;)) - 1)">15</spirit:left>
-            <spirit:right spirit:format="long">0</spirit:right>
-          </spirit:vector>
-          <spirit:wireTypeDefs>
-            <spirit:wireTypeDef>
-              <spirit:typeName>wire</spirit:typeName>
-              <spirit:viewNameRef>xilinx_verilogsynthesis</spirit:viewNameRef>
-              <spirit:viewNameRef>xilinx_verilogbehavioralsimulation</spirit:viewNameRef>
-            </spirit:wireTypeDef>
-          </spirit:wireTypeDefs>
-        </spirit:wire>
-      </spirit:port>
-      <spirit:port>
-        <spirit:name>m00_axis_tstrb</spirit:name>
-        <spirit:wire>
-          <spirit:direction>out</spirit:direction>
-          <spirit:vector>
-            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="((spirit:decode(id(&apos;MODELPARAM_VALUE.C_M00_AXIS_TDATA_WIDTH&apos;)) / 8) - 1)">1</spirit:left>
             <spirit:right spirit:format="long">0</spirit:right>
           </spirit:vector>
           <spirit:wireTypeDefs>
@@ -379,23 +346,6 @@
           <spirit:direction>in</spirit:direction>
           <spirit:vector>
             <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.C_S00_AXIS_TDATA_WIDTH&apos;)) - 1)">15</spirit:left>
-            <spirit:right spirit:format="long">0</spirit:right>
-          </spirit:vector>
-          <spirit:wireTypeDefs>
-            <spirit:wireTypeDef>
-              <spirit:typeName>wire</spirit:typeName>
-              <spirit:viewNameRef>xilinx_verilogsynthesis</spirit:viewNameRef>
-              <spirit:viewNameRef>xilinx_verilogbehavioralsimulation</spirit:viewNameRef>
-            </spirit:wireTypeDef>
-          </spirit:wireTypeDefs>
-        </spirit:wire>
-      </spirit:port>
-      <spirit:port>
-        <spirit:name>s00_axis_tstrb</spirit:name>
-        <spirit:wire>
-          <spirit:direction>in</spirit:direction>
-          <spirit:vector>
-            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="((spirit:decode(id(&apos;MODELPARAM_VALUE.C_S00_AXIS_TDATA_WIDTH&apos;)) / 8) - 1)">1</spirit:left>
             <spirit:right spirit:format="long">0</spirit:right>
           </spirit:vector>
           <spirit:wireTypeDefs>
@@ -496,7 +446,7 @@
   </spirit:model>
   <spirit:choices>
     <spirit:choice>
-      <spirit:name>choice_list_028f596c</spirit:name>
+      <spirit:name>choice_list_20dc6536</spirit:name>
       <spirit:enumeration>32</spirit:enumeration>
       <spirit:enumeration>16</spirit:enumeration>
     </spirit:choice>
@@ -523,7 +473,7 @@
       <spirit:file>
         <spirit:name>hdl/HermitianBuffer_v1_0.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
-        <spirit:userFileType>CHECKSUM_962d204c</spirit:userFileType>
+        <spirit:userFileType>CHECKSUM_366c7a3b</spirit:userFileType>
       </spirit:file>
     </spirit:fileSet>
     <spirit:fileSet>
@@ -568,7 +518,7 @@
       <spirit:name>C_M00_AXIS_TDATA_WIDTH</spirit:name>
       <spirit:displayName>C M00 AXIS TDATA WIDTH</spirit:displayName>
       <spirit:description>Width of S_AXIS address bus. The slave accepts the read and write addresses of width C_M_AXIS_TDATA_WIDTH.</spirit:description>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_M00_AXIS_TDATA_WIDTH" spirit:choiceRef="choice_list_028f596c" spirit:order="3">16</spirit:value>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_M00_AXIS_TDATA_WIDTH" spirit:choiceRef="choice_list_20dc6536" spirit:order="3">16</spirit:value>
       <spirit:vendorExtensions>
         <xilinx:parameterInfo>
           <xilinx:enablement>
@@ -587,7 +537,7 @@
       <spirit:name>C_S00_AXIS_TDATA_WIDTH</spirit:name>
       <spirit:displayName>C S00 AXIS TDATA WIDTH</spirit:displayName>
       <spirit:description>AXI4Stream sink: Data Width</spirit:description>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_S00_AXIS_TDATA_WIDTH" spirit:choiceRef="choice_list_028f596c" spirit:order="5">16</spirit:value>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_S00_AXIS_TDATA_WIDTH" spirit:choiceRef="choice_list_20dc6536" spirit:order="5">16</spirit:value>
       <spirit:vendorExtensions>
         <xilinx:parameterInfo>
           <xilinx:enablement>
@@ -610,17 +560,17 @@
         <xilinx:taxonomy>AXI_Peripheral</xilinx:taxonomy>
       </xilinx:taxonomies>
       <xilinx:displayName>HermitianBuffer_v1.0</xilinx:displayName>
-      <xilinx:coreRevision>3</xilinx:coreRevision>
-      <xilinx:coreCreationDateTime>2017-11-08T13:47:26Z</xilinx:coreCreationDateTime>
+      <xilinx:coreRevision>11</xilinx:coreRevision>
+      <xilinx:coreCreationDateTime>2017-11-10T00:29:42Z</xilinx:coreCreationDateTime>
       <xilinx:tags>
         <xilinx:tag xilinx:name="xilinx.com:user:HermitianBuffer:1.0_ARCHIVE_LOCATION">D:/Files/SoCProject/ip_repo/HermitianBuffer_1.0</xilinx:tag>
       </xilinx:tags>
     </xilinx:coreExtensions>
     <xilinx:packagingInfo>
       <xilinx:xilinxVersion>2016.2</xilinx:xilinxVersion>
-      <xilinx:checksum xilinx:scope="busInterfaces" xilinx:value="5a036f3b"/>
-      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="8c32b731"/>
-      <xilinx:checksum xilinx:scope="ports" xilinx:value="216dd494"/>
+      <xilinx:checksum xilinx:scope="busInterfaces" xilinx:value="a9505cf1"/>
+      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="3a93a518"/>
+      <xilinx:checksum xilinx:scope="ports" xilinx:value="94b5c5c1"/>
       <xilinx:checksum xilinx:scope="hdlParameters" xilinx:value="297e0401"/>
       <xilinx:checksum xilinx:scope="parameters" xilinx:value="382db80f"/>
     </xilinx:packagingInfo>

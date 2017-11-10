@@ -1,72 +1,41 @@
 module QPSK
-#(
-parameter	N = 8
-)
 (
-    clk,
-	din,
-	din_last,
-	din_valid,
-	in_ready,
-	dout,
-	dout_valid,
-	out_ready,
-	dout_last
+    input wire clk,
+    input wire [1:0] din,
+    input wire wren,
+    output reg [15:0] dout
 );
-
-input		[1:0]		din;
-input                   clk, din_valid, din_last, out_ready;
-output reg			    dout_valid;
-output reg			    in_ready;
-output reg              dout_last;
-output reg	[2*N-1:0]	dout;
 
 // Use Gray code constellation
 //                          im          re
-parameter	MAP11	= 16'b11111111_00000001;	// 1 - j1
-parameter	MAP01	= 16'b11111111_11111111;	// -1 - j1
-parameter	MAP10	= 16'b00000001_00000001;	// 1 + j1
-parameter	MAP00	= 16'b00000001_11111111;	// -1 + j1
+reg [15:0]	MAP11	= 16'b11111111_00000001;	// 1 - j1
+reg [15:0]	MAP01	= 16'b11111111_11111111;	// -1 - j1
+reg [15:0]	MAP10	= 16'b00000001_00000001;	// 1 + j1
+reg [15:0]	MAP00	= 16'b00000001_11111111;	// -1 + j1
 
 always @(posedge clk)
 begin
-	if (din_valid && out_ready)
-	begin
-		if (din == 2'b00)
+	if (wren) begin
+		if (din == 0)
 		begin
-			dout <= MAP00;
-			dout_valid <= 1;
+			 dout <= MAP00;
 	    end
-		else if (din == 2'b01)
+		else if (din == 1)
 		begin
 			dout <= MAP01;
-			dout_valid <= 1;
 	    end
-		else if (din == 2'b10)
+		else if (din == 2)
 		begin
 			dout <= MAP10;
-			dout_valid <= 1;
 	    end
 		else
 		begin
 			dout <= MAP11;
-			dout_valid <= 1;
 	    end
-	end
-	else
+	end else
 	begin
-		dout_valid <= 1'b0;
+		dout <= dout;
 	end
-	
-	if (din_last)
-	   dout_last <= 1'b1;
-	else
-	   dout_last <= 1'b0;
-	
-	if (out_ready)
-	   in_ready <= 1;
-	else
-	   in_ready <= 0; 
 end
 
 endmodule
