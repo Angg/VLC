@@ -41,6 +41,7 @@
 	wire [1:0] din;
 	wire [3:0] data;
 	wire data_valid;
+	wire rdout;
     wire wren;
     wire [15:0] dbuff;
 	
@@ -65,6 +66,7 @@
 	) QAM16_mapper_v1_0_M00_AXIS_inst (
 		.M_AXIS_ACLK(aclk),
 		.data_buff(dbuff),
+		.outrd(rdout),
 		.M_AXIS_ARESETN(aresetn),
 		.M_AXIS_TVALID(m00_axis_tvalid),
 		.M_AXIS_TDATA(m00_axis_tdata),
@@ -87,6 +89,7 @@
         .clk(aclk),
         .din(data),
         .wren(data_valid),
+        .rdout(rdout),
         .dout(dbuff)
     );
 	// User logic ends

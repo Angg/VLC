@@ -141,7 +141,7 @@
       <spirit:parameters>
         <spirit:parameter>
           <spirit:name>POLARITY</spirit:name>
-          <spirit:value spirit:id="BUSIFPARAM_VALUE.ARESETN.POLARITY" spirit:choiceRef="choice_list_74b5137e">ACTIVE_LOW</spirit:value>
+          <spirit:value spirit:id="BUSIFPARAM_VALUE.ARESETN.POLARITY" spirit:choiceRef="choice_list_9d8b0d81">ACTIVE_LOW</spirit:value>
         </spirit:parameter>
       </spirit:parameters>
     </spirit:busInterface>
@@ -160,7 +160,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>cf4b63cf</spirit:value>
+            <spirit:value>bd1ec4f6</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -176,7 +176,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>cf4b63cf</spirit:value>
+            <spirit:value>bd1ec4f6</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -381,7 +381,7 @@
       <spirit:enumeration>32</spirit:enumeration>
     </spirit:choice>
     <spirit:choice>
-      <spirit:name>choice_list_74b5137e</spirit:name>
+      <spirit:name>choice_list_9d8b0d81</spirit:name>
       <spirit:enumeration>ACTIVE_HIGH</spirit:enumeration>
       <spirit:enumeration>ACTIVE_LOW</spirit:enumeration>
     </spirit:choice>
@@ -413,7 +413,7 @@
       <spirit:file>
         <spirit:name>hdl/QAM16_mapper_v1_0.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
-        <spirit:userFileType>CHECKSUM_7de70c10</spirit:userFileType>
+        <spirit:userFileType>CHECKSUM_399332a8</spirit:userFileType>
       </spirit:file>
     </spirit:fileSet>
     <spirit:fileSet>
@@ -504,17 +504,17 @@
         <xilinx:taxonomy>AXI_Peripheral</xilinx:taxonomy>
       </xilinx:taxonomies>
       <xilinx:displayName>QAM16_mapper_v1.0</xilinx:displayName>
-      <xilinx:coreRevision>6</xilinx:coreRevision>
-      <xilinx:coreCreationDateTime>2017-11-11T02:13:36Z</xilinx:coreCreationDateTime>
+      <xilinx:coreRevision>7</xilinx:coreRevision>
+      <xilinx:coreCreationDateTime>2017-11-11T11:54:18Z</xilinx:coreCreationDateTime>
       <xilinx:tags>
         <xilinx:tag xilinx:name="xilinx.com:user:QAM16_mapper:1.0_ARCHIVE_LOCATION">D:/Files/SoCProject/ip_repo/QAM16_mapper_1.0</xilinx:tag>
       </xilinx:tags>
     </xilinx:coreExtensions>
     <xilinx:packagingInfo>
       <xilinx:xilinxVersion>2016.2</xilinx:xilinxVersion>
-      <xilinx:checksum xilinx:scope="busInterfaces" xilinx:value="70ff8c43"/>
-      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="5cd12e44"/>
-      <xilinx:checksum xilinx:scope="ports" xilinx:value="82e23ce0"/>
+      <xilinx:checksum xilinx:scope="busInterfaces" xilinx:value="6929ebce"/>
+      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="719476bc"/>
+      <xilinx:checksum xilinx:scope="ports" xilinx:value="e72a2d6f"/>
       <xilinx:checksum xilinx:scope="hdlParameters" xilinx:value="b772a9a3"/>
       <xilinx:checksum xilinx:scope="parameters" xilinx:value="1891eedf"/>
     </xilinx:packagingInfo>

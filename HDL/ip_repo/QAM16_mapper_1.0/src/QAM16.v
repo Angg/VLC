@@ -3,6 +3,7 @@ module QAM16
     input wire clk,
 	input wire [3:0] din,
 	input wire wren,
+	output reg rdout,
 	output reg [15:0] dout
 );
 
@@ -16,6 +17,7 @@ always @(posedge clk)
 begin
 	if (wren)
 	begin
+	   rdout <= 1;
 		if (din == 4'b0000)
 		begin //      im     re
 			dout <= {MAPb, MAPd};    // -3 + j3
@@ -83,6 +85,7 @@ begin
 	end else
 	begin
 		dout <= dout;
+		rdout <= 0;
 	end
 end
 
