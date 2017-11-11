@@ -9,11 +9,12 @@
 		// Do not modify the parameters beyond this line
 
 		// AXI4Stream sink: Data Width
-		parameter integer C_S_AXIS_TDATA_WIDTH	= 32
+		parameter integer C_S_AXIS_TDATA_WIDTH	= 8
 	)
 	(
 		// Users to add ports here
-
+        output wire [1:0] data_in,
+        output wire write_en,
 		// User ports ends
 		// Do not modify the ports beyond this line
 
@@ -161,7 +162,8 @@
 	endgenerate
 
 	// Add user logic here
-
+    assign data_in = S_AXIS_TDATA[1:0];
+    assign write_en = S_AXIS_TVALID;
 	// User logic ends
 
 	endmodule

@@ -15,17 +15,19 @@ output reg [3:0] dout;
 reg [1:0] buff [0:1];
 reg [1:0] count = 0;
 
-always @(posedge clk && din_valid)
+always @(posedge clk)
 begin
-    buff[0] <= din;
-    buff[1] <= buff[0];
-    count <= count + 1;
-    dout_valid <= 0;
-    if (count == 3)
-    begin
-        count <= 2;
-        dout <= {buff[1],buff[0]};
-        dout_valid <= 1;
+    if (din_valid) begin
+        buff[0] <= din;
+        buff[1] <= buff[0];
+        count = count + 1;
+        dout_valid <= 0;
+        if (count == 3)
+        begin
+            count = 1;
+            dout <= {buff[1],buff[0]};
+            dout_valid <= 1;
+        end
     end
 end
     
