@@ -43,7 +43,7 @@
 	endfunction
 
 	// Total number of input data.
-	localparam NUMBER_OF_INPUT_WORDS  = 8;
+	localparam NUMBER_OF_INPUT_WORDS  = 224;
 	// bit_num gives the minimum number of bits needed to address 'NUMBER_OF_INPUT_WORDS' size of FIFO.
 	localparam bit_num  = clogb2(NUMBER_OF_INPUT_WORDS-1);
 	// Define the states of state machine
@@ -163,7 +163,7 @@
 
 	// Add user logic here
     assign data_in = S_AXIS_TDATA;
-    assign write_en = S_AXIS_TVALID;
+    assign write_en = fifo_wren;
 	// User logic ends
 
 	endmodule

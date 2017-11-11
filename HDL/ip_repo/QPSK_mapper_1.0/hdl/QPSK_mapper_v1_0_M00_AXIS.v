@@ -16,6 +16,7 @@
 	(
 		// Users to add ports here
 		input wire [C_M_AXIS_TDATA_WIDTH-1:0] data_buff,
+		input wire outrd,
 		// User ports ends
 		// Do not modify the ports beyond this line
 
@@ -89,7 +90,7 @@
 	// I/O Connections assignments
 
 	assign M_AXIS_TVALID	= axis_tvalid_delay;
-	assign M_AXIS_TDATA	= stream_data_out;
+//	assign M_AXIS_TDATA	= stream_data_out;
 	assign M_AXIS_TLAST	= axis_tlast_delay;
 	assign M_AXIS_TSTRB	= {(C_M_AXIS_TDATA_WIDTH/8){1'b1}};
 
@@ -111,7 +112,7 @@
 	        // presence of valid streaming data                               
 	        //if ( count == 0 )                                                 
 	        //  begin                                                           
-	            mst_exec_state  <= SEND_STREAM;                              
+	            mst_exec_state  <= INIT_COUNTER;                              
 	        //  end                                                             
 	        //else                                                              
 	        //  begin                                                           
@@ -122,7 +123,7 @@
 	        // The slave starts accepting tdata when                          
 	        // there tvalid is asserted to mark the                           
 	        // presence of valid streaming data                               
-	        if ( count == C_M_START_COUNT - 1 )                               
+	        if ( outrd /*count == C_M_START_COUNT - 1*/ )                               
 	          begin                                                           
 	            mst_exec_state  <= SEND_STREAM;                               
 	          end                                                             
@@ -220,7 +221,9 @@
 	        begin                                        
 	          stream_data_out <= data_buff;   
 	        end                                          
-	    end                                              
+	    end        
+	    
+	    assign M_AXIS_TDATA = (!M_AXIS_ARESETN)? 1 : (tx_en == 1) ? data_buff : M_AXIS_TDATA;                                     
 
 	// Add user logic here
 	

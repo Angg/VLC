@@ -3,6 +3,7 @@ module QPSK
     input wire clk,
     input wire [1:0] din,
     input wire wren,
+    output reg rdout,
     output reg [15:0] dout
 );
 
@@ -16,6 +17,7 @@ reg [15:0]	MAP00	= 16'b00000001_11111111;	// -1 + j1
 always @(posedge clk)
 begin
 	if (wren) begin
+	    rdout <= 1;
 		if (din == 0)
 		begin
 			 dout <= MAP00;
@@ -35,6 +37,7 @@ begin
 	end else
 	begin
 		dout <= dout;
+		rdout <= 0;
 	end
 end
 
