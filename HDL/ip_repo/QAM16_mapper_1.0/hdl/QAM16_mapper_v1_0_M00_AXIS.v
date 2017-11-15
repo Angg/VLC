@@ -223,7 +223,7 @@
 	        end                                          
 	    end                                              
 
-    assign M_AXIS_TDATA = (!M_AXIS_ARESETN)? 1 : (tx_en == 1) ? data_buff : M_AXIS_TDATA;    
+    assign M_AXIS_TDATA = (!M_AXIS_ARESETN)? 1 : (tx_en == 1) ? data_buff : data_buff;    
 
 	// Add user logic here
 	

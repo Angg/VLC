@@ -92,7 +92,7 @@
 	// I/O Connections assignments
 
 	assign M_AXIS_TVALID	= axis_tvalid_delay;
-	assign M_AXIS_TDATA	= stream_data_out;
+//	assign M_AXIS_TDATA	= stream_data_out;
 	assign M_AXIS_TLAST	= axis_tlast_delay;
 	assign M_AXIS_TSTRB	= {(C_M_AXIS_TDATA_WIDTH/8){1'b1}};
 
@@ -223,8 +223,10 @@
 	        begin                                        
 	          stream_data_out <= data_buff;   
 	        end                                          
-	    end                                              
-
+	    end                               
+	                   
+    assign M_AXIS_TDATA = (!M_AXIS_ARESETN)? 1 : (tx_en == 1) ? data_buff : data_buff; 
+     
 	// Add user logic here
 	assign read_ptr = read_pointer;
     assign txdone = tx_done;

@@ -45,7 +45,7 @@
 	wire [15:0] din;
     wire wren;
     wire tdone;
-    wire dbuff;
+    wire [15:0] dbuff;
     wire [9:0] rptr;
     wire bfull;
 	

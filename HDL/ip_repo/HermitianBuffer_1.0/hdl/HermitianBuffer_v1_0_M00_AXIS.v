@@ -15,7 +15,7 @@
 	)
 	(
 		// Users to add ports here
-		input wire data_buff,
+		input wire [15:0] data_buff,
         input wire buff_full,
         output wire [9:0] read_ptr,
         output wire txdone,
@@ -225,7 +225,7 @@
 	        end                                          
 	    end                                              
 
-    assign M_AXIS_TDATA = (!M_AXIS_ARESETN)? 1 : (tx_en == 1) ? data_buff : M_AXIS_TDATA;    
+    assign M_AXIS_TDATA = (!M_AXIS_ARESETN)? 1 : (tx_en == 1) ? data_buff : data_buff;    
 
 	// Add user logic here
 	assign read_ptr = read_pointer;

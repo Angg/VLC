@@ -496,8 +496,8 @@
         <xilinx:taxonomy>AXI_Peripheral</xilinx:taxonomy>
       </xilinx:taxonomies>
       <xilinx:displayName>QPSK_mapper_v1.0</xilinx:displayName>
-      <xilinx:coreRevision>29</xilinx:coreRevision>
-      <xilinx:coreCreationDateTime>2017-11-11T10:51:09Z</xilinx:coreCreationDateTime>
+      <xilinx:coreRevision>33</xilinx:coreRevision>
+      <xilinx:coreCreationDateTime>2017-11-15T14:24:57Z</xilinx:coreCreationDateTime>
       <xilinx:tags>
         <xilinx:tag xilinx:name="xilinx.com:user:QPSK_mapper:1.0_ARCHIVE_LOCATION">D:/Files/SoCProject/ip_repo/QPSK_mapper_1.0</xilinx:tag>
       </xilinx:tags>

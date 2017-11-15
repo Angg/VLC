@@ -121,7 +121,7 @@ module HermBuff
    if ( tx_done ) begin
      cnt_out <= 0;
    end
-   else if ( in_buff_full ) begin
+   else if ( in_buff_full && !out_buff_full ) begin
     for (j = 0; j < symbol_num; j = j+1) begin
         out_buff[cnt_out] = 0;               // store the dc bias (active subcarrier component zero)
         cnt_out = cnt_out+1;
@@ -129,7 +129,7 @@ module HermBuff
             out_buff[cnt_out] = buff[k];    // store the data
             cnt_out = cnt_out+1;
         end
-        for (k = 0; k < 64-((2*active_subcarr)+1); k = k+1) begin
+        for (k = 0; k < 64-((2*active_subcarr)+1); k = k+1) begin   // from k=0 until k < 7
             out_buff[cnt_out] = 0;          // store the middle padding zeros
             cnt_out = cnt_out+1;
         end
