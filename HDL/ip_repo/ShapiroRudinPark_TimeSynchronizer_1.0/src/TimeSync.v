@@ -56,9 +56,12 @@ module TimeSync
   integer cnt_time_sync = 0;                        // counter for time synchronizing process
   integer cnt_frame_detect = 0;                     // counter for frame index detection process
   
-  reg [31:0] P [0:(2*OFDM_burst_size)-(2*fft_point+CP_num)];    // array register for time synchronizing calculation
-  reg [31:0] R [0:(2*OFDM_burst_size)-(2*fft_point+CP_num)];    // array register for time synchronizing calculation
+  reg signed [31:0] P [0:(2*OFDM_burst_size)-(2*fft_point+CP_num)];    // array register for time synchronizing calculation
+  reg signed [31:0] R [0:(2*OFDM_burst_size)-(2*fft_point+CP_num)];    // array register for time synchronizing calculation
   reg [31:0] M [0:(2*OFDM_burst_size)-(2*fft_point+CP_num)];    // array register to store the result of time synchronizing calculation
+  
+  reg [31:0] abs_R [0:(2*OFDM_burst_size)-(2*fft_point+CP_num)]; // absolute value of buff
+  reg [31:0] abs_P [0:(2*OFDM_burst_size)-(2*fft_point+CP_num)]; // absolute value of P
   
   // buffer initialization
   integer i;
@@ -77,14 +80,17 @@ module TimeSync
  initial begin
       for (i=0; i<(2*OFDM_burst_size)-(2*fft_point+CP_num)+1; i=i+1) begin
           P[i]=0;
+          abs_P[i]=0;
       end
   end  
  
  initial begin
        for (i=0; i<(2*OFDM_burst_size)-(2*fft_point+CP_num)+1; i=i+1) begin
            R[i]=0;
+           abs_R[i]=0;
        end
    end  
+   
    
  initial begin
         for (i=0; i<(2*OFDM_burst_size)-(2*fft_point+CP_num)+1; i=i+1) begin
@@ -175,8 +181,6 @@ module TimeSync
 
   // Time syncing
   integer d, k;
-  reg [7:0] abs_R;
-  reg [7:0] abs_P;
   always @( posedge clk )
   begin
    if ( tx_done ) begin
@@ -191,19 +195,19 @@ module TimeSync
         
             for (k = 0; k < fft_point+1; k = k+1) begin
                 if (buff[d+k] < 0) begin
-                    abs_R = buff[d+k]*(-1);
+                    abs_R[cnt_time_sync] = buff[d+k]*(-1);
                 end else begin
-                    abs_R = buff[d+k];
+                    abs_R[cnt_time_sync] = buff[d+k];
                 end
-                R[cnt_time_sync] = R[cnt_time_sync] + (abs_R**2);
+                R[cnt_time_sync] = R[cnt_time_sync] + (abs_R[cnt_time_sync]**2);
             end
         
             if (P[cnt_time_sync] < 0) begin
-                abs_P = P[cnt_time_sync]*(-1);
+                abs_P[cnt_time_sync] = P[cnt_time_sync]*(-1);
             end else begin
-                abs_P = P[cnt_time_sync];
+                abs_P[cnt_time_sync] = P[cnt_time_sync];
             end
-            M[i] = (abs_P**2) / (R[cnt_time_sync]**2);
+            M[cnt_time_sync] = (abs_P[cnt_time_sync]**2) / (R[cnt_time_sync]**2);
             cnt_time_sync = cnt_time_sync+1;
        end
    end
@@ -211,7 +215,7 @@ module TimeSync
      P[cnt_time_sync] <= P[cnt_time_sync];
      R[cnt_time_sync] <= R[cnt_time_sync];
      M[cnt_time_sync] <= M[cnt_time_sync];
-     i <= i;
+     cnt_time_sync <= cnt_time_sync;
    end
   end
   
