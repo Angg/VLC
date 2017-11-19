@@ -49,8 +49,9 @@ module TimeSync
   reg in_buff_full = 0;                             // status register for input buffer
   reg out_buff_full = 0;                            // status register for output buffer
   reg time_sync_done = 0;                           // status register for time synchronizing process
+  reg frame_index_detected = 0;                     // status register for frame index detection process
   reg [12:0] cnt_in = 0;                             // counter for data input buffering
-  reg [9:0] cnt_out = 0;                            // counter for data output buffering
+//  reg [9:0] cnt_out = 0;                            // counter for data output buffering
   
   integer cnt_time_sync = 0;                        // counter for time synchronizing process
   integer cnt_frame_detect = 0;                     // counter for frame index detection process
@@ -156,21 +157,21 @@ module TimeSync
       end
   end
   
-  // output buffer full status
-  always @( posedge clk )
-  begin
-      if ( tx_done ) begin
-          out_buff_full <= 0;
-      end
-      else begin
-          if ( cnt_out == symbol_num+channel_est_sym_num ) begin
-              out_buff_full <= 1;
-          end
-          else begin
-              out_buff_full <= out_buff_full;
-          end
-      end
-  end  
+//  // output buffer full status
+//  always @( posedge clk )
+//  begin
+//      if ( tx_done ) begin
+//          out_buff_full <= 0;
+//      end
+//      else begin
+//          if ( cnt_out == symbol_num+channel_est_sym_num ) begin
+//              out_buff_full <= 1;
+//          end
+//          else begin
+//              out_buff_full <= out_buff_full;
+//          end
+//      end
+//  end  
 
   // Time syncing
   integer d, k;
@@ -226,7 +227,7 @@ module TimeSync
        for (cnt_frame_detect=0; cnt_frame_detect < (2*OFDM_burst_size)-(2*fft_point+CP_num); cnt_frame_detect = cnt_frame_detect+1)  begin
             if ( M[cnt_frame_detect] > temp ) begin
                 temp <= M[cnt_frame_detect];
-                temp_index <= l;
+                temp_index <= cnt_frame_detect;
             end
        end
    end
@@ -237,21 +238,82 @@ module TimeSync
   end
   
   // Remove cyclic prefix
-  integer n;
+  integer a, b;
   always @( posedge clk )
   begin
    if ( tx_done ) begin
-     cnt_out <= 0;
+     out_buff_full <= 0;
    end
    else if ( frame_index_detected && !out_buff_full ) begin
-       for (n=0; n < symbol_num + channel_est_sym_num; n=n+1)  begin
-            out_buff[n*fft_point:(n*fft_point)+fft_point-1] = buff[temp_index+ofdm_preamb_num+CP_num+((fft_point+CP_num)*n):temp_index+ofdm_preamb_num+CP_num+((fft_point+CP_num)*n)+fft_point-1];
-            cnt_out = cnt_out + 1;
-       end
+         // channel estimation symbol
+        b = temp_index;
+        for (a = 0; a < fft_point; a = a+1) begin
+            out_buff[a] = buff[b];
+            b = b+1;
+        end
+        b = b + CP_num;
+        for (a = fft_point; a < 2*fft_point; a = a+1) begin
+            out_buff[a] = buff[b];
+            b = b+1;
+        end
+        b = b+fft_point+(2*CP_num); 
+        for (a = 2*fft_point; a < 3*fft_point; a = a+1) begin
+            out_buff[a] = buff[b];
+            b = b+1;
+        end  
+        b = b+fft_point+(2*CP_num);
+        for (a = 3*fft_point; a < 4*fft_point; a = a+1) begin
+            out_buff[a] = buff[b];
+            b = b+1;
+        end        
+        
+         //  data
+        b = b+CP_num;
+        for (a = 4*fft_point; a < 5*fft_point; a = a+1) begin
+                out_buff[a] = buff[b];
+                b = b+1;
+        end
+        b = b+CP_num;
+        for (a = 5*fft_point; a < 6*fft_point; a = a+1) begin
+                out_buff[a] = buff[b];
+                b = b+1;
+        end  
+        b = b+CP_num;
+        for (a = 6*fft_point; a < 7*fft_point; a = a+1) begin
+                out_buff[a] = buff[b];
+                b = b+1;
+        end        
+        b = b+CP_num;
+        for (a = 7*fft_point; a < 8*fft_point; a = a+1) begin
+                out_buff[a] = buff[b];
+                b = b+1;
+        end
+        b = b+CP_num;
+        for (a = 8*fft_point; a < 9*fft_point; a = a+1) begin
+                out_buff[a] = buff[b];
+                b = b+1;
+        end
+        b = b+CP_num;
+        for (a = 9*fft_point; a < 10*fft_point; a = a+1) begin
+                out_buff[a] = buff[b];
+                b = b+1;
+        end  
+        b = b+CP_num;
+        for (a = 10*fft_point; a < 11*fft_point; a = a+1) begin
+                out_buff[a] = buff[b];
+                b = b+1;
+        end
+        b = b+CP_num;
+        for (a = 11*fft_point; a < 12*fft_point; a = a+1) begin
+                out_buff[a] = buff[b];
+                b = b+1;
+        end
+        
+        // output buffer status
+        out_buff_full = 1;
    end
    else begin
-     out_buff <= out_buff;
-     cnt_out <= cnt_out;
+    out_buff_full <= out_buff_full;
    end
   end
 
