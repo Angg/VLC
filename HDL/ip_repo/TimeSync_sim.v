@@ -483,6 +483,9 @@ initial begin
         din_last = 0;
     #10 din_valid = 1;
         resetn = 1;
+    #22480  din_valid = 0;
+            din_last = 1;
+    #10     din_last = 0;
 end    
 
 design_1_wrapper design_1_wrapper_inst
