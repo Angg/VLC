@@ -44,7 +44,7 @@ module TimeSync
   localparam OFDM_burst_size = ((fft_point+CP_num)*symbol_num)+ofdm_preamb_num; // size of one OFDM burst size with cyclic prefix and padding
   localparam OFDM_burst_data_size = (active_subcarr*symbol_num)+channel_est_seq_num; // size of data in OFDM burst size with channel est symbol
   
-  reg [7:0] buff [0:(2*OFDM_burst_size)-1];         // temporary buffer to keep the data input, which is twice of the burst packet size
+  reg signed [7:0] buff [0:(2*OFDM_burst_size)-1];         // temporary buffer to keep the data input, which is twice of the burst packet size
   reg [7:0] out_buff [0:OFDM_burst_data_size-1];    // temporary buffer to keep the data output
   reg in_buff_full = 0;                             // status register for input buffer
   reg out_buff_full = 0;                            // status register for output buffer
@@ -57,8 +57,8 @@ module TimeSync
   integer cnt_frame_detect = 0;                     // counter for frame index detection process
   
   reg signed [31:0] P [0:(2*OFDM_burst_size)-(2*fft_point+CP_num)];    // array register for time synchronizing calculation
-  reg signed [31:0] R [0:(2*OFDM_burst_size)-(2*fft_point+CP_num)];    // array register for time synchronizing calculation
-  reg [31:0] M [0:(2*OFDM_burst_size)-(2*fft_point+CP_num)];    // array register to store the result of time synchronizing calculation
+  reg unsigned [31:0] R [0:(2*OFDM_burst_size)-(2*fft_point+CP_num)];    // array register for time synchronizing calculation
+  reg unsigned [31:0] M [0:(2*OFDM_burst_size)-(2*fft_point+CP_num)];    // array register to store the result of time synchronizing calculation
   
   // buffer initialization
   integer i;
@@ -135,7 +135,7 @@ module TimeSync
           time_sync_done <= 0;
       end
       else begin
-          if ( cnt_time_sync == (2*OFDM_burst_size)-(2*fft_point+CP_num) ) begin
+          if ( cnt_time_sync == (2*OFDM_burst_size)-((2*fft_point)+CP_num) ) begin
               time_sync_done <= 1;
           end
           else begin
@@ -151,7 +151,7 @@ module TimeSync
           frame_index_detected <= 0;
       end
       else begin
-          if ( cnt_frame_detect == (2*OFDM_burst_size)-(2*fft_point+CP_num) ) begin
+          if ( cnt_frame_detect == (2*OFDM_burst_size)-((2*fft_point)+CP_num) ) begin
               frame_index_detected <= 1;
           end
           else begin
@@ -178,8 +178,8 @@ module TimeSync
 
   // Time syncing
   integer d, k;
-  reg [31:0] abs_R;
-  reg [31:0] abs_P;
+  reg unsigned [31:0] abs_R;
+  reg unsigned [31:0] abs_P;
   always @( posedge clk )
   begin
    if ( tx_done ) begin
@@ -214,12 +214,12 @@ module TimeSync
      P[cnt_time_sync] <= P[cnt_time_sync];
      R[cnt_time_sync] <= R[cnt_time_sync];
      M[cnt_time_sync] <= M[cnt_time_sync];
-//     cnt_time_sync <= cnt_time_sync;
+     cnt_time_sync <= cnt_time_sync;
    end
   end
   
   // Frame index detection
-  reg [11:0] temp = 0;
+  reg unsigned [11:0] temp = 0;
   reg [11:0] temp_index = 0;
   always @( posedge clk )
   begin
@@ -236,7 +236,7 @@ module TimeSync
    end
    else begin
      temp <= temp;
-//     temp_index <= temp_index;
+     temp_index <= temp_index;
    end
   end
   
