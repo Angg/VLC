@@ -317,4 +317,15 @@ module TimeSync
    end
   end
 
+  // stream data output
+  always @( posedge clk )
+  begin
+      if ( out_buff_full ) begin
+          dout <= out_buff[read_ptr];
+      end
+      else begin
+          dout <= dout;
+      end
+  end  
+
 endmodule
