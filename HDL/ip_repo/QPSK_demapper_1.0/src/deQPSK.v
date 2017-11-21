@@ -1,66 +1,38 @@
 module deQPSK
-#(
-parameter	N = 16
-)
 (
-    clk,
-	din,
-	din_last,
-	din_valid,
-	in_ready,
-	dout,
-	dout_valid,
-	out_ready,
-	dout_last
+    input wire clk,
+    input wire [15:0] din,
+    input wire wren,
+    output reg rdout,
+    output reg [7:0] dout
 );
-
-input		[2*N-1:0]	   din;
-input				       clk, din_valid, din_last, out_ready;
-output reg			       dout_valid;
-output reg			       in_ready;
-output reg          	   dout_last;
-output reg	[1:0]		   dout;
 
 // Use Gray code constellation
 always @(posedge clk)
 begin
-	if (din_valid && out_ready)
-	begin
-		if ({din[2*N-1],din[N-1]} == 2'b00) // 1 + j1
+	if (wren) begin
+	    rdout <= 1;
+		if ({din[15],din[7]} == 2'b00) // 1 + j1
 		begin
-			dout <= 2'b10;
-			dout_valid <= 1'b1;
+			dout <= {6'b0, 2'b10};
 	    end
-		else if ({din[2*N-1],din[N-1]} == 2'b01) // -1 + j1
+		else if ({din[15],din[7]} == 2'b01) // -1 + j1
 		begin
-			dout <= 2'b00;
-			dout_valid <= 1'b1;
+			dout <= {6'b0, 2'b00};
 	    end
-		else if ({din[2*N-1],din[N-1]} == 2'b10) // 1 - j1
+		else if ({din[15],din[7]} == 2'b10) // 1 - j1
 		begin
-			dout <= 2'b11;
-			dout_valid <= 1'b1;
+			dout <= {6'b0, 2'b11};
 	    end
 		else                                      // -1 - j1
 		begin                         
-			dout <= 2'b01;
-			dout_valid <= 1'b1;
+			dout <= {6'b0, 2'b01};
 	    end
-	end
-	else
+	end else
 	begin
-		dout_valid <= 1'b0;
+		dout <= dout;
+        rdout <= 0;
 	end
-	
-	if (din_last)
-	   dout_last <= 1'b1;
-	else
-	   dout_last <= 1'b0; 
-	
-	if (out_ready)
-	   in_ready <= 1;
-	else
-	   in_ready <= 0;
 end
 
 endmodule

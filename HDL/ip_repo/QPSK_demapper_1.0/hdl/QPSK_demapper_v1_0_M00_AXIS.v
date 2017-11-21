@@ -9,13 +9,14 @@
 		// Do not modify the parameters beyond this line
 
 		// Width of S_AXIS address bus. The slave accepts the read and write addresses of width C_M_AXIS_TDATA_WIDTH.
-		parameter integer C_M_AXIS_TDATA_WIDTH	= 32,
+		parameter integer C_M_AXIS_TDATA_WIDTH	= 8,
 		// Start count is the numeber of clock cycles the master will wait before initiating/issuing any transaction.
 		parameter integer C_M_START_COUNT	= 32
 	)
 	(
 		// Users to add ports here
-
+		input wire [C_M_AXIS_TDATA_WIDTH-1:0] data_buff,
+		input wire outrd,
 		// User ports ends
 		// Do not modify the ports beyond this line
 
@@ -36,7 +37,7 @@
 	);
 	//Total number of output data.
 	// Total number of output data                                                 
-	localparam NUMBER_OF_OUTPUT_WORDS = 8;                                               
+	localparam NUMBER_OF_OUTPUT_WORDS = 224; // number of constellation mapped data symbol in one burst packet  (28 * 8)                                          
 	                                                                                     
 	// function called clogb2 that returns an integer which has the                      
 	// value of the ceiling of the log base 2.                                           
@@ -89,7 +90,7 @@
 	// I/O Connections assignments
 
 	assign M_AXIS_TVALID	= axis_tvalid_delay;
-	assign M_AXIS_TDATA	= stream_data_out;
+//	assign M_AXIS_TDATA	= stream_data_out;
 	assign M_AXIS_TLAST	= axis_tlast_delay;
 	assign M_AXIS_TSTRB	= {(C_M_AXIS_TDATA_WIDTH/8){1'b1}};
 
@@ -122,7 +123,7 @@
 	        // The slave starts accepting tdata when                          
 	        // there tvalid is asserted to mark the                           
 	        // presence of valid streaming data                               
-	        if ( count == C_M_START_COUNT - 1 )                               
+	        if ( outrd /*count == C_M_START_COUNT - 1*/ )                               
 	          begin                                                           
 	            mst_exec_state  <= SEND_STREAM;                               
 	          end                                                             
@@ -218,12 +219,14 @@
 	        end                                          
 	      else if (tx_en)// && M_AXIS_TSTRB[byte_index]  
 	        begin                                        
-	          stream_data_out <= read_pointer + 32'b1;   
+	          stream_data_out <= data_buff;   
 	        end                                          
-	    end                                              
+	    end        
+	    
+	    assign M_AXIS_TDATA = (!M_AXIS_ARESETN)? 1 : (tx_en == 1) ? data_buff : M_AXIS_TDATA;                                     
 
 	// Add user logic here
-
+	
 	// User logic ends
 
 	endmodule

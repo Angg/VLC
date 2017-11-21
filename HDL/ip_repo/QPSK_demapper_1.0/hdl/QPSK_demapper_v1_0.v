@@ -10,7 +10,7 @@
 
 
 		// Parameters of Axi Slave Bus Interface S00_AXIS
-		parameter integer C_S00_AXIS_TDATA_WIDTH	= 32,
+		parameter integer C_S00_AXIS_TDATA_WIDTH	= 16,
 
 		// Parameters of Axi Master Bus Interface M00_AXIS
 		parameter integer C_M00_AXIS_TDATA_WIDTH	= 8,
@@ -38,23 +38,48 @@
 		input wire  m00_axis_tready
 	);
 	
-	    wire [1:0] deqpsk_out;
+	wire [15:0] din;
+    wire wren;
+    wire rdout;
+    wire [7:0] dbuff;
+	
+// Instantiation of Axi Bus Interface S00_AXIS
+	QPSK_demapper_v1_0_S00_AXIS # ( 
+		.C_S_AXIS_TDATA_WIDTH(C_S00_AXIS_TDATA_WIDTH)
+	) QPSK_demapper_v1_0_S00_AXIS_inst (
+		.S_AXIS_ACLK(aclk),
+		.data_in(din),
+		.write_en(wren),
+		.S_AXIS_ARESETN(aresetn),
+		.S_AXIS_TREADY(s00_axis_tready),
+		.S_AXIS_TDATA(s00_axis_tdata),
+		.S_AXIS_TLAST(s00_axis_tlast),
+		.S_AXIS_TVALID(s00_axis_tvalid)
+	);
+
+// Instantiation of Axi Bus Interface M00_AXIS
+	QPSK_demapper_v1_0_M00_AXIS # ( 
+		.C_M_AXIS_TDATA_WIDTH(C_M00_AXIS_TDATA_WIDTH),
+		.C_M_START_COUNT(C_M00_AXIS_START_COUNT)
+	) QPSK_demapper_v1_0_M00_AXIS_inst (
+		.M_AXIS_ACLK(aclk),
+		.data_buff(dbuff),
+		.outrd(rdout),
+		.M_AXIS_ARESETN(aresetn),
+		.M_AXIS_TVALID(m00_axis_tvalid),
+		.M_AXIS_TDATA(m00_axis_tdata),
+		.M_AXIS_TLAST(m00_axis_tlast),
+		.M_AXIS_TREADY(m00_axis_tready)
+	);
 
 	// Add user logic here
-	assign m00_axis_tdata = {6'b0, deqpsk_out};
 	
-    deQPSK # (
-        .N(16)
-    ) deQPSK_inst (
+	deQPSK deQPSK_inst (
         .clk(aclk),
-        .din(s00_axis_tdata),
-        .din_last(s00_axis_tlast),
-        .din_valid(s00_axis_tvalid),
-        .in_ready(s00_axis_tready),
-        .dout(deqpsk_out),
-        .dout_valid(m00_axis_tvalid),
-        .out_ready(m00_axis_tready),
-        .dout_last(m00_axis_tlast)
+        .din(din),
+        .wren(wren),
+        .rdout(rdout),
+        .dout(dbuff)
     );
 	// User logic ends
 
