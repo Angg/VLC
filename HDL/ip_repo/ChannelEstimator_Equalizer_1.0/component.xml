@@ -560,8 +560,8 @@
         <xilinx:taxonomy>AXI_Peripheral</xilinx:taxonomy>
       </xilinx:taxonomies>
       <xilinx:displayName>ChannelEstimator_Equalizer_v1.0</xilinx:displayName>
-      <xilinx:coreRevision>3</xilinx:coreRevision>
-      <xilinx:coreCreationDateTime>2017-11-21T06:50:07Z</xilinx:coreCreationDateTime>
+      <xilinx:coreRevision>4</xilinx:coreRevision>
+      <xilinx:coreCreationDateTime>2017-11-21T08:49:30Z</xilinx:coreCreationDateTime>
       <xilinx:tags>
         <xilinx:tag xilinx:name="xilinx.com:user:ChannelEstimator_Equalizer:1.0_ARCHIVE_LOCATION">D:/Files/SoCProject/ip_repo/ChannelEstimator_Equalizer_1.0</xilinx:tag>
       </xilinx:tags>
