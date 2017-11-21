@@ -10,7 +10,18 @@ proc init_gui { IPINST } {
   set C_M00_AXIS_START_COUNT [ipgui::add_param $IPINST -name "C_M00_AXIS_START_COUNT" -parent ${Page_0}]
   set_property tooltip {Start count is the numeber of clock cycles the master will wait before initiating/issuing any transaction.} ${C_M00_AXIS_START_COUNT}
 
+  set LSB_SCALING [ipgui::add_param $IPINST -name "LSB_SCALING" -widget comboBox]
+  set_property tooltip {Number of least significant bit scaling for the input of QAM16 demapper to compensate for the bit growth of FFT operation} ${LSB_SCALING}
 
+}
+
+proc update_PARAM_VALUE.LSB_SCALING { PARAM_VALUE.LSB_SCALING } {
+	# Procedure called to update LSB_SCALING when any of the dependent parameters in the arguments change
+}
+
+proc validate_PARAM_VALUE.LSB_SCALING { PARAM_VALUE.LSB_SCALING } {
+	# Procedure called to validate LSB_SCALING
+	return true
 }
 
 proc update_PARAM_VALUE.C_S00_AXIS_TDATA_WIDTH { PARAM_VALUE.C_S00_AXIS_TDATA_WIDTH } {
@@ -54,5 +65,10 @@ proc update_MODELPARAM_VALUE.C_M00_AXIS_TDATA_WIDTH { MODELPARAM_VALUE.C_M00_AXI
 proc update_MODELPARAM_VALUE.C_M00_AXIS_START_COUNT { MODELPARAM_VALUE.C_M00_AXIS_START_COUNT PARAM_VALUE.C_M00_AXIS_START_COUNT } {
 	# Procedure called to set VHDL generic/Verilog parameter value(s) based on TCL parameter value
 	set_property value [get_property value ${PARAM_VALUE.C_M00_AXIS_START_COUNT}] ${MODELPARAM_VALUE.C_M00_AXIS_START_COUNT}
+}
+
+proc update_MODELPARAM_VALUE.LSB_SCALING { MODELPARAM_VALUE.LSB_SCALING PARAM_VALUE.LSB_SCALING } {
+	# Procedure called to set VHDL generic/Verilog parameter value(s) based on TCL parameter value
+	set_property value [get_property value ${PARAM_VALUE.LSB_SCALING}] ${MODELPARAM_VALUE.LSB_SCALING}
 }
 

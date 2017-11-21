@@ -9,11 +9,12 @@
 		// Do not modify the parameters beyond this line
 
 		// AXI4Stream sink: Data Width
-		parameter integer C_S_AXIS_TDATA_WIDTH	= 32
+		parameter integer C_S_AXIS_TDATA_WIDTH	= 16
 	)
 	(
 		// Users to add ports here
-
+        output wire [15:0] data_in,
+        output wire write_en,
 		// User ports ends
 		// Do not modify the ports beyond this line
 
@@ -42,7 +43,7 @@
 	endfunction
 
 	// Total number of input data.
-	localparam NUMBER_OF_INPUT_WORDS  = 8;
+	localparam NUMBER_OF_INPUT_WORDS  = 224;   // number of active subcarrier * amount of data symbol = 28*8
 	// bit_num gives the minimum number of bits needed to address 'NUMBER_OF_INPUT_WORDS' size of FIFO.
 	localparam bit_num  = clogb2(NUMBER_OF_INPUT_WORDS-1);
 	// Define the states of state machine
@@ -161,7 +162,8 @@
 	endgenerate
 
 	// Add user logic here
-
+    assign data_in = S_AXIS_TDATA;
+    assign write_en = fifo_wren;
 	// User logic ends
 
 	endmodule

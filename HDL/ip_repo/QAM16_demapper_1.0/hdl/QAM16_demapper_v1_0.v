@@ -4,14 +4,14 @@
 	module QAM16_demapper_v1_0 #
 	(
 		// Users to add parameters here
-
+        parameter integer LSB_SCALING               = 2,
 		// User parameters ends
 		// Do not modify the parameters beyond this line
 
 
 		// Parameters of Axi Slave Bus Interface S00_AXIS
-		parameter integer C_S00_AXIS_TDATA_WIDTH	= 32,
-
+		parameter integer C_S00_AXIS_TDATA_WIDTH	= 16,
+		
 		// Parameters of Axi Master Bus Interface M00_AXIS
 		parameter integer C_M00_AXIS_TDATA_WIDTH	= 8,
 		parameter integer C_M00_AXIS_START_COUNT	= 32
@@ -38,24 +38,68 @@
 		input wire  m00_axis_tready
 	);
 	
-       wire [3:0]    deqam16_out;
+	wire [15:0] din;
+	wire [3:0] data;
+	wire data_valid;
+	wire rdout;
+	wire tdone;
+	wire bfull;
+    wire wren;
+    wire [7:0] dbuff;
+	
+// Instantiation of Axi Bus Interface S00_AXIS
+	QAM16_demapper_v1_0_S00_AXIS # ( 
+		.C_S_AXIS_TDATA_WIDTH(C_S00_AXIS_TDATA_WIDTH)
+	) QAM16_demapper_v1_0_S00_AXIS_inst (
+		.S_AXIS_ACLK(aclk),
+		.data_in(din),
+		.write_en(wren),
+		.S_AXIS_ARESETN(aresetn),
+		.S_AXIS_TREADY(s00_axis_tready),
+		.S_AXIS_TDATA(s00_axis_tdata),
+		.S_AXIS_TLAST(s00_axis_tlast),
+		.S_AXIS_TVALID(s00_axis_tvalid)
+	);
+
+// Instantiation of Axi Bus Interface M00_AXIS
+	QAM16_demapper_v1_0_M00_AXIS # ( 
+		.C_M_AXIS_TDATA_WIDTH(C_M00_AXIS_TDATA_WIDTH),
+		.C_M_START_COUNT(C_M00_AXIS_START_COUNT)
+	) QAM16_demapper_v1_0_M00_AXIS_inst (
+		.M_AXIS_ACLK(m00_axis_aclk),
+		.data_buff(dbuff),
+        .buff_full(bfull),
+        .txdone(tdone),
+		.M_AXIS_ARESETN(m00_axis_aresetn),
+		.M_AXIS_TVALID(m00_axis_tvalid),
+		.M_AXIS_TDATA(m00_axis_tdata),
+//		.M_AXIS_TSTRB(m00_axis_tstrb),
+		.M_AXIS_TLAST(m00_axis_tlast),
+		.M_AXIS_TREADY(m00_axis_tready)
+	);
 
 	// Add user logic here
-	assign m00_axis_tdata = {4'b0, deqam16_out};
 	
-    deQAM16 # (
-        .N(16),
-        .sch(2)
-    ) deQAM16_inst (
+	OUT_BUFF OUT_BUFF_inst
+    (
+
         .clk(aclk),
-        .din(s00_axis_tdata),
-        .din_last(s00_axis_tlast),
-        .din_valid(s00_axis_tvalid),
-        .in_ready(s00_axis_tready),
-        .dout(deqam16_out),
-        .dout_valid(m00_axis_tvalid),
-        .out_ready(m00_axis_tready),
-        .dout_last(m00_axis_tlast)
+        .din(data),
+        .dout(dbuff),
+        .tx_done(tdone),
+        .din_valid(rdout),
+        .buff_full(bfull)    
+    );
+	
+	deQAM16 
+	#(
+	   .sch(LSB_SCALING)
+	) deQAM16_inst (
+        .clk(aclk),
+        .din(din),
+        .wren(wren),
+        .rdout(rdout),
+        .dout(data)
     );
 	// User logic ends
 
