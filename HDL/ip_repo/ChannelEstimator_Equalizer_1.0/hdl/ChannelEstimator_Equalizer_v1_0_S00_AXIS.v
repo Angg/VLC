@@ -1,7 +1,7 @@
 
 `timescale 1 ns / 1 ps
 
-	module HermitianRemover_v1_0_S00_AXIS #
+	module ChannelEstimator_Equalizer_v1_0_S00_AXIS #
 	(
 		// Users to add parameters here
 
@@ -43,7 +43,7 @@
 	endfunction
 
 	// Total number of input data.
-	localparam NUMBER_OF_INPUT_WORDS  = 768; // fft point * (amount of data symbol + amount of channel estimation symbol) = 64*(8+4)
+	localparam NUMBER_OF_INPUT_WORDS  = 336; // number of subcarrier * (amount of data symbol + amount of channel est symbol) = 28*(8+4)
 	// bit_num gives the minimum number of bits needed to address 'NUMBER_OF_INPUT_WORDS' size of FIFO.
 	localparam bit_num  = clogb2(NUMBER_OF_INPUT_WORDS-1);
 	// Define the states of state machine

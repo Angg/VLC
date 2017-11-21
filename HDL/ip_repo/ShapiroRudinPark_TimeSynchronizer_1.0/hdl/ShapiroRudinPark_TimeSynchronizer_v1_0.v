@@ -46,7 +46,7 @@
     wire wren;
     wire tdone;
     wire [7:0] dbuff;
-    wire [8:0] rptr;
+    wire [9:0] rptr;
     wire bfull;
 	
 // Instantiation of Axi Bus Interface S00_AXIS

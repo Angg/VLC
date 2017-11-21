@@ -1,7 +1,7 @@
 
 `timescale 1 ns / 1 ps
 
-	module HermitianRemover_v1_0 #
+	module ChannelEstimator_Equalizer_v1_0 #
 	(
 		// Users to add parameters here
 
@@ -46,13 +46,13 @@
     wire wren;
     wire tdone;
     wire [15:0] dbuff;
-    wire [8:0] rptr;
+    wire [7:0] rptr;
     wire bfull;
 	
 // Instantiation of Axi Bus Interface S00_AXIS
-	HermitianRemover_v1_0_S00_AXIS # ( 
+	ChannelEstimator_Equalizer_v1_0_S00_AXIS # ( 
 		.C_S_AXIS_TDATA_WIDTH(C_S00_AXIS_TDATA_WIDTH)
-	) HermitianRemover_v1_0_S00_AXIS_inst (
+	) ChannelEstimator_Equalizer_v1_0_S00_AXIS_inst (
 		.S_AXIS_ACLK(s00_axis_aclk),
 		.data_in(din),
 		.write_en(wren),
@@ -65,10 +65,10 @@
 	);
 
 // Instantiation of Axi Bus Interface M00_AXIS
-	HermitianRemover_v1_0_M00_AXIS # ( 
+	ChannelEstimator_Equalizer_v1_0_M00_AXIS # ( 
 		.C_M_AXIS_TDATA_WIDTH(C_M00_AXIS_TDATA_WIDTH),
 		.C_M_START_COUNT(C_M00_AXIS_START_COUNT)
-	) HermitianRemover_v1_0_M00_AXIS_inst (
+	) ChannelEstimator_Equalizer_v1_0_M00_AXIS_inst (
 		.M_AXIS_ACLK(m00_axis_aclk),
 		.data_buff(dbuff),
         .buff_full(bfull),
@@ -83,7 +83,7 @@
 	);
 
 	// Add user logic here
-    HermRemover HermRemover_inst(
+    ChannelEst_Eq ChannelEst_Eq_inst(
         .clk(s00_axis_aclk),
         .din(din),
         .wren(wren),

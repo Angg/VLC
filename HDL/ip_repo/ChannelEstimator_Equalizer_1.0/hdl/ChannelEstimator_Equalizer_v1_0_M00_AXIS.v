@@ -1,7 +1,7 @@
 
 `timescale 1 ns / 1 ps
 
-	module ShapiroRudinPark_TimeSynchronizer_v1_0_M00_AXIS #
+	module ChannelEstimator_Equalizer_v1_0_M00_AXIS #
 	(
 		// Users to add parameters here
 
@@ -9,15 +9,15 @@
 		// Do not modify the parameters beyond this line
 
 		// Width of S_AXIS address bus. The slave accepts the read and write addresses of width C_M_AXIS_TDATA_WIDTH.
-		parameter integer C_M_AXIS_TDATA_WIDTH	= 8,
+		parameter integer C_M_AXIS_TDATA_WIDTH	= 16,
 		// Start count is the numeber of clock cycles the master will wait before initiating/issuing any transaction.
 		parameter integer C_M_START_COUNT	= 32
 	)
 	(
 		// Users to add ports here
-		input wire [7:0] data_buff,
+		input wire [15:0] data_buff,
         input wire buff_full,
-        output wire [9:0] read_ptr,
+        output wire [7:0] read_ptr,
         output wire txdone,
 		// User ports ends
 		// Do not modify the ports beyond this line
@@ -39,7 +39,7 @@
 	);
 	//Total number of output data.
 	// Total number of output data                                                 
-	localparam NUMBER_OF_OUTPUT_WORDS = 768;   // fft_point * (amount of data symbol + amount of channel est symbol) = 64 * (8 + 4)                                               
+	localparam NUMBER_OF_OUTPUT_WORDS = 224;// number of subcarrier * amount of data symbol = 28*8                                          
 	                                                                                     
 	// function called clogb2 that returns an integer which has the                      
 	// value of the ceiling of the log base 2.                                           

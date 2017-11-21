@@ -26,19 +26,20 @@ module HermRemover
     input wire [15:0] din,
     input wire wren,
     input wire tx_done,
-    input wire [7:0] read_ptr,
+    input wire [8:0] read_ptr,
     output reg [15:0] dout,
     output out_buff_full
     );
     
-  localparam active_subcarr = 28;  // number of active OFDM subcarrier
+    localparam active_subcarr = 28;  // number of active OFDM subcarrier
     localparam symbol_num = 8;         // amount of data symbol in one burst packet  
+    localparam cest_num = 4;            // amount of channel estimation symbol
     localparam fft_point = 64;         // number of fft point 
       
-    reg [15:0] buff [0:(fft_point*symbol_num)-1];     // temporary buffer to keep the data from the FFT output
-    reg [15:0] out_buff [0:(active_subcarr*symbol_num)-1];        // temporary buffer to store data input after hermitan symmetry removed
-    reg [9:0] cnt_in = 0;
-    reg [9:0] cnt_out = 0;
+    reg [15:0] buff [0:(fft_point*(symbol_num + cest_num))-1];     // temporary buffer to keep the data from the FFT output
+    reg [15:0] out_buff [0:(active_subcarr*(symbol_num + cest_num))-1];        // temporary buffer to store data input after hermitan symmetry removed
+    reg [10:0] cnt_in = 0;
+    reg [10:0] cnt_out = 0;
     reg in_buff_full = 0;
     reg out_buff_full = 0;
    
@@ -46,13 +47,13 @@ module HermRemover
     // buffer initialization
     integer i;
     initial begin
-        for (i=0;i<fft_point*symbol_num;i=i+1) begin
+        for (i=0;i<fft_point*(symbol_num+cest_num);i=i+1) begin
             buff[i]=0;
         end
     end
     
    initial begin
-        for (i=0;i<active_subcarr*symbol_num;i=i+1) begin
+        for (i=0;i<active_subcarr*(symbol_num+cest_num);i=i+1) begin
             out_buff[i]=0;
         end
     end
@@ -81,7 +82,7 @@ module HermRemover
             in_buff_full <= 0;
         end
         else begin
-            if ( cnt_in == fft_point*symbol_num ) begin
+            if ( cnt_in == fft_point*(symbol_num+cest_num) ) begin
                 in_buff_full <= 1;
             end
             else begin
@@ -97,7 +98,7 @@ module HermRemover
             out_buff_full <= 0;
         end
         else begin
-            if ( cnt_out == active_subcarr*symbol_num ) begin
+            if ( cnt_out == active_subcarr*(symbol_num+cest_num) ) begin
                 out_buff_full <= 1;
             end
             else begin
@@ -114,7 +115,7 @@ module HermRemover
        cnt_out <= 0;
      end
      else if ( in_buff_full && !out_buff_full ) begin
-      for (j = 0; j < symbol_num; j = j+1) begin
+      for (j = 0; j < symbol_num + cest_num; j = j+1) begin
           for (k = 1+(fft_point*j); k < active_subcarr+1+(fft_point*j); k = k+1) begin
               out_buff[cnt_out] = buff[k];    // store the data
               cnt_out = cnt_out+1;

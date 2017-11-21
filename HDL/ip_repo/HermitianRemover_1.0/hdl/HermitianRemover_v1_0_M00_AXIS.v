@@ -17,7 +17,7 @@
 		// Users to add ports here
 		input wire [15:0] data_buff,
         input wire buff_full,
-        output wire [7:0] read_ptr,
+        output wire [8:0] read_ptr,
         output wire txdone,
 		// User ports ends
 		// Do not modify the ports beyond this line
@@ -39,7 +39,7 @@
 	);
 	//Total number of output data.
 	// Total number of output data                                                 
-	localparam NUMBER_OF_OUTPUT_WORDS = 224;                                               
+	localparam NUMBER_OF_OUTPUT_WORDS = 336;  // number of active subcarrier * (amount of data symbol + amount of channel estimation symbol) = 28*(8+4)                                             
 	                                                                                     
 	// function called clogb2 that returns an integer which has the                      
 	// value of the ceiling of the log base 2.                                           

@@ -26,7 +26,7 @@ module TimeSync
     input wire [7:0] din,
     input wire wren,
     input wire tx_done,
-    input wire [8:0] read_ptr,
+    input wire [9:0] read_ptr,
     output reg [7:0] dout,
     output out_buff_full
 );
@@ -39,10 +39,10 @@ module TimeSync
   localparam fft_point = 64;            // number of fft point 
   localparam ofdm_preamb_num = 480;     // number of OFDM preamble sequence (which includes time synchronization & channel estimation sequence & its CP)
                                         // time sync + CP = (64+16)*2; channel est + CP (+ padding )= (64+16)*2 + (64+16)*2
-  localparam channel_est_seq_num = 112;  // number of channel symbol (4*active_subcarr). Two from the time sync symbol and other two separated.
+  localparam channel_est_seq_num = 256;  // number of channel symbol (4*fft_point). Two from the time sync symbol and other two separated.
   
   localparam OFDM_burst_size = ((fft_point+CP_num)*symbol_num)+ofdm_preamb_num; // size of one OFDM burst size with cyclic prefix and padding
-  localparam OFDM_burst_data_size = (active_subcarr*symbol_num)+channel_est_seq_num; // size of data in OFDM burst size with channel est symbol
+  localparam OFDM_burst_data_size = (fft_point*symbol_num)+channel_est_seq_num; // size OFDM burst size with channel est symbol and hermitian symmetry
   
   reg signed [7:0] buff [0:(2*OFDM_burst_size)-1];         // temporary buffer to keep the data input, which is twice of the burst packet size
   reg [7:0] out_buff [0:OFDM_burst_data_size-1];    // temporary buffer to keep the data output
