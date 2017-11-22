@@ -17,7 +17,7 @@
 		// Users to add ports here
 		input wire [7:0] data_buff,
         input wire buff_full,
-        output wire [9:0] read_ptr,
+        output wire [10:0] read_ptr,
         output wire txdone,
 		// User ports ends
 		// Do not modify the ports beyond this line
@@ -39,7 +39,7 @@
 	);
 	//Total number of output data.
 	// Total number of output data                                                 
-	localparam NUMBER_OF_OUTPUT_WORDS = 992;                                               
+	localparam NUMBER_OF_OUTPUT_WORDS = 1120; // ((fft_point+CP_num)*symbol_num)+sync_time_seq_num                                              
 	                                                                                     
 	// function called clogb2 that returns an integer which has the                      
 	// value of the ceiling of the log base 2.                                           
