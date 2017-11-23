@@ -28,7 +28,7 @@ module ValLimiter
     input wire clk,
     input wire resetn,
     input wire clk_en,
-    output reg valid
+    output wire valid
 );
     
 reg [31:0] cnt = 0;
@@ -38,20 +38,18 @@ begin
     if ( !resetn )
     begin
         cnt <= 0;
-        valid <= 0;
     end
     else if ( cnt == LIMIT_COUNT ) begin
-        valid <= 0;
-    end 
+        cnt <= cnt;
+    end
     else if ( clk_en ) begin
-        valid <= 1;
         cnt <= cnt + 1;
     end
     else begin
-        valid <= valid;
         cnt <= cnt;
     end
 end
-
+    
+assign valid = ( !resetn )? 0 : ( cnt == LIMIT_COUNT )? 0 : ( clk_en )? 1 : valid;    
     
 endmodule
