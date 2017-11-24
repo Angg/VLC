@@ -7,7 +7,7 @@ module OutBuffer(
     input wire read_ena,
     input wire [31:0] flag_data,
     input wire flag_write_ena,
-    input wire flag_addres,
+    input wire flag_address,
     input wire [2:0] read_address,
     output reg [31:0] dout,
     output buff_full
@@ -76,10 +76,10 @@ module OutBuffer(
     // flag (finished data read) processing
     always @( posedge clk )
     begin
-        if ( flag_write_ena && (flag_addres == 0) && (flag_data == 32'h0001) ) begin
+        if ( flag_write_ena && (flag_address == 0) && (flag_data == 32'h0001) ) begin
             tx_done <= 1;
         end
-        else if ( flag_write_ena && (flag_addres == 0) && (flag_data == 32'h0000) ) begin
+        else if ( flag_write_ena && (flag_address == 0) && (flag_data == 32'h0000) ) begin
             tx_done <= 0;
         end
         else begin
