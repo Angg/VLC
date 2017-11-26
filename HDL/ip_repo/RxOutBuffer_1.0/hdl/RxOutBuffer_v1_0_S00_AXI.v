@@ -439,7 +439,7 @@
 	end    
 
 	// Add user logic here
-    assign data_out = S_AXI_RDATA;
+    assign S_AXI_RDATA = data_out;
     assign read_en = slv_reg_rden;
     assign read_addr = axi_araddr[ADDR_LSB+OPT_MEM_ADDR_BITS:ADDR_LSB];
     assign flag = S_AXI_WDATA;

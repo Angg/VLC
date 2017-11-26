@@ -1069,8 +1069,8 @@
         <xilinx:taxonomy>AXI_Peripheral</xilinx:taxonomy>
       </xilinx:taxonomies>
       <xilinx:displayName>TxInputBuffer_v1.0</xilinx:displayName>
-      <xilinx:coreRevision>7</xilinx:coreRevision>
-      <xilinx:coreCreationDateTime>2017-11-15T17:22:40Z</xilinx:coreCreationDateTime>
+      <xilinx:coreRevision>10</xilinx:coreRevision>
+      <xilinx:coreCreationDateTime>2017-11-26T04:14:59Z</xilinx:coreCreationDateTime>
       <xilinx:tags>
         <xilinx:tag xilinx:name="xilinx.com:user:TxInputBuffer:1.0_ARCHIVE_LOCATION">D:/Files/SoCProject/ip_repo/TxInputBuffer_1.0</xilinx:tag>
       </xilinx:tags>
