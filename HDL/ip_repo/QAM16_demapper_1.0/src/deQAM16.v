@@ -11,9 +11,9 @@ parameter   sch = 2 // LSB truncation to normalize bit scaling
 );
 
 // Use Gray constellation code
-reg signed [15:0]	MAPa	= 16'd0;	// 0
-reg signed [15:0]	MAPb	= 16'd2;	// 2
-reg signed [15:0]	MAPc	= -16'd2;	// -2
+reg signed [7:0]	MAPa	= 8'd0;	// 0
+reg signed [7:0]	MAPb	= 8'd2;	// 2
+reg signed [7:0]	MAPc	= -8'd2;	// -2
 
 reg signed [15-sch:0] din_re, din_im;
 
@@ -21,8 +21,8 @@ always @(posedge clk)
 begin
 	if (wren)
 	begin
-	   din_re = din[15:0+sch]; 
-	   din_im = din[32:16+sch];
+	   din_re = din[7:0+sch]; 
+	   din_im = din[15:8+sch];
 	   rdout = 1;
 	
 		if (din_re < MAPc)
