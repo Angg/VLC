@@ -15,6 +15,7 @@
 	)
 	(
 		// Users to add ports here
+		input wire done,
 		input wire [7:0] data_buff,
         input wire buff_full,
         output wire [10:0] read_ptr,
@@ -39,7 +40,7 @@
 	);
 	//Total number of output data.
 	// Total number of output data                                                 
-	localparam NUMBER_OF_OUTPUT_WORDS = 1120; // ((fft_point+CP_num)*symbol_num)+sync_time_seq_num                                              
+	localparam NUMBER_OF_OUTPUT_WORDS = 2240; // 2*((fft_point+CP_num)*symbol_num)+sync_time_seq_num                                              
 	                                                                                     
 	// function called clogb2 that returns an integer which has the                      
 	// value of the ceiling of the log base 2.                                           
@@ -69,7 +70,8 @@
 	// State variable                                                                    
 	reg [1:0] mst_exec_state;                                                            
 	// Example design FIFO read pointer                                                  
-	reg [bit_num-1:0] read_pointer;                                                      
+	reg [bit_num-1:0] read_pointer; 
+	reg [bit_num-1:0] read_count;                                                      
 
 	// AXI Stream internal signals
 	//wait counter. The master waits for the user defined number of clock cycles before initiating a transfer.
@@ -159,7 +161,7 @@
 	// AXI tlast generation                                                                        
 	// axis_tlast is asserted number of output streaming data is NUMBER_OF_OUTPUT_WORDS-1          
 	// (0 to NUMBER_OF_OUTPUT_WORDS-1)                                                             
-	assign axis_tlast = (read_pointer == NUMBER_OF_OUTPUT_WORDS-1);                                
+	assign axis_tlast = (read_count == NUMBER_OF_OUTPUT_WORDS-1);                                
 	                                                                                               
 	                                                                                               
 	// Delay the axis_tvalid and axis_tlast signal by one clock cycle                              
@@ -189,7 +191,7 @@
 	      tx_done <= 1'b0;                                                           
 	    end                                                                          
 	  else                                                                           
-	    if (read_pointer <= NUMBER_OF_OUTPUT_WORDS-1)                                
+	    if ((read_pointer <= (NUMBER_OF_OUTPUT_WORDS/2)-1) && !done)                                
 	      begin                                                                      
 	        if (tx_en)                                                               
 	          // read pointer is incremented after every read from the FIFO          
@@ -199,13 +201,45 @@
 	            tx_done <= 1'b0;                                                     
 	          end                                                                    
 	      end                                                                        
-	    else if (read_pointer == NUMBER_OF_OUTPUT_WORDS)                             
+	    else if ((read_pointer == NUMBER_OF_OUTPUT_WORDS/2) && !done)                             
 	      begin                                                                      
 	        // tx_done is asserted when NUMBER_OF_OUTPUT_WORDS numbers of streaming data
 	        // has been out.                                                         
-	        tx_done <= 1'b1;                                                         
-	      end                                                                        
-	end                                                                              
+	        read_pointer <= 500;
+//	        tx_done <= 1'b1;                                                         
+	      end
+	    else if (done)
+	      begin
+	        tx_done <= 1'b1;
+	      end                             
+	end                                                
+	
+	//read counter
+    always@(posedge M_AXIS_ACLK)                                               
+    begin                                                                            
+      if(!M_AXIS_ARESETN)                                                            
+        begin                                                                        
+          read_count <= 0;                                                          
+        end                                                                          
+      else                                                                           
+        if ((read_count <= NUMBER_OF_OUTPUT_WORDS-1) && !done)                                
+          begin                                                                      
+            if (tx_en)                                                               
+              // read pointer is incremented after every read from the FIFO          
+              // when FIFO read signal is enabled.                                   
+              begin                                                                  
+                read_count <= read_count + 1;                                    
+                tx_done <= 1'b0;                                                     
+              end                                                                    
+          end                                                                        
+        else if ((read_count == NUMBER_OF_OUTPUT_WORDS) && !done)                             
+          begin                                                                      
+            // tx_done is asserted when NUMBER_OF_OUTPUT_WORDS numbers of streaming data
+            // has been out.                                                         
+            read_count <= 0;
+//            tx_done <= 1'b1;                                                         
+          end                       
+    end 	                              
 
 
 	//FIFO read enable generation 

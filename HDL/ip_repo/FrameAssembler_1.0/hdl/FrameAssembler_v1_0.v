@@ -33,6 +33,7 @@
 		input wire  s00_axis_tvalid,
 
 		// Ports of Axi Master Bus Interface M00_AXIS
+		input wire done,
 		input wire  m00_axis_aclk,
 		input wire  m00_axis_aresetn,
 		output wire  m00_axis_tvalid,
@@ -69,6 +70,7 @@
 		.C_M_AXIS_TDATA_WIDTH(C_M00_AXIS_TDATA_WIDTH),
 		.C_M_START_COUNT(C_M00_AXIS_START_COUNT)
 	) FrameAssembler_v1_0_M00_AXIS_inst (
+	    .done(done),
 		.M_AXIS_ACLK(m00_axis_aclk),
 		.data_buff(dbuff),
         .buff_full(bfull),
