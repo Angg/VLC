@@ -205,7 +205,7 @@
 	      begin                                                                      
 	        // tx_done is asserted when NUMBER_OF_OUTPUT_WORDS numbers of streaming data
 	        // has been out.                                                         
-	        read_pointer <= 500;
+	        read_pointer <= 480;
 //	        tx_done <= 1'b1;                                                         
 	      end
 	    else if (done)
