@@ -33,7 +33,6 @@ begin
             cnt_buff = cnt_buff + 1;
         end
         else begin
-            buff <= buff;
             cnt_buff <= cnt_buff;
         end
     end

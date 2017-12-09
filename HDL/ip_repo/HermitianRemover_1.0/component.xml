@@ -560,8 +560,8 @@
         <xilinx:taxonomy>AXI_Peripheral</xilinx:taxonomy>
       </xilinx:taxonomies>
       <xilinx:displayName>HermitianRemover_v1.0</xilinx:displayName>
-      <xilinx:coreRevision>9</xilinx:coreRevision>
-      <xilinx:coreCreationDateTime>2017-11-21T06:45:54Z</xilinx:coreCreationDateTime>
+      <xilinx:coreRevision>15</xilinx:coreRevision>
+      <xilinx:coreCreationDateTime>2017-12-08T07:36:32Z</xilinx:coreCreationDateTime>
       <xilinx:tags>
         <xilinx:tag xilinx:name="xilinx.com:user:HermitianRemover:1.0_ARCHIVE_LOCATION">D:/Files/SoCProject/ip_repo/HermitianRemover_1.0</xilinx:tag>
       </xilinx:tags>

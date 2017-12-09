@@ -208,7 +208,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>7544adfd</spirit:value>
+            <spirit:value>fe1d3fb9</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -224,7 +224,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>7544adfd</spirit:value>
+            <spirit:value>fe1d3fb9</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -560,8 +560,8 @@
         <xilinx:taxonomy>AXI_Peripheral</xilinx:taxonomy>
       </xilinx:taxonomies>
       <xilinx:displayName>ChannelEstimator_Equalizer_v1.0</xilinx:displayName>
-      <xilinx:coreRevision>4</xilinx:coreRevision>
-      <xilinx:coreCreationDateTime>2017-11-21T08:49:30Z</xilinx:coreCreationDateTime>
+      <xilinx:coreRevision>11</xilinx:coreRevision>
+      <xilinx:coreCreationDateTime>2017-12-08T07:42:23Z</xilinx:coreCreationDateTime>
       <xilinx:tags>
         <xilinx:tag xilinx:name="xilinx.com:user:ChannelEstimator_Equalizer:1.0_ARCHIVE_LOCATION">D:/Files/SoCProject/ip_repo/ChannelEstimator_Equalizer_1.0</xilinx:tag>
       </xilinx:tags>
@@ -569,7 +569,7 @@
     <xilinx:packagingInfo>
       <xilinx:xilinxVersion>2016.2</xilinx:xilinxVersion>
       <xilinx:checksum xilinx:scope="busInterfaces" xilinx:value="5a1dfdb2"/>
-      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="a6fa2dad"/>
+      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="274cc9bc"/>
       <xilinx:checksum xilinx:scope="ports" xilinx:value="27c019a7"/>
       <xilinx:checksum xilinx:scope="hdlParameters" xilinx:value="5133538f"/>
       <xilinx:checksum xilinx:scope="parameters" xilinx:value="ee25a87a"/>

@@ -39,7 +39,7 @@ module ChannelEst_Eq
       reg signed [7:0] eq_coeff [0:active_subcarr-1];                          // buffer to store the channel equalization coefficient 
       reg signed [7:0] buff_data_re [0:(active_subcarr*symbol_num)-1];           // temporary buffer to keep the data real component of symbol input
       reg signed [7:0] buff_data_im [0:(active_subcarr*symbol_num)-1];           // temporary buffer to keep the data imaginary component of symbol input
-      reg [15:0] out_buff [0:(active_subcarr*symbol_num)-1];                // temporary buffer to store the data output
+      reg signed [15:0] out_buff [0:(active_subcarr*symbol_num)-1];                // temporary buffer to store the data output
       reg [8:0] cnt_in = 0;
       reg [7:0] cnt_est = 0;
       reg [8:0] cnt_out = 0;
@@ -204,7 +204,7 @@ module ChannelEst_Eq
        else if ( in_buff_full && channel_est_done && !out_buff_full ) begin
         for (k = 0; k < symbol_num; k = k+1) begin
             for (l = 0; l < active_subcarr; l = l+1) begin
-                out_buff[l+(k*active_subcarr)] = { buff_data_im[l+(k*active_subcarr)]/eq_coeff[l] , buff_data_re[l+(k*active_subcarr)]/eq_coeff[l] };
+                out_buff[l+(k*active_subcarr)] = { buff_data_im[l+(k*active_subcarr)] /* /eq_coeff[l]*/ , buff_data_re[l+(k*active_subcarr)] /* /eq_coeff[l]*/ };
                 cnt_out = cnt_out + 1;
             end
         end

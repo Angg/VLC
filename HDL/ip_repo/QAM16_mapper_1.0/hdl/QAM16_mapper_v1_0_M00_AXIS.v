@@ -89,9 +89,9 @@
 
 	// I/O Connections assignments
 
-	assign M_AXIS_TVALID	= axis_tvalid_delay;
+	assign M_AXIS_TVALID	= axis_tvalid; //axis_tvalid_delay;
 //	assign M_AXIS_TDATA	= stream_data_out;
-	assign M_AXIS_TLAST	= axis_tlast_delay;
+	assign M_AXIS_TLAST	= axis_tlast; //axis_tlast_delay;
 	assign M_AXIS_TSTRB	= {(C_M_AXIS_TDATA_WIDTH/8){1'b1}};
 
 
@@ -152,7 +152,7 @@
 	//tvalid generation
 	//axis_tvalid is asserted when the control state machine's state is SEND_STREAM and
 	//number of output streaming data is less than the NUMBER_OF_OUTPUT_WORDS.
-	assign axis_tvalid = ((mst_exec_state == SEND_STREAM) && (read_pointer < NUMBER_OF_OUTPUT_WORDS));
+	assign axis_tvalid = (/*(mst_exec_state == SEND_STREAM)*/ outrd && (read_pointer < NUMBER_OF_OUTPUT_WORDS));
 	                                                                                               
 	// AXI tlast generation                                                                        
 	// axis_tlast is asserted number of output streaming data is NUMBER_OF_OUTPUT_WORDS-1          

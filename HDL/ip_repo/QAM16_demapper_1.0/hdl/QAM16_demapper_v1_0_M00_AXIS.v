@@ -90,9 +90,9 @@
 
 	// I/O Connections assignments
 
-	assign M_AXIS_TVALID	= axis_tvalid_delay;
+	assign M_AXIS_TVALID	= axis_tvalid; //axis_tvalid_delay;
 //	assign M_AXIS_TDATA	= stream_data_out;
-	assign M_AXIS_TLAST	= axis_tlast_delay;
+	assign M_AXIS_TLAST	= axis_tlast; //axis_tlast_delay;
 	assign M_AXIS_TSTRB	= {(C_M_AXIS_TDATA_WIDTH/8){1'b1}};
 
 

@@ -11,11 +11,11 @@ parameter   sch = 2 // LSB truncation to normalize bit scaling
 );
 
 // Use Gray constellation code
-reg signed [7:0]	MAPa	= 8'd0;	// 0
-reg signed [7:0]	MAPb	= 8'd2;	// 2
-reg signed [7:0]	MAPc	= -8'd2;	// -2
+reg signed [8:0]	MAPa	= 8'd0;	// 0
+reg signed [8:0]	MAPb	= 8'd128;	// 2 (normalized with FFT bit growth)
+reg signed [8:0]	MAPc	= -8'd128;	// -2 (normalized with FFT bit growth)
 
-reg signed [15-sch:0] din_re, din_im;
+reg signed [7-sch:0] din_re, din_im;
 
 always @(posedge clk)
 begin

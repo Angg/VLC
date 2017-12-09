@@ -35,13 +35,14 @@ module HermBuff
   localparam symbol_num = 8;         // amount of data symbol in one burst packet  
   localparam fft_point = 64;         // number of fft point 
     
-  reg [15:0] buff [0:(active_subcarr*symbol_num)-1];    // temporary buffer to keep the data from the constellation mapper
-  reg [15:0] buff_conj [0:(active_subcarr*symbol_num)-1];    // temporary buffer to keep the conjugate data from the constellation mapper
-  reg [15:0] out_buff [0:(fft_point*symbol_num)-1];         // temporary buffer to apply hermitian symmetry for data input
   reg [7:0] cnt_in = 0;
   reg [9:0] cnt_out = 0;
   reg in_buff_full = 0;
-  reg out_buff_full = 0;
+  reg out_buff_full = 0;  
+     
+  reg [15:0] buff [0:(active_subcarr*symbol_num)-1];    // temporary buffer to keep the data from the constellation mapper
+  reg [15:0] buff_conj [0:(active_subcarr*symbol_num)-1];    // temporary buffer to keep the conjugate data from the constellation mapper
+  reg [15:0] out_buff [0:(fft_point*symbol_num)-1];         // temporary buffer to apply hermitian symmetry for data input
  
   
   // buffer initialization

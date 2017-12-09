@@ -66,11 +66,11 @@
 		.C_M_AXIS_TDATA_WIDTH(C_M00_AXIS_TDATA_WIDTH),
 		.C_M_START_COUNT(C_M00_AXIS_START_COUNT)
 	) QAM16_demapper_v1_0_M00_AXIS_inst (
-		.M_AXIS_ACLK(m00_axis_aclk),
+		.M_AXIS_ACLK(aclk),
 		.data_buff(dbuff),
         .buff_full(bfull),
         .txdone(tdone),
-		.M_AXIS_ARESETN(m00_axis_aresetn),
+		.M_AXIS_ARESETN(aresetn),
 		.M_AXIS_TVALID(m00_axis_tvalid),
 		.M_AXIS_TDATA(m00_axis_tdata),
 //		.M_AXIS_TSTRB(m00_axis_tstrb),

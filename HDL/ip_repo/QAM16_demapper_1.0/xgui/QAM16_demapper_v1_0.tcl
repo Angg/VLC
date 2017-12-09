@@ -10,7 +10,7 @@ proc init_gui { IPINST } {
   set C_M00_AXIS_START_COUNT [ipgui::add_param $IPINST -name "C_M00_AXIS_START_COUNT" -parent ${Page_0}]
   set_property tooltip {Start count is the numeber of clock cycles the master will wait before initiating/issuing any transaction.} ${C_M00_AXIS_START_COUNT}
 
-  set LSB_SCALING [ipgui::add_param $IPINST -name "LSB_SCALING" -widget comboBox]
+  set LSB_SCALING [ipgui::add_param $IPINST -name "LSB_SCALING"]
   set_property tooltip {Number of least significant bit scaling for the input of QAM16 demapper to compensate for the bit growth of FFT operation} ${LSB_SCALING}
 
 }
