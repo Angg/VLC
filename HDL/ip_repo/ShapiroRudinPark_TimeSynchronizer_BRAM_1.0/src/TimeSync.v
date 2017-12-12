@@ -234,10 +234,12 @@ module TimeSync
 
           if (dout_buff < 0) begin
             abs_R <= dout_buff*(-1);
+            temp_R <=  temp_R + ((dout_buff*(-1))**2);
           end else begin
             abs_R <= dout_buff;
+            temp_R <=  temp_R + (dout_buff**2);
           end
-          temp_R <=  temp_R + (abs_R**2);
+//          temp_R <=  temp_R + (abs_R**2);
           
           R_iteration_idx = R_iteration_idx + 1;
           
@@ -248,6 +250,7 @@ module TimeSync
             we_R <= 1;
             addr_R <= R_idx;
             di_R <= temp_R;
+            R_idx = R_idx + 1;
           end
 
           if ( denom_window_idx == (2*OFDM_burst_size)-fft_point ) begin
