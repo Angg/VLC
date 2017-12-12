@@ -62,18 +62,24 @@ module TimeSync
   reg [11:0] addr_P, addr_R, addr_M;
   reg [11:0] addr_buff, addr_buff_1;
   reg [9:0] addr_out_buff;
-  reg [31:0] di_P, di_R, di_M;
-  reg [7:0] di_buff, di_buff_1, di_out_buff;
-  wire signed [31:0] dout_P, dout_R, dout_M;
-  wire signed [7:0] dout_buff, dout_buff_1, dout_out_buff;
+  reg signed [31:0] di_P; 
+  reg unsigned [31:0] di_R, di_M;
+  reg signed [7:0] di_buff, di_buff_1;
+  reg [7:0] di_out_buff;
+  wire signed [31:0] dout_P;
+  wire unsigned [31:0] dout_R, dout_M;
+  wire signed [7:0] dout_buff, dout_buff_1;
+  wire [7:0] dout_out_buff;
     
   wire webuff, webuff_1, weout_buff, weP, weR, weM;
   wire enbuff, enbuff_1, enout_buff, enP, enR, enM;
   wire [11:0] addrP, addrR, addrM;
   wire [11:0] addrbuff, addrbuff_1;
   wire [9:0] addrout_buff;
-  wire [31:0] diP, diR, diM;  
-  wire [7:0] dibuff, dibuff_1, diout_buff;
+  wire signed [31:0] diP;
+  wire unsigned [31:0] diR, diM;  
+  wire signed [7:0] dibuff, dibuff_1;
+  wire [7:0] diout_buff;
     
   assign webuff = we_buff;
   assign webuff_1 = we_buff_1;
@@ -271,6 +277,7 @@ module TimeSync
           if (delay_count < 3) delay_count = delay_count + 1;
           en_P <= 1;
           we_P <= 0;
+          addr_P <= M_idx;
 
           en_R <= 1;
           we_R <= 0;
@@ -279,19 +286,19 @@ module TimeSync
           en_M <= 1;
           we_M <= 1;
           
-          M_idx <= M_idx+1;
-          
           if (delay_count == 3) begin
               addr_M <= M_idx-2;               // includes 2 clock register delay
-              addr_P <= M_idx-2;
-    
-              if (dout_P < 0) begin
-                abs_P <= dout_P*(-1);
-              end else begin
-                abs_P <= dout_P;
-              end
           end
-          di_M <= abs_P**2 / dout_R**2;           // store the data       
+          
+          if (dout_P < 0) begin
+            abs_P <= dout_P*(-1);
+            di_M <= ((dout_P*(-1))**2) / (dout_R**2);           // store the data      
+          end else begin
+            abs_P <= dout_P;
+            di_M <= (dout_P**2) / (dout_R**2);           // store the data      
+          end
+
+          M_idx <= M_idx+1;
 
           if ( M_idx == (2*OFDM_burst_size)-fft_point-(fft_point+CP_num) ) begin
             M_done <= 1;

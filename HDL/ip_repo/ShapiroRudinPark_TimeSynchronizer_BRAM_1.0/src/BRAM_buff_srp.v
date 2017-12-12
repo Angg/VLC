@@ -25,10 +25,10 @@ input clk;
 input we;
 input en;
 input [11:0] addr;
-input [7:0] di;
-output [7:0] dout;
-reg[7:0] RAM [0:2239];
-reg[7:0] dout;
+input signed [7:0] di;
+output signed [7:0] dout;
+reg signed [7:0] RAM [0:2239];
+reg signed [7:0] dout;
 
 always @(posedge clk)
 begin
