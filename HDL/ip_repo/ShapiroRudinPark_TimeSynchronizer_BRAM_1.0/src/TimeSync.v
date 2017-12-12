@@ -196,7 +196,7 @@ module TimeSync
           if ( dot_product_iteration_idx == 64 ) begin
             en_buff <= 1; en_buff_1 <= 1;
             we_buff <= 0; we_buff_1 <= 0;
-            addr_buff <= n; addr_buff_1 <= n;
+            addr_buff <= window_middle_idx; addr_buff_1 <= window_middle_idx;
             en_P <= 1;
             we_P <= 1;
             addr_P <= P_idx;
@@ -300,6 +300,8 @@ module TimeSync
   // Frame index detection
   reg unsigned [11:0] temp = 0;
   reg [11:0] temp_index = 0;
+  reg [31:0] buff_data_idx;
+  
   always @( posedge clk )
   begin
    if ( tx_done ) begin
@@ -313,6 +315,7 @@ module TimeSync
             if ( dout_M > temp ) begin
                 temp <= dout_M;
                 temp_index <= cnt_frame_detect;
+                buff_data_idx <= cnt_frame_detect;
             end
             
             cnt_frame_detect = cnt_frame_detect+1;
@@ -320,11 +323,11 @@ module TimeSync
    else begin
      temp <= temp;
      temp_index <= temp_index;
+     buff_data_idx <= buff_data_idx;
    end
   end
   
   // Remove cyclic prefix
-  integer buff_data_idx = temp_index;
   integer out_buff_idx = 0;
   
   always @( posedge clk )
