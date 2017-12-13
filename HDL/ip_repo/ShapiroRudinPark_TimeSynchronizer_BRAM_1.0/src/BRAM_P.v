@@ -27,7 +27,7 @@ input en;
 input [11:0] addr;
 input signed [31:0] di;
 output signed [31:0] dout;
-reg signed [31:0] RAM [0:2095];
+reg signed [31:0] RAM [0:2096];
 reg signed [31:0] dout;
 
 always @(posedge clk)

@@ -156,7 +156,7 @@ module TimeSync
           frame_index_detected <= 0;
       end
       else begin
-          if ( cnt_frame_detect == (2*OFDM_burst_size)-((2*fft_point)+CP_num) ) begin
+          if ( cnt_frame_detect == (2*OFDM_burst_size)-((2*fft_point)+CP_num)+2 ) begin
               frame_index_detected <= 1;
           end
           else begin
@@ -171,13 +171,16 @@ module TimeSync
   integer left_window_idx = fft_point - 1;            // index of left window to calculate the dot product of data input
   integer right_window_idx = fft_point + CP_num + 1;  // index of right window to calculate the dot product of data input
   integer dot_product_iteration_idx = 0;
-  integer window_sliding_idx = 0;
+  integer window_sliding_idx = 1;
   integer P_idx = 0;                                    // index of RAM buffer of P value
+  
+  reg dot_product_store_flag = 0;
+  reg [1:0] store_count = 0;
   
   integer window_middle_idx = fft_point + CP_num;
   
   reg [1:0] delay_count = 0;
-  reg unsigned [31:0] temp_P = 0;  
+  reg signed [31:0] temp_P = 0;  
   reg unsigned [31:0] temp_R = 0;  
   reg unsigned [31:0] abs_R;
   reg unsigned [31:0] abs_P;
@@ -189,36 +192,51 @@ module TimeSync
           P_done <= 0;
       end
       else if ( in_buff_full && !P_done ) begin
+          if (delay_count < 3) delay_count = delay_count + 1;
           en_buff <= 1; en_buff_1 <= 1;
           we_buff <= 0; we_buff_1 <= 0;
           addr_buff <= left_window_idx; addr_buff_1 <= right_window_idx;
-
-          temp_P <=  temp_P + (dout_buff * dout_buff_1);           // temporary store the P value
+          if (delay_count == 3) begin   // includes 2 clock register delay
+                temp_P <=  temp_P + (dout_buff * dout_buff_1);           // temporary store the P value             
+          end
           
           right_window_idx = right_window_idx + 1;
           left_window_idx = left_window_idx - 1;
-          dot_product_iteration_idx  = dot_product_iteration_idx  + 1;
+          dot_product_iteration_idx = dot_product_iteration_idx  + 1;
           
-          if ( dot_product_iteration_idx == 64 ) begin
+          if ( dot_product_iteration_idx == 65 ) begin
+            right_window_idx = fft_point + CP_num + 1 + window_sliding_idx;
+            left_window_idx = fft_point - 1 + window_sliding_idx;
+            window_sliding_idx = window_sliding_idx + 1;
+            
             en_buff <= 1; en_buff_1 <= 1;
             we_buff <= 0; we_buff_1 <= 0;
             addr_buff <= window_middle_idx; addr_buff_1 <= window_middle_idx;
+            window_middle_idx = window_middle_idx + 1;  
+            dot_product_store_flag = 1;
+            dot_product_iteration_idx = 0;
+          end          
+          
+          if (dot_product_store_flag == 1) begin
+            store_count <= store_count + 1; 
+          end
+          
+          if ( store_count == 3 ) begin
             en_P <= 1;
             we_P <= 1;
-            addr_P <= P_idx;
+            addr_P <= P_idx;           // temporary store the P value     
             
             di_P <= temp_P + (dout_buff * dout_buff_1);
             
-            P_idx = P_idx + 1;
-            right_window_idx = fft_point + CP_num + 1 + window_sliding_idx;
-            left_window_idx = fft_point - 1 + window_sliding_idx;
-            window_middle_idx = window_middle_idx + 1;
-            dot_product_iteration_idx = 0;
-            window_sliding_idx = window_sliding_idx + 1;
+            temp_P <= 0;
+            P_idx <= P_idx + 1;
+            store_count <= 0;
+            dot_product_store_flag <= 0;
           end
               
-          if ( window_middle_idx == (2*OFDM_burst_size)-fft_point ) begin
-              P_done = 1;
+          if ( window_middle_idx == (2*OFDM_burst_size)-fft_point+2 ) begin
+              P_done <= 1;
+              delay_count <= 0;
           end        
       end
     end
@@ -234,22 +252,26 @@ module TimeSync
           R_done <= 0;
       end
       else if ( P_done && !R_done ) begin
+          if (delay_count < 3) delay_count = delay_count + 1;      
           en_buff <= 1;
           we_buff <= 0;
           addr_buff <= denom_window_idx + R_iteration_idx;
 
-          if (dout_buff < 0) begin
-            abs_R <= dout_buff*(-1);
-            temp_R <=  temp_R + ((dout_buff*(-1))**2);
-          end else begin
-            abs_R <= dout_buff;
-            temp_R <=  temp_R + (dout_buff**2);
+          if (delay_count == 3) begin   // includes 2 clock register delay
+            if (dout_buff < 0) begin
+                abs_R <= dout_buff*(-1);
+                temp_R <=  temp_R + ((dout_buff*(-1))**2);
+            end else begin
+                abs_R <= dout_buff;
+                temp_R <=  temp_R + (dout_buff**2);
+            end          
           end
+          
 //          temp_R <=  temp_R + (abs_R**2);
           
           R_iteration_idx = R_iteration_idx + 1;
           
-          if ( R_iteration_idx == fft_point+1 ) begin
+          if ( R_iteration_idx == fft_point+1+2 ) begin
             R_iteration_idx <= 0;
             denom_window_idx = denom_window_idx + 1;
             en_R <= 1;
@@ -259,8 +281,9 @@ module TimeSync
             R_idx = R_idx + 1;
           end
 
-          if ( denom_window_idx == (2*OFDM_burst_size)-fft_point ) begin
+          if ( denom_window_idx == (2*OFDM_burst_size)-fft_point+2 ) begin
             R_done <= 1;
+            delay_count <= 0;
           end
       end
     end
@@ -288,6 +311,11 @@ module TimeSync
           
           if (delay_count == 3) begin
               addr_M <= M_idx-2;               // includes 2 clock register delay
+              if (dout_P < 0) begin
+                abs_P <= dout_P*(-1);  
+              end else begin
+                abs_P <= dout_P;   
+              end
           end
           
           if (dout_P < 0) begin
@@ -300,7 +328,7 @@ module TimeSync
 
           M_idx <= M_idx+1;
 
-          if ( M_idx == (2*OFDM_burst_size)-fft_point-(fft_point+CP_num) ) begin
+          if ( M_idx == (2*OFDM_burst_size)-fft_point-(fft_point+CP_num)+2 ) begin
             M_done <= 1;
             delay_count <= 0;
           end
@@ -318,9 +346,12 @@ module TimeSync
      cnt_frame_detect <= 0;
    end
    else if ( M_done && !frame_index_detected ) begin
+            if (delay_count < 3) delay_count = delay_count + 1;
             en_M <= 1;
             we_M <= 0;
-            addr_M <= cnt_frame_detect; 
+            if (delay_count == 3) begin   // includes 2 clock register delay
+                addr_M <= cnt_frame_detect-2;           
+            end
             
             if ( dout_M > temp ) begin
                 temp <= dout_M;
@@ -371,7 +402,7 @@ module TimeSync
             buff_data_idx = buff_data_idx + fft_point + CP_num;
          end
              
-         if ( out_buff_idx == OFDM_burst_data_size ) begin
+         if ( out_buff_idx == OFDM_burst_data_size+2 ) begin
              delay_count <= 0;
              out_buff_full <= 1;
          end 
