@@ -156,7 +156,7 @@ module TimeSync
           frame_index_detected <= 0;
       end
       else begin
-          if ( cnt_frame_detect == (2*OFDM_burst_size)-((2*fft_point)+CP_num)+2 ) begin
+          if ( cnt_frame_detect == (2*OFDM_burst_size)-((2*fft_point)+CP_num) ) begin
               frame_index_detected <= 1;
           end
           else begin
@@ -262,10 +262,10 @@ module TimeSync
           if (delay_count == 3) begin   // includes 2 clock register delay
             if (dout_buff < 0) begin
                 abs_R <= dout_buff*(-1);
-                temp_R <=  temp_R + ((dout_buff*(-1))**2);
+                temp_R <=  temp_R + (dout_buff*dout_buff);
             end else begin
                 abs_R <= dout_buff;
-                temp_R <=  temp_R + (dout_buff**2);
+                temp_R <=  temp_R + (dout_buff*dout_buff);
             end          
           end
           
@@ -273,7 +273,7 @@ module TimeSync
           
           R_iteration_idx = R_iteration_idx + 1;
           
-          if ( R_iteration_idx == fft_point+1 + 1 ) begin
+          if ( R_iteration_idx == fft_point+1 ) begin
             R_iteration_idx = 0;
             denom_window_idx = denom_window_idx + 1;  
             R_store_flag = 1;        
@@ -295,7 +295,7 @@ module TimeSync
             store_count_R = 0;
           end
 
-          if ( denom_window_idx == (2*OFDM_burst_size)-fft_point+2 ) begin
+          if ( denom_window_idx == (2*OFDM_burst_size)-fft_point ) begin
             R_done <= 1;
             delay_count <= 0;
           end
@@ -322,6 +322,8 @@ module TimeSync
           
           en_M <= 1;
           we_M <= 1;
+ 
+          M_idx <= M_idx+1;
           
           if (delay_count == 3) begin
               addr_M <= M_idx-2;               // includes 2 clock register delay
@@ -340,7 +342,6 @@ module TimeSync
             di_M <= (dout_P**2) / (dout_R**2);           // store the data      
           end
 
-          M_idx <= M_idx+1;
 
           if ( M_idx == (2*OFDM_burst_size)-fft_point-(fft_point+CP_num)+2 ) begin
             M_done <= 1;
@@ -363,9 +364,7 @@ module TimeSync
             if (delay_count < 3) delay_count = delay_count + 1;
             en_M <= 1;
             we_M <= 0;
-            if (delay_count == 3) begin   // includes 2 clock register delay
-                addr_M <= cnt_frame_detect-2;           
-            end
+            addr_M <= cnt_frame_detect; 
             
             if ( dout_M > temp ) begin
                 temp <= dout_M;
