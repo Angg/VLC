@@ -175,7 +175,7 @@ module TimeSync
   integer P_idx = 0;                                    // index of RAM buffer of P value
   
   reg dot_product_store_flag = 0;
-  reg [1:0] store_count = 0;
+  reg [1:0] store_count_P = 0;
   
   integer window_middle_idx = fft_point + CP_num;
   
@@ -204,7 +204,7 @@ module TimeSync
           left_window_idx = left_window_idx - 1;
           dot_product_iteration_idx = dot_product_iteration_idx  + 1;
           
-          if ( dot_product_iteration_idx == 65 ) begin
+          if ( dot_product_iteration_idx == fft_point + 1 ) begin
             right_window_idx = fft_point + CP_num + 1 + window_sliding_idx;
             left_window_idx = fft_point - 1 + window_sliding_idx;
             window_sliding_idx = window_sliding_idx + 1;
@@ -218,10 +218,10 @@ module TimeSync
           end          
           
           if (dot_product_store_flag == 1) begin
-            store_count <= store_count + 1; 
+            store_count_P <= store_count_P + 1; 
           end
           
-          if ( store_count == 3 ) begin
+          if ( store_count_P == 3 ) begin
             en_P <= 1;
             we_P <= 1;
             addr_P <= P_idx;           // temporary store the P value     
@@ -230,7 +230,7 @@ module TimeSync
             
             temp_P <= 0;
             P_idx <= P_idx + 1;
-            store_count <= 0;
+            store_count_P <= 0;
             dot_product_store_flag <= 0;
           end
               
@@ -244,6 +244,8 @@ module TimeSync
    integer denom_window_idx = fft_point + CP_num;
    integer R_idx = 0;
    integer R_iteration_idx = 0;
+   reg [1:0] store_count_R = 0;
+   reg R_store_flag = 0;
    
   // calculate R
   always @( posedge clk )
@@ -271,14 +273,26 @@ module TimeSync
           
           R_iteration_idx = R_iteration_idx + 1;
           
-          if ( R_iteration_idx == fft_point+1+2 ) begin
-            R_iteration_idx <= 0;
-            denom_window_idx = denom_window_idx + 1;
+          if ( R_iteration_idx == fft_point+1 + 1 ) begin
+            R_iteration_idx = 0;
+            denom_window_idx = denom_window_idx + 1;  
+            R_store_flag = 1;        
+          end
+          
+           if (R_store_flag == 1) begin
+            store_count_R <= store_count_R + 1; 
+          end         
+          
+          if ( store_count_R == 3 ) begin
             en_R <= 1;
             we_R <= 1;
             addr_R <= R_idx;
             di_R <= temp_R;
+            temp_R <= 0;
+            
             R_idx = R_idx + 1;
+            R_store_flag = 0;
+            store_count_R = 0;
           end
 
           if ( denom_window_idx == (2*OFDM_burst_size)-fft_point+2 ) begin
