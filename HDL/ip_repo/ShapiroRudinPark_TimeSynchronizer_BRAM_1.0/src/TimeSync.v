@@ -181,7 +181,6 @@ module TimeSync
   
   reg [1:0] delay_count = 0;
   reg signed [31:0] temp_P = 0;  
-  reg unsigned [31:0] temp_R = 0;  
   reg unsigned [31:0] abs_R;
   reg unsigned [31:0] abs_P;
   
@@ -190,6 +189,7 @@ module TimeSync
     begin
       if ( tx_done ) begin
           P_done <= 0;
+          temp_P <= 0;
       end
       else if ( in_buff_full && !P_done ) begin
           if (delay_count < 3) delay_count = delay_count + 1;
@@ -246,32 +246,34 @@ module TimeSync
    integer R_iteration_idx = 0;
    reg [1:0] store_count_R = 0;
    reg R_store_flag = 0;
+   reg [31:0] temp_R = 0;  
    
   // calculate R
   always @( posedge clk )
     begin
       if ( tx_done ) begin
           R_done <= 0;
+          temp_R <= 0;
       end
       else if ( P_done && !R_done ) begin
           if (delay_count < 3) delay_count = delay_count + 1;      
-          en_buff <= 1;
-          we_buff <= 0;
-          addr_buff <= denom_window_idx + R_iteration_idx;
+          en_buff <= 1; en_buff_1 <= 1;
+          we_buff <= 0; we_buff_1 <= 0;
+          addr_buff <= denom_window_idx + R_iteration_idx; addr_buff_1 <= denom_window_idx + R_iteration_idx;
+
+          R_iteration_idx = R_iteration_idx + 1;
 
           if (delay_count == 3) begin   // includes 2 clock register delay
             if (dout_buff < 0) begin
-                abs_R <= dout_buff*(-1);
-                temp_R <=  temp_R + (dout_buff*dout_buff);
+                abs_R = dout_buff*(-1);
+                temp_R = temp_R + (abs_R**2);
             end else begin
-                abs_R <= dout_buff;
-                temp_R <=  temp_R + (dout_buff*dout_buff);
+                abs_R = dout_buff;
+                temp_R = temp_R + (abs_R**2);
             end          
           end
           
 //          temp_R <=  temp_R + (abs_R**2);
-          
-          R_iteration_idx = R_iteration_idx + 1;
           
           if ( R_iteration_idx == fft_point+1 ) begin
             R_iteration_idx = 0;
@@ -295,7 +297,7 @@ module TimeSync
             store_count_R = 0;
           end
 
-          if ( denom_window_idx == (2*OFDM_burst_size)-fft_point ) begin
+          if ( R_idx == 2098 ) begin
             R_done <= 1;
             delay_count <= 0;
           end
