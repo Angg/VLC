@@ -418,7 +418,6 @@ module TimeSync
    else begin
      temp <= temp;
      temp_index <= temp_index;
-     buff_data_idx <= buff_data_idx;
    end
   end
   
@@ -444,17 +443,19 @@ module TimeSync
          end
          di_out_buff <= dout_buff;           // store the data
          
-         buff_data_idx = buff_data_idx + 1;
-         out_buff_idx = out_buff_idx + 1;
+         out_buff_idx <= out_buff_idx + 1;
          
-         if ( buff_data_idx == fft_point+2 || buff_data_idx == (6*fft_point)+(5*CP_num)+2 || buff_data_idx == (7*fft_point)+(6*CP_num)+2 || buff_data_idx == (8*fft_point)+(7*CP_num)+2 || buff_data_idx == (9*fft_point)+(8*CP_num)+2 || buff_data_idx == (10*fft_point)+(9*CP_num)+2 || buff_data_idx == (11*fft_point)+(10*CP_num)+2 || buff_data_idx == (12*fft_point)+(11*CP_num)+2|| buff_data_idx == (13*fft_point)+(12*CP_num)+2 ) 
+         if ( buff_data_idx == fft_point+temp_index-1 || buff_data_idx == (6*fft_point)+(5*CP_num)+temp_index-1 || buff_data_idx == (7*fft_point)+(6*CP_num)+temp_index-1 || buff_data_idx == (8*fft_point)+(7*CP_num)+temp_index-1 || buff_data_idx == (9*fft_point)+(8*CP_num)+temp_index-1 || buff_data_idx == (10*fft_point)+(9*CP_num)+temp_index-1 || buff_data_idx == (11*fft_point)+(10*CP_num)+temp_index-1 || buff_data_idx == (12*fft_point)+(11*CP_num)+temp_index-1 || buff_data_idx == (13*fft_point)+(12*CP_num)+temp_index-1 ) 
          begin
              buff_data_idx = buff_data_idx + CP_num;
          end
-         
-         if ( buff_data_idx == (2*fft_point)+CP_num+2 || buff_data_idx == (4*fft_point)+(3*CP_num)+2 )
+         else if ( buff_data_idx == (2*fft_point)+CP_num+temp_index-1 || buff_data_idx == (4*fft_point)+(3*CP_num)+temp_index-1 )
          begin
             buff_data_idx = buff_data_idx + fft_point + CP_num;
+         end
+         else 
+         begin
+            buff_data_idx = buff_data_idx + 1;
          end
              
          if ( out_buff_idx == OFDM_burst_data_size+2 ) begin
