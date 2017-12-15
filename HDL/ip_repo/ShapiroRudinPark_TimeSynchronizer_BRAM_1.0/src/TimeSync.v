@@ -176,33 +176,45 @@ module TimeSync
   
   reg dot_product_store_flag = 0;
   reg [1:0] store_count_P = 0;
+  reg store_flag_P = 0;
   
   integer window_middle_idx = fft_point + CP_num;
   
   reg [1:0] delay_count = 0;
   reg signed [31:0] temp_P = 0;  
-  reg unsigned [31:0] abs_R;
   reg unsigned [31:0] abs_P;
   
   // calculate P
   always @( posedge clk )
     begin
       if ( tx_done ) begin
-          P_done <= 0;
-          temp_P <= 0;
+          P_done = 0;
+          temp_P = 0;
+          abs_P = 0;
+          left_window_idx = fft_point - 1; 
+          right_window_idx = fft_point + CP_num + 1; 
+          dot_product_iteration_idx = 0;
+          window_sliding_idx = 1;
+          P_idx = 0; 
+          dot_product_store_flag = 0;
+          store_count_P = 0;                                   
       end
       else if ( in_buff_full && !P_done ) begin
           if (delay_count < 3) delay_count = delay_count + 1;
           en_buff <= 1; en_buff_1 <= 1;
           we_buff <= 0; we_buff_1 <= 0;
           addr_buff <= left_window_idx; addr_buff_1 <= right_window_idx;
-          if (delay_count == 3) begin   // includes 2 clock register delay
+          
+          dot_product_iteration_idx = dot_product_iteration_idx  + 1;
+          
+          if ( (delay_count == 3) && (dot_product_iteration_idx != 3) ) begin   // includes 2 clock register delay
                 temp_P <=  temp_P + (dout_buff * dout_buff_1);           // temporary store the P value             
+          end else if ( (delay_count == 3) && (dot_product_iteration_idx == 3) ) begin
+                temp_P <= dout_buff * dout_buff_1; 
           end
           
           right_window_idx = right_window_idx + 1;
           left_window_idx = left_window_idx - 1;
-          dot_product_iteration_idx = dot_product_iteration_idx  + 1;
           
           if ( dot_product_iteration_idx == fft_point + 1 ) begin
             right_window_idx = fft_point + CP_num + 1 + window_sliding_idx;
@@ -228,7 +240,7 @@ module TimeSync
             
             di_P <= temp_P + (dout_buff * dout_buff_1);
             
-            temp_P <= 0;
+//            temp_P <= 0;
             P_idx <= P_idx + 1;
             store_count_P <= 0;
             dot_product_store_flag <= 0;
@@ -244,6 +256,7 @@ module TimeSync
    integer denom_window_idx = fft_point + CP_num;
    integer R_idx = 0;
    integer R_iteration_idx = 0;
+   reg unsigned [31:0] abs_R;
    reg [1:0] store_count_R = 0;
    reg R_store_flag = 0;
    reg [31:0] temp_R = 0;  
@@ -254,6 +267,13 @@ module TimeSync
       if ( tx_done ) begin
           R_done <= 0;
           temp_R <= 0;
+          denom_window_idx = fft_point + CP_num;
+          R_idx = 0;
+          R_iteration_idx = 0;
+          abs_R = 0;
+          store_count_R = 0;
+          R_store_flag = 0;
+          temp_R = 0; 
       end
       else if ( P_done && !R_done ) begin
           if (delay_count < 3) delay_count = delay_count + 1;      
@@ -266,10 +286,18 @@ module TimeSync
           if (delay_count == 3) begin   // includes 2 clock register delay
             if (dout_buff < 0) begin
                 abs_R = dout_buff*(-1);
-                temp_R = temp_R + (abs_R**2);
+                if (R_iteration_idx != 1) begin
+                    temp_R = temp_R + (abs_R**2);
+                end else begin
+                    temp_R = abs_R**2;
+                end
             end else begin
                 abs_R = dout_buff;
-                temp_R = temp_R + (abs_R**2);
+                if (R_iteration_idx != 1) begin
+                    temp_R = temp_R + (abs_R**2);
+                end else begin
+                    temp_R = abs_R**2;
+                end
             end          
           end
           
@@ -279,23 +307,32 @@ module TimeSync
             R_iteration_idx = 0;
             denom_window_idx = denom_window_idx + 1;  
             R_store_flag = 1;        
-          end
-          
-           if (R_store_flag == 1) begin
-            store_count_R <= store_count_R + 1; 
-          end         
-          
-          if ( store_count_R == 3 ) begin
             en_R <= 1;
             we_R <= 1;
             addr_R <= R_idx;
             di_R <= temp_R;
-            temp_R <= 0;
+//            temp_R <= 0;
             
             R_idx = R_idx + 1;
-            R_store_flag = 0;
-            store_count_R = 0;
+//            R_store_flag = 0;
+//            store_count_R = 0;
           end
+          
+//           if (R_store_flag == 1) begin
+//            store_count_R <= store_count_R + 1; 
+//          end         
+          
+//          if ( store_count_R == 3 ) begin
+//            en_R <= 1;
+//            we_R <= 1;
+//            addr_R <= R_idx;
+//            di_R <= temp_R;
+//            temp_R <= 0;
+            
+//            R_idx = R_idx + 1;
+//            R_store_flag = 0;
+//            store_count_R = 0;
+//          end
 
           if ( R_idx == 2098 ) begin
             R_done <= 1;
@@ -310,7 +347,8 @@ module TimeSync
   always @( posedge clk )
     begin
       if ( tx_done ) begin
-          M_done <= 0;
+          M_done = 0;
+          M_idx = 0;
       end
       else if ( R_done && !M_done ) begin
           if (delay_count < 3) delay_count = delay_count + 1;
@@ -344,7 +382,6 @@ module TimeSync
             di_M <= (dout_P**2) / (dout_R**2);           // store the data      
           end
 
-
           if ( M_idx == (2*OFDM_burst_size)-fft_point-(fft_point+CP_num)+2 ) begin
             M_done <= 1;
             delay_count <= 0;
@@ -361,6 +398,8 @@ module TimeSync
   begin
    if ( tx_done ) begin
      cnt_frame_detect <= 0;
+     temp = 0;
+     temp_index = 0;
    end
    else if ( M_done && !frame_index_detected ) begin
             if (delay_count < 3) delay_count = delay_count + 1;
@@ -389,7 +428,8 @@ module TimeSync
   always @( posedge clk )
   begin
    if ( tx_done ) begin
-     out_buff_full <= 0;
+     out_buff_full = 0;
+     out_buff_idx = 0;
    end
    else if ( frame_index_detected && !out_buff_full ) begin
          // channel estimation symbol
