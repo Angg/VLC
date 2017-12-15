@@ -409,8 +409,8 @@ module TimeSync
             
             if ( dout_M > temp ) begin
                 temp <= dout_M;
-                temp_index <= cnt_frame_detect;
-                buff_data_idx <= cnt_frame_detect;
+                temp_index <= cnt_frame_detect-2;
+                buff_data_idx <= cnt_frame_detect-2;
             end
             
             cnt_frame_detect = cnt_frame_detect+1;
