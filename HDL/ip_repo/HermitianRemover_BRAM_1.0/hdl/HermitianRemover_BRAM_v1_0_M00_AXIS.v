@@ -39,7 +39,7 @@
 	);
 	//Total number of output data.
 	// Total number of output data                                                 
-	localparam NUMBER_OF_OUTPUT_WORDS = 224;//336;                                               
+	localparam NUMBER_OF_OUTPUT_WORDS = /*224;*/ 336;                                               
 	                                                                                     
 	// function called clogb2 that returns an integer which has the                      
 	// value of the ceiling of the log base 2.                                           

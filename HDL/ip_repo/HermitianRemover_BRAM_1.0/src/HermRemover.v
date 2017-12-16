@@ -33,7 +33,7 @@ module HermRemover
     
     localparam active_subcarr = 28;  // number of active OFDM subcarrier
     localparam symbol_num = 8;         // amount of data symbol in one burst packet  
-    localparam cest_num = 0;            // amount of channel estimation symbol
+    localparam cest_num = 4;            // amount of channel estimation symbol
     localparam fft_point = 64;         // number of fft point 
    
     reg [10:0] cnt_in = 0;
@@ -127,10 +127,10 @@ module HermRemover
           
           k = k + 1;
           j = j + 1;
-          if ( k == 29+2 || k == 93+2 || k == 157+2 || k == 221+2 || k == 285+2 || k == 349+2 || k == 413+2  ) begin
+          if ( k == 29 || k == 93 || k == 157 || k == 221 || k == 285 || k == 349 || k == 413 || k == 477 || k == 541 || k == 605 || k == 669 ) begin
               k = k + 36;
           end    
-          if ( k == 477+2 ) begin
+          if ( k == 733+2 ) begin
               j = 0;
               delay_count = 0;
               out_buff_full <= 1;
