@@ -285,7 +285,7 @@ module ChannelEst_Eq
               out_buff_full <= 0;
           end
           else begin
-              if ( cnt_out == active_subcarr*symbol_num ) begin
+              if ( cnt_out == (active_subcarr*symbol_num)+2 ) begin
                   out_buff_full <= 1;
                   delay_count <= 0;
               end

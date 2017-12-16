@@ -208,7 +208,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>9ac73e29</spirit:value>
+            <spirit:value>1d52b565</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -224,7 +224,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>9ac73e29</spirit:value>
+            <spirit:value>1d52b565</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -446,7 +446,7 @@
   </spirit:model>
   <spirit:choices>
     <spirit:choice>
-      <spirit:name>choice_list_028f596c</spirit:name>
+      <spirit:name>choice_list_20dc6536</spirit:name>
       <spirit:enumeration>32</spirit:enumeration>
       <spirit:enumeration>16</spirit:enumeration>
     </spirit:choice>
@@ -582,7 +582,7 @@
       <spirit:name>C_M00_AXIS_TDATA_WIDTH</spirit:name>
       <spirit:displayName>C M00 AXIS TDATA WIDTH</spirit:displayName>
       <spirit:description>Width of S_AXIS address bus. The slave accepts the read and write addresses of width C_M_AXIS_TDATA_WIDTH.</spirit:description>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_M00_AXIS_TDATA_WIDTH" spirit:choiceRef="choice_list_028f596c" spirit:order="3">16</spirit:value>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_M00_AXIS_TDATA_WIDTH" spirit:choiceRef="choice_list_20dc6536" spirit:order="3">16</spirit:value>
       <spirit:vendorExtensions>
         <xilinx:parameterInfo>
           <xilinx:enablement>
@@ -601,7 +601,7 @@
       <spirit:name>C_S00_AXIS_TDATA_WIDTH</spirit:name>
       <spirit:displayName>C S00 AXIS TDATA WIDTH</spirit:displayName>
       <spirit:description>AXI4Stream sink: Data Width</spirit:description>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_S00_AXIS_TDATA_WIDTH" spirit:choiceRef="choice_list_028f596c" spirit:order="5">16</spirit:value>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_S00_AXIS_TDATA_WIDTH" spirit:choiceRef="choice_list_20dc6536" spirit:order="5">16</spirit:value>
       <spirit:vendorExtensions>
         <xilinx:parameterInfo>
           <xilinx:enablement>
@@ -624,8 +624,8 @@
         <xilinx:taxonomy>AXI_Peripheral</xilinx:taxonomy>
       </xilinx:taxonomies>
       <xilinx:displayName>ChannelEstimator_Equalizer_BRAM_v1.0</xilinx:displayName>
-      <xilinx:coreRevision>2</xilinx:coreRevision>
-      <xilinx:coreCreationDateTime>2017-12-15T16:46:50Z</xilinx:coreCreationDateTime>
+      <xilinx:coreRevision>3</xilinx:coreRevision>
+      <xilinx:coreCreationDateTime>2017-12-16T07:57:34Z</xilinx:coreCreationDateTime>
       <xilinx:tags>
         <xilinx:tag xilinx:name="xilinx.com:user:ChannelEstimator_Equalizer_BRAM:1.0_ARCHIVE_LOCATION">D:/Files/SoCProject/ip_repo/ChannelEstimator_Equalizer_BRAM_1.0</xilinx:tag>
       </xilinx:tags>
@@ -633,7 +633,7 @@
     <xilinx:packagingInfo>
       <xilinx:xilinxVersion>2016.2</xilinx:xilinxVersion>
       <xilinx:checksum xilinx:scope="busInterfaces" xilinx:value="a9505cf1"/>
-      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="1e99fd5e"/>
+      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="527d67b2"/>
       <xilinx:checksum xilinx:scope="ports" xilinx:value="94b5c5c1"/>
       <xilinx:checksum xilinx:scope="hdlParameters" xilinx:value="297e0401"/>
       <xilinx:checksum xilinx:scope="parameters" xilinx:value="ae4f9d44"/>
