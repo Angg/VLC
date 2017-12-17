@@ -185,10 +185,10 @@
 	    begin
 	      valid_delay_1 <= axis_tvalid;
 	      valid_delay_2 <= valid_delay_1;                                                                                       
-	      axis_tvalid_delay <= axis_tvalid; //valid_delay_2;
+	      axis_tvalid_delay <= valid_delay_2;
 	      last_delay_1 <= axis_tlast;
 	      last_delay_2 <= last_delay_1;                                                        
-	      axis_tlast_delay <= axis_tlast; //last_delay_2;                                                          
+	      axis_tlast_delay <= last_delay_2;                                                          
 	    end                                                                                        
 	end                                                                                            
 
