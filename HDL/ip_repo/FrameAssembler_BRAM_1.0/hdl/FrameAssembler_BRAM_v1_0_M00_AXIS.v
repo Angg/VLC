@@ -203,7 +203,7 @@
 	      tx_done <= 1'b0;                                                           
 	    end                                                                          
 	  else                                                                           
-	    if ((read_pointer <= (NUMBER_OF_OUTPUT_WORDS/2)-1) && !done)                                
+	    if ((read_pointer < (NUMBER_OF_OUTPUT_WORDS/2)-1) && !done)                                
 	      begin                                                                      
 	        if (tx_en)                                                               
 	          // read pointer is incremented after every read from the FIFO          
@@ -213,7 +213,7 @@
 	            tx_done <= 1'b0;                                                     
 	          end                                                                    
 	      end                                                                        
-	    else if ((read_pointer == NUMBER_OF_OUTPUT_WORDS/2) && !done)                             
+	    else if ((read_pointer == (NUMBER_OF_OUTPUT_WORDS/2)-1) && !done)                             
 	      begin                                                                      
 	        // tx_done is asserted when NUMBER_OF_OUTPUT_WORDS numbers of streaming data
 	        // has been out.                                                         

@@ -348,7 +348,7 @@ module ChannelEst_Eq
             if (delay_count == 3) begin
                 addr_out_buff <= cnt_out-2;               // includes 2 clock register delay
             end
-            di_out_buff <= {dout_buff_im/dout_buff_eq, dout_buff_re/dout_buff_eq};           // store the data
+            di_out_buff <= {dout_buff_im/* /dout_buff_eq*/, dout_buff_re/* /dout_buff_eq*/};           // store the data
        
             cnt_out = cnt_out + 1;
             cnt_eq = cnt_eq + 1;

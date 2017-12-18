@@ -576,8 +576,8 @@
         <xilinx:taxonomy>AXI_Peripheral</xilinx:taxonomy>
       </xilinx:taxonomies>
       <xilinx:displayName>HermitianRemover_BRAM_v1.0</xilinx:displayName>
-      <xilinx:coreRevision>10</xilinx:coreRevision>
-      <xilinx:coreCreationDateTime>2017-12-16T05:44:24Z</xilinx:coreCreationDateTime>
+      <xilinx:coreRevision>12</xilinx:coreRevision>
+      <xilinx:coreCreationDateTime>2017-12-17T05:24:48Z</xilinx:coreCreationDateTime>
       <xilinx:tags>
         <xilinx:tag xilinx:name="xilinx.com:user:HermitianRemover_BRAM:1.0_ARCHIVE_LOCATION">D:/Files/SoCProject/ip_repo/HermitianRemover_BRAM_1.0</xilinx:tag>
       </xilinx:tags>

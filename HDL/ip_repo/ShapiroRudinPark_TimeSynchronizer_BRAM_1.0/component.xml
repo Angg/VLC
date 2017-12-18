@@ -608,8 +608,8 @@
         <xilinx:taxonomy>AXI_Peripheral</xilinx:taxonomy>
       </xilinx:taxonomies>
       <xilinx:displayName>ShapiroRudinPark_TimeSynchronizer_BRAM_v1.0</xilinx:displayName>
-      <xilinx:coreRevision>58</xilinx:coreRevision>
-      <xilinx:coreCreationDateTime>2017-12-15T11:48:35Z</xilinx:coreCreationDateTime>
+      <xilinx:coreRevision>59</xilinx:coreRevision>
+      <xilinx:coreCreationDateTime>2017-12-17T13:09:26Z</xilinx:coreCreationDateTime>
       <xilinx:tags>
         <xilinx:tag xilinx:name="xilinx.com:user:ShapiroRudinPark_TimeSynchronizer_BRAM:1.0_ARCHIVE_LOCATION">D:/Files/SoCProject/ip_repo/ShapiroRudinPark_TimeSynchronizer_BRAM_1.0</xilinx:tag>
       </xilinx:tags>
