@@ -624,8 +624,8 @@
         <xilinx:taxonomy>AXI_Peripheral</xilinx:taxonomy>
       </xilinx:taxonomies>
       <xilinx:displayName>ChannelEstimator_Equalizer_BRAM_v1.0</xilinx:displayName>
-      <xilinx:coreRevision>4</xilinx:coreRevision>
-      <xilinx:coreCreationDateTime>2017-12-16T10:18:17Z</xilinx:coreCreationDateTime>
+      <xilinx:coreRevision>5</xilinx:coreRevision>
+      <xilinx:coreCreationDateTime>2017-12-18T10:13:12Z</xilinx:coreCreationDateTime>
       <xilinx:tags>
         <xilinx:tag xilinx:name="xilinx.com:user:ChannelEstimator_Equalizer_BRAM:1.0_ARCHIVE_LOCATION">D:/Files/SoCProject/ip_repo/ChannelEstimator_Equalizer_BRAM_1.0</xilinx:tag>
       </xilinx:tags>
