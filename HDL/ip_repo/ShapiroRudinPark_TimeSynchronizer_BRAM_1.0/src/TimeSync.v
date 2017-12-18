@@ -447,11 +447,11 @@ module TimeSync
          
          if ( buff_data_idx == fft_point+temp_index-1 || buff_data_idx == (6*fft_point)+(5*CP_num)+temp_index-1 || buff_data_idx == (7*fft_point)+(6*CP_num)+temp_index-1 || buff_data_idx == (8*fft_point)+(7*CP_num)+temp_index-1 || buff_data_idx == (9*fft_point)+(8*CP_num)+temp_index-1 || buff_data_idx == (10*fft_point)+(9*CP_num)+temp_index-1 || buff_data_idx == (11*fft_point)+(10*CP_num)+temp_index-1 || buff_data_idx == (12*fft_point)+(11*CP_num)+temp_index-1 || buff_data_idx == (13*fft_point)+(12*CP_num)+temp_index-1 ) 
          begin
-             buff_data_idx = buff_data_idx + CP_num;
+             buff_data_idx = buff_data_idx + CP_num + 1;
          end
          else if ( buff_data_idx == (2*fft_point)+CP_num+temp_index-1 || buff_data_idx == (4*fft_point)+(3*CP_num)+temp_index-1 )
          begin
-            buff_data_idx = buff_data_idx + fft_point + CP_num;
+            buff_data_idx = buff_data_idx + CP_num + fft_point + CP_num + 1;
          end
          else 
          begin
