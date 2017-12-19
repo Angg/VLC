@@ -224,7 +224,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>98da3413</spirit:value>
+            <spirit:value>cee9dfee</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -240,7 +240,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>98da3413</spirit:value>
+            <spirit:value>cee9dfee</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -605,8 +605,8 @@
         <xilinx:taxonomy>AXI_Peripheral</xilinx:taxonomy>
       </xilinx:taxonomies>
       <xilinx:displayName>FrameAssembler_BRAM_v1.0</xilinx:displayName>
-      <xilinx:coreRevision>7</xilinx:coreRevision>
-      <xilinx:coreCreationDateTime>2017-12-18T07:58:59Z</xilinx:coreCreationDateTime>
+      <xilinx:coreRevision>10</xilinx:coreRevision>
+      <xilinx:coreCreationDateTime>2017-12-19T03:25:26Z</xilinx:coreCreationDateTime>
       <xilinx:tags>
         <xilinx:tag xilinx:name="xilinx.com:user:FrameAssembler_BRAM:1.0_ARCHIVE_LOCATION">D:/Files/SoCProject/ip_repo/FrameAssembler_BRAM_1.0</xilinx:tag>
       </xilinx:tags>
@@ -614,7 +614,7 @@
     <xilinx:packagingInfo>
       <xilinx:xilinxVersion>2016.2</xilinx:xilinxVersion>
       <xilinx:checksum xilinx:scope="busInterfaces" xilinx:value="1ee2d442"/>
-      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="ce86d3d6"/>
+      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="a7c8c38a"/>
       <xilinx:checksum xilinx:scope="ports" xilinx:value="fc9a40b9"/>
       <xilinx:checksum xilinx:scope="hdlParameters" xilinx:value="271585de"/>
       <xilinx:checksum xilinx:scope="parameters" xilinx:value="c055e6ee"/>

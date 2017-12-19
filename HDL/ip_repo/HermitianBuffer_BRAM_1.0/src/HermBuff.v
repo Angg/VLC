@@ -40,6 +40,15 @@ module HermBuff
   reg in_buff_full = 0;
   reg out_buff_full = 0;  
   
+  integer i = 0;
+  integer j = 0;
+  integer k = 1;
+  integer l = 29;
+  integer m = 36;
+  integer n = 28; 
+  
+  reg [1:0] delay_count = 0;  
+  
   reg dc_bias = 0;
   reg zeros = 0;
   reg conj = 0;
@@ -75,7 +84,7 @@ module HermBuff
   BRAM_buff_conj BRAM_buff_conj_inst (clk, webuff_conj, enbuff_conj, addrbuff_conj, dibuff_conj, dout_buff_conj);  // temporary buffer to keep the conjugate data from the constellation mapper
   BRAM_out_buff BRAM_out_buff_inst (clk, weout_buff, enout_buff, addrout_buff, diout_buff, dout_out_buff);      // temporary buffer to apply hermitian symmetry for data input  
   
-  // buffering data input
+  // buffer input
   always @( posedge clk )
   begin
       if ( tx_done ) begin
@@ -95,6 +104,29 @@ module HermBuff
               
               cnt_in = cnt_in + 1;
           end
+          else if ( dc_bias && !inf_data  ) begin
+              en_buff <= 1;
+              we_buff <= 0;
+              addr_buff <= j; 
+              
+              j = j + 1;
+              if ( k == 477+2 ) begin
+                  j = 0;
+              end        
+          end
+          else if ( zeros && !conj  ) begin
+              en_buff_conj <= 1;
+              we_buff_conj <= 0;
+              addr_buff_conj <= n-1;
+              
+              n = n - 1;
+              if ( n == 0 || n == 28 || n == 56 || n == 84 || n == 112 || n == 140 || n == 168  ) begin
+                  n = n + 56;
+              end     
+              if ( m == 512+2+1 ) begin
+                  j = 0;
+              end        
+          end                    
           else begin
               cnt_in <= cnt_in;
           end
@@ -120,20 +152,16 @@ module HermBuff
   ////////////////////////
   // hermitian symmetry //
   ////////////////////////
-  integer i = 0;
-  integer j = 0;
-  integer k = 1;
-  integer l = 29;
-  integer m = 36;
-  integer n = 28; 
   
-  reg [1:0] delay_count = 0;
-  
-  // DC bias
+  // output buffer
   always @( posedge clk )
   begin
     if ( tx_done ) begin
         dc_bias <= 0;
+        inf_data <= 0;
+        zeros <= 0;
+        conj <= 0;
+        out_buff_full <= 0;        
     end
     else if ( in_buff_full && !dc_bias ) begin
         en_out_buff <= 1;
@@ -144,22 +172,10 @@ module HermBuff
         i = i + 64;
         if ( i == 512+64 ) begin
             dc_bias = 1;
-//            i = 1;
         end        
-    end
-  end
-  
-  // Information data
-  always @( posedge clk )
-  begin
-    if ( tx_done ) begin
-        inf_data <= 0;
     end
     else if ( dc_bias && !inf_data  ) begin
         if (delay_count < 3) delay_count = delay_count + 1;
-        en_buff <= 1;
-        we_buff <= 0;
-        addr_buff <= j; 
         en_out_buff <= 1;
         we_out_buff <= 1;
         if (delay_count == 3) begin
@@ -168,24 +184,13 @@ module HermBuff
         di_out_buff <= dout_buff;           // store the data
         
         k = k + 1;
-        j = j + 1;
         if ( k == 29+2 || k == 93+2 || k == 157+2 || k == 221+2 || k == 285+2 || k == 349+2 || k == 413+2  ) begin
             k = k + 36;
         end    
         if ( k == 477+2 ) begin
-//            i = 29;
-            j = 0;
             delay_count = 0;
             inf_data <= 1;
         end        
-    end
-  end  
-
-  // Middle padding zeros
-  always @( posedge clk )
-  begin
-    if ( tx_done ) begin
-        zeros <= 0;
     end
     else if ( inf_data && !zeros  ) begin
         en_out_buff <= 1;
@@ -198,24 +203,11 @@ module HermBuff
             l = l + 57;
         end    
         if ( l == 484+1 ) begin
-//            i = 36;
             zeros = 1;
         end        
     end
-  end  
-
-  // Data conjugate
-  always @( posedge clk )
-  begin
-    if ( tx_done ) begin
-        conj <= 0;
-        out_buff_full <= 0;
-    end
     else if ( zeros && !conj  ) begin
         if (delay_count < 3) delay_count = delay_count + 1;
-        en_buff_conj <= 1;
-        we_buff_conj <= 0;
-        addr_buff_conj <= n-1; 
         en_out_buff <= 1;
         we_out_buff <= 1;
         if (delay_count == 3) begin
@@ -224,35 +216,25 @@ module HermBuff
         di_out_buff <= dout_buff_conj;           // store the data conjugate
         
         m = m + 1;
-        n = n - 1;
         if ( m == 64+2 || m == 128+2 || m == 192+2 || m == 256+2 || m == 320+2 || m == 384+2 || m == 448+2  ) begin
             m = m + 36;
-        end
-        if ( n == 0 || n == 28 || n == 56 || n == 84 || n == 112 || n == 140 || n == 168  ) begin
-            n = n + 56;
-        end     
+        end    
         if ( m == 512+2+1 ) begin
             m = 0;
-            j = 0;
             delay_count = 0;
             conj = 1;
             out_buff_full = 1;
         end        
     end
+    else if ( out_buff_full ) begin
+        en_out_buff <= 1;
+        we_out_buff <= 0;
+        addr_out_buff <= read_ptr;
+        dout <= dout_out_buff;
+    end
+    else begin
+        dout <= dout;
+    end                
   end
-    
-  // stream data output
-  always @( posedge clk )
-  begin
-      if ( out_buff_full ) begin
-          en_out_buff <= 1;
-          we_out_buff <= 0;
-          addr_out_buff <= read_ptr;
-          dout <= dout_out_buff;
-      end
-      else begin
-          dout <= dout;
-      end
-  end    
     
 endmodule

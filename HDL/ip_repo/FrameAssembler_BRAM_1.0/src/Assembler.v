@@ -104,6 +104,10 @@ reg [7:0] sync_time_seq [0:sync_time_seq_num-1] =               // temporary buf
     8'h02,  8'h00,  8'h02,  8'h00,  8'h02,  8'hFF,  8'h03,  8'hFE,  
     8'hE4,  8'hFE,  8'h05,  8'hFD,  8'h04,  8'hFE,  8'h04,  8'h00,
     8'h02,  8'h00,  8'h00,  8'h03,  8'hFF,  8'h06,  8'hFC,  8'h06};
+
+    integer j = 0;
+    integer k = 480;
+    integer l = 0;
     
     reg we_buff, we_out_buff;
     reg en_buff, en_out_buff;
@@ -130,7 +134,7 @@ reg [7:0] sync_time_seq [0:sync_time_seq_num-1] =               // temporary buf
     BRAM_buff_asm BRAM_buff_asm_inst (clk, webuff, enbuff, addrbuff, dibuff, dout_buff);      // temporary buffer to keep the data input
     BRAM_out_buff_asm BRAM_out_buff_asm_inst (clk, weout_buff, enout_buff, addrout_buff, diout_buff, dout_out_buff);     // temporary buffer to keep the data output
 
-  // buffering data input
+  // data input buffer
   always @( posedge clk )
   begin
       if ( tx_done ) begin
@@ -143,6 +147,16 @@ reg [7:0] sync_time_seq [0:sync_time_seq_num-1] =               // temporary buf
                 addr_buff <= cnt_in;
                 di_buff <= din;
                 cnt_in = cnt_in + 1;
+          end
+          else if ( time_seq_done && !out_buff_full  ) begin
+                en_buff <= 1;
+                we_buff <= 0;
+                addr_buff <= l;
+                
+                l = l + 1;    
+                if ( k == 1120+2 ) begin
+                    l = 0;
+                end          
           end
           else begin
                 cnt_in <= cnt_in;
@@ -169,17 +183,15 @@ reg [7:0] sync_time_seq [0:sync_time_seq_num-1] =               // temporary buf
    //////////////
   // Assembler //
   //////////////
-  integer j = 0;
-  integer k = 480;
-  integer l = 0;
   
   reg [1:0] delay_count = 0; 
   
-  // Assemble time synchronizer sequence
+  // Output buffer
   always @( posedge clk )
     begin
       if ( tx_done ) begin
           time_seq_done <= 0;
+          out_buff_full <= 0;
       end
       else if ( in_buff_full && !time_seq_done  ) begin
           en_out_buff <= 1;
@@ -193,49 +205,31 @@ reg [7:0] sync_time_seq [0:sync_time_seq_num-1] =               // temporary buf
               time_seq_done <= 1;
           end        
       end
-    end
-
-   // Assemble the data and concatenate it with the time sync into output BRAM 
-  always @( posedge clk )
-    begin
-      if ( tx_done ) begin
-          out_buff_full <= 0;
-      end
       else if ( time_seq_done && !out_buff_full  ) begin
           if (delay_count < 3) delay_count = delay_count + 1;
-          en_buff <= 1;
-          we_buff <= 0;
-          addr_buff <= l; 
           en_out_buff <= 1;
           we_out_buff <= 1;
           if (delay_count == 3) begin
               addr_out_buff <= k-2;               // includes 2 clock register delay
           end
-          di_out_buff <= dout_buff;           // store the data
-          
+          di_out_buff <= dout_buff;           // store the data 
+           
           k = k + 1;
-          l = l + 1;
           if ( k == 1120+2 ) begin
               k = 0;
-              l = 0;
               delay_count = 0;
               out_buff_full <= 1;
           end        
       end
-    end
-
-    // stream data output
-    always @( posedge clk )
-    begin
-        if ( out_buff_full ) begin
+      else if ( out_buff_full ) begin
             en_out_buff <= 1;
             we_out_buff <= 0;
             addr_out_buff <= read_ptr;
             dout <= dout_out_buff;
-        end
-        else begin
+      end
+      else begin
             dout <= dout;
-        end
-    end 
+      end       
+    end
 
 endmodule
