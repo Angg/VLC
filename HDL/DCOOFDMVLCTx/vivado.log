@@ -1,0 +1,27 @@
+#-----------------------------------------------------------
+# Vivado v2016.2 (64-bit)
+# SW Build 1577090 on Thu Jun  2 16:32:40 MDT 2016
+# IP Build 1577682 on Fri Jun  3 12:00:54 MDT 2016
+# Start of session at: Tue Nov 28 10:42:52 2017
+# Process ID: 10628
+# Current directory: D:/Files/SoCProject/DCOOFDMVLCTx
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent13028 D:\Files\SoCProject\DCOOFDMVLCTx\DCOOFDMVLCTx.xpr
+# Log file: D:/Files/SoCProject/DCOOFDMVLCTx/vivado.log
+# Journal file: D:/Files/SoCProject/DCOOFDMVLCTx\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project D:/Files/SoCProject/DCOOFDMVLCTx/DCOOFDMVLCTx.xpr
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'd:/Files/SoCProject/ip_repo/HermitianBuffer_1.0'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'd:/Files/SoCProject/ip_repo/FrameAssembler_1.0'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'd:/Files/SoCProject/ip_repo/QAM16_mapper_1.0'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'd:/Files/SoCProject/ip_repo/QPSK_mapper_1.0'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'd:/Files/SoCProject/ip_repo/ResetReg_1.0'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'd:/Files/SoCProject/ip_repo/TxInputBuffer_1.0'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/Xilinx/Vivado/2016.2/data/ip'.
+open_project: Time (s): cpu = 00:00:17 ; elapsed = 00:00:36 . Memory (MB): peak = 790.668 ; gain = 189.965
+update_compile_order -fileset sources_1
+exit
+INFO: [Common 17-206] Exiting Vivado at Tue Nov 28 10:44:07 2017...
