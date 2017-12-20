@@ -48,7 +48,8 @@ module ChannelEst_Eq
       reg channel_est_done = 0;
       reg out_buff_full = 0;
       
-      reg [1:0] delay_count = 0;
+      reg [1:0] delay_count_ce = 0;
+      reg [1:0] delay_count_out = 0;
      
       reg we_buff_im, we_buff_re, we_buff_eq, we_buff_cest1, we_buff_cest2, we_buff_cest3, we_buff_cest4, we_out_buff;
       reg en_buff_im, en_buff_re, en_buff_eq, en_buff_cest1, en_buff_cest2, en_buff_cest3, en_buff_cest4, en_out_buff;
@@ -108,12 +109,27 @@ module ChannelEst_Eq
   BRAM_buff_cest_3_cee BRAM_buff_cest_3_cee_inst (clk, webuff_cest3, enbuff_cest3, addrbuff_cest3, dibuff_cest3, dout_buff_cest3);   // block RAM to keep the third channel_est sequence input 
   BRAM_buff_cest_4_cee BRAM_buff_cest_4_cee_inst (clk, webuff_cest4, enbuff_cest4, addrbuff_cest4, dibuff_cest4, dout_buff_cest4);   // block RAM to keep the fourth channel_est sequence input       
       
-      
-      // buffering channel estimation sequence input
+      // channel est counter
       always @( posedge clk )
       begin
           if ( tx_done ) begin
               cnt_est <= 0;
+          end
+          else begin
+              if ( (wren == 1) && !cest4_buff_full ) begin
+                cnt_est = cnt_est + 1;
+              end
+              else begin
+                cnt_est = cnt_est;
+              end
+          end
+      end
+      
+      // buffering channel estimation sequence 1 input
+      always @( posedge clk )
+      begin
+          if ( tx_done ) begin
+              
           end
           else begin
               if ( (wren == 1) && !cest1_buff_full ) begin
@@ -121,39 +137,77 @@ module ChannelEst_Eq
                 we_buff_cest1 <= 1;
                 addr_buff_cest1 <= cnt_est;
                 di_buff_cest1 <= din[7:0];
-                
-                cnt_est = cnt_est + 1;
               end
+              else if ( cest4_buff_full && !channel_est_done ) begin
+                 en_buff_cest1 <= 1;
+                 we_buff_cest1 <= 0;
+                 addr_buff_cest1 <= cnt_est_proc;
+              end
+          end
+      end      
 
+      // buffering channel estimation sequence 2 input
+      always @( posedge clk )
+      begin
+          if ( tx_done ) begin
+              
+          end
+          else begin
               if ( cest1_buff_full && !cest2_buff_full ) begin
                 en_buff_cest2 <= 1;
                 we_buff_cest2 <= 1;
                 addr_buff_cest2 <= cnt_est - 28;
                 di_buff_cest2 <= din[7:0];
-                
-                cnt_est = cnt_est + 1;
               end
+              else if ( cest4_buff_full && !channel_est_done ) begin
+                 en_buff_cest2 <= 1;
+                 we_buff_cest2 <= 0;
+                 addr_buff_cest2 <= cnt_est_proc;
+              end                                                      
+          end
+      end
 
+      // buffering channel estimation sequence 3 input
+      always @( posedge clk )
+      begin
+          if ( tx_done ) begin
+              
+          end
+          else begin
               if ( cest2_buff_full && !cest3_buff_full ) begin
                 en_buff_cest3 <= 1;
                 we_buff_cest3 <= 1;
                 addr_buff_cest3 <= cnt_est - 56;
                 di_buff_cest3 <= din[7:0];
-                
-                cnt_est = cnt_est + 1;
-              end  
+              end
+              else if ( cest4_buff_full && !channel_est_done ) begin
+                 en_buff_cest3 <= 1;
+                 we_buff_cest3 <= 0;
+                 addr_buff_cest3 <= cnt_est_proc;
+              end               
+          end
+      end
+
+      // buffering channel estimation sequence 4 input
+      always @( posedge clk )
+      begin
+          if ( tx_done ) begin
               
+          end
+          else begin
               if ( cest3_buff_full && !cest4_buff_full ) begin
                 en_buff_cest4 <= 1;
                 we_buff_cest4 <= 1;
                 addr_buff_cest4 <= cnt_est - 84;
                 di_buff_cest4 <= din[7:0];
-                
-                cnt_est = cnt_est + 1;
-              end                                          
-              
+              end    
+              else if ( cest4_buff_full && !channel_est_done ) begin
+                 en_buff_cest4 <= 1;
+                 we_buff_cest4 <= 0;
+                 addr_buff_cest4 <= cnt_est_proc;
+              end               
           end
-      end      
+      end
 
       // channel estimation sequence 1 buffer full status
       always @( posedge clk )
@@ -219,7 +273,7 @@ module ChannelEst_Eq
           end
       end  
       
-      // buffering data input
+      // input buffer
       always @( posedge clk )
       begin
           if ( tx_done ) begin
@@ -239,6 +293,11 @@ module ChannelEst_Eq
                 
                 cnt_in = cnt_in + 1;
               end
+              else if ( in_buff_full && channel_est_done && !out_buff_full ) begin
+                 en_buff_re <= 1; en_buff_im <= 1;
+                 we_buff_re <= 0; we_buff_im <= 0;
+                 addr_buff_re <= cnt_out; addr_buff_im <= cnt_out;
+              end    
               else begin
                   cnt_in <= cnt_in;
               end
@@ -270,7 +329,6 @@ module ChannelEst_Eq
           else begin
               if ( cnt_est_proc == active_subcarr+2 ) begin
                   channel_est_done <= 1;
-                  delay_count <= 0;
               end
               else begin
                   channel_est_done <= channel_est_done;
@@ -287,7 +345,6 @@ module ChannelEst_Eq
           else begin
               if ( cnt_out == (active_subcarr*symbol_num)+2 ) begin
                   out_buff_full <= 1;
-                  delay_count <= 0;
               end
               else begin
                   out_buff_full <= out_buff_full;
@@ -295,23 +352,21 @@ module ChannelEst_Eq
           end
       end  
     
-      // channel estimating
+      // channel estimating and equalizing
       integer j;
       always @( posedge clk )
       begin
        if ( tx_done ) begin
          cnt_est_proc <= 0;
+         cnt_eq <= 0;
+         delay_count_ce <= 0;
        end
        else if ( cest4_buff_full && !channel_est_done ) begin
-        if (delay_count < 3) delay_count = delay_count + 1;
-        en_buff_cest1 <= 1; en_buff_cest2 <= 1; en_buff_cest3 <= 1; en_buff_cest4 <= 1;
-        we_buff_cest1 <= 0; we_buff_cest2 <= 0; we_buff_cest3 <= 0; we_buff_cest4 <= 0;
-        addr_buff_cest1 <= cnt_est_proc; addr_buff_cest2 <= cnt_est_proc; addr_buff_cest3 <= cnt_est_proc; addr_buff_cest4 <= cnt_est_proc;
-         
+        if (delay_count_ce < 3) delay_count_ce = delay_count_ce + 1;
         en_buff_eq <= 1;
         we_buff_eq <= 1;
         
-        if (delay_count == 3) begin
+        if (delay_count_ce == 3) begin
            addr_buff_eq <= cnt_est_proc-2;               // includes 2 clock register delay
         end
         di_buff_eq = (dout_buff_cest1 + dout_buff_cest2 + dout_buff_cest3 + dout_buff_cest4)/4 ;           // store the data     
@@ -324,55 +379,50 @@ module ChannelEst_Eq
              
         cnt_est_proc = cnt_est_proc + 1;       
        end
+       else if ( in_buff_full && channel_est_done && !out_buff_full ) begin
+          en_buff_eq <= 1;
+          we_buff_eq <= 0;
+          addr_buff_eq <= cnt_eq;
+          cnt_eq = cnt_eq + 1;
+          
+          if (cnt_eq == 28) cnt_eq <= 0;
+       end      
        else begin
          cnt_est_proc = cnt_est_proc;
+         cnt_eq = cnt_eq;
        end
       end
       
-      // channel equalizing
+      // output buffer
       integer k,l;
       always @( posedge clk )
       begin
        if ( tx_done ) begin
          cnt_out <= 0;
-         cnt_eq <= 0;
+         delay_count_out <= 0;
        end
        else if ( in_buff_full && channel_est_done && !out_buff_full ) begin
-            if (delay_count < 3) delay_count = delay_count + 1;
-            en_buff_re <= 1; en_buff_im <= 1; en_buff_eq <= 1;
-            we_buff_re <= 0; we_buff_im <= 0; we_buff_eq <= 0;
-            addr_buff_re <= cnt_out; addr_buff_im <= cnt_out; addr_buff_eq <= cnt_eq;          
+            if (delay_count_out < 3) delay_count_out = delay_count_out + 1;       
             
             en_out_buff <= 1;
             we_out_buff <= 1;
-            if (delay_count == 3) begin
+            if (delay_count_out == 3) begin
                 addr_out_buff <= cnt_out-2;               // includes 2 clock register delay
             end
             di_out_buff <= {dout_buff_im/* /dout_buff_eq*/, dout_buff_re/* /dout_buff_eq*/};           // store the data
        
             cnt_out = cnt_out + 1;
-            cnt_eq = cnt_eq + 1;
-            
-            if (cnt_eq == 28) cnt_eq <= 0;
+       end
+       else if ( out_buff_full ) begin
+             en_out_buff <= 1;
+             we_out_buff <= 0;
+             addr_out_buff <= read_ptr;
+             dout <= dout_out_buff;
        end
        else begin
-         cnt_out = cnt_out;
-         cnt_eq = cnt_eq;
+         dout <= dout;
+         cnt_out <= cnt_out;
        end
-      end      
-        
-      // stream data output
-      always @( posedge clk )
-      begin
-          if ( out_buff_full ) begin
-            en_out_buff <= 1;
-            we_out_buff <= 0;
-            addr_out_buff <= read_ptr;
-            dout <= dout_out_buff;
-          end
-          else begin
-              dout <= dout;
-          end
-      end    
+      end          
     
 endmodule
