@@ -39,6 +39,9 @@ module HermRemover
     reg [10:0] cnt_in = 0;
     reg in_buff_full = 0;
     reg out_buff_full = 0;
+
+    integer j = 0;
+    integer k = 1;    
     
     reg we_buff, we_out_buff;
     reg en_buff, en_out_buff;
@@ -65,11 +68,12 @@ module HermRemover
     BRAM_buff_rmv BRAM_buff_rmv_inst (clk, webuff, enbuff, addrbuff, dibuff, dout_buff);      // temporary buffer to keep the data from the FFT output
     BRAM_out_buff_rmv BRAM_out_buff_rmv_inst (clk, weout_buff, enout_buff, addrout_buff, diout_buff, dout_out_buff);      // temporary buffer to store data input after hermitan symmetry removed
     
-    // buffering data input
+    // input buffer
     always @( posedge clk )
     begin
         if ( tx_done ) begin
             cnt_in <= 0;
+            k <= 1;
         end
         else begin
             if ( (wren == 1) && !in_buff_full ) begin
@@ -79,6 +83,16 @@ module HermRemover
                 di_buff <= din;
                 cnt_in = cnt_in + 1;
             end
+            else if ( in_buff_full && !out_buff_full  ) begin
+                en_buff <= 1;
+                we_buff <= 0;
+                addr_buff <= k; 
+                
+                k = k + 1;
+                if ( k == 29 || k == 93 || k == 157 || k == 221 || k == 285 || k == 349 || k == 413 || k == 477 || k == 541 || k == 605 || k == 669 ) begin
+                    k = k + 36;
+                end        
+            end            
             else begin
                 cnt_in <= cnt_in;
             end
@@ -104,20 +118,17 @@ module HermRemover
   ////////////////////////
   // Hermitian remover //
   ///////////////////////
-  integer j = 0;
-  integer k = 1;
   
+  // output buffer
   reg [1:0] delay_count = 0;  
   always @( posedge clk )
     begin
       if ( tx_done ) begin
           out_buff_full <= 0;
+          j <= 0;
       end
       else if ( in_buff_full && !out_buff_full  ) begin
           if (delay_count < 3) delay_count = delay_count + 1;
-          en_buff <= 1;
-          we_buff <= 0;
-          addr_buff <= k; 
           en_out_buff <= 1;
           we_out_buff <= 1;
           if (delay_count == 3) begin
@@ -125,31 +136,22 @@ module HermRemover
           end
           di_out_buff <= dout_buff;           // store the data
           
-          k = k + 1;
           j = j + 1;
-          if ( k == 29 || k == 93 || k == 157 || k == 221 || k == 285 || k == 349 || k == 413 || k == 477 || k == 541 || k == 605 || k == 669 ) begin
-              k = k + 36;
-          end    
           if ( k == 733+2 ) begin
               j = 0;
               delay_count = 0;
               out_buff_full <= 1;
           end        
       end
-    end
-      
-    // stream data output
-    always @( posedge clk )
-    begin
-        if ( out_buff_full ) begin
-            en_out_buff <= 1;
-            we_out_buff <= 0;
-            addr_out_buff <= read_ptr;
-            dout <= dout_out_buff;
-        end
-        else begin
-            dout <= dout;
-        end
-    end    
+      else if ( out_buff_full ) begin
+          en_out_buff <= 1;
+          we_out_buff <= 0;
+          addr_out_buff <= read_ptr;
+          dout <= dout_out_buff;
+      end
+      else begin
+          dout <= dout;
+      end
+    end   
     
 endmodule

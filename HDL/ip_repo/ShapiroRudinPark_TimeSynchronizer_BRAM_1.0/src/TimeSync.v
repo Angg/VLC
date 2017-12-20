@@ -56,6 +56,41 @@ module TimeSync
   
   integer cnt_time_sync = 0;                        // counter for time synchronizing process
   integer cnt_frame_detect = 0;                     // counter for frame index detection process
+  
+  integer left_window_idx = fft_point - 1;            // index of left window to calculate the dot product of data input
+  integer right_window_idx = fft_point + CP_num + 1;  // index of right window to calculate the dot product of data input
+  integer dot_product_iteration_idx = 0;
+  integer window_sliding_idx = 1;
+  integer P_idx = 0;                                    // index of RAM buffer of P value
+  
+  reg dot_product_store_flag = 0;
+  reg [1:0] store_count_P = 0;
+  reg store_flag_P = 0;
+  
+  integer window_middle_idx = fft_point + CP_num;
+  
+  integer denom_window_idx = fft_point + CP_num;
+  integer R_idx = 0;
+  integer R_iteration_idx = 0;
+  reg unsigned [31:0] abs_R;
+  reg [1:0] store_count_R = 0;
+  reg R_store_flag = 0;
+  reg [31:0] temp_R = 0; 
+  
+  integer M_idx = 0;
+  
+  reg [1:0] delay_count_P = 0;
+  reg [1:0] delay_count_R = 0;
+  reg [1:0] delay_count_M = 0;
+  reg [1:0] delay_count_out = 0;  
+  reg signed [31:0] temp_P = 0;  
+  reg unsigned [31:0] abs_P;  
+
+  reg unsigned [11:0] temp = 0;
+  reg [11:0] temp_index = 0;
+  reg [31:0] buff_data_idx = 0;
+  
+  integer out_buff_idx = 0;  
 
   reg we_buff, we_buff_1, we_P, we_R, we_M, we_out_buff;
   reg en_buff, en_buff_1, en_P, en_R, en_M, en_out_buff;
@@ -127,6 +162,26 @@ module TimeSync
             di_buff <= din; di_buff_1 <= din;
             cnt_in = cnt_in + 1;
           end
+          else if ( in_buff_full && !P_done ) begin
+            en_buff <= 1; en_buff_1 <= 1;
+            we_buff <= 0; we_buff_1 <= 0;
+                
+            if ( dot_product_iteration_idx == fft_point ) begin
+                addr_buff <= window_middle_idx; addr_buff_1 <= window_middle_idx;
+            end else begin
+                addr_buff <= left_window_idx; addr_buff_1 <= right_window_idx;
+            end
+          end 
+          else if ( P_done && !R_done ) begin   
+             en_buff <= 1; en_buff_1 <= 1;
+             we_buff <= 0; we_buff_1 <= 0;
+             addr_buff <= denom_window_idx + R_iteration_idx; addr_buff_1 <= denom_window_idx + R_iteration_idx; 
+          end
+          else if ( frame_index_detected && !out_buff_full ) begin
+            en_buff <= 1;
+            we_buff <= 0;
+            addr_buff <= buff_data_idx-1; 
+          end          
           else begin
               cnt_in <= cnt_in;
           end
@@ -168,21 +223,6 @@ module TimeSync
   ////////////////////////
   // Time synchronizing //
   ///////////////////////
-  integer left_window_idx = fft_point - 1;            // index of left window to calculate the dot product of data input
-  integer right_window_idx = fft_point + CP_num + 1;  // index of right window to calculate the dot product of data input
-  integer dot_product_iteration_idx = 0;
-  integer window_sliding_idx = 1;
-  integer P_idx = 0;                                    // index of RAM buffer of P value
-  
-  reg dot_product_store_flag = 0;
-  reg [1:0] store_count_P = 0;
-  reg store_flag_P = 0;
-  
-  integer window_middle_idx = fft_point + CP_num;
-  
-  reg [1:0] delay_count = 0;
-  reg signed [31:0] temp_P = 0;  
-  reg unsigned [31:0] abs_P;
   
   // calculate P
   always @( posedge clk )
@@ -190,26 +230,22 @@ module TimeSync
       if ( tx_done ) begin
           P_done = 0;
           temp_P = 0;
-          abs_P = 0;
           left_window_idx = fft_point - 1; 
           right_window_idx = fft_point + CP_num + 1; 
           dot_product_iteration_idx = 0;
           window_sliding_idx = 1;
           P_idx = 0; 
           dot_product_store_flag = 0;
-          store_count_P = 0;                                   
+          store_count_P = 0;   
+          window_middle_idx = fft_point + CP_num;                                
       end
       else if ( in_buff_full && !P_done ) begin
-          if (delay_count < 3) delay_count = delay_count + 1;
-          en_buff <= 1; en_buff_1 <= 1;
-          we_buff <= 0; we_buff_1 <= 0;
-          addr_buff <= left_window_idx; addr_buff_1 <= right_window_idx;
-          
+          if (delay_count_P < 3) delay_count_P = delay_count_P + 1;
           dot_product_iteration_idx = dot_product_iteration_idx  + 1;
           
-          if ( (delay_count == 3) && (dot_product_iteration_idx != 3) ) begin   // includes 2 clock register delay
+          if ( (delay_count_P == 3) && (dot_product_iteration_idx != 3) ) begin   // includes 2 clock register delay
                 temp_P <=  temp_P + (dout_buff * dout_buff_1);           // temporary store the P value             
-          end else if ( (delay_count == 3) && (dot_product_iteration_idx == 3) ) begin
+          end else if ( (delay_count_P == 3) && (dot_product_iteration_idx == 3) ) begin
                 temp_P <= dout_buff * dout_buff_1; 
           end
           
@@ -220,10 +256,6 @@ module TimeSync
             right_window_idx = fft_point + CP_num + 1 + window_sliding_idx;
             left_window_idx = fft_point - 1 + window_sliding_idx;
             window_sliding_idx = window_sliding_idx + 1;
-            
-            en_buff <= 1; en_buff_1 <= 1;
-            we_buff <= 0; we_buff_1 <= 0;
-            addr_buff <= window_middle_idx; addr_buff_1 <= window_middle_idx;
             window_middle_idx = window_middle_idx + 1;  
             dot_product_store_flag = 1;
             dot_product_iteration_idx = 0;
@@ -248,18 +280,15 @@ module TimeSync
               
           if ( window_middle_idx == (2*OFDM_burst_size)-fft_point+2 ) begin
               P_done <= 1;
-              delay_count <= 0;
+              delay_count_P <= 0;
           end        
       end
-    end
-
-   integer denom_window_idx = fft_point + CP_num;
-   integer R_idx = 0;
-   integer R_iteration_idx = 0;
-   reg unsigned [31:0] abs_R;
-   reg [1:0] store_count_R = 0;
-   reg R_store_flag = 0;
-   reg [31:0] temp_R = 0;  
+      else if ( R_done && !M_done ) begin
+          en_P <= 1;
+          we_P <= 0;
+          addr_P <= M_idx;
+      end
+    end 
    
   // calculate R
   always @( posedge clk )
@@ -276,14 +305,11 @@ module TimeSync
           temp_R = 0; 
       end
       else if ( P_done && !R_done ) begin
-          if (delay_count < 3) delay_count = delay_count + 1;      
-          en_buff <= 1; en_buff_1 <= 1;
-          we_buff <= 0; we_buff_1 <= 0;
-          addr_buff <= denom_window_idx + R_iteration_idx; addr_buff_1 <= denom_window_idx + R_iteration_idx;
+          if (delay_count_R < 3) delay_count_R = delay_count_R + 1;
 
           R_iteration_idx = R_iteration_idx + 1;
 
-          if (delay_count == 3) begin   // includes 2 clock register delay
+          if (delay_count_R == 3) begin   // includes 2 clock register delay
             if (dout_buff < 0) begin
                 abs_R = dout_buff*(-1);
                 if (R_iteration_idx != 1) begin
@@ -301,8 +327,6 @@ module TimeSync
             end          
           end
           
-//          temp_R <=  temp_R + (abs_R**2);
-          
           if ( R_iteration_idx == fft_point+1 ) begin
             R_iteration_idx = 0;
             denom_window_idx = denom_window_idx + 1;  
@@ -314,34 +338,19 @@ module TimeSync
 //            temp_R <= 0;
             
             R_idx = R_idx + 1;
-//            R_store_flag = 0;
-//            store_count_R = 0;
           end
-          
-//           if (R_store_flag == 1) begin
-//            store_count_R <= store_count_R + 1; 
-//          end         
-          
-//          if ( store_count_R == 3 ) begin
-//            en_R <= 1;
-//            we_R <= 1;
-//            addr_R <= R_idx;
-//            di_R <= temp_R;
-//            temp_R <= 0;
-            
-//            R_idx = R_idx + 1;
-//            R_store_flag = 0;
-//            store_count_R = 0;
-//          end
 
           if ( R_idx == 2098 ) begin
             R_done <= 1;
-            delay_count <= 0;
+            delay_count_R <= 0;
           end
       end
+      else if ( R_done && !M_done ) begin
+          en_R <= 1;
+          we_R <= 0;
+          addr_R <= M_idx; 
+      end      
     end
-
-  integer M_idx = 0;
 
   // calculate M
   always @( posedge clk )
@@ -349,23 +358,16 @@ module TimeSync
       if ( tx_done ) begin
           M_done = 0;
           M_idx = 0;
+          abs_P = 0;
       end
       else if ( R_done && !M_done ) begin
-          if (delay_count < 3) delay_count = delay_count + 1;
-          en_P <= 1;
-          we_P <= 0;
-          addr_P <= M_idx;
-
-          en_R <= 1;
-          we_R <= 0;
-          addr_R <= M_idx; 
-          
+          if (delay_count_M < 3) delay_count_M = delay_count_M + 1;
           en_M <= 1;
           we_M <= 1;
  
           M_idx <= M_idx+1;
           
-          if (delay_count == 3) begin
+          if (delay_count_M == 3) begin
               addr_M <= M_idx-2;               // includes 2 clock register delay
               if (dout_P < 0) begin
                 abs_P <= dout_P*(-1);  
@@ -384,16 +386,18 @@ module TimeSync
 
           if ( M_idx == (2*OFDM_burst_size)-fft_point-(fft_point+CP_num)+2 ) begin
             M_done <= 1;
-            delay_count <= 0;
+            delay_count_M <= 0;
           end
       end
+      else if ( M_done && !frame_index_detected ) begin
+        en_M <= 1;
+        we_M <= 0;
+        addr_M <= cnt_frame_detect; 
+      end      
     end
   
   // Frame index detection
-  reg unsigned [11:0] temp = 0;
-  reg [11:0] temp_index = 0;
-  reg [31:0] buff_data_idx;
-  
+
   always @( posedge clk )
   begin
    if ( tx_done ) begin
@@ -402,18 +406,12 @@ module TimeSync
      temp_index = 0;
    end
    else if ( M_done && !frame_index_detected ) begin
-            if (delay_count < 3) delay_count = delay_count + 1;
-            en_M <= 1;
-            we_M <= 0;
-            addr_M <= cnt_frame_detect; 
+    if ( dout_M > temp ) begin
+        temp <= dout_M;
+        temp_index <= cnt_frame_detect-2;
+    end
             
-            if ( dout_M > temp ) begin
-                temp <= dout_M;
-                temp_index <= cnt_frame_detect-2;
-                buff_data_idx <= cnt_frame_detect-2;
-            end
-            
-            cnt_frame_detect = cnt_frame_detect+1;
+    cnt_frame_detect = cnt_frame_detect+1;
    end
    else begin
      temp <= temp;
@@ -421,9 +419,35 @@ module TimeSync
    end
   end
   
-  // Remove cyclic prefix
-  integer out_buff_idx = 0;
+  // Buff data index
+  always @( posedge clk )
+  begin
+   if ( tx_done ) begin
+     buff_data_idx <= 0;
+   end
+   else if (  M_done && !frame_index_detected ) begin
+      if ( dout_M > temp ) begin
+          buff_data_idx <= cnt_frame_detect-2;
+      end
+   end
+   else if ( frame_index_detected && !out_buff_full ) begin
+   
+         if ( buff_data_idx == fft_point+temp_index || buff_data_idx == (6*fft_point)+(5*CP_num)+temp_index || buff_data_idx == (7*fft_point)+(6*CP_num)+temp_index || buff_data_idx == (8*fft_point)+(7*CP_num)+temp_index || buff_data_idx == (9*fft_point)+(8*CP_num)+temp_index || buff_data_idx == (10*fft_point)+(9*CP_num)+temp_index || buff_data_idx == (11*fft_point)+(10*CP_num)+temp_index || buff_data_idx == (12*fft_point)+(11*CP_num)+temp_index || buff_data_idx == (13*fft_point)+(12*CP_num)+temp_index ) 
+         begin
+             buff_data_idx = buff_data_idx + CP_num + 1;
+         end
+         else if ( buff_data_idx == (2*fft_point)+CP_num+temp_index || buff_data_idx == (4*fft_point)+(3*CP_num)+temp_index )
+         begin
+            buff_data_idx = buff_data_idx + CP_num + fft_point + CP_num + 1;
+         end
+         else 
+         begin
+            buff_data_idx = buff_data_idx + 1;
+         end      
+    end
+  end   
   
+  // Remove cyclic prefix and output buffering
   always @( posedge clk )
   begin
    if ( tx_done ) begin
@@ -431,55 +455,30 @@ module TimeSync
      out_buff_idx = 0;
    end
    else if ( frame_index_detected && !out_buff_full ) begin
-         // channel estimation symbol
-         if (delay_count < 3) delay_count = delay_count + 1;
-         en_buff <= 1;
-         we_buff <= 0;
-         addr_buff <= buff_data_idx; 
+         if (delay_count_out < 3) delay_count_out = delay_count_out + 1;
          en_out_buff <= 1;
          we_out_buff <= 1;
-         if (delay_count == 3) begin
+         if (delay_count_out == 3) begin
              addr_out_buff <= out_buff_idx-2;               // includes 2 clock register delay
          end
          di_out_buff <= dout_buff;           // store the data
-         
          out_buff_idx <= out_buff_idx + 1;
          
-         if ( buff_data_idx == fft_point+temp_index-1 || buff_data_idx == (6*fft_point)+(5*CP_num)+temp_index-1 || buff_data_idx == (7*fft_point)+(6*CP_num)+temp_index-1 || buff_data_idx == (8*fft_point)+(7*CP_num)+temp_index-1 || buff_data_idx == (9*fft_point)+(8*CP_num)+temp_index-1 || buff_data_idx == (10*fft_point)+(9*CP_num)+temp_index-1 || buff_data_idx == (11*fft_point)+(10*CP_num)+temp_index-1 || buff_data_idx == (12*fft_point)+(11*CP_num)+temp_index-1 || buff_data_idx == (13*fft_point)+(12*CP_num)+temp_index-1 ) 
-         begin
-             buff_data_idx = buff_data_idx + CP_num + 1;
-         end
-         else if ( buff_data_idx == (2*fft_point)+CP_num+temp_index-1 || buff_data_idx == (4*fft_point)+(3*CP_num)+temp_index-1 )
-         begin
-            buff_data_idx = buff_data_idx + CP_num + fft_point + CP_num + 1;
-         end
-         else 
-         begin
-            buff_data_idx = buff_data_idx + 1;
-         end
-             
          if ( out_buff_idx == OFDM_burst_data_size+2 ) begin
-             delay_count <= 0;
+             delay_count_out <= 0;
              out_buff_full <= 1;
          end 
    end
+   else if ( out_buff_full ) begin
+       en_out_buff <= 1;
+       we_out_buff <= 0;
+       addr_out_buff <= read_ptr;
+       dout <= dout_out_buff;
+   end   
    else begin
-    out_buff_full <= out_buff_full;
+        out_buff_full <= out_buff_full;
+        dout <= dout;
    end
-  end  
-
-    // stream data output
-    always @( posedge clk )
-    begin
-        if ( out_buff_full ) begin
-            en_out_buff <= 1;
-            we_out_buff <= 0;
-            addr_out_buff <= read_ptr;
-            dout <= dout_out_buff;
-        end
-        else begin
-            dout <= dout;
-        end
-    end  
+  end    
 
 endmodule

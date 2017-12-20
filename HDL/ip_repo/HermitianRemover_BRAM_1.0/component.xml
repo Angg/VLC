@@ -208,7 +208,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>fa7e0141</spirit:value>
+            <spirit:value>9f02e0d5</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -224,7 +224,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>fa7e0141</spirit:value>
+            <spirit:value>9f02e0d5</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -576,8 +576,8 @@
         <xilinx:taxonomy>AXI_Peripheral</xilinx:taxonomy>
       </xilinx:taxonomies>
       <xilinx:displayName>HermitianRemover_BRAM_v1.0</xilinx:displayName>
-      <xilinx:coreRevision>12</xilinx:coreRevision>
-      <xilinx:coreCreationDateTime>2017-12-17T05:24:48Z</xilinx:coreCreationDateTime>
+      <xilinx:coreRevision>15</xilinx:coreRevision>
+      <xilinx:coreCreationDateTime>2017-12-20T05:01:54Z</xilinx:coreCreationDateTime>
       <xilinx:tags>
         <xilinx:tag xilinx:name="xilinx.com:user:HermitianRemover_BRAM:1.0_ARCHIVE_LOCATION">D:/Files/SoCProject/ip_repo/HermitianRemover_BRAM_1.0</xilinx:tag>
       </xilinx:tags>
@@ -585,7 +585,7 @@
     <xilinx:packagingInfo>
       <xilinx:xilinxVersion>2016.2</xilinx:xilinxVersion>
       <xilinx:checksum xilinx:scope="busInterfaces" xilinx:value="df25e557"/>
-      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="c6a1bfda"/>
+      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="06e95374"/>
       <xilinx:checksum xilinx:scope="ports" xilinx:value="27c019a7"/>
       <xilinx:checksum xilinx:scope="hdlParameters" xilinx:value="5133538f"/>
       <xilinx:checksum xilinx:scope="parameters" xilinx:value="28c5e7dd"/>
