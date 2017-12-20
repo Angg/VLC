@@ -1,0 +1,103 @@
+{
+   guistr: "# # String gsaved with Nlview 6.5.12  2016-01-29 bk=1.3547 VDI=39 GEI=35 GUI=JA:1.6
+#  -string -flagsOSRD
+preplace port dout_valid -pg 1 -y 460 -defaultsOSRD
+preplace port done -pg 1 -y 130 -defaultsOSRD
+preplace port clk -pg 1 -y 220 -defaultsOSRD
+preplace port nreset -pg 1 -y 360 -defaultsOSRD
+preplace portBus dout -pg 1 -y 420 -defaultsOSRD
+preplace inst axis_data_fifo_1 -pg 1 -lvl 5 -y 260 -defaultsOSRD
+preplace inst FrameAssembler_0 -pg 1 -lvl 10 -y 780 -defaultsOSRD
+preplace inst axis_data_fifo_2 -pg 1 -lvl 7 -y 280 -defaultsOSRD
+preplace inst viterbi_0 -pg 1 -lvl 28 -y 430 -defaultsOSRD
+preplace inst xlslice_0 -pg 1 -lvl 9 -y 180 -defaultsOSRD
+preplace inst QPSK_demapper_0 -pg 1 -lvl 23 -y 330 -defaultsOSRD
+preplace inst axis_data_fifo_3 -pg 1 -lvl 22 -y 340 -defaultsOSRD
+preplace inst nResetCounter_0 -pg 1 -lvl 27 -y 410 -defaultsOSRD
+preplace inst xlslice_1 -pg 1 -lvl 17 -y 390 -defaultsOSRD
+preplace inst xlconstant_0 -pg 1 -lvl 12 -y 410 -defaultsOSRD
+preplace inst FrameAssembler_BRAM_0 -pg 1 -lvl 10 -y 330 -defaultsOSRD
+preplace inst axis_data_fifo_4 -pg 1 -lvl 20 -y 310 -defaultsOSRD
+preplace inst xlslice_2 -pg 1 -lvl 17 -y 470 -defaultsOSRD
+preplace inst xlconstant_1 -pg 1 -lvl 1 -y 300 -defaultsOSRD
+preplace inst ChannelEstimator_Equalizer_BRAM_0 -pg 1 -lvl 21 -y 330 -defaultsOSRD
+preplace inst axis_data_fifo_5 -pg 1 -lvl 15 -y 740 -defaultsOSRD
+preplace inst xlconstant_2 -pg 1 -lvl 25 -y 680 -defaultsOSRD
+preplace inst xlslice_3 -pg 1 -lvl 25 -y 600 -defaultsOSRD
+preplace inst QAM16_mapper_0 -pg 1 -lvl 2 -y 410 -defaultsOSRD
+preplace inst xlconstant_3 -pg 1 -lvl 7 -y 410 -defaultsOSRD
+preplace inst xlslice_4 -pg 1 -lvl 25 -y 520 -defaultsOSRD
+preplace inst xlconcat_0 -pg 1 -lvl 14 -y 240 -defaultsOSRD
+preplace inst HermitianRemover_BRAM_0 -pg 1 -lvl 19 -y 420 -defaultsOSRD
+preplace inst HermitianBuffer_BRAM_0 -pg 1 -lvl 6 -y 280 -defaultsOSRD
+preplace inst xlconstant_4 -pg 1 -lvl 15 -y 1330 -defaultsOSRD
+preplace inst c_counter_binary_0 -pg 1 -lvl 1 -y 220 -defaultsOSRD
+preplace inst xlconcat_1 -pg 1 -lvl 18 -y 340 -defaultsOSRD
+preplace inst xfft_0 -pg 1 -lvl 8 -y 590 -defaultsOSRD
+preplace inst convolution_0 -pg 1 -lvl 2 -y 240 -defaultsOSRD
+preplace inst xlconcat_2 -pg 1 -lvl 26 -y 630 -defaultsOSRD
+preplace inst xfft_1 -pg 1 -lvl 16 -y 520 -defaultsOSRD
+preplace inst sid_0 -pg 1 -lvl 3 -y 260 -defaultsOSRD
+preplace inst xlconcat_3 -pg 1 -lvl 26 -y 530 -defaultsOSRD
+preplace inst sid_1 -pg 1 -lvl 24 -y 350 -defaultsOSRD
+preplace inst xlconcat_4 -pg 1 -lvl 27 -y 540 -defaultsOSRD
+preplace inst QAM16_demapper_0 -pg 1 -lvl 2 -y 60 -defaultsOSRD
+preplace inst QPSK_mapper_0 -pg 1 -lvl 4 -y 250 -defaultsOSRD
+preplace inst ShapiroRudinPark_TimeSynchronizer_BRAM_0 -pg 1 -lvl 13 -y 300 -defaultsOSRD
+preplace inst HermitianBuffer_0 -pg 1 -lvl 6 -y 60 -defaultsOSRD
+preplace inst axis_data_fifo_0 -pg 1 -lvl 11 -y 280 -defaultsOSRD
+preplace netloc xlconstant_1_dout 1 1 28 200 140 NJ 140 NJ 140 NJ 140 NJ 150 NJ 150 2290 440 NJ 440 NJ 480 NJ 480 NJ 480 NJ 480 NJ 480 NJ 480 5060 370 NJ 570 NJ 570 NJ 570 NJ 480 NJ 480 NJ 480 NJ 480 NJ 480 NJ 330 NJ 330 NJ 330 NJ 330 9170
+preplace netloc ChannelEstimator_Equalizer_BRAM_0_M00_AXIS 1 21 1 7260
+preplace netloc axis_data_fifo_4_M_AXIS 1 20 1 6990
+preplace netloc sid_0_M_AXIS_DATA 1 3 1 N
+preplace netloc xfft_0_m_axis_data_tlast 1 8 2 NJ 280 N
+preplace netloc sid_1_m_axis_data_tdata 1 24 1 8160
+preplace netloc xlconstant_2_dout 1 25 1 8370
+preplace netloc xlslice_4_Dout 1 25 1 NJ
+preplace netloc xlslice_3_Dout 1 25 1 NJ
+preplace netloc xlslice_1_Dout 1 17 1 NJ
+preplace netloc xfft_1_m_axis_data_tdata 1 16 1 5480
+preplace netloc QPSK_demapper_0_M00_AXIS 1 23 1 N
+preplace netloc FrameAssembler_BRAM_0_s00_axis_tready 1 8 2 NJ 320 N
+preplace netloc axis_data_fifo_5_s_axis_tready 1 13 2 NJ 340 4630
+preplace netloc xlconcat_1_dout 1 18 1 6110
+preplace netloc viterbi_0_s_axis_data_tready 1 24 4 8150 320 NJ 320 NJ 320 NJ
+preplace netloc FrameAssembler_BRAM_0_M00_AXIS 1 10 1 3410
+preplace netloc axis_data_fifo_5_M_AXIS 1 15 1 5030
+preplace netloc done_1 1 0 10 NJ -30 NJ -30 NJ -30 NJ -30 NJ -30 NJ -30 NJ -30 NJ -30 NJ -30 NJ
+preplace netloc viterbi_0_m_axis_data_tdata 1 28 1 NJ
+preplace netloc xfft_1_m_axis_data_tlast 1 16 3 5460 340 NJ 400 NJ
+preplace netloc nResetCounter_0_out_sig 1 27 1 8760
+preplace netloc xlconcat_3_dout 1 26 1 8550
+preplace netloc HermitianRemover_BRAM_0_M00_AXIS 1 19 1 6650
+preplace netloc convolution_0_M_AXIS_DATA 1 2 1 N
+preplace netloc xlconcat_0_dout 1 14 1 4680
+preplace netloc clk_1 1 0 28 10 170 210 150 530 160 860 160 1090 160 1480 190 1920 200 2260 230 NJ 230 3110 190 3400 200 N 200 NJ 460 N 460 4660 460 5040 360 NJ 530 NJ 530 6120 550 6670 390 6990 420 7270 420 7590 400 7820 460 NJ 460 NJ 460 NJ 470 NJ
+preplace netloc sid_1_m_axis_data_tvalid 1 24 3 N 350 NJ 350 NJ
+preplace netloc xlconstant_0_dout 1 12 2 NJ 210 4360
+preplace netloc c_counter_binary_0_Q 1 1 1 NJ
+preplace netloc xfft_0_m_axis_data_tdata 1 8 1 2690
+preplace netloc xfft_1_m_axis_data_tvalid 1 16 3 5450 520 NJ 410 NJ
+preplace netloc xlslice_2_Dout 1 17 1 NJ
+preplace netloc xfft_0_m_axis_data_tvalid 1 8 2 NJ 300 N
+preplace netloc ShapiroRudinPark_TimeSynchronizer_BRAM_0_m00_axis_tdata 1 13 1 4370
+preplace netloc HermitianRemover_BRAM_0_s00_axis_tready 1 16 3 5450 330 NJ 420 NJ
+preplace netloc xlconstant_4_dout 1 15 1 NJ
+preplace netloc axis_data_fifo_0_M_AXIS 1 11 2 NJ 250 3960
+preplace netloc axis_data_fifo_1_M_AXIS 1 5 1 1470
+preplace netloc QPSK_mapper_0_M00_AXIS 1 4 1 1100
+preplace netloc viterbi_0_m_axis_data_tvalid 1 28 1 NJ
+preplace netloc HermitianBuffer_BRAM_0_M00_AXIS 1 6 1 1930
+preplace netloc axis_data_fifo_2_M_AXIS 1 7 1 2280
+preplace netloc axis_data_fifo_3_M_AXIS 1 22 1 N
+preplace netloc ShapiroRudinPark_TimeSynchronizer_BRAM_0_m00_axis_tvalid 1 13 2 NJ 320 4670
+preplace netloc ShapiroRudinPark_TimeSynchronizer_BRAM_0_m00_axis_tlast 1 13 2 NJ 300 4640
+preplace netloc nreset_1 1 0 28 NJ 360 190 -10 540 180 850 180 1080 180 1490 180 1940 180 2270 240 NJ 240 3090 180 3420 180 N 180 NJ 470 N 470 4650 470 5020 320 NJ 320 NJ 460 6110 560 6660 400 7000 430 7260 430 7600 410 7830 470 NJ 470 NJ 470 8550 480 NJ
+preplace netloc xlconcat_4_dout 1 27 1 8770
+preplace netloc xlconcat_2_dout 1 26 1 8560
+preplace netloc xlslice_0_Dout 1 9 1 3080
+preplace netloc xlconstant_3_dout 1 7 1 NJ
+levelinfo -pg 1 -10 100 370 700 970 1320 1800 2100 2490 2990 3260 3620 3900 4210 4540 4850 5250 5770 6020 6510 6840 7140 7440 7710 7990 8270 8460 8670 8980 9190 -top -40 -bot 1380
+",
+}
+0

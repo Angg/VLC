@@ -373,13 +373,6 @@
   "../../../bd/Tx_Design/ip/Tx_Design_axis_data_fifo_0_0/sim/Tx_Design_axis_data_fifo_0_0.v" \
   "../../../bd/Tx_Design/ip/Tx_Design_axis_data_fifo_0_1/sim/Tx_Design_axis_data_fifo_0_1.v" \
   "../../../bd/Tx_Design/ip/Tx_Design_axis_data_fifo_1_0/sim/Tx_Design_axis_data_fifo_1_0.v" \
-  "../../../bd/Tx_Design/ipshared/xilinx.com/frameassembler_bram_v1_0/src/BRAM_out_buff_asm.v" \
-  "../../../bd/Tx_Design/ipshared/xilinx.com/frameassembler_bram_v1_0/src/BRAM_buff_asm.v" \
-  "../../../bd/Tx_Design/ipshared/xilinx.com/frameassembler_bram_v1_0/src/Assembler.v" \
-  "../../../bd/Tx_Design/ipshared/xilinx.com/frameassembler_bram_v1_0/hdl/FrameAssembler_BRAM_v1_0_S00_AXIS.v" \
-  "../../../bd/Tx_Design/ipshared/xilinx.com/frameassembler_bram_v1_0/hdl/FrameAssembler_BRAM_v1_0_M00_AXIS.v" \
-  "../../../bd/Tx_Design/ipshared/xilinx.com/frameassembler_bram_v1_0/hdl/FrameAssembler_BRAM_v1_0.v" \
-  "../../../bd/Tx_Design/ip/Tx_Design_FrameAssembler_BRAM_0_1/sim/Tx_Design_FrameAssembler_BRAM_0_1.v" \
   "../../../bd/Tx_Design/ipshared/xilinx.com/hermitianbuffer_bram_v1_0/src/BRAM_out_buff.v" \
   "../../../bd/Tx_Design/ipshared/xilinx.com/hermitianbuffer_bram_v1_0/src/BRAM_buff_conj.v" \
   "../../../bd/Tx_Design/ipshared/xilinx.com/hermitianbuffer_bram_v1_0/src/BRAM_buff.v" \
@@ -387,7 +380,14 @@
   "../../../bd/Tx_Design/ipshared/xilinx.com/hermitianbuffer_bram_v1_0/hdl/HermitianBuffer_BRAM_v1_0_S00_AXIS.v" \
   "../../../bd/Tx_Design/ipshared/xilinx.com/hermitianbuffer_bram_v1_0/hdl/HermitianBuffer_BRAM_v1_0_M00_AXIS.v" \
   "../../../bd/Tx_Design/ipshared/xilinx.com/hermitianbuffer_bram_v1_0/hdl/HermitianBuffer_BRAM_v1_0.v" \
-  "../../../bd/Tx_Design/ip/Tx_Design_HermitianBuffer_BRAM_0_1/sim/Tx_Design_HermitianBuffer_BRAM_0_1.v" \
+  "../../../bd/Tx_Design/ip/Tx_Design_HermitianBuffer_BRAM_0_0/sim/Tx_Design_HermitianBuffer_BRAM_0_0.v" \
+  "../../../bd/Tx_Design/ipshared/xilinx.com/frameassembler_bram_v1_0/src/BRAM_out_buff_asm.v" \
+  "../../../bd/Tx_Design/ipshared/xilinx.com/frameassembler_bram_v1_0/src/BRAM_buff_asm.v" \
+  "../../../bd/Tx_Design/ipshared/xilinx.com/frameassembler_bram_v1_0/src/Assembler.v" \
+  "../../../bd/Tx_Design/ipshared/xilinx.com/frameassembler_bram_v1_0/hdl/FrameAssembler_BRAM_v1_0_S00_AXIS.v" \
+  "../../../bd/Tx_Design/ipshared/xilinx.com/frameassembler_bram_v1_0/hdl/FrameAssembler_BRAM_v1_0_M00_AXIS.v" \
+  "../../../bd/Tx_Design/ipshared/xilinx.com/frameassembler_bram_v1_0/hdl/FrameAssembler_BRAM_v1_0.v" \
+  "../../../bd/Tx_Design/ip/Tx_Design_FrameAssembler_BRAM_0_0/sim/Tx_Design_FrameAssembler_BRAM_0_0.v" \
 -endlib
 -makelib ies/axi_protocol_converter_v2_1_9 \
   "../../../ipstatic/axi_protocol_converter_v2_1/hdl/verilog/axi_protocol_converter_v2_1_a_axi3_conv.v" \

@@ -89,6 +89,8 @@ module HermBuff
   begin
       if ( tx_done ) begin
           cnt_in <= 0;
+          j <= 0;
+          n <= 28; 
       end
       else begin
           if ( (wren == 1) && !in_buff_full ) begin
@@ -161,7 +163,11 @@ module HermBuff
         inf_data <= 0;
         zeros <= 0;
         conj <= 0;
-        out_buff_full <= 0;        
+        out_buff_full <= 0;   
+        i <= 0;
+        k <= 1;     
+        l <= 29;
+        m <= 36;
     end
     else if ( in_buff_full && !dc_bias ) begin
         en_out_buff <= 1;

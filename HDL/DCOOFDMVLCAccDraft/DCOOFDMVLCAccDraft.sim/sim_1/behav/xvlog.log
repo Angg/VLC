@@ -1,0 +1,292 @@
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/Xilinx/Vivado/2016.2/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module xpm_cdc_single
+INFO: [VRFC 10-311] analyzing module xpm_cdc_gray
+INFO: [VRFC 10-311] analyzing module xpm_cdc_handshake
+INFO: [VRFC 10-311] analyzing module xpm_cdc_pulse
+INFO: [VRFC 10-311] analyzing module xpm_cdc_array_single
+INFO: [VRFC 10-311] analyzing module xpm_cdc_sync_rst
+INFO: [VRFC 10-311] analyzing module xpm_cdc_async_rst
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Files/SoCProject/DCOOFDMVLCAccDraft/DCOOFDMVLCAccDraft.ip_user_files/bd/TxRx_Design/ipshared/xilinx.com/xlconstant_v1_1/xlconstant.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module xlconstant
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Files/SoCProject/DCOOFDMVLCAccDraft/DCOOFDMVLCAccDraft.ip_user_files/bd/TxRx_Design/ip/TxRx_Design_xlconstant_1_0/sim/TxRx_Design_xlconstant_1_0.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module TxRx_Design_xlconstant_1_0
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Files/SoCProject/DCOOFDMVLCAccDraft/DCOOFDMVLCAccDraft.ip_user_files/bd/TxRx_Design/ip/TxRx_Design_xlconstant_0_1/sim/TxRx_Design_xlconstant_0_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module TxRx_Design_xlconstant_0_1
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Files/SoCProject/DCOOFDMVLCAccDraft/DCOOFDMVLCAccDraft.ip_user_files/bd/TxRx_Design/ipshared/xilinx.com/xlslice_v1_0/xlslice.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module xlslice
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Files/SoCProject/DCOOFDMVLCAccDraft/DCOOFDMVLCAccDraft.ip_user_files/bd/TxRx_Design/ip/TxRx_Design_xlslice_0_1/sim/TxRx_Design_xlslice_0_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module TxRx_Design_xlslice_0_1
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Files/SoCProject/DCOOFDMVLCAccDraft/DCOOFDMVLCAccDraft.ip_user_files/bd/TxRx_Design/ipshared/xilinx.com/xlconcat_v2_1/xlconcat.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module xlconcat
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Files/SoCProject/DCOOFDMVLCAccDraft/DCOOFDMVLCAccDraft.ip_user_files/bd/TxRx_Design/ip/TxRx_Design_xlconcat_0_0/sim/TxRx_Design_xlconcat_0_0.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module TxRx_Design_xlconcat_0_0
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Files/SoCProject/DCOOFDMVLCAccDraft/DCOOFDMVLCAccDraft.ip_user_files/bd/TxRx_Design/ip/TxRx_Design_xlslice_1_0/sim/TxRx_Design_xlslice_1_0.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module TxRx_Design_xlslice_1_0
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Files/SoCProject/DCOOFDMVLCAccDraft/DCOOFDMVLCAccDraft.ip_user_files/bd/TxRx_Design/ip/TxRx_Design_xlslice_1_1/sim/TxRx_Design_xlslice_1_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module TxRx_Design_xlslice_1_1
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Files/SoCProject/DCOOFDMVLCAccDraft/DCOOFDMVLCAccDraft.ip_user_files/bd/TxRx_Design/ip/TxRx_Design_xlconcat_0_1/sim/TxRx_Design_xlconcat_0_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module TxRx_Design_xlconcat_0_1
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Files/SoCProject/DCOOFDMVLCAccDraft/DCOOFDMVLCAccDraft.ip_user_files/bd/TxRx_Design/ip/TxRx_Design_xlslice_1_2/sim/TxRx_Design_xlslice_1_2.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module TxRx_Design_xlslice_1_2
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Files/SoCProject/DCOOFDMVLCAccDraft/DCOOFDMVLCAccDraft.ip_user_files/bd/TxRx_Design/ip/TxRx_Design_xlslice_2_0/sim/TxRx_Design_xlslice_2_0.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module TxRx_Design_xlslice_2_0
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Files/SoCProject/DCOOFDMVLCAccDraft/DCOOFDMVLCAccDraft.ip_user_files/bd/TxRx_Design/ip/TxRx_Design_xlconcat_2_0/sim/TxRx_Design_xlconcat_2_0.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module TxRx_Design_xlconcat_2_0
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Files/SoCProject/DCOOFDMVLCAccDraft/DCOOFDMVLCAccDraft.ip_user_files/bd/TxRx_Design/ip/TxRx_Design_xlconcat_2_1/sim/TxRx_Design_xlconcat_2_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module TxRx_Design_xlconcat_2_1
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Files/SoCProject/DCOOFDMVLCAccDraft/DCOOFDMVLCAccDraft.ip_user_files/bd/TxRx_Design/ip/TxRx_Design_xlconstant_2_0/sim/TxRx_Design_xlconstant_2_0.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module TxRx_Design_xlconstant_2_0
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Files/SoCProject/DCOOFDMVLCAccDraft/DCOOFDMVLCAccDraft.ip_user_files/bd/TxRx_Design/ip/TxRx_Design_xlconcat_1_0/sim/TxRx_Design_xlconcat_1_0.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module TxRx_Design_xlconcat_1_0
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Files/SoCProject/DCOOFDMVLCAccDraft/DCOOFDMVLCAccDraft.ip_user_files/bd/TxRx_Design/ipshared/xilinx.com/nresetcounter_v1_0/hdl/nResetCounter_v1_0_S00_AXIS.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module nResetCounter_v1_0_S00_AXIS
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Files/SoCProject/DCOOFDMVLCAccDraft/DCOOFDMVLCAccDraft.ip_user_files/bd/TxRx_Design/ipshared/xilinx.com/nresetcounter_v1_0/hdl/nResetCounter_v1_0.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module nResetCounter_v1_0
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Files/SoCProject/DCOOFDMVLCAccDraft/DCOOFDMVLCAccDraft.ip_user_files/bd/TxRx_Design/ip/TxRx_Design_nResetCounter_0_0/sim/TxRx_Design_nResetCounter_0_0.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module TxRx_Design_nResetCounter_0_0
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Files/SoCProject/DCOOFDMVLCAccDraft/DCOOFDMVLCAccDraft.ip_user_files/bd/TxRx_Design/hdl/TxRx_Design.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module TxRx_Design
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Files/SoCProject/DCOOFDMVLCAccDraft/DCOOFDMVLCAccDraft.ip_user_files/bd/TxRx_Design/ip/TxRx_Design_xlconstant_3_0/sim/TxRx_Design_xlconstant_3_0.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module TxRx_Design_xlconstant_3_0
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Files/SoCProject/DCOOFDMVLCAccDraft/DCOOFDMVLCAccDraft.ip_user_files/bd/TxRx_Design/ip/TxRx_Design_xlconstant_4_0/sim/TxRx_Design_xlconstant_4_0.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module TxRx_Design_xlconstant_4_0
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Files/SoCProject/DCOOFDMVLCAccDraft/DCOOFDMVLCAccDraft.ip_user_files/ipstatic/axis_infrastructure_v1_1/hdl/verilog/axis_infrastructure_v1_1_mux_enc.v" into library axis_infrastructure_v1_1_0
+INFO: [VRFC 10-311] analyzing module axis_infrastructure_v1_1_0_mux_enc
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Files/SoCProject/DCOOFDMVLCAccDraft/DCOOFDMVLCAccDraft.ip_user_files/ipstatic/axis_infrastructure_v1_1/hdl/verilog/axis_infrastructure_v1_1_util_aclken_converter.v" into library axis_infrastructure_v1_1_0
+INFO: [VRFC 10-311] analyzing module axis_infrastructure_v1_1_0_util_aclken_converter
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Files/SoCProject/DCOOFDMVLCAccDraft/DCOOFDMVLCAccDraft.ip_user_files/ipstatic/axis_infrastructure_v1_1/hdl/verilog/axis_infrastructure_v1_1_util_aclken_converter_wrapper.v" into library axis_infrastructure_v1_1_0
+INFO: [VRFC 10-311] analyzing module axis_infrastructure_v1_1_0_util_aclken_converter_wrapper
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Files/SoCProject/DCOOFDMVLCAccDraft/DCOOFDMVLCAccDraft.ip_user_files/ipstatic/axis_infrastructure_v1_1/hdl/verilog/axis_infrastructure_v1_1_util_axis2vector.v" into library axis_infrastructure_v1_1_0
+INFO: [VRFC 10-311] analyzing module axis_infrastructure_v1_1_0_util_axis2vector
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Files/SoCProject/DCOOFDMVLCAccDraft/DCOOFDMVLCAccDraft.ip_user_files/ipstatic/axis_infrastructure_v1_1/hdl/verilog/axis_infrastructure_v1_1_util_vector2axis.v" into library axis_infrastructure_v1_1_0
+INFO: [VRFC 10-311] analyzing module axis_infrastructure_v1_1_0_util_vector2axis
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Files/SoCProject/DCOOFDMVLCAccDraft/DCOOFDMVLCAccDraft.ip_user_files/ipstatic/axis_infrastructure_v1_1/hdl/verilog/axis_infrastructure_v1_1_clock_synchronizer.v" into library axis_infrastructure_v1_1_0
+INFO: [VRFC 10-311] analyzing module axis_infrastructure_v1_1_0_clock_synchronizer
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Files/SoCProject/DCOOFDMVLCAccDraft/DCOOFDMVLCAccDraft.ip_user_files/ipstatic/axis_infrastructure_v1_1/hdl/verilog/axis_infrastructure_v1_1_cdc_handshake.v" into library axis_infrastructure_v1_1_0
+INFO: [VRFC 10-311] analyzing module axis_infrastructure_v1_1_0_cdc_handshake
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Files/SoCProject/DCOOFDMVLCAccDraft/DCOOFDMVLCAccDraft.ip_user_files/ipstatic/fifo_generator_v13_1/simulation/fifo_generator_vlog_beh.v" into library fifo_generator_v13_1_1
+INFO: [VRFC 10-311] analyzing module fifo_generator_vlog_beh
+INFO: [VRFC 10-2458] undeclared symbol wr_eop_ad, assumed default net type wire [D:/Files/SoCProject/DCOOFDMVLCAccDraft/DCOOFDMVLCAccDraft.ip_user_files/ipstatic/fifo_generator_v13_1/simulation/fifo_generator_vlog_beh.v:1321]
+INFO: [VRFC 10-2458] undeclared symbol rd_eop_ad, assumed default net type wire [D:/Files/SoCProject/DCOOFDMVLCAccDraft/DCOOFDMVLCAccDraft.ip_user_files/ipstatic/fifo_generator_v13_1/simulation/fifo_generator_vlog_beh.v:1322]
+INFO: [VRFC 10-2458] undeclared symbol wr_rst_busy_axis, assumed default net type wire [D:/Files/SoCProject/DCOOFDMVLCAccDraft/DCOOFDMVLCAccDraft.ip_user_files/ipstatic/fifo_generator_v13_1/simulation/fifo_generator_vlog_beh.v:1561]
+INFO: [VRFC 10-2458] undeclared symbol rd_rst_busy_axis, assumed default net type wire [D:/Files/SoCProject/DCOOFDMVLCAccDraft/DCOOFDMVLCAccDraft.ip_user_files/ipstatic/fifo_generator_v13_1/simulation/fifo_generator_vlog_beh.v:1562]
+INFO: [VRFC 10-2458] undeclared symbol wr_rst_busy_wach, assumed default net type wire [D:/Files/SoCProject/DCOOFDMVLCAccDraft/DCOOFDMVLCAccDraft.ip_user_files/ipstatic/fifo_generator_v13_1/simulation/fifo_generator_vlog_beh.v:2087]
+INFO: [VRFC 10-2458] undeclared symbol rd_rst_busy_wach, assumed default net type wire [D:/Files/SoCProject/DCOOFDMVLCAccDraft/DCOOFDMVLCAccDraft.ip_user_files/ipstatic/fifo_generator_v13_1/simulation/fifo_generator_vlog_beh.v:2088]
+INFO: [VRFC 10-2458] undeclared symbol wr_rst_busy_wdch, assumed default net type wire [D:/Files/SoCProject/DCOOFDMVLCAccDraft/DCOOFDMVLCAccDraft.ip_user_files/ipstatic/fifo_generator_v13_1/simulation/fifo_generator_vlog_beh.v:2307]
+INFO: [VRFC 10-2458] undeclared symbol rd_rst_busy_wdch, assumed default net type wire [D:/Files/SoCProject/DCOOFDMVLCAccDraft/DCOOFDMVLCAccDraft.ip_user_files/ipstatic/fifo_generator_v13_1/simulation/fifo_generator_vlog_beh.v:2308]
+INFO: [VRFC 10-2458] undeclared symbol wr_rst_busy_wrch, assumed default net type wire [D:/Files/SoCProject/DCOOFDMVLCAccDraft/DCOOFDMVLCAccDraft.ip_user_files/ipstatic/fifo_generator_v13_1/simulation/fifo_generator_vlog_beh.v:2474]
+INFO: [VRFC 10-2458] undeclared symbol rd_rst_busy_wrch, assumed default net type wire [D:/Files/SoCProject/DCOOFDMVLCAccDraft/DCOOFDMVLCAccDraft.ip_user_files/ipstatic/fifo_generator_v13_1/simulation/fifo_generator_vlog_beh.v:2475]
+INFO: [VRFC 10-2458] undeclared symbol wr_rst_busy_rach, assumed default net type wire [D:/Files/SoCProject/DCOOFDMVLCAccDraft/DCOOFDMVLCAccDraft.ip_user_files/ipstatic/fifo_generator_v13_1/simulation/fifo_generator_vlog_beh.v:2854]
+INFO: [VRFC 10-2458] undeclared symbol rd_rst_busy_rach, assumed default net type wire [D:/Files/SoCProject/DCOOFDMVLCAccDraft/DCOOFDMVLCAccDraft.ip_user_files/ipstatic/fifo_generator_v13_1/simulation/fifo_generator_vlog_beh.v:2855]
+INFO: [VRFC 10-2458] undeclared symbol wr_rst_busy_rdch, assumed default net type wire [D:/Files/SoCProject/DCOOFDMVLCAccDraft/DCOOFDMVLCAccDraft.ip_user_files/ipstatic/fifo_generator_v13_1/simulation/fifo_generator_vlog_beh.v:3087]
+INFO: [VRFC 10-2458] undeclared symbol rd_rst_busy_rdch, assumed default net type wire [D:/Files/SoCProject/DCOOFDMVLCAccDraft/DCOOFDMVLCAccDraft.ip_user_files/ipstatic/fifo_generator_v13_1/simulation/fifo_generator_vlog_beh.v:3088]
+INFO: [VRFC 10-311] analyzing module fifo_generator_v13_1_1_CONV_VER
+INFO: [VRFC 10-311] analyzing module fifo_generator_v13_1_1_sync_stage
+INFO: [VRFC 10-311] analyzing module fifo_generator_v13_1_1_bhv_ver_as
+INFO: [VRFC 10-311] analyzing module fifo_generator_v13_1_1_beh_ver_ll_afifo
+INFO: [VRFC 10-311] analyzing module fifo_generator_v13_1_1_bhv_ver_ss
+INFO: [VRFC 10-2458] undeclared symbol srst_wrst_busy, assumed default net type wire [D:/Files/SoCProject/DCOOFDMVLCAccDraft/DCOOFDMVLCAccDraft.ip_user_files/ipstatic/fifo_generator_v13_1/simulation/fifo_generator_vlog_beh.v:7752]
+INFO: [VRFC 10-311] analyzing module fifo_generator_v13_1_1_bhv_ver_preload0
+INFO: [VRFC 10-311] analyzing module fifo_generator_v13_1_1_axic_reg_slice
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Files/SoCProject/DCOOFDMVLCAccDraft/DCOOFDMVLCAccDraft.ip_user_files/ipstatic/fifo_generator_v13_1/hdl/fifo_generator_v13_1_rfs.v" into library fifo_generator_v13_1_1
+INFO: [VRFC 10-311] analyzing module fifo_generator_v13_1_1
+INFO: [VRFC 10-2458] undeclared symbol sleep_i, assumed default net type wire [D:/Files/SoCProject/DCOOFDMVLCAccDraft/DCOOFDMVLCAccDraft.ip_user_files/ipstatic/fifo_generator_v13_1/hdl/fifo_generator_v13_1_rfs.v:519]
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Files/SoCProject/DCOOFDMVLCAccDraft/DCOOFDMVLCAccDraft.ip_user_files/ipstatic/axis_data_fifo_v1_1/hdl/verilog/axis_data_fifo_v1_1_axis_data_fifo.v" into library axis_data_fifo_v1_1_10
+INFO: [VRFC 10-311] analyzing module axis_data_fifo_v1_1_10_axis_data_fifo
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Files/SoCProject/DCOOFDMVLCAccDraft/DCOOFDMVLCAccDraft.ip_user_files/bd/TxRx_Design/ip/TxRx_Design_axis_data_fifo_0_0/sim/TxRx_Design_axis_data_fifo_0_0.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module TxRx_Design_axis_data_fifo_0_0
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Files/SoCProject/DCOOFDMVLCAccDraft/DCOOFDMVLCAccDraft.ip_user_files/bd/TxRx_Design/ip/TxRx_Design_axis_data_fifo_1_0/sim/TxRx_Design_axis_data_fifo_1_0.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module TxRx_Design_axis_data_fifo_1_0
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Files/SoCProject/DCOOFDMVLCAccDraft/DCOOFDMVLCAccDraft.ip_user_files/bd/TxRx_Design/ip/TxRx_Design_axis_data_fifo_2_0/sim/TxRx_Design_axis_data_fifo_2_0.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module TxRx_Design_axis_data_fifo_2_0
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Files/SoCProject/DCOOFDMVLCAccDraft/DCOOFDMVLCAccDraft.ip_user_files/bd/TxRx_Design/ipshared/xilinx.com/qpsk_mapper_v1_0/src/QPSK.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module QPSK
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Files/SoCProject/DCOOFDMVLCAccDraft/DCOOFDMVLCAccDraft.ip_user_files/bd/TxRx_Design/ipshared/xilinx.com/qpsk_mapper_v1_0/hdl/QPSK_mapper_v1_0_M00_AXIS.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module QPSK_mapper_v1_0_M00_AXIS
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Files/SoCProject/DCOOFDMVLCAccDraft/DCOOFDMVLCAccDraft.ip_user_files/bd/TxRx_Design/ipshared/xilinx.com/qpsk_mapper_v1_0/hdl/QPSK_mapper_v1_0_S00_AXIS.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module QPSK_mapper_v1_0_S00_AXIS
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Files/SoCProject/DCOOFDMVLCAccDraft/DCOOFDMVLCAccDraft.ip_user_files/bd/TxRx_Design/ipshared/xilinx.com/qpsk_mapper_v1_0/hdl/QPSK_mapper_v1_0.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module QPSK_mapper_v1_0
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Files/SoCProject/DCOOFDMVLCAccDraft/DCOOFDMVLCAccDraft.ip_user_files/bd/TxRx_Design/ip/TxRx_Design_QPSK_mapper_0_0/sim/TxRx_Design_QPSK_mapper_0_0.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module TxRx_Design_QPSK_mapper_0_0
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Files/SoCProject/DCOOFDMVLCAccDraft/DCOOFDMVLCAccDraft.ip_user_files/bd/TxRx_Design/ipshared/xilinx.com/qpsk_demapper_v1_0/hdl/QPSK_demapper_v1_0_S00_AXIS.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module QPSK_demapper_v1_0_S00_AXIS
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Files/SoCProject/DCOOFDMVLCAccDraft/DCOOFDMVLCAccDraft.ip_user_files/bd/TxRx_Design/ipshared/xilinx.com/qpsk_demapper_v1_0/hdl/QPSK_demapper_v1_0_M00_AXIS.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module QPSK_demapper_v1_0_M00_AXIS
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Files/SoCProject/DCOOFDMVLCAccDraft/DCOOFDMVLCAccDraft.ip_user_files/bd/TxRx_Design/ipshared/xilinx.com/qpsk_demapper_v1_0/src/deQPSK.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module deQPSK
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Files/SoCProject/DCOOFDMVLCAccDraft/DCOOFDMVLCAccDraft.ip_user_files/bd/TxRx_Design/ipshared/xilinx.com/qpsk_demapper_v1_0/hdl/QPSK_demapper_v1_0.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module QPSK_demapper_v1_0
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Files/SoCProject/DCOOFDMVLCAccDraft/DCOOFDMVLCAccDraft.ip_user_files/bd/TxRx_Design/ip/TxRx_Design_QPSK_demapper_0_0/sim/TxRx_Design_QPSK_demapper_0_0.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module TxRx_Design_QPSK_demapper_0_0
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Files/SoCProject/DCOOFDMVLCAccDraft/DCOOFDMVLCAccDraft.ip_user_files/bd/TxRx_Design/ip/TxRx_Design_axis_data_fifo_3_0/sim/TxRx_Design_axis_data_fifo_3_0.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module TxRx_Design_axis_data_fifo_3_0
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Files/SoCProject/DCOOFDMVLCAccDraft/DCOOFDMVLCAccDraft.ip_user_files/bd/TxRx_Design/ipshared/xilinx.com/qam16_mapper_v1_0/src/IN_BUFF.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module IN_BUFF
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Files/SoCProject/DCOOFDMVLCAccDraft/DCOOFDMVLCAccDraft.ip_user_files/bd/TxRx_Design/ipshared/xilinx.com/qam16_mapper_v1_0/hdl/QAM16_mapper_v1_0_S00_AXIS.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module QAM16_mapper_v1_0_S00_AXIS
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Files/SoCProject/DCOOFDMVLCAccDraft/DCOOFDMVLCAccDraft.ip_user_files/bd/TxRx_Design/ipshared/xilinx.com/qam16_mapper_v1_0/hdl/QAM16_mapper_v1_0_M00_AXIS.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module QAM16_mapper_v1_0_M00_AXIS
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Files/SoCProject/DCOOFDMVLCAccDraft/DCOOFDMVLCAccDraft.ip_user_files/bd/TxRx_Design/ipshared/xilinx.com/qam16_mapper_v1_0/src/QAM16.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module QAM16
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Files/SoCProject/DCOOFDMVLCAccDraft/DCOOFDMVLCAccDraft.ip_user_files/bd/TxRx_Design/ipshared/xilinx.com/qam16_mapper_v1_0/hdl/QAM16_mapper_v1_0.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module QAM16_mapper_v1_0
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Files/SoCProject/DCOOFDMVLCAccDraft/DCOOFDMVLCAccDraft.ip_user_files/bd/TxRx_Design/ip/TxRx_Design_QAM16_mapper_0_0/sim/TxRx_Design_QAM16_mapper_0_0.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module TxRx_Design_QAM16_mapper_0_0
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Files/SoCProject/DCOOFDMVLCAccDraft/DCOOFDMVLCAccDraft.ip_user_files/bd/TxRx_Design/ipshared/xilinx.com/qam16_demapper_v1_0/hdl/QAM16_demapper_v1_0_S00_AXIS.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module QAM16_demapper_v1_0_S00_AXIS
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Files/SoCProject/DCOOFDMVLCAccDraft/DCOOFDMVLCAccDraft.ip_user_files/bd/TxRx_Design/ipshared/xilinx.com/qam16_demapper_v1_0/hdl/QAM16_demapper_v1_0_M00_AXIS.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module QAM16_demapper_v1_0_M00_AXIS
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Files/SoCProject/DCOOFDMVLCAccDraft/DCOOFDMVLCAccDraft.ip_user_files/bd/TxRx_Design/ipshared/xilinx.com/qam16_demapper_v1_0/src/OUT_BUFF.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module OUT_BUFF
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Files/SoCProject/DCOOFDMVLCAccDraft/DCOOFDMVLCAccDraft.ip_user_files/bd/TxRx_Design/ipshared/xilinx.com/qam16_demapper_v1_0/src/deQAM16.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module deQAM16
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Files/SoCProject/DCOOFDMVLCAccDraft/DCOOFDMVLCAccDraft.ip_user_files/bd/TxRx_Design/ipshared/xilinx.com/qam16_demapper_v1_0/hdl/QAM16_demapper_v1_0.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module QAM16_demapper_v1_0
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Files/SoCProject/DCOOFDMVLCAccDraft/DCOOFDMVLCAccDraft.ip_user_files/bd/TxRx_Design/ip/TxRx_Design_QAM16_demapper_0_1/sim/TxRx_Design_QAM16_demapper_0_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module TxRx_Design_QAM16_demapper_0_1
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Files/SoCProject/DCOOFDMVLCAccDraft/DCOOFDMVLCAccDraft.ip_user_files/bd/TxRx_Design/ip/TxRx_Design_axis_data_fifo_1_1/sim/TxRx_Design_axis_data_fifo_1_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module TxRx_Design_axis_data_fifo_1_1
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Files/SoCProject/DCOOFDMVLCAccDraft/DCOOFDMVLCAccDraft.ip_user_files/bd/TxRx_Design/ip/TxRx_Design_axis_data_fifo_2_1/sim/TxRx_Design_axis_data_fifo_2_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module TxRx_Design_axis_data_fifo_2_1
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Files/SoCProject/DCOOFDMVLCAccDraft/DCOOFDMVLCAccDraft.ip_user_files/bd/TxRx_Design/ipshared/xilinx.com/hermitianbuffer_v1_0/src/HermBuff.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module HermBuff
+WARNING: [VRFC 10-1315] redeclaration of ansi port out_buff_full is not allowed [D:/Files/SoCProject/DCOOFDMVLCAccDraft/DCOOFDMVLCAccDraft.ip_user_files/bd/TxRx_Design/ipshared/xilinx.com/hermitianbuffer_v1_0/src/HermBuff.v:41]
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Files/SoCProject/DCOOFDMVLCAccDraft/DCOOFDMVLCAccDraft.ip_user_files/bd/TxRx_Design/ipshared/xilinx.com/hermitianbuffer_v1_0/hdl/HermitianBuffer_v1_0_S00_AXIS.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module HermitianBuffer_v1_0_S00_AXIS
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Files/SoCProject/DCOOFDMVLCAccDraft/DCOOFDMVLCAccDraft.ip_user_files/bd/TxRx_Design/ipshared/xilinx.com/hermitianbuffer_v1_0/hdl/HermitianBuffer_v1_0_M00_AXIS.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module HermitianBuffer_v1_0_M00_AXIS
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Files/SoCProject/DCOOFDMVLCAccDraft/DCOOFDMVLCAccDraft.ip_user_files/bd/TxRx_Design/ipshared/xilinx.com/hermitianbuffer_v1_0/hdl/HermitianBuffer_v1_0.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module HermitianBuffer_v1_0
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Files/SoCProject/DCOOFDMVLCAccDraft/DCOOFDMVLCAccDraft.ip_user_files/bd/TxRx_Design/ip/TxRx_Design_HermitianBuffer_0_0/sim/TxRx_Design_HermitianBuffer_0_0.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module TxRx_Design_HermitianBuffer_0_0
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Files/SoCProject/DCOOFDMVLCAccDraft/DCOOFDMVLCAccDraft.ip_user_files/bd/TxRx_Design/ipshared/xilinx.com/frameassembler_v1_0/src/Assembler.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Assembler
+WARNING: [VRFC 10-1315] redeclaration of ansi port out_buff_full is not allowed [D:/Files/SoCProject/DCOOFDMVLCAccDraft/DCOOFDMVLCAccDraft.ip_user_files/bd/TxRx_Design/ipshared/xilinx.com/frameassembler_v1_0/src/Assembler.v:42]
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Files/SoCProject/DCOOFDMVLCAccDraft/DCOOFDMVLCAccDraft.ip_user_files/bd/TxRx_Design/ipshared/xilinx.com/frameassembler_v1_0/hdl/FrameAssembler_v1_0_S00_AXIS.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module FrameAssembler_v1_0_S00_AXIS
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Files/SoCProject/DCOOFDMVLCAccDraft/DCOOFDMVLCAccDraft.ip_user_files/bd/TxRx_Design/ipshared/xilinx.com/frameassembler_v1_0/hdl/FrameAssembler_v1_0_M00_AXIS.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module FrameAssembler_v1_0_M00_AXIS
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Files/SoCProject/DCOOFDMVLCAccDraft/DCOOFDMVLCAccDraft.ip_user_files/bd/TxRx_Design/ipshared/xilinx.com/frameassembler_v1_0/hdl/FrameAssembler_v1_0.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module FrameAssembler_v1_0
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Files/SoCProject/DCOOFDMVLCAccDraft/DCOOFDMVLCAccDraft.ip_user_files/bd/TxRx_Design/ip/TxRx_Design_FrameAssembler_0_0/sim/TxRx_Design_FrameAssembler_0_0.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module TxRx_Design_FrameAssembler_0_0
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Files/SoCProject/DCOOFDMVLCAccDraft/DCOOFDMVLCAccDraft.ip_user_files/bd/TxRx_Design/ipshared/xilinx.com/hermitianbuffer_bram_v1_0/src/BRAM_out_buff.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module BRAM_out_buff
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Files/SoCProject/DCOOFDMVLCAccDraft/DCOOFDMVLCAccDraft.ip_user_files/bd/TxRx_Design/ipshared/xilinx.com/hermitianbuffer_bram_v1_0/src/BRAM_buff_conj.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module BRAM_buff_conj
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Files/SoCProject/DCOOFDMVLCAccDraft/DCOOFDMVLCAccDraft.ip_user_files/bd/TxRx_Design/ipshared/xilinx.com/hermitianbuffer_bram_v1_0/src/BRAM_buff.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module BRAM_buff
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Files/SoCProject/DCOOFDMVLCAccDraft/DCOOFDMVLCAccDraft.ip_user_files/bd/TxRx_Design/ipshared/xilinx.com/hermitianbuffer_bram_v1_0/src/HermBuff.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module HermBuff
+WARNING: [VRFC 10-1315] redeclaration of ansi port out_buff_full is not allowed [D:/Files/SoCProject/DCOOFDMVLCAccDraft/DCOOFDMVLCAccDraft.ip_user_files/bd/TxRx_Design/ipshared/xilinx.com/hermitianbuffer_bram_v1_0/src/HermBuff.v:41]
+WARNING: [VRFC 10-1195] overwriting previous definition of module HermBuff [D:/Files/SoCProject/DCOOFDMVLCAccDraft/DCOOFDMVLCAccDraft.ip_user_files/bd/TxRx_Design/ipshared/xilinx.com/hermitianbuffer_bram_v1_0/src/HermBuff.v:23]
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Files/SoCProject/DCOOFDMVLCAccDraft/DCOOFDMVLCAccDraft.ip_user_files/bd/TxRx_Design/ipshared/xilinx.com/hermitianbuffer_bram_v1_0/hdl/HermitianBuffer_BRAM_v1_0_S00_AXIS.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module HermitianBuffer_BRAM_v1_0_S00_AXIS
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Files/SoCProject/DCOOFDMVLCAccDraft/DCOOFDMVLCAccDraft.ip_user_files/bd/TxRx_Design/ipshared/xilinx.com/hermitianbuffer_bram_v1_0/hdl/HermitianBuffer_BRAM_v1_0_M00_AXIS.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module HermitianBuffer_BRAM_v1_0_M00_AXIS
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Files/SoCProject/DCOOFDMVLCAccDraft/DCOOFDMVLCAccDraft.ip_user_files/bd/TxRx_Design/ipshared/xilinx.com/hermitianbuffer_bram_v1_0/hdl/HermitianBuffer_BRAM_v1_0.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module HermitianBuffer_BRAM_v1_0
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Files/SoCProject/DCOOFDMVLCAccDraft/DCOOFDMVLCAccDraft.ip_user_files/bd/TxRx_Design/ip/TxRx_Design_HermitianBuffer_BRAM_0_1/sim/TxRx_Design_HermitianBuffer_BRAM_0_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module TxRx_Design_HermitianBuffer_BRAM_0_1
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Files/SoCProject/DCOOFDMVLCAccDraft/DCOOFDMVLCAccDraft.ip_user_files/bd/TxRx_Design/ipshared/xilinx.com/hermitianremover_bram_v1_0/src/BRAM_out_buff_rmv.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module BRAM_out_buff_rmv
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Files/SoCProject/DCOOFDMVLCAccDraft/DCOOFDMVLCAccDraft.ip_user_files/bd/TxRx_Design/ipshared/xilinx.com/hermitianremover_bram_v1_0/src/BRAM_buff_rmv.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module BRAM_buff_rmv
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Files/SoCProject/DCOOFDMVLCAccDraft/DCOOFDMVLCAccDraft.ip_user_files/bd/TxRx_Design/ipshared/xilinx.com/hermitianremover_bram_v1_0/hdl/HermitianRemover_BRAM_v1_0_S00_AXIS.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module HermitianRemover_BRAM_v1_0_S00_AXIS
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Files/SoCProject/DCOOFDMVLCAccDraft/DCOOFDMVLCAccDraft.ip_user_files/bd/TxRx_Design/ipshared/xilinx.com/hermitianremover_bram_v1_0/hdl/HermitianRemover_BRAM_v1_0_M00_AXIS.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module HermitianRemover_BRAM_v1_0_M00_AXIS
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Files/SoCProject/DCOOFDMVLCAccDraft/DCOOFDMVLCAccDraft.ip_user_files/bd/TxRx_Design/ipshared/xilinx.com/hermitianremover_bram_v1_0/src/HermRemover.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module HermRemover
+WARNING: [VRFC 10-1315] redeclaration of ansi port out_buff_full is not allowed [D:/Files/SoCProject/DCOOFDMVLCAccDraft/DCOOFDMVLCAccDraft.ip_user_files/bd/TxRx_Design/ipshared/xilinx.com/hermitianremover_bram_v1_0/src/HermRemover.v:41]
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Files/SoCProject/DCOOFDMVLCAccDraft/DCOOFDMVLCAccDraft.ip_user_files/bd/TxRx_Design/ipshared/xilinx.com/hermitianremover_bram_v1_0/hdl/HermitianRemover_BRAM_v1_0.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module HermitianRemover_BRAM_v1_0
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Files/SoCProject/DCOOFDMVLCAccDraft/DCOOFDMVLCAccDraft.ip_user_files/bd/TxRx_Design/ip/TxRx_Design_HermitianRemover_BRAM_0_0/sim/TxRx_Design_HermitianRemover_BRAM_0_0.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module TxRx_Design_HermitianRemover_BRAM_0_0
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Files/SoCProject/DCOOFDMVLCAccDraft/DCOOFDMVLCAccDraft.ip_user_files/bd/TxRx_Design/ipshared/xilinx.com/shapirorudinpark_timesynchronizer_bram_v1_0/src/BRAM_M.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module BRAM_M
+WARNING: [VRFC 10-969] keyword 'unsigned' is not allowed here in this mode of verilog [D:/Files/SoCProject/DCOOFDMVLCAccDraft/DCOOFDMVLCAccDraft.ip_user_files/bd/TxRx_Design/ipshared/xilinx.com/shapirorudinpark_timesynchronizer_bram_v1_0/src/BRAM_M.v:28]
+WARNING: [VRFC 10-969] keyword 'unsigned' is not allowed here in this mode of verilog [D:/Files/SoCProject/DCOOFDMVLCAccDraft/DCOOFDMVLCAccDraft.ip_user_files/bd/TxRx_Design/ipshared/xilinx.com/shapirorudinpark_timesynchronizer_bram_v1_0/src/BRAM_M.v:29]
+WARNING: [VRFC 10-969] keyword 'unsigned' is not allowed here in this mode of verilog [D:/Files/SoCProject/DCOOFDMVLCAccDraft/DCOOFDMVLCAccDraft.ip_user_files/bd/TxRx_Design/ipshared/xilinx.com/shapirorudinpark_timesynchronizer_bram_v1_0/src/BRAM_M.v:30]
+WARNING: [VRFC 10-969] keyword 'unsigned' is not allowed here in this mode of verilog [D:/Files/SoCProject/DCOOFDMVLCAccDraft/DCOOFDMVLCAccDraft.ip_user_files/bd/TxRx_Design/ipshared/xilinx.com/shapirorudinpark_timesynchronizer_bram_v1_0/src/BRAM_M.v:31]
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Files/SoCProject/DCOOFDMVLCAccDraft/DCOOFDMVLCAccDraft.ip_user_files/bd/TxRx_Design/ipshared/xilinx.com/shapirorudinpark_timesynchronizer_bram_v1_0/src/BRAM_buff_1_srp.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module BRAM_buff_1_srp
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Files/SoCProject/DCOOFDMVLCAccDraft/DCOOFDMVLCAccDraft.ip_user_files/bd/TxRx_Design/ipshared/xilinx.com/shapirorudinpark_timesynchronizer_bram_v1_0/src/BRAM_out_buff_srp.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module BRAM_out_buff_srp
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Files/SoCProject/DCOOFDMVLCAccDraft/DCOOFDMVLCAccDraft.ip_user_files/bd/TxRx_Design/ipshared/xilinx.com/shapirorudinpark_timesynchronizer_bram_v1_0/src/BRAM_buff_srp.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module BRAM_buff_srp
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Files/SoCProject/DCOOFDMVLCAccDraft/DCOOFDMVLCAccDraft.ip_user_files/bd/TxRx_Design/ipshared/xilinx.com/shapirorudinpark_timesynchronizer_bram_v1_0/src/BRAM_P.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module BRAM_P
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Files/SoCProject/DCOOFDMVLCAccDraft/DCOOFDMVLCAccDraft.ip_user_files/bd/TxRx_Design/ipshared/xilinx.com/shapirorudinpark_timesynchronizer_bram_v1_0/src/BRAM_R.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module BRAM_R
+WARNING: [VRFC 10-969] keyword 'unsigned' is not allowed here in this mode of verilog [D:/Files/SoCProject/DCOOFDMVLCAccDraft/DCOOFDMVLCAccDraft.ip_user_files/bd/TxRx_Design/ipshared/xilinx.com/shapirorudinpark_timesynchronizer_bram_v1_0/src/BRAM_R.v:28]
+WARNING: [VRFC 10-969] keyword 'unsigned' is not allowed here in this mode of verilog [D:/Files/SoCProject/DCOOFDMVLCAccDraft/DCOOFDMVLCAccDraft.ip_user_files/bd/TxRx_Design/ipshared/xilinx.com/shapirorudinpark_timesynchronizer_bram_v1_0/src/BRAM_R.v:29]
+WARNING: [VRFC 10-969] keyword 'unsigned' is not allowed here in this mode of verilog [D:/Files/SoCProject/DCOOFDMVLCAccDraft/DCOOFDMVLCAccDraft.ip_user_files/bd/TxRx_Design/ipshared/xilinx.com/shapirorudinpark_timesynchronizer_bram_v1_0/src/BRAM_R.v:30]
+WARNING: [VRFC 10-969] keyword 'unsigned' is not allowed here in this mode of verilog [D:/Files/SoCProject/DCOOFDMVLCAccDraft/DCOOFDMVLCAccDraft.ip_user_files/bd/TxRx_Design/ipshared/xilinx.com/shapirorudinpark_timesynchronizer_bram_v1_0/src/BRAM_R.v:31]
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Files/SoCProject/DCOOFDMVLCAccDraft/DCOOFDMVLCAccDraft.ip_user_files/bd/TxRx_Design/ipshared/xilinx.com/shapirorudinpark_timesynchronizer_bram_v1_0/hdl/ShapiroRudinPark_TimeSynchronizer_BRAM_v1_0_S00_AXIS.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ShapiroRudinPark_TimeSynchronizer_BRAM_v1_0_S00_AXIS
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Files/SoCProject/DCOOFDMVLCAccDraft/DCOOFDMVLCAccDraft.ip_user_files/bd/TxRx_Design/ipshared/xilinx.com/shapirorudinpark_timesynchronizer_bram_v1_0/hdl/ShapiroRudinPark_TimeSynchronizer_BRAM_v1_0_M00_AXIS.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ShapiroRudinPark_TimeSynchronizer_BRAM_v1_0_M00_AXIS
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Files/SoCProject/DCOOFDMVLCAccDraft/DCOOFDMVLCAccDraft.ip_user_files/bd/TxRx_Design/ipshared/xilinx.com/shapirorudinpark_timesynchronizer_bram_v1_0/src/TimeSync.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module TimeSync
+WARNING: [VRFC 10-1315] redeclaration of ansi port out_buff_full is not allowed [D:/Files/SoCProject/DCOOFDMVLCAccDraft/DCOOFDMVLCAccDraft.ip_user_files/bd/TxRx_Design/ipshared/xilinx.com/shapirorudinpark_timesynchronizer_bram_v1_0/src/TimeSync.v:48]
+WARNING: [VRFC 10-969] keyword 'unsigned' is not allowed here in this mode of verilog [D:/Files/SoCProject/DCOOFDMVLCAccDraft/DCOOFDMVLCAccDraft.ip_user_files/bd/TxRx_Design/ipshared/xilinx.com/shapirorudinpark_timesynchronizer_bram_v1_0/src/TimeSync.v:75]
+WARNING: [VRFC 10-969] keyword 'unsigned' is not allowed here in this mode of verilog [D:/Files/SoCProject/DCOOFDMVLCAccDraft/DCOOFDMVLCAccDraft.ip_user_files/bd/TxRx_Design/ipshared/xilinx.com/shapirorudinpark_timesynchronizer_bram_v1_0/src/TimeSync.v:87]
+WARNING: [VRFC 10-969] keyword 'unsigned' is not allowed here in this mode of verilog [D:/Files/SoCProject/DCOOFDMVLCAccDraft/DCOOFDMVLCAccDraft.ip_user_files/bd/TxRx_Design/ipshared/xilinx.com/shapirorudinpark_timesynchronizer_bram_v1_0/src/TimeSync.v:89]
+WARNING: [VRFC 10-969] keyword 'unsigned' is not allowed here in this mode of verilog [D:/Files/SoCProject/DCOOFDMVLCAccDraft/DCOOFDMVLCAccDraft.ip_user_files/bd/TxRx_Design/ipshared/xilinx.com/shapirorudinpark_timesynchronizer_bram_v1_0/src/TimeSync.v:101]
+WARNING: [VRFC 10-969] keyword 'unsigned' is not allowed here in this mode of verilog [D:/Files/SoCProject/DCOOFDMVLCAccDraft/DCOOFDMVLCAccDraft.ip_user_files/bd/TxRx_Design/ipshared/xilinx.com/shapirorudinpark_timesynchronizer_bram_v1_0/src/TimeSync.v:105]
+WARNING: [VRFC 10-969] keyword 'unsigned' is not allowed here in this mode of verilog [D:/Files/SoCProject/DCOOFDMVLCAccDraft/DCOOFDMVLCAccDraft.ip_user_files/bd/TxRx_Design/ipshared/xilinx.com/shapirorudinpark_timesynchronizer_bram_v1_0/src/TimeSync.v:115]
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Files/SoCProject/DCOOFDMVLCAccDraft/DCOOFDMVLCAccDraft.ip_user_files/bd/TxRx_Design/ipshared/xilinx.com/shapirorudinpark_timesynchronizer_bram_v1_0/hdl/ShapiroRudinPark_TimeSynchronizer_BRAM_v1_0.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ShapiroRudinPark_TimeSynchronizer_BRAM_v1_0
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Files/SoCProject/DCOOFDMVLCAccDraft/DCOOFDMVLCAccDraft.ip_user_files/bd/TxRx_Design/ip/TxRx_Design_ShapiroRudinPark_TimeSynchronizer_BRAM_0_0/sim/TxRx_Design_ShapiroRudinPark_TimeSynchronizer_BRAM_0_0.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module TxRx_Design_ShapiroRudinPark_TimeSynchronizer_BRAM_0_0
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Files/SoCProject/DCOOFDMVLCAccDraft/DCOOFDMVLCAccDraft.ip_user_files/bd/TxRx_Design/ipshared/xilinx.com/channelestimator_equalizer_bram_v1_0/src/BRAM_out_buff_cee.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module BRAM_out_buff_cee
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Files/SoCProject/DCOOFDMVLCAccDraft/DCOOFDMVLCAccDraft.ip_user_files/bd/TxRx_Design/ipshared/xilinx.com/channelestimator_equalizer_bram_v1_0/src/BRAM_buff_cest_4_cee.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module BRAM_buff_cest_4_cee
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Files/SoCProject/DCOOFDMVLCAccDraft/DCOOFDMVLCAccDraft.ip_user_files/bd/TxRx_Design/ipshared/xilinx.com/channelestimator_equalizer_bram_v1_0/src/BRAM_buff_cest_3_cee.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module BRAM_buff_cest_3_cee
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Files/SoCProject/DCOOFDMVLCAccDraft/DCOOFDMVLCAccDraft.ip_user_files/bd/TxRx_Design/ipshared/xilinx.com/channelestimator_equalizer_bram_v1_0/src/BRAM_buff_cest_2_cee.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module BRAM_buff_cest_2_cee
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Files/SoCProject/DCOOFDMVLCAccDraft/DCOOFDMVLCAccDraft.ip_user_files/bd/TxRx_Design/ipshared/xilinx.com/channelestimator_equalizer_bram_v1_0/src/BRAM_buff_cest_1_cee.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module BRAM_buff_cest_1_cee
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Files/SoCProject/DCOOFDMVLCAccDraft/DCOOFDMVLCAccDraft.ip_user_files/bd/TxRx_Design/ipshared/xilinx.com/channelestimator_equalizer_bram_v1_0/src/BRAM_eq_coeff_cee.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module BRAM_eq_coeff_cee
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Files/SoCProject/DCOOFDMVLCAccDraft/DCOOFDMVLCAccDraft.ip_user_files/bd/TxRx_Design/ipshared/xilinx.com/channelestimator_equalizer_bram_v1_0/src/BRAM_buff_re_cee.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module BRAM_buff_re_cee
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Files/SoCProject/DCOOFDMVLCAccDraft/DCOOFDMVLCAccDraft.ip_user_files/bd/TxRx_Design/ipshared/xilinx.com/channelestimator_equalizer_bram_v1_0/src/BRAM_buff_im_cee.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module BRAM_buff_im_cee
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Files/SoCProject/DCOOFDMVLCAccDraft/DCOOFDMVLCAccDraft.ip_user_files/bd/TxRx_Design/ipshared/xilinx.com/channelestimator_equalizer_bram_v1_0/src/ChannelEst_Eq.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ChannelEst_Eq
+WARNING: [VRFC 10-1315] redeclaration of ansi port out_buff_full is not allowed [D:/Files/SoCProject/DCOOFDMVLCAccDraft/DCOOFDMVLCAccDraft.ip_user_files/bd/TxRx_Design/ipshared/xilinx.com/channelestimator_equalizer_bram_v1_0/src/ChannelEst_Eq.v:49]
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Files/SoCProject/DCOOFDMVLCAccDraft/DCOOFDMVLCAccDraft.ip_user_files/bd/TxRx_Design/ipshared/xilinx.com/channelestimator_equalizer_bram_v1_0/hdl/ChannelEstimator_Equalizer_BRAM_v1_0_S00_AXIS.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ChannelEstimator_Equalizer_BRAM_v1_0_S00_AXIS
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Files/SoCProject/DCOOFDMVLCAccDraft/DCOOFDMVLCAccDraft.ip_user_files/bd/TxRx_Design/ipshared/xilinx.com/channelestimator_equalizer_bram_v1_0/hdl/ChannelEstimator_Equalizer_BRAM_v1_0_M00_AXIS.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ChannelEstimator_Equalizer_BRAM_v1_0_M00_AXIS
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Files/SoCProject/DCOOFDMVLCAccDraft/DCOOFDMVLCAccDraft.ip_user_files/bd/TxRx_Design/ipshared/xilinx.com/channelestimator_equalizer_bram_v1_0/hdl/ChannelEstimator_Equalizer_BRAM_v1_0.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ChannelEstimator_Equalizer_BRAM_v1_0
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Files/SoCProject/DCOOFDMVLCAccDraft/DCOOFDMVLCAccDraft.ip_user_files/bd/TxRx_Design/ip/TxRx_Design_ChannelEstimator_Equalizer_BRAM_0_0/sim/TxRx_Design_ChannelEstimator_Equalizer_BRAM_0_0.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module TxRx_Design_ChannelEstimator_Equalizer_BRAM_0_0
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Files/SoCProject/DCOOFDMVLCAccDraft/DCOOFDMVLCAccDraft.ip_user_files/bd/TxRx_Design/ipshared/xilinx.com/frameassembler_bram_v1_0/src/BRAM_out_buff_asm.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module BRAM_out_buff_asm
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Files/SoCProject/DCOOFDMVLCAccDraft/DCOOFDMVLCAccDraft.ip_user_files/bd/TxRx_Design/ipshared/xilinx.com/frameassembler_bram_v1_0/src/BRAM_buff_asm.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module BRAM_buff_asm
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Files/SoCProject/DCOOFDMVLCAccDraft/DCOOFDMVLCAccDraft.ip_user_files/bd/TxRx_Design/ipshared/xilinx.com/frameassembler_bram_v1_0/src/Assembler.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Assembler
+WARNING: [VRFC 10-1315] redeclaration of ansi port out_buff_full is not allowed [D:/Files/SoCProject/DCOOFDMVLCAccDraft/DCOOFDMVLCAccDraft.ip_user_files/bd/TxRx_Design/ipshared/xilinx.com/frameassembler_bram_v1_0/src/Assembler.v:40]
+WARNING: [VRFC 10-1195] overwriting previous definition of module Assembler [D:/Files/SoCProject/DCOOFDMVLCAccDraft/DCOOFDMVLCAccDraft.ip_user_files/bd/TxRx_Design/ipshared/xilinx.com/frameassembler_bram_v1_0/src/Assembler.v:23]
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Files/SoCProject/DCOOFDMVLCAccDraft/DCOOFDMVLCAccDraft.ip_user_files/bd/TxRx_Design/ipshared/xilinx.com/frameassembler_bram_v1_0/hdl/FrameAssembler_BRAM_v1_0_S00_AXIS.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module FrameAssembler_BRAM_v1_0_S00_AXIS
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Files/SoCProject/DCOOFDMVLCAccDraft/DCOOFDMVLCAccDraft.ip_user_files/bd/TxRx_Design/ipshared/xilinx.com/frameassembler_bram_v1_0/hdl/FrameAssembler_BRAM_v1_0_M00_AXIS.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module FrameAssembler_BRAM_v1_0_M00_AXIS
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Files/SoCProject/DCOOFDMVLCAccDraft/DCOOFDMVLCAccDraft.ip_user_files/bd/TxRx_Design/ipshared/xilinx.com/frameassembler_bram_v1_0/hdl/FrameAssembler_BRAM_v1_0.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module FrameAssembler_BRAM_v1_0
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Files/SoCProject/DCOOFDMVLCAccDraft/DCOOFDMVLCAccDraft.ip_user_files/bd/TxRx_Design/ip/TxRx_Design_FrameAssembler_BRAM_0_1/sim/TxRx_Design_FrameAssembler_BRAM_0_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module TxRx_Design_FrameAssembler_BRAM_0_1
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Files/SoCProject/DCOOFDMVLCAccDraft/DCOOFDMVLCAccDraft.srcs/sources_1/bd/TxRx_Design/hdl/TxRx_Design_wrapper.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module TxRx_Design_wrapper
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Files/SoCProject/DCOOFDMVLCAccDraft/DCOOFDMVLCAccDraft.srcs/sim_1/new/TxRx_sim.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module TxRx_sim
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Files/SoCProject/DCOOFDMVLCAccDraft/DCOOFDMVLCAccDraft.sim/sim_1/behav/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl

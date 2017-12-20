@@ -1,0 +1,78 @@
+{
+   guistr: "# # String gsaved with Nlview 6.5.12  2016-01-29 bk=1.3547 VDI=39 GEI=35 GUI=JA:1.6
+#  -string -flagsOSRD
+preplace port dout_valid -pg 1 -y 250 -defaultsOSRD
+preplace port clk -pg 1 -y 70 -defaultsOSRD
+preplace port nreset -pg 1 -y 210 -defaultsOSRD
+preplace portBus dout -pg 1 -y 210 -defaultsOSRD
+preplace inst axis_data_fifo_1 -pg 1 -lvl 14 -y 270 -defaultsOSRD
+preplace inst viterbi_0 -pg 1 -lvl 20 -y 220 -defaultsOSRD
+preplace inst xlslice_0 -pg 1 -lvl 8 -y 140 -defaultsOSRD
+preplace inst QPSK_demapper_0 -pg 1 -lvl 15 -y 260 -defaultsOSRD
+preplace inst xlconstant_0 -pg 1 -lvl 17 -y 200 -defaultsOSRD
+preplace inst nResetCounter_0 -pg 1 -lvl 19 -y 330 -defaultsOSRD
+preplace inst xlslice_1 -pg 1 -lvl 11 -y 40 -defaultsOSRD
+preplace inst HermitianRemover_0 -pg 1 -lvl 13 -y 250 -defaultsOSRD
+preplace inst xlslice_2 -pg 1 -lvl 11 -y 120 -defaultsOSRD
+preplace inst xlconstant_1 -pg 1 -lvl 1 -y 150 -defaultsOSRD
+preplace inst xlslice_4 -pg 1 -lvl 17 -y 120 -defaultsOSRD
+preplace inst xlconstant_3 -pg 1 -lvl 6 -y 310 -defaultsOSRD
+preplace inst xlconcat_0 -pg 1 -lvl 9 -y 80 -defaultsOSRD
+preplace inst xlslice_5 -pg 1 -lvl 17 -y 40 -defaultsOSRD
+preplace inst convolution_0 -pg 1 -lvl 2 -y 150 -defaultsOSRD
+preplace inst xlconstant_4 -pg 1 -lvl 6 -y 390 -defaultsOSRD
+preplace inst xlconcat_1 -pg 1 -lvl 12 -y 240 -defaultsOSRD
+preplace inst xfft_0 -pg 1 -lvl 7 -y 240 -defaultsOSRD
+preplace inst c_counter_binary_0 -pg 1 -lvl 1 -y 70 -defaultsOSRD
+preplace inst xlconcat_2 -pg 1 -lvl 18 -y 150 -defaultsOSRD
+preplace inst xfft_1 -pg 1 -lvl 10 -y 230 -defaultsOSRD
+preplace inst sid_0 -pg 1 -lvl 3 -y 170 -defaultsOSRD
+preplace inst xlconcat_3 -pg 1 -lvl 18 -y 50 -defaultsOSRD
+preplace inst sid_1 -pg 1 -lvl 16 -y 280 -defaultsOSRD
+preplace inst xlconcat_4 -pg 1 -lvl 19 -y 160 -defaultsOSRD
+preplace inst QPSK_mapper_0 -pg 1 -lvl 4 -y 160 -defaultsOSRD
+preplace inst axis_data_fifo_0 -pg 1 -lvl 5 -y 180 -defaultsOSRD
+preplace inst HermitianBuffer_0 -pg 1 -lvl 6 -y 190 -defaultsOSRD
+preplace netloc xlconstant_1_dout 1 1 1 NJ
+preplace netloc sid_0_M_AXIS_DATA 1 3 1 N
+preplace netloc xlslice_4_Dout 1 17 1 NJ
+preplace netloc xlconstant_2_dout 1 17 1 4560
+preplace netloc xfft_0_m_axis_data_tlast 1 7 3 NJ 190 NJ 190 2400
+preplace netloc xlslice_1_Dout 1 11 1 2990
+preplace netloc xfft_1_m_axis_data_tdata 1 10 1 2800
+preplace netloc QPSK_demapper_0_M00_AXIS 1 15 1 N
+preplace netloc xlconcat_1_dout 1 12 1 3170
+preplace netloc viterbi_0_s_axis_data_tready 1 16 4 NJ 260 NJ 260 NJ 260 4930
+preplace netloc HermitianRemover_0_s00_axis_tready 1 10 3 NJ 180 NJ 180 3180
+preplace netloc viterbi_0_m_axis_data_tdata 1 20 1 NJ
+preplace netloc xfft_1_s_axis_data_tready 1 7 3 NJ 200 NJ 200 N
+preplace netloc xfft_1_m_axis_data_tlast 1 10 3 NJ 170 NJ 170 3190
+preplace netloc nResetCounter_0_out_sig 1 19 1 4940
+preplace netloc xlconcat_3_dout 1 18 1 4750
+preplace netloc convolution_0_M_AXIS_DATA 1 2 1 N
+preplace netloc sid_1_m_axis_data_tvalid 1 16 3 NJ 280 NJ 280 4740
+preplace netloc c_counter_binary_0_Q 1 1 1 NJ
+preplace netloc xlconcat_0_dout 1 9 1 2400
+preplace netloc xfft_0_m_axis_data_tdata 1 7 1 NJ
+preplace netloc clk_1 1 0 20 20 200 200 60 530 250 840 250 1080 260 1380 440 1640 400 NJ 400 NJ 400 2400 380 NJ 380 NJ 380 3200 390 3500 360 3800 330 4030 170 NJ 250 NJ 250 NJ 250 NJ
+preplace netloc HermitianRemover_0_M00_AXIS 1 13 1 N
+preplace netloc xfft_1_m_axis_data_tvalid 1 10 3 NJ 300 NJ 300 3190
+preplace netloc xlslice_2_Dout 1 11 1 2980
+preplace netloc xlslice_3_Dout1 1 17 1 NJ
+preplace netloc xfft_0_m_axis_data_tvalid 1 7 3 NJ 220 NJ 220 N
+preplace netloc xlconstant_4_dout 1 6 15 1650 390 NJ 390 NJ 390 2410 400 NJ 400 NJ 400 NJ 400 NJ 400 NJ 400 NJ 400 NJ 400 NJ 400 NJ 400 NJ 400 5320
+preplace netloc axis_data_fifo_1_M_AXIS 1 14 1 N
+preplace netloc QPSK_mapper_0_M00_AXIS 1 4 1 N
+preplace netloc axis_data_fifo_0_M_AXIS 1 5 1 N
+preplace netloc viterbi_0_m_axis_data_tvalid 1 20 1 NJ
+preplace netloc Net 1 16 1 4370
+preplace netloc xlconcat_4_dout 1 19 1 4930
+preplace netloc xlconcat_2_dout 1 18 1 N
+preplace netloc nreset_1 1 0 20 NJ 210 210 240 540 260 850 230 1070 270 1390 450 1660 410 NJ 410 NJ 410 2420 390 NJ 390 NJ 390 3210 380 3490 350 3810 340 4040 390 NJ 390 NJ 390 4750 270 N
+preplace netloc HermitianBuffer_0_M00_AXIS 1 6 1 N
+preplace netloc xlslice_0_Dout 1 8 1 2220
+preplace netloc xlconstant_3_dout 1 6 3 1630 90 NJ 90 NJ
+levelinfo -pg 1 0 110 370 690 960 1230 1510 1850 2130 2310 2610 2890 3080 3350 3650 3920 4200 4460 4650 4840 5130 5340 -top 0 -bot 460
+",
+}
+0

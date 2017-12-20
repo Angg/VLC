@@ -1,0 +1,1468 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="TxRx_sim_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="TxRx_sim" />
+            <top_module name="glbl" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="79976900000fs"></ZoomStartTime>
+      <ZoomEndTime time="80115500001fs"></ZoomEndTime>
+      <Cursor1Time time="80060000000fs"></Cursor1Time>
+   </zoom_setting>
+   <WVObjectSize size="360" />
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/clk" type="logic">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/done" type="logic">
+      <obj_property name="ElementShortName">done</obj_property>
+      <obj_property name="ObjectShortName">done</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/dout" type="array">
+      <obj_property name="ElementShortName">dout[7:0]</obj_property>
+      <obj_property name="ObjectShortName">dout[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/dout_valid" type="logic">
+      <obj_property name="ElementShortName">dout_valid</obj_property>
+      <obj_property name="ObjectShortName">dout_valid</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/nreset" type="logic">
+      <obj_property name="ElementShortName">nreset</obj_property>
+      <obj_property name="ObjectShortName">nreset</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/c_counter_binary_0/CLK" type="logic">
+      <obj_property name="ElementShortName">CLK</obj_property>
+      <obj_property name="ObjectShortName">CLK</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/c_counter_binary_0/Q" type="array">
+      <obj_property name="ElementShortName">Q[7:0]</obj_property>
+      <obj_property name="ObjectShortName">Q[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/convolution_0/aclk" type="logic">
+      <obj_property name="ElementShortName">aclk</obj_property>
+      <obj_property name="ObjectShortName">aclk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/convolution_0/aresetn" type="logic">
+      <obj_property name="ElementShortName">aresetn</obj_property>
+      <obj_property name="ObjectShortName">aresetn</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/convolution_0/s_axis_data_tdata" type="array">
+      <obj_property name="ElementShortName">s_axis_data_tdata[7:0]</obj_property>
+      <obj_property name="ObjectShortName">s_axis_data_tdata[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/convolution_0/s_axis_data_tvalid" type="logic">
+      <obj_property name="ElementShortName">s_axis_data_tvalid</obj_property>
+      <obj_property name="ObjectShortName">s_axis_data_tvalid</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/convolution_0/s_axis_data_tready" type="logic">
+      <obj_property name="ElementShortName">s_axis_data_tready</obj_property>
+      <obj_property name="ObjectShortName">s_axis_data_tready</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/convolution_0/m_axis_data_tdata" type="array">
+      <obj_property name="ElementShortName">m_axis_data_tdata[7:0]</obj_property>
+      <obj_property name="ObjectShortName">m_axis_data_tdata[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/convolution_0/m_axis_data_tvalid" type="logic">
+      <obj_property name="ElementShortName">m_axis_data_tvalid</obj_property>
+      <obj_property name="ObjectShortName">m_axis_data_tvalid</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/convolution_0/m_axis_data_tready" type="logic">
+      <obj_property name="ElementShortName">m_axis_data_tready</obj_property>
+      <obj_property name="ObjectShortName">m_axis_data_tready</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/sid_0/aclk" type="logic">
+      <obj_property name="ElementShortName">aclk</obj_property>
+      <obj_property name="ObjectShortName">aclk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/sid_0/aresetn" type="logic">
+      <obj_property name="ElementShortName">aresetn</obj_property>
+      <obj_property name="ObjectShortName">aresetn</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/sid_0/s_axis_data_tdata" type="array">
+      <obj_property name="ElementShortName">s_axis_data_tdata[7:0]</obj_property>
+      <obj_property name="ObjectShortName">s_axis_data_tdata[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/sid_0/s_axis_data_tvalid" type="logic">
+      <obj_property name="ElementShortName">s_axis_data_tvalid</obj_property>
+      <obj_property name="ObjectShortName">s_axis_data_tvalid</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/sid_0/s_axis_data_tlast" type="logic">
+      <obj_property name="ElementShortName">s_axis_data_tlast</obj_property>
+      <obj_property name="ObjectShortName">s_axis_data_tlast</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/sid_0/s_axis_data_tready" type="logic">
+      <obj_property name="ElementShortName">s_axis_data_tready</obj_property>
+      <obj_property name="ObjectShortName">s_axis_data_tready</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/sid_0/m_axis_data_tdata" type="array">
+      <obj_property name="ElementShortName">m_axis_data_tdata[7:0]</obj_property>
+      <obj_property name="ObjectShortName">m_axis_data_tdata[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/sid_0/m_axis_data_tvalid" type="logic">
+      <obj_property name="ElementShortName">m_axis_data_tvalid</obj_property>
+      <obj_property name="ObjectShortName">m_axis_data_tvalid</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/sid_0/m_axis_data_tlast" type="logic">
+      <obj_property name="ElementShortName">m_axis_data_tlast</obj_property>
+      <obj_property name="ObjectShortName">m_axis_data_tlast</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/sid_0/m_axis_data_tready" type="logic">
+      <obj_property name="ElementShortName">m_axis_data_tready</obj_property>
+      <obj_property name="ObjectShortName">m_axis_data_tready</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/sid_0/event_tlast_unexpected" type="logic">
+      <obj_property name="ElementShortName">event_tlast_unexpected</obj_property>
+      <obj_property name="ObjectShortName">event_tlast_unexpected</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/sid_0/event_tlast_missing" type="logic">
+      <obj_property name="ElementShortName">event_tlast_missing</obj_property>
+      <obj_property name="ObjectShortName">event_tlast_missing</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/sid_0/event_halted" type="logic">
+      <obj_property name="ElementShortName">event_halted</obj_property>
+      <obj_property name="ObjectShortName">event_halted</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/QPSK_mapper_0/aclk" type="logic">
+      <obj_property name="ElementShortName">aclk</obj_property>
+      <obj_property name="ObjectShortName">aclk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/QPSK_mapper_0/aresetn" type="logic">
+      <obj_property name="ElementShortName">aresetn</obj_property>
+      <obj_property name="ObjectShortName">aresetn</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/QPSK_mapper_0/m00_axis_tdata" type="array">
+      <obj_property name="ElementShortName">m00_axis_tdata[15:0]</obj_property>
+      <obj_property name="ObjectShortName">m00_axis_tdata[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/QPSK_mapper_0/m00_axis_tlast" type="logic">
+      <obj_property name="ElementShortName">m00_axis_tlast</obj_property>
+      <obj_property name="ObjectShortName">m00_axis_tlast</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/QPSK_mapper_0/m00_axis_tvalid" type="logic">
+      <obj_property name="ElementShortName">m00_axis_tvalid</obj_property>
+      <obj_property name="ObjectShortName">m00_axis_tvalid</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/QPSK_mapper_0/m00_axis_tready" type="logic">
+      <obj_property name="ElementShortName">m00_axis_tready</obj_property>
+      <obj_property name="ObjectShortName">m00_axis_tready</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/QPSK_mapper_0/s00_axis_tdata" type="array">
+      <obj_property name="ElementShortName">s00_axis_tdata[7:0]</obj_property>
+      <obj_property name="ObjectShortName">s00_axis_tdata[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/QPSK_mapper_0/s00_axis_tlast" type="logic">
+      <obj_property name="ElementShortName">s00_axis_tlast</obj_property>
+      <obj_property name="ObjectShortName">s00_axis_tlast</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/QPSK_mapper_0/s00_axis_tvalid" type="logic">
+      <obj_property name="ElementShortName">s00_axis_tvalid</obj_property>
+      <obj_property name="ObjectShortName">s00_axis_tvalid</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/QPSK_mapper_0/s00_axis_tready" type="logic">
+      <obj_property name="ElementShortName">s00_axis_tready</obj_property>
+      <obj_property name="ObjectShortName">s00_axis_tready</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/HermitianBuffer_BRAM_0/s00_axis_tdata" type="array">
+      <obj_property name="ElementShortName">s00_axis_tdata[15:0]</obj_property>
+      <obj_property name="ObjectShortName">s00_axis_tdata[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/HermitianBuffer_BRAM_0/s00_axis_tlast" type="logic">
+      <obj_property name="ElementShortName">s00_axis_tlast</obj_property>
+      <obj_property name="ObjectShortName">s00_axis_tlast</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/HermitianBuffer_BRAM_0/s00_axis_tvalid" type="logic">
+      <obj_property name="ElementShortName">s00_axis_tvalid</obj_property>
+      <obj_property name="ObjectShortName">s00_axis_tvalid</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/HermitianBuffer_BRAM_0/s00_axis_tready" type="logic">
+      <obj_property name="ElementShortName">s00_axis_tready</obj_property>
+      <obj_property name="ObjectShortName">s00_axis_tready</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/HermitianBuffer_BRAM_0/s00_axis_aclk" type="logic">
+      <obj_property name="ElementShortName">s00_axis_aclk</obj_property>
+      <obj_property name="ObjectShortName">s00_axis_aclk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/HermitianBuffer_BRAM_0/s00_axis_aresetn" type="logic">
+      <obj_property name="ElementShortName">s00_axis_aresetn</obj_property>
+      <obj_property name="ObjectShortName">s00_axis_aresetn</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/HermitianBuffer_BRAM_0/m00_axis_tdata" type="array">
+      <obj_property name="ElementShortName">m00_axis_tdata[15:0]</obj_property>
+      <obj_property name="ObjectShortName">m00_axis_tdata[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/HermitianBuffer_BRAM_0/m00_axis_tlast" type="logic">
+      <obj_property name="ElementShortName">m00_axis_tlast</obj_property>
+      <obj_property name="ObjectShortName">m00_axis_tlast</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/HermitianBuffer_BRAM_0/m00_axis_tvalid" type="logic">
+      <obj_property name="ElementShortName">m00_axis_tvalid</obj_property>
+      <obj_property name="ObjectShortName">m00_axis_tvalid</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/HermitianBuffer_BRAM_0/m00_axis_tready" type="logic">
+      <obj_property name="ElementShortName">m00_axis_tready</obj_property>
+      <obj_property name="ObjectShortName">m00_axis_tready</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/HermitianBuffer_BRAM_0/m00_axis_aclk" type="logic">
+      <obj_property name="ElementShortName">m00_axis_aclk</obj_property>
+      <obj_property name="ObjectShortName">m00_axis_aclk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/HermitianBuffer_BRAM_0/m00_axis_aresetn" type="logic">
+      <obj_property name="ElementShortName">m00_axis_aresetn</obj_property>
+      <obj_property name="ObjectShortName">m00_axis_aresetn</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/xfft_0/aclk" type="logic">
+      <obj_property name="ElementShortName">aclk</obj_property>
+      <obj_property name="ObjectShortName">aclk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/xfft_0/aresetn" type="logic">
+      <obj_property name="ElementShortName">aresetn</obj_property>
+      <obj_property name="ObjectShortName">aresetn</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/HermitianBuffer_0/m00_axis_tdata" type="array">
+      <obj_property name="ElementShortName">m00_axis_tdata[15:0]</obj_property>
+      <obj_property name="ObjectShortName">m00_axis_tdata[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/HermitianBuffer_0/m00_axis_tlast" type="logic">
+      <obj_property name="ElementShortName">m00_axis_tlast</obj_property>
+      <obj_property name="ObjectShortName">m00_axis_tlast</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/HermitianBuffer_0/m00_axis_tvalid" type="logic">
+      <obj_property name="ElementShortName">m00_axis_tvalid</obj_property>
+      <obj_property name="ObjectShortName">m00_axis_tvalid</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/HermitianBuffer_0/m00_axis_tready" type="logic">
+      <obj_property name="ElementShortName">m00_axis_tready</obj_property>
+      <obj_property name="ObjectShortName">m00_axis_tready</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/HermitianBuffer_0/m00_axis_aclk" type="logic">
+      <obj_property name="ElementShortName">m00_axis_aclk</obj_property>
+      <obj_property name="ObjectShortName">m00_axis_aclk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/HermitianBuffer_0/m00_axis_aresetn" type="logic">
+      <obj_property name="ElementShortName">m00_axis_aresetn</obj_property>
+      <obj_property name="ObjectShortName">m00_axis_aresetn</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/HermitianBuffer_0/s00_axis_tdata" type="array">
+      <obj_property name="ElementShortName">s00_axis_tdata[15:0]</obj_property>
+      <obj_property name="ObjectShortName">s00_axis_tdata[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/HermitianBuffer_0/s00_axis_tlast" type="logic">
+      <obj_property name="ElementShortName">s00_axis_tlast</obj_property>
+      <obj_property name="ObjectShortName">s00_axis_tlast</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/HermitianBuffer_0/s00_axis_tvalid" type="logic">
+      <obj_property name="ElementShortName">s00_axis_tvalid</obj_property>
+      <obj_property name="ObjectShortName">s00_axis_tvalid</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/HermitianBuffer_0/s00_axis_tready" type="logic">
+      <obj_property name="ElementShortName">s00_axis_tready</obj_property>
+      <obj_property name="ObjectShortName">s00_axis_tready</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/HermitianBuffer_0/s00_axis_aclk" type="logic">
+      <obj_property name="ElementShortName">s00_axis_aclk</obj_property>
+      <obj_property name="ObjectShortName">s00_axis_aclk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/HermitianBuffer_0/s00_axis_aresetn" type="logic">
+      <obj_property name="ElementShortName">s00_axis_aresetn</obj_property>
+      <obj_property name="ObjectShortName">s00_axis_aresetn</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/xfft_0/s_axis_config_tdata" type="array">
+      <obj_property name="ElementShortName">s_axis_config_tdata[15:0]</obj_property>
+      <obj_property name="ObjectShortName">s_axis_config_tdata[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/xfft_0/s_axis_config_tvalid" type="logic">
+      <obj_property name="ElementShortName">s_axis_config_tvalid</obj_property>
+      <obj_property name="ObjectShortName">s_axis_config_tvalid</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/xfft_0/s_axis_config_tready" type="logic">
+      <obj_property name="ElementShortName">s_axis_config_tready</obj_property>
+      <obj_property name="ObjectShortName">s_axis_config_tready</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/xfft_0/s_axis_data_tdata" type="array">
+      <obj_property name="ElementShortName">s_axis_data_tdata[15:0]</obj_property>
+      <obj_property name="ObjectShortName">s_axis_data_tdata[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/xfft_0/s_axis_data_tvalid" type="logic">
+      <obj_property name="ElementShortName">s_axis_data_tvalid</obj_property>
+      <obj_property name="ObjectShortName">s_axis_data_tvalid</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/xfft_0/s_axis_data_tready" type="logic">
+      <obj_property name="ElementShortName">s_axis_data_tready</obj_property>
+      <obj_property name="ObjectShortName">s_axis_data_tready</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/xfft_0/s_axis_data_tlast" type="logic">
+      <obj_property name="ElementShortName">s_axis_data_tlast</obj_property>
+      <obj_property name="ObjectShortName">s_axis_data_tlast</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/xfft_0/m_axis_data_tdata" type="array">
+      <obj_property name="ElementShortName">m_axis_data_tdata[31:0]</obj_property>
+      <obj_property name="ObjectShortName">m_axis_data_tdata[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/xfft_0/m_axis_data_tvalid" type="logic">
+      <obj_property name="ElementShortName">m_axis_data_tvalid</obj_property>
+      <obj_property name="ObjectShortName">m_axis_data_tvalid</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/xfft_0/m_axis_data_tready" type="logic">
+      <obj_property name="ElementShortName">m_axis_data_tready</obj_property>
+      <obj_property name="ObjectShortName">m_axis_data_tready</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/xfft_0/m_axis_data_tlast" type="logic">
+      <obj_property name="ElementShortName">m_axis_data_tlast</obj_property>
+      <obj_property name="ObjectShortName">m_axis_data_tlast</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/xfft_0/event_frame_started" type="logic">
+      <obj_property name="ElementShortName">event_frame_started</obj_property>
+      <obj_property name="ObjectShortName">event_frame_started</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/xfft_0/event_tlast_unexpected" type="logic">
+      <obj_property name="ElementShortName">event_tlast_unexpected</obj_property>
+      <obj_property name="ObjectShortName">event_tlast_unexpected</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/xfft_0/event_tlast_missing" type="logic">
+      <obj_property name="ElementShortName">event_tlast_missing</obj_property>
+      <obj_property name="ObjectShortName">event_tlast_missing</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/xfft_0/event_status_channel_halt" type="logic">
+      <obj_property name="ElementShortName">event_status_channel_halt</obj_property>
+      <obj_property name="ObjectShortName">event_status_channel_halt</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/xfft_0/event_data_in_channel_halt" type="logic">
+      <obj_property name="ElementShortName">event_data_in_channel_halt</obj_property>
+      <obj_property name="ObjectShortName">event_data_in_channel_halt</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/xfft_0/event_data_out_channel_halt" type="logic">
+      <obj_property name="ElementShortName">event_data_out_channel_halt</obj_property>
+      <obj_property name="ObjectShortName">event_data_out_channel_halt</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/FrameAssembler_BRAM_0/m00_axis_tdata" type="array">
+      <obj_property name="ElementShortName">m00_axis_tdata[7:0]</obj_property>
+      <obj_property name="ObjectShortName">m00_axis_tdata[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/FrameAssembler_BRAM_0/m00_axis_tlast" type="logic">
+      <obj_property name="ElementShortName">m00_axis_tlast</obj_property>
+      <obj_property name="ObjectShortName">m00_axis_tlast</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/FrameAssembler_BRAM_0/m00_axis_tvalid" type="logic">
+      <obj_property name="ElementShortName">m00_axis_tvalid</obj_property>
+      <obj_property name="ObjectShortName">m00_axis_tvalid</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/FrameAssembler_BRAM_0/m00_axis_tready" type="logic">
+      <obj_property name="ElementShortName">m00_axis_tready</obj_property>
+      <obj_property name="ObjectShortName">m00_axis_tready</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/FrameAssembler_BRAM_0/m00_axis_aclk" type="logic">
+      <obj_property name="ElementShortName">m00_axis_aclk</obj_property>
+      <obj_property name="ObjectShortName">m00_axis_aclk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/FrameAssembler_BRAM_0/m00_axis_aresetn" type="logic">
+      <obj_property name="ElementShortName">m00_axis_aresetn</obj_property>
+      <obj_property name="ObjectShortName">m00_axis_aresetn</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/FrameAssembler_BRAM_0/s00_axis_tdata" type="array">
+      <obj_property name="ElementShortName">s00_axis_tdata[7:0]</obj_property>
+      <obj_property name="ObjectShortName">s00_axis_tdata[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/FrameAssembler_BRAM_0/s00_axis_tlast" type="logic">
+      <obj_property name="ElementShortName">s00_axis_tlast</obj_property>
+      <obj_property name="ObjectShortName">s00_axis_tlast</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/FrameAssembler_BRAM_0/s00_axis_tvalid" type="logic">
+      <obj_property name="ElementShortName">s00_axis_tvalid</obj_property>
+      <obj_property name="ObjectShortName">s00_axis_tvalid</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/FrameAssembler_BRAM_0/done" type="logic">
+      <obj_property name="ElementShortName">done</obj_property>
+      <obj_property name="ObjectShortName">done</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/FrameAssembler_BRAM_0/s00_axis_tready" type="logic">
+      <obj_property name="ElementShortName">s00_axis_tready</obj_property>
+      <obj_property name="ObjectShortName">s00_axis_tready</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/FrameAssembler_BRAM_0/s00_axis_aclk" type="logic">
+      <obj_property name="ElementShortName">s00_axis_aclk</obj_property>
+      <obj_property name="ObjectShortName">s00_axis_aclk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/FrameAssembler_BRAM_0/s00_axis_aresetn" type="logic">
+      <obj_property name="ElementShortName">s00_axis_aresetn</obj_property>
+      <obj_property name="ObjectShortName">s00_axis_aresetn</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/FrameAssembler_0/s00_axis_tdata" type="array">
+      <obj_property name="ElementShortName">s00_axis_tdata[7:0]</obj_property>
+      <obj_property name="ObjectShortName">s00_axis_tdata[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/FrameAssembler_0/s00_axis_tlast" type="logic">
+      <obj_property name="ElementShortName">s00_axis_tlast</obj_property>
+      <obj_property name="ObjectShortName">s00_axis_tlast</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/FrameAssembler_0/s00_axis_tvalid" type="logic">
+      <obj_property name="ElementShortName">s00_axis_tvalid</obj_property>
+      <obj_property name="ObjectShortName">s00_axis_tvalid</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/FrameAssembler_0/done" type="logic">
+      <obj_property name="ElementShortName">done</obj_property>
+      <obj_property name="ObjectShortName">done</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/FrameAssembler_0/s00_axis_tready" type="logic">
+      <obj_property name="ElementShortName">s00_axis_tready</obj_property>
+      <obj_property name="ObjectShortName">s00_axis_tready</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/FrameAssembler_0/s00_axis_aclk" type="logic">
+      <obj_property name="ElementShortName">s00_axis_aclk</obj_property>
+      <obj_property name="ObjectShortName">s00_axis_aclk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/FrameAssembler_0/s00_axis_aresetn" type="logic">
+      <obj_property name="ElementShortName">s00_axis_aresetn</obj_property>
+      <obj_property name="ObjectShortName">s00_axis_aresetn</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/FrameAssembler_0/m00_axis_tdata" type="array">
+      <obj_property name="ElementShortName">m00_axis_tdata[7:0]</obj_property>
+      <obj_property name="ObjectShortName">m00_axis_tdata[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/FrameAssembler_0/m00_axis_tlast" type="logic">
+      <obj_property name="ElementShortName">m00_axis_tlast</obj_property>
+      <obj_property name="ObjectShortName">m00_axis_tlast</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/FrameAssembler_0/m00_axis_tvalid" type="logic">
+      <obj_property name="ElementShortName">m00_axis_tvalid</obj_property>
+      <obj_property name="ObjectShortName">m00_axis_tvalid</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/FrameAssembler_0/m00_axis_tready" type="logic">
+      <obj_property name="ElementShortName">m00_axis_tready</obj_property>
+      <obj_property name="ObjectShortName">m00_axis_tready</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/FrameAssembler_0/m00_axis_aclk" type="logic">
+      <obj_property name="ElementShortName">m00_axis_aclk</obj_property>
+      <obj_property name="ObjectShortName">m00_axis_aclk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/FrameAssembler_0/m00_axis_aresetn" type="logic">
+      <obj_property name="ElementShortName">m00_axis_aresetn</obj_property>
+      <obj_property name="ObjectShortName">m00_axis_aresetn</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/ShapiroRudinPark_TimeSynchronizer_BRAM_0/m00_axis_tdata" type="array">
+      <obj_property name="ElementShortName">m00_axis_tdata[7:0]</obj_property>
+      <obj_property name="ObjectShortName">m00_axis_tdata[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/ShapiroRudinPark_TimeSynchronizer_BRAM_0/m00_axis_tlast" type="logic">
+      <obj_property name="ElementShortName">m00_axis_tlast</obj_property>
+      <obj_property name="ObjectShortName">m00_axis_tlast</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/ShapiroRudinPark_TimeSynchronizer_BRAM_0/m00_axis_tvalid" type="logic">
+      <obj_property name="ElementShortName">m00_axis_tvalid</obj_property>
+      <obj_property name="ObjectShortName">m00_axis_tvalid</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/ShapiroRudinPark_TimeSynchronizer_BRAM_0/m00_axis_tready" type="logic">
+      <obj_property name="ElementShortName">m00_axis_tready</obj_property>
+      <obj_property name="ObjectShortName">m00_axis_tready</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/ShapiroRudinPark_TimeSynchronizer_BRAM_0/m00_axis_aclk" type="logic">
+      <obj_property name="ElementShortName">m00_axis_aclk</obj_property>
+      <obj_property name="ObjectShortName">m00_axis_aclk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/ShapiroRudinPark_TimeSynchronizer_BRAM_0/m00_axis_aresetn" type="logic">
+      <obj_property name="ElementShortName">m00_axis_aresetn</obj_property>
+      <obj_property name="ObjectShortName">m00_axis_aresetn</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/ShapiroRudinPark_TimeSynchronizer_BRAM_0/s00_axis_tdata" type="array">
+      <obj_property name="ElementShortName">s00_axis_tdata[7:0]</obj_property>
+      <obj_property name="ObjectShortName">s00_axis_tdata[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/ShapiroRudinPark_TimeSynchronizer_BRAM_0/s00_axis_tlast" type="logic">
+      <obj_property name="ElementShortName">s00_axis_tlast</obj_property>
+      <obj_property name="ObjectShortName">s00_axis_tlast</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/ShapiroRudinPark_TimeSynchronizer_BRAM_0/s00_axis_tvalid" type="logic">
+      <obj_property name="ElementShortName">s00_axis_tvalid</obj_property>
+      <obj_property name="ObjectShortName">s00_axis_tvalid</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/ShapiroRudinPark_TimeSynchronizer_BRAM_0/s00_axis_tready" type="logic">
+      <obj_property name="ElementShortName">s00_axis_tready</obj_property>
+      <obj_property name="ObjectShortName">s00_axis_tready</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/ShapiroRudinPark_TimeSynchronizer_BRAM_0/s00_axis_aclk" type="logic">
+      <obj_property name="ElementShortName">s00_axis_aclk</obj_property>
+      <obj_property name="ObjectShortName">s00_axis_aclk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/ShapiroRudinPark_TimeSynchronizer_BRAM_0/s00_axis_aresetn" type="logic">
+      <obj_property name="ElementShortName">s00_axis_aresetn</obj_property>
+      <obj_property name="ObjectShortName">s00_axis_aresetn</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/xfft_1/aclk" type="logic">
+      <obj_property name="ElementShortName">aclk</obj_property>
+      <obj_property name="ObjectShortName">aclk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/xfft_1/aresetn" type="logic">
+      <obj_property name="ElementShortName">aresetn</obj_property>
+      <obj_property name="ObjectShortName">aresetn</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/xfft_1/s_axis_config_tdata" type="array">
+      <obj_property name="ElementShortName">s_axis_config_tdata[7:0]</obj_property>
+      <obj_property name="ObjectShortName">s_axis_config_tdata[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/xfft_1/s_axis_config_tvalid" type="logic">
+      <obj_property name="ElementShortName">s_axis_config_tvalid</obj_property>
+      <obj_property name="ObjectShortName">s_axis_config_tvalid</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/xfft_1/s_axis_config_tready" type="logic">
+      <obj_property name="ElementShortName">s_axis_config_tready</obj_property>
+      <obj_property name="ObjectShortName">s_axis_config_tready</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/xfft_1/s_axis_data_tdata" type="array">
+      <obj_property name="ElementShortName">s_axis_data_tdata[15:0]</obj_property>
+      <obj_property name="ObjectShortName">s_axis_data_tdata[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/xfft_1/s_axis_data_tvalid" type="logic">
+      <obj_property name="ElementShortName">s_axis_data_tvalid</obj_property>
+      <obj_property name="ObjectShortName">s_axis_data_tvalid</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/xfft_1/s_axis_data_tready" type="logic">
+      <obj_property name="ElementShortName">s_axis_data_tready</obj_property>
+      <obj_property name="ObjectShortName">s_axis_data_tready</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/xfft_1/s_axis_data_tlast" type="logic">
+      <obj_property name="ElementShortName">s_axis_data_tlast</obj_property>
+      <obj_property name="ObjectShortName">s_axis_data_tlast</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/xfft_1/m_axis_data_tdata" type="array">
+      <obj_property name="ElementShortName">m_axis_data_tdata[31:0]</obj_property>
+      <obj_property name="ObjectShortName">m_axis_data_tdata[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/xfft_1/m_axis_data_tvalid" type="logic">
+      <obj_property name="ElementShortName">m_axis_data_tvalid</obj_property>
+      <obj_property name="ObjectShortName">m_axis_data_tvalid</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/xfft_1/m_axis_data_tready" type="logic">
+      <obj_property name="ElementShortName">m_axis_data_tready</obj_property>
+      <obj_property name="ObjectShortName">m_axis_data_tready</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/xfft_1/m_axis_data_tlast" type="logic">
+      <obj_property name="ElementShortName">m_axis_data_tlast</obj_property>
+      <obj_property name="ObjectShortName">m_axis_data_tlast</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/xfft_1/event_frame_started" type="logic">
+      <obj_property name="ElementShortName">event_frame_started</obj_property>
+      <obj_property name="ObjectShortName">event_frame_started</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/xfft_1/event_tlast_unexpected" type="logic">
+      <obj_property name="ElementShortName">event_tlast_unexpected</obj_property>
+      <obj_property name="ObjectShortName">event_tlast_unexpected</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/xfft_1/event_tlast_missing" type="logic">
+      <obj_property name="ElementShortName">event_tlast_missing</obj_property>
+      <obj_property name="ObjectShortName">event_tlast_missing</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/xfft_1/event_status_channel_halt" type="logic">
+      <obj_property name="ElementShortName">event_status_channel_halt</obj_property>
+      <obj_property name="ObjectShortName">event_status_channel_halt</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/xfft_1/event_data_in_channel_halt" type="logic">
+      <obj_property name="ElementShortName">event_data_in_channel_halt</obj_property>
+      <obj_property name="ObjectShortName">event_data_in_channel_halt</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/xfft_1/event_data_out_channel_halt" type="logic">
+      <obj_property name="ElementShortName">event_data_out_channel_halt</obj_property>
+      <obj_property name="ObjectShortName">event_data_out_channel_halt</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/HermitianRemover_BRAM_0/s00_axis_tdata" type="array">
+      <obj_property name="ElementShortName">s00_axis_tdata[15:0]</obj_property>
+      <obj_property name="ObjectShortName">s00_axis_tdata[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/HermitianRemover_BRAM_0/s00_axis_tlast" type="logic">
+      <obj_property name="ElementShortName">s00_axis_tlast</obj_property>
+      <obj_property name="ObjectShortName">s00_axis_tlast</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/HermitianRemover_BRAM_0/s00_axis_tvalid" type="logic">
+      <obj_property name="ElementShortName">s00_axis_tvalid</obj_property>
+      <obj_property name="ObjectShortName">s00_axis_tvalid</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/HermitianRemover_BRAM_0/s00_axis_tready" type="logic">
+      <obj_property name="ElementShortName">s00_axis_tready</obj_property>
+      <obj_property name="ObjectShortName">s00_axis_tready</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/HermitianRemover_BRAM_0/s00_axis_aclk" type="logic">
+      <obj_property name="ElementShortName">s00_axis_aclk</obj_property>
+      <obj_property name="ObjectShortName">s00_axis_aclk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/HermitianRemover_BRAM_0/s00_axis_aresetn" type="logic">
+      <obj_property name="ElementShortName">s00_axis_aresetn</obj_property>
+      <obj_property name="ObjectShortName">s00_axis_aresetn</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/HermitianRemover_BRAM_0/m00_axis_tdata" type="array">
+      <obj_property name="ElementShortName">m00_axis_tdata[15:0]</obj_property>
+      <obj_property name="ObjectShortName">m00_axis_tdata[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/HermitianRemover_BRAM_0/m00_axis_tlast" type="logic">
+      <obj_property name="ElementShortName">m00_axis_tlast</obj_property>
+      <obj_property name="ObjectShortName">m00_axis_tlast</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/HermitianRemover_BRAM_0/m00_axis_tvalid" type="logic">
+      <obj_property name="ElementShortName">m00_axis_tvalid</obj_property>
+      <obj_property name="ObjectShortName">m00_axis_tvalid</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/HermitianRemover_BRAM_0/m00_axis_tready" type="logic">
+      <obj_property name="ElementShortName">m00_axis_tready</obj_property>
+      <obj_property name="ObjectShortName">m00_axis_tready</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/HermitianRemover_BRAM_0/m00_axis_aclk" type="logic">
+      <obj_property name="ElementShortName">m00_axis_aclk</obj_property>
+      <obj_property name="ObjectShortName">m00_axis_aclk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/HermitianRemover_BRAM_0/m00_axis_aresetn" type="logic">
+      <obj_property name="ElementShortName">m00_axis_aresetn</obj_property>
+      <obj_property name="ObjectShortName">m00_axis_aresetn</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/QPSK_demapper_0/aclk" type="logic">
+      <obj_property name="ElementShortName">aclk</obj_property>
+      <obj_property name="ObjectShortName">aclk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/QPSK_demapper_0/aresetn" type="logic">
+      <obj_property name="ElementShortName">aresetn</obj_property>
+      <obj_property name="ObjectShortName">aresetn</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/ChannelEstimator_Equalizer_0/s00_axis_tdata" type="array">
+      <obj_property name="ElementShortName">s00_axis_tdata[15:0]</obj_property>
+      <obj_property name="ObjectShortName">s00_axis_tdata[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/ChannelEstimator_Equalizer_0/s00_axis_tlast" type="logic">
+      <obj_property name="ElementShortName">s00_axis_tlast</obj_property>
+      <obj_property name="ObjectShortName">s00_axis_tlast</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/ChannelEstimator_Equalizer_0/s00_axis_tvalid" type="logic">
+      <obj_property name="ElementShortName">s00_axis_tvalid</obj_property>
+      <obj_property name="ObjectShortName">s00_axis_tvalid</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/ChannelEstimator_Equalizer_0/s00_axis_tready" type="logic">
+      <obj_property name="ElementShortName">s00_axis_tready</obj_property>
+      <obj_property name="ObjectShortName">s00_axis_tready</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/ChannelEstimator_Equalizer_0/s00_axis_aclk" type="logic">
+      <obj_property name="ElementShortName">s00_axis_aclk</obj_property>
+      <obj_property name="ObjectShortName">s00_axis_aclk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/ChannelEstimator_Equalizer_0/s00_axis_aresetn" type="logic">
+      <obj_property name="ElementShortName">s00_axis_aresetn</obj_property>
+      <obj_property name="ObjectShortName">s00_axis_aresetn</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/ChannelEstimator_Equalizer_0/m00_axis_tdata" type="array">
+      <obj_property name="ElementShortName">m00_axis_tdata[15:0]</obj_property>
+      <obj_property name="ObjectShortName">m00_axis_tdata[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/ChannelEstimator_Equalizer_0/m00_axis_tlast" type="logic">
+      <obj_property name="ElementShortName">m00_axis_tlast</obj_property>
+      <obj_property name="ObjectShortName">m00_axis_tlast</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/ChannelEstimator_Equalizer_0/m00_axis_tvalid" type="logic">
+      <obj_property name="ElementShortName">m00_axis_tvalid</obj_property>
+      <obj_property name="ObjectShortName">m00_axis_tvalid</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/ChannelEstimator_Equalizer_0/m00_axis_tready" type="logic">
+      <obj_property name="ElementShortName">m00_axis_tready</obj_property>
+      <obj_property name="ObjectShortName">m00_axis_tready</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/ChannelEstimator_Equalizer_0/m00_axis_aclk" type="logic">
+      <obj_property name="ElementShortName">m00_axis_aclk</obj_property>
+      <obj_property name="ObjectShortName">m00_axis_aclk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/ChannelEstimator_Equalizer_0/m00_axis_aresetn" type="logic">
+      <obj_property name="ElementShortName">m00_axis_aresetn</obj_property>
+      <obj_property name="ObjectShortName">m00_axis_aresetn</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/QPSK_demapper_0/m00_axis_tdata" type="array">
+      <obj_property name="ElementShortName">m00_axis_tdata[7:0]</obj_property>
+      <obj_property name="ObjectShortName">m00_axis_tdata[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/QPSK_demapper_0/m00_axis_tlast" type="logic">
+      <obj_property name="ElementShortName">m00_axis_tlast</obj_property>
+      <obj_property name="ObjectShortName">m00_axis_tlast</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/QPSK_demapper_0/m00_axis_tvalid" type="logic">
+      <obj_property name="ElementShortName">m00_axis_tvalid</obj_property>
+      <obj_property name="ObjectShortName">m00_axis_tvalid</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/QPSK_demapper_0/m00_axis_tready" type="logic">
+      <obj_property name="ElementShortName">m00_axis_tready</obj_property>
+      <obj_property name="ObjectShortName">m00_axis_tready</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/QPSK_demapper_0/s00_axis_tdata" type="array">
+      <obj_property name="ElementShortName">s00_axis_tdata[15:0]</obj_property>
+      <obj_property name="ObjectShortName">s00_axis_tdata[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/QPSK_demapper_0/s00_axis_tlast" type="logic">
+      <obj_property name="ElementShortName">s00_axis_tlast</obj_property>
+      <obj_property name="ObjectShortName">s00_axis_tlast</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/QPSK_demapper_0/s00_axis_tvalid" type="logic">
+      <obj_property name="ElementShortName">s00_axis_tvalid</obj_property>
+      <obj_property name="ObjectShortName">s00_axis_tvalid</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/QPSK_demapper_0/s00_axis_tready" type="logic">
+      <obj_property name="ElementShortName">s00_axis_tready</obj_property>
+      <obj_property name="ObjectShortName">s00_axis_tready</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/sid_1/aclk" type="logic">
+      <obj_property name="ElementShortName">aclk</obj_property>
+      <obj_property name="ObjectShortName">aclk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/sid_1/aresetn" type="logic">
+      <obj_property name="ElementShortName">aresetn</obj_property>
+      <obj_property name="ObjectShortName">aresetn</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/sid_1/s_axis_data_tdata" type="array">
+      <obj_property name="ElementShortName">s_axis_data_tdata[7:0]</obj_property>
+      <obj_property name="ObjectShortName">s_axis_data_tdata[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/sid_1/s_axis_data_tvalid" type="logic">
+      <obj_property name="ElementShortName">s_axis_data_tvalid</obj_property>
+      <obj_property name="ObjectShortName">s_axis_data_tvalid</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/sid_1/s_axis_data_tlast" type="logic">
+      <obj_property name="ElementShortName">s_axis_data_tlast</obj_property>
+      <obj_property name="ObjectShortName">s_axis_data_tlast</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/sid_1/s_axis_data_tready" type="logic">
+      <obj_property name="ElementShortName">s_axis_data_tready</obj_property>
+      <obj_property name="ObjectShortName">s_axis_data_tready</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/sid_1/m_axis_data_tdata" type="array">
+      <obj_property name="ElementShortName">m_axis_data_tdata[7:0]</obj_property>
+      <obj_property name="ObjectShortName">m_axis_data_tdata[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/sid_1/m_axis_data_tvalid" type="logic">
+      <obj_property name="ElementShortName">m_axis_data_tvalid</obj_property>
+      <obj_property name="ObjectShortName">m_axis_data_tvalid</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/sid_1/m_axis_data_tlast" type="logic">
+      <obj_property name="ElementShortName">m_axis_data_tlast</obj_property>
+      <obj_property name="ObjectShortName">m_axis_data_tlast</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/sid_1/m_axis_data_tready" type="logic">
+      <obj_property name="ElementShortName">m_axis_data_tready</obj_property>
+      <obj_property name="ObjectShortName">m_axis_data_tready</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/sid_1/event_tlast_unexpected" type="logic">
+      <obj_property name="ElementShortName">event_tlast_unexpected</obj_property>
+      <obj_property name="ObjectShortName">event_tlast_unexpected</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/sid_1/event_tlast_missing" type="logic">
+      <obj_property name="ElementShortName">event_tlast_missing</obj_property>
+      <obj_property name="ObjectShortName">event_tlast_missing</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/sid_1/event_halted" type="logic">
+      <obj_property name="ElementShortName">event_halted</obj_property>
+      <obj_property name="ObjectShortName">event_halted</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/viterbi_0/aclk" type="logic">
+      <obj_property name="ElementShortName">aclk</obj_property>
+      <obj_property name="ObjectShortName">aclk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/viterbi_0/aresetn" type="logic">
+      <obj_property name="ElementShortName">aresetn</obj_property>
+      <obj_property name="ObjectShortName">aresetn</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/viterbi_0/s_axis_data_tdata" type="array">
+      <obj_property name="ElementShortName">s_axis_data_tdata[15:0]</obj_property>
+      <obj_property name="ObjectShortName">s_axis_data_tdata[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/viterbi_0/s_axis_data_tvalid" type="logic">
+      <obj_property name="ElementShortName">s_axis_data_tvalid</obj_property>
+      <obj_property name="ObjectShortName">s_axis_data_tvalid</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/viterbi_0/s_axis_data_tready" type="logic">
+      <obj_property name="ElementShortName">s_axis_data_tready</obj_property>
+      <obj_property name="ObjectShortName">s_axis_data_tready</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/viterbi_0/m_axis_data_tdata" type="array">
+      <obj_property name="ElementShortName">m_axis_data_tdata[7:0]</obj_property>
+      <obj_property name="ObjectShortName">m_axis_data_tdata[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/viterbi_0/m_axis_data_tvalid" type="logic">
+      <obj_property name="ElementShortName">m_axis_data_tvalid</obj_property>
+      <obj_property name="ObjectShortName">m_axis_data_tvalid</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/viterbi_0/m_axis_data_tready" type="logic">
+      <obj_property name="ElementShortName">m_axis_data_tready</obj_property>
+      <obj_property name="ObjectShortName">m_axis_data_tready</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/ShapiroRudinPark_TimeSynchronizer_BRAM_0/inst/TimeSync_inst/clk" type="logic">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/ShapiroRudinPark_TimeSynchronizer_BRAM_0/inst/TimeSync_inst/din" type="array">
+      <obj_property name="ElementShortName">din[7:0]</obj_property>
+      <obj_property name="ObjectShortName">din[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/ShapiroRudinPark_TimeSynchronizer_BRAM_0/inst/TimeSync_inst/wren" type="logic">
+      <obj_property name="ElementShortName">wren</obj_property>
+      <obj_property name="ObjectShortName">wren</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/ShapiroRudinPark_TimeSynchronizer_BRAM_0/inst/TimeSync_inst/tx_done" type="logic">
+      <obj_property name="ElementShortName">tx_done</obj_property>
+      <obj_property name="ObjectShortName">tx_done</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/ShapiroRudinPark_TimeSynchronizer_BRAM_0/inst/TimeSync_inst/read_ptr" type="array">
+      <obj_property name="ElementShortName">read_ptr[9:0]</obj_property>
+      <obj_property name="ObjectShortName">read_ptr[9:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/ShapiroRudinPark_TimeSynchronizer_BRAM_0/inst/TimeSync_inst/dout" type="array">
+      <obj_property name="ElementShortName">dout[7:0]</obj_property>
+      <obj_property name="ObjectShortName">dout[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/ShapiroRudinPark_TimeSynchronizer_BRAM_0/inst/TimeSync_inst/out_buff_full" type="logic">
+      <obj_property name="ElementShortName">out_buff_full</obj_property>
+      <obj_property name="ObjectShortName">out_buff_full</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/ShapiroRudinPark_TimeSynchronizer_BRAM_0/inst/TimeSync_inst/in_buff_full" type="logic">
+      <obj_property name="ElementShortName">in_buff_full</obj_property>
+      <obj_property name="ObjectShortName">in_buff_full</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/ShapiroRudinPark_TimeSynchronizer_BRAM_0/inst/TimeSync_inst/time_sync_done" type="logic">
+      <obj_property name="ElementShortName">time_sync_done</obj_property>
+      <obj_property name="ObjectShortName">time_sync_done</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/ShapiroRudinPark_TimeSynchronizer_BRAM_0/inst/TimeSync_inst/frame_index_detected" type="logic">
+      <obj_property name="ElementShortName">frame_index_detected</obj_property>
+      <obj_property name="ObjectShortName">frame_index_detected</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/ShapiroRudinPark_TimeSynchronizer_BRAM_0/inst/TimeSync_inst/cnt_in" type="array">
+      <obj_property name="ElementShortName">cnt_in[12:0]</obj_property>
+      <obj_property name="ObjectShortName">cnt_in[12:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/ShapiroRudinPark_TimeSynchronizer_BRAM_0/inst/TimeSync_inst/P_done" type="logic">
+      <obj_property name="ElementShortName">P_done</obj_property>
+      <obj_property name="ObjectShortName">P_done</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/ShapiroRudinPark_TimeSynchronizer_BRAM_0/inst/TimeSync_inst/R_done" type="logic">
+      <obj_property name="ElementShortName">R_done</obj_property>
+      <obj_property name="ObjectShortName">R_done</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/ShapiroRudinPark_TimeSynchronizer_BRAM_0/inst/TimeSync_inst/M_done" type="logic">
+      <obj_property name="ElementShortName">M_done</obj_property>
+      <obj_property name="ObjectShortName">M_done</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/ShapiroRudinPark_TimeSynchronizer_BRAM_0/inst/TimeSync_inst/cnt_time_sync" type="array">
+      <obj_property name="ElementShortName">cnt_time_sync[31:0]</obj_property>
+      <obj_property name="ObjectShortName">cnt_time_sync[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/ShapiroRudinPark_TimeSynchronizer_BRAM_0/inst/TimeSync_inst/cnt_frame_detect" type="array">
+      <obj_property name="ElementShortName">cnt_frame_detect[31:0]</obj_property>
+      <obj_property name="ObjectShortName">cnt_frame_detect[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/ShapiroRudinPark_TimeSynchronizer_BRAM_0/inst/TimeSync_inst/we_buff" type="logic">
+      <obj_property name="ElementShortName">we_buff</obj_property>
+      <obj_property name="ObjectShortName">we_buff</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/ShapiroRudinPark_TimeSynchronizer_BRAM_0/inst/TimeSync_inst/we_buff_1" type="logic">
+      <obj_property name="ElementShortName">we_buff_1</obj_property>
+      <obj_property name="ObjectShortName">we_buff_1</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/ShapiroRudinPark_TimeSynchronizer_BRAM_0/inst/TimeSync_inst/we_P" type="logic">
+      <obj_property name="ElementShortName">we_P</obj_property>
+      <obj_property name="ObjectShortName">we_P</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/ShapiroRudinPark_TimeSynchronizer_BRAM_0/inst/TimeSync_inst/we_R" type="logic">
+      <obj_property name="ElementShortName">we_R</obj_property>
+      <obj_property name="ObjectShortName">we_R</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/ShapiroRudinPark_TimeSynchronizer_BRAM_0/inst/TimeSync_inst/we_M" type="logic">
+      <obj_property name="ElementShortName">we_M</obj_property>
+      <obj_property name="ObjectShortName">we_M</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/ShapiroRudinPark_TimeSynchronizer_BRAM_0/inst/TimeSync_inst/we_out_buff" type="logic">
+      <obj_property name="ElementShortName">we_out_buff</obj_property>
+      <obj_property name="ObjectShortName">we_out_buff</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/ShapiroRudinPark_TimeSynchronizer_BRAM_0/inst/TimeSync_inst/en_buff" type="logic">
+      <obj_property name="ElementShortName">en_buff</obj_property>
+      <obj_property name="ObjectShortName">en_buff</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/ShapiroRudinPark_TimeSynchronizer_BRAM_0/inst/TimeSync_inst/en_buff_1" type="logic">
+      <obj_property name="ElementShortName">en_buff_1</obj_property>
+      <obj_property name="ObjectShortName">en_buff_1</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/ShapiroRudinPark_TimeSynchronizer_BRAM_0/inst/TimeSync_inst/en_P" type="logic">
+      <obj_property name="ElementShortName">en_P</obj_property>
+      <obj_property name="ObjectShortName">en_P</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/ShapiroRudinPark_TimeSynchronizer_BRAM_0/inst/TimeSync_inst/en_R" type="logic">
+      <obj_property name="ElementShortName">en_R</obj_property>
+      <obj_property name="ObjectShortName">en_R</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/ShapiroRudinPark_TimeSynchronizer_BRAM_0/inst/TimeSync_inst/en_M" type="logic">
+      <obj_property name="ElementShortName">en_M</obj_property>
+      <obj_property name="ObjectShortName">en_M</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/ShapiroRudinPark_TimeSynchronizer_BRAM_0/inst/TimeSync_inst/en_out_buff" type="logic">
+      <obj_property name="ElementShortName">en_out_buff</obj_property>
+      <obj_property name="ObjectShortName">en_out_buff</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/ShapiroRudinPark_TimeSynchronizer_BRAM_0/inst/TimeSync_inst/addr_P" type="array">
+      <obj_property name="ElementShortName">addr_P[11:0]</obj_property>
+      <obj_property name="ObjectShortName">addr_P[11:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/ShapiroRudinPark_TimeSynchronizer_BRAM_0/inst/TimeSync_inst/addr_R" type="array">
+      <obj_property name="ElementShortName">addr_R[11:0]</obj_property>
+      <obj_property name="ObjectShortName">addr_R[11:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/ShapiroRudinPark_TimeSynchronizer_BRAM_0/inst/TimeSync_inst/addr_M" type="array">
+      <obj_property name="ElementShortName">addr_M[11:0]</obj_property>
+      <obj_property name="ObjectShortName">addr_M[11:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/ShapiroRudinPark_TimeSynchronizer_BRAM_0/inst/TimeSync_inst/addr_buff" type="array">
+      <obj_property name="ElementShortName">addr_buff[11:0]</obj_property>
+      <obj_property name="ObjectShortName">addr_buff[11:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/ShapiroRudinPark_TimeSynchronizer_BRAM_0/inst/TimeSync_inst/addr_buff_1" type="array">
+      <obj_property name="ElementShortName">addr_buff_1[11:0]</obj_property>
+      <obj_property name="ObjectShortName">addr_buff_1[11:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/ShapiroRudinPark_TimeSynchronizer_BRAM_0/inst/TimeSync_inst/addr_out_buff" type="array">
+      <obj_property name="ElementShortName">addr_out_buff[9:0]</obj_property>
+      <obj_property name="ObjectShortName">addr_out_buff[9:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/ShapiroRudinPark_TimeSynchronizer_BRAM_0/inst/TimeSync_inst/di_P" type="array">
+      <obj_property name="ElementShortName">di_P[31:0]</obj_property>
+      <obj_property name="ObjectShortName">di_P[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/ShapiroRudinPark_TimeSynchronizer_BRAM_0/inst/TimeSync_inst/di_R" type="array">
+      <obj_property name="ElementShortName">di_R[31:0]</obj_property>
+      <obj_property name="ObjectShortName">di_R[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/ShapiroRudinPark_TimeSynchronizer_BRAM_0/inst/TimeSync_inst/di_M" type="array">
+      <obj_property name="ElementShortName">di_M[31:0]</obj_property>
+      <obj_property name="ObjectShortName">di_M[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/ShapiroRudinPark_TimeSynchronizer_BRAM_0/inst/TimeSync_inst/di_buff" type="array">
+      <obj_property name="ElementShortName">di_buff[7:0]</obj_property>
+      <obj_property name="ObjectShortName">di_buff[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/ShapiroRudinPark_TimeSynchronizer_BRAM_0/inst/TimeSync_inst/di_buff_1" type="array">
+      <obj_property name="ElementShortName">di_buff_1[7:0]</obj_property>
+      <obj_property name="ObjectShortName">di_buff_1[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/ShapiroRudinPark_TimeSynchronizer_BRAM_0/inst/TimeSync_inst/di_out_buff" type="array">
+      <obj_property name="ElementShortName">di_out_buff[7:0]</obj_property>
+      <obj_property name="ObjectShortName">di_out_buff[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/ShapiroRudinPark_TimeSynchronizer_BRAM_0/inst/TimeSync_inst/dout_P" type="array">
+      <obj_property name="ElementShortName">dout_P[31:0]</obj_property>
+      <obj_property name="ObjectShortName">dout_P[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/ShapiroRudinPark_TimeSynchronizer_BRAM_0/inst/TimeSync_inst/dout_R" type="array">
+      <obj_property name="ElementShortName">dout_R[31:0]</obj_property>
+      <obj_property name="ObjectShortName">dout_R[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/ShapiroRudinPark_TimeSynchronizer_BRAM_0/inst/TimeSync_inst/dout_M" type="array">
+      <obj_property name="ElementShortName">dout_M[31:0]</obj_property>
+      <obj_property name="ObjectShortName">dout_M[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/ShapiroRudinPark_TimeSynchronizer_BRAM_0/inst/TimeSync_inst/dout_buff" type="array">
+      <obj_property name="ElementShortName">dout_buff[7:0]</obj_property>
+      <obj_property name="ObjectShortName">dout_buff[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/ShapiroRudinPark_TimeSynchronizer_BRAM_0/inst/TimeSync_inst/dout_buff_1" type="array">
+      <obj_property name="ElementShortName">dout_buff_1[7:0]</obj_property>
+      <obj_property name="ObjectShortName">dout_buff_1[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/ShapiroRudinPark_TimeSynchronizer_BRAM_0/inst/TimeSync_inst/dout_out_buff" type="array">
+      <obj_property name="ElementShortName">dout_out_buff[7:0]</obj_property>
+      <obj_property name="ObjectShortName">dout_out_buff[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/ShapiroRudinPark_TimeSynchronizer_BRAM_0/inst/TimeSync_inst/webuff" type="logic">
+      <obj_property name="ElementShortName">webuff</obj_property>
+      <obj_property name="ObjectShortName">webuff</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/ShapiroRudinPark_TimeSynchronizer_BRAM_0/inst/TimeSync_inst/webuff_1" type="logic">
+      <obj_property name="ElementShortName">webuff_1</obj_property>
+      <obj_property name="ObjectShortName">webuff_1</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/ShapiroRudinPark_TimeSynchronizer_BRAM_0/inst/TimeSync_inst/weout_buff" type="logic">
+      <obj_property name="ElementShortName">weout_buff</obj_property>
+      <obj_property name="ObjectShortName">weout_buff</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/ShapiroRudinPark_TimeSynchronizer_BRAM_0/inst/TimeSync_inst/weP" type="logic">
+      <obj_property name="ElementShortName">weP</obj_property>
+      <obj_property name="ObjectShortName">weP</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/ShapiroRudinPark_TimeSynchronizer_BRAM_0/inst/TimeSync_inst/weR" type="logic">
+      <obj_property name="ElementShortName">weR</obj_property>
+      <obj_property name="ObjectShortName">weR</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/ShapiroRudinPark_TimeSynchronizer_BRAM_0/inst/TimeSync_inst/weM" type="logic">
+      <obj_property name="ElementShortName">weM</obj_property>
+      <obj_property name="ObjectShortName">weM</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/ShapiroRudinPark_TimeSynchronizer_BRAM_0/inst/TimeSync_inst/enbuff" type="logic">
+      <obj_property name="ElementShortName">enbuff</obj_property>
+      <obj_property name="ObjectShortName">enbuff</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/ShapiroRudinPark_TimeSynchronizer_BRAM_0/inst/TimeSync_inst/enbuff_1" type="logic">
+      <obj_property name="ElementShortName">enbuff_1</obj_property>
+      <obj_property name="ObjectShortName">enbuff_1</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/ShapiroRudinPark_TimeSynchronizer_BRAM_0/inst/TimeSync_inst/enout_buff" type="logic">
+      <obj_property name="ElementShortName">enout_buff</obj_property>
+      <obj_property name="ObjectShortName">enout_buff</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/ShapiroRudinPark_TimeSynchronizer_BRAM_0/inst/TimeSync_inst/enP" type="logic">
+      <obj_property name="ElementShortName">enP</obj_property>
+      <obj_property name="ObjectShortName">enP</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/ShapiroRudinPark_TimeSynchronizer_BRAM_0/inst/TimeSync_inst/enR" type="logic">
+      <obj_property name="ElementShortName">enR</obj_property>
+      <obj_property name="ObjectShortName">enR</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/ShapiroRudinPark_TimeSynchronizer_BRAM_0/inst/TimeSync_inst/enM" type="logic">
+      <obj_property name="ElementShortName">enM</obj_property>
+      <obj_property name="ObjectShortName">enM</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/ShapiroRudinPark_TimeSynchronizer_BRAM_0/inst/TimeSync_inst/addrP" type="array">
+      <obj_property name="ElementShortName">addrP[11:0]</obj_property>
+      <obj_property name="ObjectShortName">addrP[11:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/ShapiroRudinPark_TimeSynchronizer_BRAM_0/inst/TimeSync_inst/addrR" type="array">
+      <obj_property name="ElementShortName">addrR[11:0]</obj_property>
+      <obj_property name="ObjectShortName">addrR[11:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/ShapiroRudinPark_TimeSynchronizer_BRAM_0/inst/TimeSync_inst/addrM" type="array">
+      <obj_property name="ElementShortName">addrM[11:0]</obj_property>
+      <obj_property name="ObjectShortName">addrM[11:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/ShapiroRudinPark_TimeSynchronizer_BRAM_0/inst/TimeSync_inst/addrbuff" type="array">
+      <obj_property name="ElementShortName">addrbuff[11:0]</obj_property>
+      <obj_property name="ObjectShortName">addrbuff[11:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/ShapiroRudinPark_TimeSynchronizer_BRAM_0/inst/TimeSync_inst/addrbuff_1" type="array">
+      <obj_property name="ElementShortName">addrbuff_1[11:0]</obj_property>
+      <obj_property name="ObjectShortName">addrbuff_1[11:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/ShapiroRudinPark_TimeSynchronizer_BRAM_0/inst/TimeSync_inst/addrout_buff" type="array">
+      <obj_property name="ElementShortName">addrout_buff[9:0]</obj_property>
+      <obj_property name="ObjectShortName">addrout_buff[9:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/ShapiroRudinPark_TimeSynchronizer_BRAM_0/inst/TimeSync_inst/diP" type="array">
+      <obj_property name="ElementShortName">diP[31:0]</obj_property>
+      <obj_property name="ObjectShortName">diP[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/ShapiroRudinPark_TimeSynchronizer_BRAM_0/inst/TimeSync_inst/diR" type="array">
+      <obj_property name="ElementShortName">diR[31:0]</obj_property>
+      <obj_property name="ObjectShortName">diR[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/ShapiroRudinPark_TimeSynchronizer_BRAM_0/inst/TimeSync_inst/diM" type="array">
+      <obj_property name="ElementShortName">diM[31:0]</obj_property>
+      <obj_property name="ObjectShortName">diM[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/ShapiroRudinPark_TimeSynchronizer_BRAM_0/inst/TimeSync_inst/dibuff" type="array">
+      <obj_property name="ElementShortName">dibuff[7:0]</obj_property>
+      <obj_property name="ObjectShortName">dibuff[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/ShapiroRudinPark_TimeSynchronizer_BRAM_0/inst/TimeSync_inst/dibuff_1" type="array">
+      <obj_property name="ElementShortName">dibuff_1[7:0]</obj_property>
+      <obj_property name="ObjectShortName">dibuff_1[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/ShapiroRudinPark_TimeSynchronizer_BRAM_0/inst/TimeSync_inst/diout_buff" type="array">
+      <obj_property name="ElementShortName">diout_buff[7:0]</obj_property>
+      <obj_property name="ObjectShortName">diout_buff[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/ShapiroRudinPark_TimeSynchronizer_BRAM_0/inst/TimeSync_inst/left_window_idx" type="array">
+      <obj_property name="ElementShortName">left_window_idx[31:0]</obj_property>
+      <obj_property name="ObjectShortName">left_window_idx[31:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/ShapiroRudinPark_TimeSynchronizer_BRAM_0/inst/TimeSync_inst/right_window_idx" type="array">
+      <obj_property name="ElementShortName">right_window_idx[31:0]</obj_property>
+      <obj_property name="ObjectShortName">right_window_idx[31:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/ShapiroRudinPark_TimeSynchronizer_BRAM_0/inst/TimeSync_inst/dot_product_iteration_idx" type="array">
+      <obj_property name="ElementShortName">dot_product_iteration_idx[31:0]</obj_property>
+      <obj_property name="ObjectShortName">dot_product_iteration_idx[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/ShapiroRudinPark_TimeSynchronizer_BRAM_0/inst/TimeSync_inst/window_sliding_idx" type="array">
+      <obj_property name="ElementShortName">window_sliding_idx[31:0]</obj_property>
+      <obj_property name="ObjectShortName">window_sliding_idx[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/ShapiroRudinPark_TimeSynchronizer_BRAM_0/inst/TimeSync_inst/P_idx" type="array">
+      <obj_property name="ElementShortName">P_idx[31:0]</obj_property>
+      <obj_property name="ObjectShortName">P_idx[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/ShapiroRudinPark_TimeSynchronizer_BRAM_0/inst/TimeSync_inst/dot_product_store_flag" type="logic">
+      <obj_property name="ElementShortName">dot_product_store_flag</obj_property>
+      <obj_property name="ObjectShortName">dot_product_store_flag</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/ShapiroRudinPark_TimeSynchronizer_BRAM_0/inst/TimeSync_inst/store_count_P" type="array">
+      <obj_property name="ElementShortName">store_count_P[1:0]</obj_property>
+      <obj_property name="ObjectShortName">store_count_P[1:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/ShapiroRudinPark_TimeSynchronizer_BRAM_0/inst/TimeSync_inst/store_flag_P" type="logic">
+      <obj_property name="ElementShortName">store_flag_P</obj_property>
+      <obj_property name="ObjectShortName">store_flag_P</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/ShapiroRudinPark_TimeSynchronizer_BRAM_0/inst/TimeSync_inst/window_middle_idx" type="array">
+      <obj_property name="ElementShortName">window_middle_idx[31:0]</obj_property>
+      <obj_property name="ObjectShortName">window_middle_idx[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/ShapiroRudinPark_TimeSynchronizer_BRAM_0/inst/TimeSync_inst/temp_P" type="array">
+      <obj_property name="ElementShortName">temp_P[31:0]</obj_property>
+      <obj_property name="ObjectShortName">temp_P[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/ShapiroRudinPark_TimeSynchronizer_BRAM_0/inst/TimeSync_inst/abs_P" type="array">
+      <obj_property name="ElementShortName">abs_P[31:0]</obj_property>
+      <obj_property name="ObjectShortName">abs_P[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/ShapiroRudinPark_TimeSynchronizer_BRAM_0/inst/TimeSync_inst/denom_window_idx" type="array">
+      <obj_property name="ElementShortName">denom_window_idx[31:0]</obj_property>
+      <obj_property name="ObjectShortName">denom_window_idx[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/ShapiroRudinPark_TimeSynchronizer_BRAM_0/inst/TimeSync_inst/R_idx" type="array">
+      <obj_property name="ElementShortName">R_idx[31:0]</obj_property>
+      <obj_property name="ObjectShortName">R_idx[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/ShapiroRudinPark_TimeSynchronizer_BRAM_0/inst/TimeSync_inst/R_iteration_idx" type="array">
+      <obj_property name="ElementShortName">R_iteration_idx[31:0]</obj_property>
+      <obj_property name="ObjectShortName">R_iteration_idx[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/ShapiroRudinPark_TimeSynchronizer_BRAM_0/inst/TimeSync_inst/abs_R" type="array">
+      <obj_property name="ElementShortName">abs_R[31:0]</obj_property>
+      <obj_property name="ObjectShortName">abs_R[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/ShapiroRudinPark_TimeSynchronizer_BRAM_0/inst/TimeSync_inst/store_count_R" type="array">
+      <obj_property name="ElementShortName">store_count_R[1:0]</obj_property>
+      <obj_property name="ObjectShortName">store_count_R[1:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/ShapiroRudinPark_TimeSynchronizer_BRAM_0/inst/TimeSync_inst/R_store_flag" type="logic">
+      <obj_property name="ElementShortName">R_store_flag</obj_property>
+      <obj_property name="ObjectShortName">R_store_flag</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/ShapiroRudinPark_TimeSynchronizer_BRAM_0/inst/TimeSync_inst/temp_R" type="array">
+      <obj_property name="ElementShortName">temp_R[31:0]</obj_property>
+      <obj_property name="ObjectShortName">temp_R[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/ShapiroRudinPark_TimeSynchronizer_BRAM_0/inst/TimeSync_inst/M_idx" type="array">
+      <obj_property name="ElementShortName">M_idx[31:0]</obj_property>
+      <obj_property name="ObjectShortName">M_idx[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/ShapiroRudinPark_TimeSynchronizer_BRAM_0/inst/TimeSync_inst/temp" type="array">
+      <obj_property name="ElementShortName">temp[11:0]</obj_property>
+      <obj_property name="ObjectShortName">temp[11:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/ShapiroRudinPark_TimeSynchronizer_BRAM_0/inst/TimeSync_inst/temp_index" type="array">
+      <obj_property name="ElementShortName">temp_index[11:0]</obj_property>
+      <obj_property name="ObjectShortName">temp_index[11:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/ShapiroRudinPark_TimeSynchronizer_BRAM_0/inst/TimeSync_inst/buff_data_idx" type="array">
+      <obj_property name="ElementShortName">buff_data_idx[31:0]</obj_property>
+      <obj_property name="ObjectShortName">buff_data_idx[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/ShapiroRudinPark_TimeSynchronizer_BRAM_0/inst/TimeSync_inst/out_buff_idx" type="array">
+      <obj_property name="ElementShortName">out_buff_idx[31:0]</obj_property>
+      <obj_property name="ObjectShortName">out_buff_idx[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/ShapiroRudinPark_TimeSynchronizer_BRAM_0/inst/TimeSync_inst/CP_num" type="array">
+      <obj_property name="ElementShortName">CP_num[31:0]</obj_property>
+      <obj_property name="ObjectShortName">CP_num[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/ShapiroRudinPark_TimeSynchronizer_BRAM_0/inst/TimeSync_inst/symbol_num" type="array">
+      <obj_property name="ElementShortName">symbol_num[31:0]</obj_property>
+      <obj_property name="ObjectShortName">symbol_num[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/ShapiroRudinPark_TimeSynchronizer_BRAM_0/inst/TimeSync_inst/time_sym_num" type="array">
+      <obj_property name="ElementShortName">time_sym_num[31:0]</obj_property>
+      <obj_property name="ObjectShortName">time_sym_num[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/ShapiroRudinPark_TimeSynchronizer_BRAM_0/inst/TimeSync_inst/channel_est_sym_num" type="array">
+      <obj_property name="ElementShortName">channel_est_sym_num[31:0]</obj_property>
+      <obj_property name="ObjectShortName">channel_est_sym_num[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/ShapiroRudinPark_TimeSynchronizer_BRAM_0/inst/TimeSync_inst/active_subcarr" type="array">
+      <obj_property name="ElementShortName">active_subcarr[31:0]</obj_property>
+      <obj_property name="ObjectShortName">active_subcarr[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/ShapiroRudinPark_TimeSynchronizer_BRAM_0/inst/TimeSync_inst/fft_point" type="array">
+      <obj_property name="ElementShortName">fft_point[31:0]</obj_property>
+      <obj_property name="ObjectShortName">fft_point[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/ShapiroRudinPark_TimeSynchronizer_BRAM_0/inst/TimeSync_inst/ofdm_preamb_num" type="array">
+      <obj_property name="ElementShortName">ofdm_preamb_num[31:0]</obj_property>
+      <obj_property name="ObjectShortName">ofdm_preamb_num[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/ShapiroRudinPark_TimeSynchronizer_BRAM_0/inst/TimeSync_inst/channel_est_seq_num" type="array">
+      <obj_property name="ElementShortName">channel_est_seq_num[31:0]</obj_property>
+      <obj_property name="ObjectShortName">channel_est_seq_num[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/ShapiroRudinPark_TimeSynchronizer_BRAM_0/inst/TimeSync_inst/OFDM_burst_size" type="array">
+      <obj_property name="ElementShortName">OFDM_burst_size[31:0]</obj_property>
+      <obj_property name="ObjectShortName">OFDM_burst_size[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/ShapiroRudinPark_TimeSynchronizer_BRAM_0/inst/TimeSync_inst/OFDM_burst_data_size" type="array">
+      <obj_property name="ElementShortName">OFDM_burst_data_size[31:0]</obj_property>
+      <obj_property name="ObjectShortName">OFDM_burst_data_size[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/ShapiroRudinPark_TimeSynchronizer_BRAM_0/inst/TimeSync_inst/BRAM_buff_srp_inst/clk" type="logic">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/ShapiroRudinPark_TimeSynchronizer_BRAM_0/inst/TimeSync_inst/BRAM_buff_srp_inst/we" type="logic">
+      <obj_property name="ElementShortName">we</obj_property>
+      <obj_property name="ObjectShortName">we</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/ShapiroRudinPark_TimeSynchronizer_BRAM_0/inst/TimeSync_inst/BRAM_buff_srp_inst/en" type="logic">
+      <obj_property name="ElementShortName">en</obj_property>
+      <obj_property name="ObjectShortName">en</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/ShapiroRudinPark_TimeSynchronizer_BRAM_0/inst/TimeSync_inst/dot_product_iteration_idx" type="array">
+      <obj_property name="ElementShortName">dot_product_iteration_idx[31:0]</obj_property>
+      <obj_property name="ObjectShortName">dot_product_iteration_idx[31:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/ShapiroRudinPark_TimeSynchronizer_BRAM_0/inst/TimeSync_inst/BRAM_buff_srp_inst/addr" type="array">
+      <obj_property name="ElementShortName">addr[11:0]</obj_property>
+      <obj_property name="ObjectShortName">addr[11:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/ShapiroRudinPark_TimeSynchronizer_BRAM_0/inst/TimeSync_inst/BRAM_buff_srp_inst/di" type="array">
+      <obj_property name="ElementShortName">di[7:0]</obj_property>
+      <obj_property name="ObjectShortName">di[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/ShapiroRudinPark_TimeSynchronizer_BRAM_0/inst/TimeSync_inst/BRAM_buff_srp_inst/RAM" type="array">
+      <obj_property name="ElementShortName">RAM[0:2239][7:0]</obj_property>
+      <obj_property name="ObjectShortName">RAM[0:2239][7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/ShapiroRudinPark_TimeSynchronizer_BRAM_0/inst/TimeSync_inst/BRAM_buff_srp_inst/dout" type="array">
+      <obj_property name="ElementShortName">dout[7:0]</obj_property>
+      <obj_property name="ObjectShortName">dout[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/ShapiroRudinPark_TimeSynchronizer_BRAM_0/inst/TimeSync_inst/BRAM_buff_1_srp_inst/clk" type="logic">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/ShapiroRudinPark_TimeSynchronizer_BRAM_0/inst/TimeSync_inst/BRAM_buff_1_srp_inst/we" type="logic">
+      <obj_property name="ElementShortName">we</obj_property>
+      <obj_property name="ObjectShortName">we</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/ShapiroRudinPark_TimeSynchronizer_BRAM_0/inst/TimeSync_inst/BRAM_buff_1_srp_inst/en" type="logic">
+      <obj_property name="ElementShortName">en</obj_property>
+      <obj_property name="ObjectShortName">en</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/ShapiroRudinPark_TimeSynchronizer_BRAM_0/inst/TimeSync_inst/BRAM_buff_1_srp_inst/addr" type="array">
+      <obj_property name="ElementShortName">addr[11:0]</obj_property>
+      <obj_property name="ObjectShortName">addr[11:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/ShapiroRudinPark_TimeSynchronizer_BRAM_0/inst/TimeSync_inst/BRAM_buff_1_srp_inst/di" type="array">
+      <obj_property name="ElementShortName">di[7:0]</obj_property>
+      <obj_property name="ObjectShortName">di[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/ShapiroRudinPark_TimeSynchronizer_BRAM_0/inst/TimeSync_inst/BRAM_buff_1_srp_inst/RAM" type="array">
+      <obj_property name="ElementShortName">RAM[0:2239][7:0]</obj_property>
+      <obj_property name="ObjectShortName">RAM[0:2239][7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/ShapiroRudinPark_TimeSynchronizer_BRAM_0/inst/TimeSync_inst/BRAM_buff_1_srp_inst/dout" type="array">
+      <obj_property name="ElementShortName">dout[7:0]</obj_property>
+      <obj_property name="ObjectShortName">dout[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/ShapiroRudinPark_TimeSynchronizer_BRAM_0/inst/TimeSync_inst/BRAM_P_inst/clk" type="logic">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/ShapiroRudinPark_TimeSynchronizer_BRAM_0/inst/TimeSync_inst/BRAM_P_inst/we" type="logic">
+      <obj_property name="ElementShortName">we</obj_property>
+      <obj_property name="ObjectShortName">we</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/ShapiroRudinPark_TimeSynchronizer_BRAM_0/inst/TimeSync_inst/BRAM_P_inst/en" type="logic">
+      <obj_property name="ElementShortName">en</obj_property>
+      <obj_property name="ObjectShortName">en</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/ShapiroRudinPark_TimeSynchronizer_BRAM_0/inst/TimeSync_inst/BRAM_P_inst/addr" type="array">
+      <obj_property name="ElementShortName">addr[11:0]</obj_property>
+      <obj_property name="ObjectShortName">addr[11:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/ShapiroRudinPark_TimeSynchronizer_BRAM_0/inst/TimeSync_inst/BRAM_P_inst/di" type="array">
+      <obj_property name="ElementShortName">di[31:0]</obj_property>
+      <obj_property name="ObjectShortName">di[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/ShapiroRudinPark_TimeSynchronizer_BRAM_0/inst/TimeSync_inst/BRAM_P_inst/RAM" type="array">
+      <obj_property name="ElementShortName">RAM[0:2096][31:0]</obj_property>
+      <obj_property name="ObjectShortName">RAM[0:2096][31:0]</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/ShapiroRudinPark_TimeSynchronizer_BRAM_0/inst/TimeSync_inst/BRAM_P_inst/dout" type="array">
+      <obj_property name="ElementShortName">dout[31:0]</obj_property>
+      <obj_property name="ObjectShortName">dout[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/ShapiroRudinPark_TimeSynchronizer_BRAM_0/inst/TimeSync_inst/BRAM_out_buff_srp_inst/clk" type="logic">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/ShapiroRudinPark_TimeSynchronizer_BRAM_0/inst/TimeSync_inst/BRAM_out_buff_srp_inst/we" type="logic">
+      <obj_property name="ElementShortName">we</obj_property>
+      <obj_property name="ObjectShortName">we</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/ShapiroRudinPark_TimeSynchronizer_BRAM_0/inst/TimeSync_inst/BRAM_out_buff_srp_inst/en" type="logic">
+      <obj_property name="ElementShortName">en</obj_property>
+      <obj_property name="ObjectShortName">en</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/ShapiroRudinPark_TimeSynchronizer_BRAM_0/inst/TimeSync_inst/BRAM_out_buff_srp_inst/addr" type="array">
+      <obj_property name="ElementShortName">addr[9:0]</obj_property>
+      <obj_property name="ObjectShortName">addr[9:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/ShapiroRudinPark_TimeSynchronizer_BRAM_0/inst/TimeSync_inst/BRAM_out_buff_srp_inst/di" type="array">
+      <obj_property name="ElementShortName">di[7:0]</obj_property>
+      <obj_property name="ObjectShortName">di[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/ShapiroRudinPark_TimeSynchronizer_BRAM_0/inst/TimeSync_inst/BRAM_out_buff_srp_inst/RAM" type="array">
+      <obj_property name="ElementShortName">RAM[0:767][7:0]</obj_property>
+      <obj_property name="ObjectShortName">RAM[0:767][7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/ShapiroRudinPark_TimeSynchronizer_BRAM_0/inst/TimeSync_inst/BRAM_out_buff_srp_inst/dout" type="array">
+      <obj_property name="ElementShortName">dout[7:0]</obj_property>
+      <obj_property name="ObjectShortName">dout[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/ShapiroRudinPark_TimeSynchronizer_BRAM_0/inst/TimeSync_inst/BRAM_P_inst/clk" type="logic">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/ShapiroRudinPark_TimeSynchronizer_BRAM_0/inst/TimeSync_inst/BRAM_P_inst/we" type="logic">
+      <obj_property name="ElementShortName">we</obj_property>
+      <obj_property name="ObjectShortName">we</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/ShapiroRudinPark_TimeSynchronizer_BRAM_0/inst/TimeSync_inst/BRAM_P_inst/en" type="logic">
+      <obj_property name="ElementShortName">en</obj_property>
+      <obj_property name="ObjectShortName">en</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/ShapiroRudinPark_TimeSynchronizer_BRAM_0/inst/TimeSync_inst/BRAM_P_inst/addr" type="array">
+      <obj_property name="ElementShortName">addr[11:0]</obj_property>
+      <obj_property name="ObjectShortName">addr[11:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/ShapiroRudinPark_TimeSynchronizer_BRAM_0/inst/TimeSync_inst/BRAM_P_inst/di" type="array">
+      <obj_property name="ElementShortName">di[31:0]</obj_property>
+      <obj_property name="ObjectShortName">di[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/ShapiroRudinPark_TimeSynchronizer_BRAM_0/inst/TimeSync_inst/BRAM_R_inst/clk" type="logic">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/ShapiroRudinPark_TimeSynchronizer_BRAM_0/inst/TimeSync_inst/BRAM_R_inst/we" type="logic">
+      <obj_property name="ElementShortName">we</obj_property>
+      <obj_property name="ObjectShortName">we</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/ShapiroRudinPark_TimeSynchronizer_BRAM_0/inst/TimeSync_inst/BRAM_R_inst/en" type="logic">
+      <obj_property name="ElementShortName">en</obj_property>
+      <obj_property name="ObjectShortName">en</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/ShapiroRudinPark_TimeSynchronizer_BRAM_0/inst/TimeSync_inst/BRAM_R_inst/addr" type="array">
+      <obj_property name="ElementShortName">addr[11:0]</obj_property>
+      <obj_property name="ObjectShortName">addr[11:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/ShapiroRudinPark_TimeSynchronizer_BRAM_0/inst/TimeSync_inst/BRAM_R_inst/di" type="array">
+      <obj_property name="ElementShortName">di[31:0]</obj_property>
+      <obj_property name="ObjectShortName">di[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/ShapiroRudinPark_TimeSynchronizer_BRAM_0/inst/TimeSync_inst/BRAM_R_inst/RAM" type="array">
+      <obj_property name="ElementShortName">RAM[0:2096][31:0]</obj_property>
+      <obj_property name="ObjectShortName">RAM[0:2096][31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/ShapiroRudinPark_TimeSynchronizer_BRAM_0/inst/TimeSync_inst/BRAM_R_inst/dout" type="array">
+      <obj_property name="ElementShortName">dout[31:0]</obj_property>
+      <obj_property name="ObjectShortName">dout[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/ShapiroRudinPark_TimeSynchronizer_BRAM_0/inst/TimeSync_inst/BRAM_M_inst/clk" type="logic">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/ShapiroRudinPark_TimeSynchronizer_BRAM_0/inst/TimeSync_inst/BRAM_M_inst/we" type="logic">
+      <obj_property name="ElementShortName">we</obj_property>
+      <obj_property name="ObjectShortName">we</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/ShapiroRudinPark_TimeSynchronizer_BRAM_0/inst/TimeSync_inst/BRAM_M_inst/en" type="logic">
+      <obj_property name="ElementShortName">en</obj_property>
+      <obj_property name="ObjectShortName">en</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/ShapiroRudinPark_TimeSynchronizer_BRAM_0/inst/TimeSync_inst/BRAM_M_inst/addr" type="array">
+      <obj_property name="ElementShortName">addr[11:0]</obj_property>
+      <obj_property name="ObjectShortName">addr[11:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/ShapiroRudinPark_TimeSynchronizer_BRAM_0/inst/TimeSync_inst/BRAM_M_inst/di" type="array">
+      <obj_property name="ElementShortName">di[31:0]</obj_property>
+      <obj_property name="ObjectShortName">di[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/ShapiroRudinPark_TimeSynchronizer_BRAM_0/inst/TimeSync_inst/BRAM_M_inst/RAM" type="array">
+      <obj_property name="ElementShortName">RAM[0:2096][31:0]</obj_property>
+      <obj_property name="ObjectShortName">RAM[0:2096][31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/ShapiroRudinPark_TimeSynchronizer_BRAM_0/inst/TimeSync_inst/BRAM_M_inst/dout" type="array">
+      <obj_property name="ElementShortName">dout[31:0]</obj_property>
+      <obj_property name="ObjectShortName">dout[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/FrameAssembler_BRAM_0/inst/Assembler_inst/BRAM_out_buff_asm_inst/clk" type="logic">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/FrameAssembler_BRAM_0/inst/Assembler_inst/BRAM_out_buff_asm_inst/we" type="logic">
+      <obj_property name="ElementShortName">we</obj_property>
+      <obj_property name="ObjectShortName">we</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/FrameAssembler_BRAM_0/inst/Assembler_inst/BRAM_out_buff_asm_inst/en" type="logic">
+      <obj_property name="ElementShortName">en</obj_property>
+      <obj_property name="ObjectShortName">en</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/FrameAssembler_BRAM_0/inst/Assembler_inst/BRAM_out_buff_asm_inst/addr" type="array">
+      <obj_property name="ElementShortName">addr[10:0]</obj_property>
+      <obj_property name="ObjectShortName">addr[10:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/FrameAssembler_BRAM_0/inst/Assembler_inst/BRAM_out_buff_asm_inst/di" type="array">
+      <obj_property name="ElementShortName">di[7:0]</obj_property>
+      <obj_property name="ObjectShortName">di[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/FrameAssembler_BRAM_0/inst/Assembler_inst/BRAM_out_buff_asm_inst/RAM" type="array">
+      <obj_property name="ElementShortName">RAM[0:1119][7:0]</obj_property>
+      <obj_property name="ObjectShortName">RAM[0:1119][7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/FrameAssembler_BRAM_0/inst/Assembler_inst/BRAM_out_buff_asm_inst/dout" type="array">
+      <obj_property name="ElementShortName">dout[7:0]</obj_property>
+      <obj_property name="ObjectShortName">dout[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/FrameAssembler_BRAM_0/inst/Assembler_inst/BRAM_buff_asm_inst/clk" type="logic">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/FrameAssembler_BRAM_0/inst/Assembler_inst/BRAM_buff_asm_inst/we" type="logic">
+      <obj_property name="ElementShortName">we</obj_property>
+      <obj_property name="ObjectShortName">we</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/FrameAssembler_BRAM_0/inst/Assembler_inst/BRAM_buff_asm_inst/en" type="logic">
+      <obj_property name="ElementShortName">en</obj_property>
+      <obj_property name="ObjectShortName">en</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/FrameAssembler_BRAM_0/inst/Assembler_inst/BRAM_buff_asm_inst/addr" type="array">
+      <obj_property name="ElementShortName">addr[9:0]</obj_property>
+      <obj_property name="ObjectShortName">addr[9:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/FrameAssembler_BRAM_0/inst/Assembler_inst/BRAM_buff_asm_inst/di" type="array">
+      <obj_property name="ElementShortName">di[7:0]</obj_property>
+      <obj_property name="ObjectShortName">di[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/FrameAssembler_BRAM_0/inst/Assembler_inst/BRAM_buff_asm_inst/RAM" type="array">
+      <obj_property name="ElementShortName">RAM[0:639][7:0]</obj_property>
+      <obj_property name="ObjectShortName">RAM[0:639][7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/FrameAssembler_BRAM_0/inst/Assembler_inst/BRAM_buff_asm_inst/dout" type="array">
+      <obj_property name="ElementShortName">dout[7:0]</obj_property>
+      <obj_property name="ObjectShortName">dout[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/FrameAssembler_BRAM_0/inst/FrameAssembler_BRAM_v1_0_M00_AXIS_inst/read_pointer" type="array">
+      <obj_property name="ElementShortName">read_pointer[11:0]</obj_property>
+      <obj_property name="ObjectShortName">read_pointer[11:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/TxRx_sim/TxRx_Design_wrapper_inst/TxRx_Design_i/FrameAssembler_BRAM_0/inst/FrameAssembler_BRAM_v1_0_M00_AXIS_inst/read_count" type="array">
+      <obj_property name="ElementShortName">read_count[11:0]</obj_property>
+      <obj_property name="ObjectShortName">read_count[11:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+</wave_config>

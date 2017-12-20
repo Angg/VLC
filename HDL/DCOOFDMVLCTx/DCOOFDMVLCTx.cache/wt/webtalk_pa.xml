@@ -3,7 +3,7 @@
 <!--The data in this file is primarily intended for consumption by Xilinx tools.
 The structure and the elements are likely to change over the next few releases.
 This means code written to parse this file will need to be revisited each subsequent release.-->
-<application name="pa" timeStamp="Tue Dec 19 11:48:49 2017">
+<application name="pa" timeStamp="Wed Dec 20 21:38:15 2017">
 <section name="Project Information" visible="false">
 <property name="ProjectID" value="bba6b09879ee432ab0f255192a9f7190" type="ProjectID"/>
 <property name="ProjectIteration" value="1" type="ProjectIteration"/>
@@ -19,29 +19,104 @@ This means code written to parse this file will need to be revisited each subseq
 <item name="Java Command Handlers">
 <property name="CloseProject" value="1" type="JavaHandler"/>
 <property name="CreateBlockDesign" value="1" type="JavaHandler"/>
+<property name="CreateTopHDL" value="1" type="JavaHandler"/>
 <property name="CustomizeRSBBlock" value="43" type="JavaHandler"/>
+<property name="DebugWizardCmdHandler" value="1" type="JavaHandler"/>
 <property name="EditCopy" value="4" type="JavaHandler"/>
-<property name="EditDelete" value="5" type="JavaHandler"/>
+<property name="EditDelete" value="7" type="JavaHandler"/>
 <property name="EditPaste" value="3" type="JavaHandler"/>
 <property name="IPPackagerHandler" value="1" type="JavaHandler"/>
 <property name="IPPackagerWizardHandler" value="3" type="JavaHandler"/>
+<property name="ManageCompositeTargets" value="1" type="JavaHandler"/>
+<property name="NewExportHardware" value="1" type="JavaHandler"/>
 <property name="NewProject" value="1" type="JavaHandler"/>
-<property name="OpenBlockDesign" value="2" type="JavaHandler"/>
+<property name="OpenBlockDesign" value="3" type="JavaHandler"/>
 <property name="OpenProject" value="1" type="JavaHandler"/>
 <property name="ProjectSettingsCmdHandler" value="1" type="JavaHandler"/>
-<property name="RegenerateRSBLayout" value="4" type="JavaHandler"/>
-<property name="SaveRSBDesign" value="4" type="JavaHandler"/>
-<property name="ValidateRSBDesign" value="1" type="JavaHandler"/>
+<property name="RegenerateRSBLayout" value="5" type="JavaHandler"/>
+<property name="SaveDesign" value="1" type="JavaHandler"/>
+<property name="SaveRSBDesign" value="7" type="JavaHandler"/>
+<property name="ValidateRSBDesign" value="2" type="JavaHandler"/>
 <property name="ZoomFit" value="5" type="JavaHandler"/>
 <property name="ZoomIn" value="19" type="JavaHandler"/>
 </item>
 <item name="Gui Resources Info">
-<property name="PAResourceCommand.PACommandNames_OPEN_PROJECT, Open Project..." value="1" type="GuiResourceData"/>
-<property name="PAResourceItoN.MainMenuMgr_FILE, File" value="2" type="GuiResourceData"/>
-<property name="PAResourceItoN.MainMenuMgr_OPEN_RECENT_PROJECT, Open Recent Project" value="1" type="GuiResourceData"/>
+<property name="BACK,  Back" value="2" type="GuiResourceData"/>
+<property name="FINISH, Finish" value="1" type="GuiResourceData"/>
+<property name="NEXT, Next " value="7" type="GuiResourceData"/>
+<property name="PAResourceAtoD.CmdMsgDialog_OK, OK" value="2" type="GuiResourceData"/>
+<property name="PAResourceAtoD.CoreTreeTablePanel_CORE_TREE_TABLE, FrameAssembler_BRAM_v1.0, 0" value="1" type="GuiResourceData"/>
+<property name="PAResourceAtoD.CoreTreeTablePanel_CORE_TREE_TABLE, FrameAssembler_BRAM_v1.0, 0, FrameAssembler_BRAM_v1.0, 0, false" value="1" type="GuiResourceData"/>
+<property name="PAResourceAtoD.CoreTreeTablePanel_CORE_TREE_TABLE, FrameAssembler_BRAM_v1.0, 0, FrameAssembler_BRAM_v1.0, 0, false, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="PAResourceAtoD.CoreTreeTablePanel_CORE_TREE_TABLE, HermitianBuffer_BRAM_v1.0, 0" value="1" type="GuiResourceData"/>
+<property name="PAResourceAtoD.CoreTreeTablePanel_CORE_TREE_TABLE, HermitianBuffer_BRAM_v1.0, 0, HermitianBuffer_BRAM_v1.0, 0, false" value="1" type="GuiResourceData"/>
+<property name="PAResourceAtoD.CoreTreeTablePanel_CORE_TREE_TABLE, HermitianBuffer_BRAM_v1.0, 0, HermitianBuffer_BRAM_v1.0, 0, false, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="PAResourceAtoD.DebugView_DEBUG_CORES_TREE_TABLE, Unassigned Debug Nets (301" value="2" type="GuiResourceData"/>
+<property name="PAResourceAtoD.DebugWizard_CHIPSCOPE_TREE_TABLE, Clock Domain, 1" value="1" type="GuiResourceData"/>
+<property name="PAResourceAtoD.DebugWizard_CHIPSCOPE_TREE_TABLE, TxInputBuffer_0_m00_axis_tdata[1] ; undefined ; GND ; Data and Trigger, 8, TxInputBuffer_0_m00_axis_tdata[1], 0, false" value="1" type="GuiResourceData"/>
+<property name="PAResourceAtoD.DebugWizard_CHIPSCOPE_TREE_TABLE, Tx_Design_i/QPSK_mapper_0_M00_AXIS_TDATA[0] ; undefined ; VCC ; Data and Trigger, 6, Tx_Design_i/QPSK_mapper_0_M00_AXIS_TDATA[0], 0, false" value="1" type="GuiResourceData"/>
+<property name="PAResourceAtoD.DebugWizard_CHIPSCOPE_TREE_TABLE, Tx_Design_i/QPSK_mapper_0_M00_AXIS_TDATA[0] ; undefined ; VCC ; Data and Trigger, 6, Tx_Design_i/QPSK_mapper_0_M00_AXIS_TDATA[0], 0, false, false, false, false, true, false" value="1" type="GuiResourceData"/>
+<property name="PAResourceAtoD.DebugWizard_CHIPSCOPE_TREE_TABLE, Tx_Design_i/TxInputBuffer_0_m00_axis_tdata (32" value="2" type="GuiResourceData"/>
+<property name="PAResourceAtoD.DebugWizard_CHIPSCOPE_TREE_TABLE, Tx_Design_i/axi_dma_0_M_AXI_S2MM_AWCACHE (4" value="1" type="GuiResourceData"/>
+<property name="PAResourceAtoD.DebugWizard_CHIPSCOPE_TREE_TABLE, Tx_Design_i/axi_dma_0_M_AXI_S2MM_AWCACHE[2] ; undefined ; GND ; Data and Trigger, 1, Tx_Design_i/axi_dma_0_M_AXI_S2MM_AWCACHE[2], 0, false, false, false, false, true, false" value="1" type="GuiResourceData"/>
+<property name="PAResourceAtoD.DebugWizard_CHIPSCOPE_TREE_TABLE, Tx_Design_i/axi_dma_0_M_AXI_S2MM_AWPROT (3" value="1" type="GuiResourceData"/>
+<property name="PAResourceAtoD.DebugWizard_CHIPSCOPE_TREE_TABLE, Tx_Design_i/convolution_0_M_AXIS_DATA_TDATA[2] ; undefined ; GND ; Data and Trigger, 0, Tx_Design_i/convolution_0_M_AXIS_DATA_TDATA[2], 0, true" value="1" type="GuiResourceData"/>
+<property name="PAResourceAtoD.DebugWizard_CHIPSCOPE_TREE_TABLE, Tx_Design_i/convolution_0_M_AXIS_DATA_TDATA[7] ; undefined ; GND ; Data and Trigger, 5, Tx_Design_i/convolution_0_M_AXIS_DATA_TDATA[7], 0, false, false, false, false, true, false" value="1" type="GuiResourceData"/>
+<property name="PAResourceAtoD.DebugWizard_CHIPSCOPE_TREE_TABLE, Tx_Design_i/convolution_0_M_AXIS_DATA_TDATA[7] ; undefined ; GND ; Data and Trigger, 5, Tx_Design_i/convolution_0_M_AXIS_DATA_TDATA[7], 0, false, true, false, false, false, false" value="1" type="GuiResourceData"/>
+<property name="PAResourceAtoD.DebugWizard_CHIPSCOPE_TREE_TABLE, Tx_Design_i/processing_system7_0_axi_periph_M00_AXI_BRESP (2" value="1" type="GuiResourceData"/>
+<property name="PAResourceAtoD.DebugWizard_CHIPSCOPE_TREE_TABLE, Tx_Design_i/processing_system7_0_axi_periph_M00_AXI_RRESP (2" value="1" type="GuiResourceData"/>
+<property name="PAResourceAtoD.DebugWizard_CHIPSCOPE_TREE_TABLE, Tx_Design_i/processing_system7_0_axi_periph_M01_AXI_BRESP (2" value="1" type="GuiResourceData"/>
+<property name="PAResourceAtoD.DebugWizard_CHIPSCOPE_TREE_TABLE, Tx_Design_i/processing_system7_0_axi_periph_M01_AXI_BRESP[0] ; undefined ; GND ; Data and Trigger, 2, Tx_Design_i/processing_system7_0_axi_periph_M01_AXI_BRESP[0], 0, false" value="1" type="GuiResourceData"/>
+<property name="PAResourceAtoD.DebugWizard_CHIPSCOPE_TREE_TABLE, Tx_Design_i/processing_system7_0_axi_periph_M01_AXI_RRESP[1] ; undefined ; GND ; Data and Trigger, 6, Tx_Design_i/processing_system7_0_axi_periph_M01_AXI_RRESP[1], 0, false" value="1" type="GuiResourceData"/>
+<property name="PAResourceAtoD.DebugWizard_CHIPSCOPE_TREE_TABLE, Tx_Design_i/processing_system7_0_axi_periph_M02_AXI_BRESP (2" value="1" type="GuiResourceData"/>
+<property name="PAResourceAtoD.DebugWizard_CHIPSCOPE_TREE_TABLE, Tx_Design_i/processing_system7_0_axi_periph_M02_AXI_RRESP (2" value="1" type="GuiResourceData"/>
+<property name="PAResourceAtoD.DebugWizard_CHIPSCOPE_TREE_TABLE, Tx_Design_i/xlslice_1_Dout[1] ; undefined ; GND ; Data and Trigger, 39, Tx_Design_i/xlslice_1_Dout[1], 0, false" value="1" type="GuiResourceData"/>
+<property name="PAResourceAtoD.DebugWizard_CHIPSCOPE_TREE_TABLE, Tx_Design_i/xlslice_1_Dout[7] ; undefined ; GND ; Data and Trigger, 45, Tx_Design_i/xlslice_1_Dout[7], 0, true, false, false, false, true, false" value="1" type="GuiResourceData"/>
+<property name="PAResourceAtoD.DebugWizard_CHIPSCOPE_TREE_TABLE, Tx_Design_i/xlslice_1_Dout[7] ; undefined ; GND ; Data and Trigger, 45, Tx_Design_i/xlslice_1_Dout[7], 0, true, true, false, false, false, false" value="1" type="GuiResourceData"/>
+<property name="PAResourceAtoD.DebugWizard_CHIPSCOPE_TREE_TABLE, processing_system7_0_axi_periph_M01_AXI_RRESP[0] ; undefined ; GND ; Data and Trigger, 7, processing_system7_0_axi_periph_M01_AXI_RRESP[0], 0, false" value="1" type="GuiResourceData"/>
+<property name="PAResourceAtoD.DebugWizard_FIND_NETS_TO_ADD, Find Nets to Add..." value="1" type="GuiResourceData"/>
+<property name="PAResourceAtoD.DebugWizard_MORE_INFO, more info" value="2" type="GuiResourceData"/>
+<property name="PAResourceAtoD.DebugWizard_NETS, 3 nets" value="1" type="GuiResourceData"/>
+<property name="PAResourceAtoD.DebugWizard_NETS, 57 nets" value="1" type="GuiResourceData"/>
+<property name="PAResourceAtoD.DebugWizard_SAMPLE_OF_DATA_DEPTH, 4096, 2" value="1" type="GuiResourceData"/>
+<property name="PAResourceAtoD.DebugWizard_SELECT_CLOCK_DOMAIN, Select Clock Domain..." value="4" type="GuiResourceData"/>
+<property name="PAResourceCommand.PACommandNames_CREATE_TOP_HDL, Create HDL Wrapper..." value="1" type="GuiResourceData"/>
+<property name="PAResourceCommand.PACommandNames_DEBUG_WIZARD, Set Up Debug..." value="1" type="GuiResourceData"/>
+<property name="PAResourceCommand.PACommandNames_EXPORT_HARDWARE, Export Hardware..." value="1" type="GuiResourceData"/>
+<property name="PAResourceCommand.PACommandNames_GENERATE_COMPOSITE_FILE, Generate Output Products..." value="1" type="GuiResourceData"/>
+<property name="PAResourceCommand.PACommandNames_REGENERATE_LAYOUT, System_regenerate_rsb_layout" value="1" type="GuiResourceData"/>
+<property name="PAResourceCommand.PACommandNames_VALIDATE_RSB_DESIGN, System_validate_bd_design_rsb" value="1" type="GuiResourceData"/>
+<property name="PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, [root, Design Sources, Tx_Design_wrapper (Tx_Design_wrapper.v" value="5" type="GuiResourceData"/>
+<property name="PAResourceEtoH.FilteredNetsWarningDialog_DETAILS, u_ila_0_sid_0_M_AXIS_DATA_TLAST (auto-generated for ChipScope" value="1" type="GuiResourceData"/>
+<property name="PAResourceEtoH.FilteredNetsWarningDialog_OK, OK" value="1" type="GuiResourceData"/>
+<property name="PAResourceEtoH.FindAndPickNetsDialog_NETS_TREE_TABLE_PANEL, Tx_Design_i/axi_mem_intercon_M00_AXI_AWBURST (2" value="1" type="GuiResourceData"/>
+<property name="PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, [, IP Integrator, Open Block Design], 7, false" value="1" type="GuiResourceData"/>
+<property name="PAResourceItoN.MainMenuMgr_EDIT, Edit" value="2" type="GuiResourceData"/>
+<property name="PAResourceItoN.MainMenuMgr_EXPORT, Export" value="3" type="GuiResourceData"/>
+<property name="PAResourceItoN.MainMenuMgr_FILE, File" value="6" type="GuiResourceData"/>
+<property name="PAResourceItoN.MainMenuMgr_IMPORT, Import" value="1" type="GuiResourceData"/>
+<property name="PAResourceItoN.MainMenuMgr_OPEN_RECENT_FILE, Open Recent File" value="1" type="GuiResourceData"/>
+<property name="PAResourceItoN.MainMenuMgr_OPEN_RECENT_PROJECT, D:/Files/SoCProject/DCOOFDMVLCRx/DCOOFDMVLCRx.xpr" value="1" type="GuiResourceData"/>
+<property name="PAResourceItoN.MainMenuMgr_OPEN_RECENT_PROJECT, Open Recent Project" value="3" type="GuiResourceData"/>
+<property name="PAResourceQtoS.SelectMenu_HIGHLIGHT, Highlight" value="3" type="GuiResourceData"/>
+<property name="PAResourceQtoS.SimpleOutputProductDialog_GENERATE_OUTPUT_PRODUCTS_IMMEDIATELY, Generate" value="1" type="GuiResourceData"/>
+<property name="PAResourceQtoS.SystemBuilderMenu_MARK_DEBUG, Mark Debug" value="3" type="GuiResourceData"/>
+<property name="PAResourceQtoS.SystemBuilderView_ADD_IP, System_RSB_ADD_IP" value="3" type="GuiResourceData"/>
+<property name="RDIResource.BaseDialog_OK, OK" value="8" type="GuiResourceData"/>
+<property name="RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, (String" value="1" type="GuiResourceData"/>
+<property name="RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, opt, true" value="1" type="GuiResourceData"/>
+<property name="RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, phys, true" value="1" type="GuiResourceData"/>
+<property name="RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, place_design, true" value="1" type="GuiResourceData"/>
+<property name="RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, route, true" value="1" type="GuiResourceData"/>
+<property name="RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, synth, true" value="1" type="GuiResourceData"/>
+<property name="RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, write_bits, true" value="1" type="GuiResourceData"/>
+<property name="RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, write_bitstream -force D:\Files\SoCProject\DCOOFDMVLCTx\DCOOFDMVLCTx.sdk\Tx_Design_wrapper_hw_platform_0/test, true" value="1" type="GuiResourceData"/>
+<property name="RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, write_debug_probes -force D:\Files\SoCProject\DCOOFDMVLCTx\DCOOFDMVLCTx.runs\impl_1/test, true" value="1" type="GuiResourceData"/>
+<property name="RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, write_debug_probes, true" value="1" type="GuiResourceData"/>
+<property name="pa.Finder.Nets_criteria_1, MARK_DEBUG, 4" value="1" type="GuiResourceData"/>
 </item>
 <item name="Other">
-<property name="GuiMode" value="114" type="GuiMode"/>
+<property name="GuiMode" value="115" type="GuiMode"/>
 <property name="BatchMode" value="0" type="BatchMode"/>
 <property name="TclMode" value="57" type="TclMode"/>
 </item>

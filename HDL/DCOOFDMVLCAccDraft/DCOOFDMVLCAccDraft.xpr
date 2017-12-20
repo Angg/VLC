@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Product Version: Vivado v2016.2 (64-bit)              -->
+<!--                                                         -->
+<!-- Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.   -->
+
+<Project Version="7" Minor="14" Path="D:/Files/SoCProject/DCOOFDMVLCAccDraft/DCOOFDMVLCAccDraft.xpr">
+  <DefaultLaunch Dir="$PRUNDIR"/>
+  <Configuration>
+    <Option Name="Id" Val="56b6010462a34c93819e9b87d70e59f7"/>
+    <Option Name="Part" Val="xc7z020clg400-1"/>
+    <Option Name="CompiledLibDir" Val="$PCACHEDIR/compile_simlib"/>
+    <Option Name="CompiledLibDirXSim" Val=""/>
+    <Option Name="CompiledLibDirModelSim" Val="D:/Files/SoCProject/DCOOFDMVLCAccDraft/DCOOFDMVLCAccDraft.cache/compile_simlib/modelsim"/>
+    <Option Name="CompiledLibDirQuesta" Val="D:/Files/SoCProject/DCOOFDMVLCAccDraft/DCOOFDMVLCAccDraft.cache/compile_simlib/questa"/>
+    <Option Name="CompiledLibDirIES" Val="D:/Files/SoCProject/DCOOFDMVLCAccDraft/DCOOFDMVLCAccDraft.cache/compile_simlib/ies"/>
+    <Option Name="CompiledLibDirVCS" Val="D:/Files/SoCProject/DCOOFDMVLCAccDraft/DCOOFDMVLCAccDraft.cache/compile_simlib/vcs"/>
+    <Option Name="CompiledLibDirRiviera" Val="D:/Files/SoCProject/DCOOFDMVLCAccDraft/DCOOFDMVLCAccDraft.cache/compile_simlib/riviera"/>
+    <Option Name="CompiledLibDirActivehdl" Val="D:/Files/SoCProject/DCOOFDMVLCAccDraft/DCOOFDMVLCAccDraft.cache/compile_simlib/activehdl"/>
+    <Option Name="BoardPart" Val="digilentinc.com:arty-z7-20:part0:1.0"/>
+    <Option Name="ActiveSimSet" Val="sim_1"/>
+    <Option Name="DefaultLib" Val="xil_defaultlib"/>
+    <Option Name="IPRepoPath" Val="$PPRDIR/../ip_repo/ChannelEstimator_Equalizer_1.0"/>
+    <Option Name="IPRepoPath" Val="$PPRDIR/../ip_repo/ChannelEstimator_Equalizer_BRAM_1.0"/>
+    <Option Name="IPRepoPath" Val="$PPRDIR/../ip_repo/FrameAssembler_BRAM_1.0"/>
+    <Option Name="IPRepoPath" Val="$PPRDIR/../ip_repo/HermitianBuffer_BRAM_1.0"/>
+    <Option Name="IPRepoPath" Val="$PPRDIR/../ip_repo/HermitianRemover_BRAM_1.0"/>
+    <Option Name="IPRepoPath" Val="$PPRDIR/../ip_repo/ShapiroRudinPark_TimeSynchronizer_BRAM_1.0"/>
+    <Option Name="IPRepoPath" Val="$PPRDIR/../ip_repo/FrameAssembler_1.0"/>
+    <Option Name="IPRepoPath" Val="$PPRDIR/../ip_repo/HermitianBuffer_1.0"/>
+    <Option Name="IPRepoPath" Val="$PPRDIR/../ip_repo/HermitianRemover_1.0"/>
+    <Option Name="IPRepoPath" Val="$PPRDIR/../ip_repo/QAM16_demapper_1.0"/>
+    <Option Name="IPRepoPath" Val="$PPRDIR/../ip_repo/QPSK_mapper_1.0"/>
+    <Option Name="IPRepoPath" Val="$PPRDIR/../ip_repo/QPSK_demapper_1.0"/>
+    <Option Name="IPRepoPath" Val="$PPRDIR/../ip_repo/QAM16_mapper_1.0"/>
+    <Option Name="IPRepoPath" Val="$PPRDIR/../ip_repo/ResetReg_1.0"/>
+    <Option Name="IPRepoPath" Val="$PPRDIR/../ip_repo/RxOutBuffer_1.0"/>
+    <Option Name="IPRepoPath" Val="$PPRDIR/../ip_repo/ShapiroRudinPark_TimeSynchronizer_1.0"/>
+    <Option Name="IPRepoPath" Val="$PPRDIR/../ip_repo/TxInputBuffer_1.0"/>
+    <Option Name="IPRepoPath" Val="$PPRDIR/../ip_repo/ValidSignalLimiter_1.0"/>
+    <Option Name="IPRepoPath" Val="$PPRDIR/../ip_repo/nResetCounter_1.0"/>
+    <Option Name="EnableCoreContainer" Val="FALSE"/>
+    <Option Name="XPMLibraries" Val="XPM_CDC"/>
+    <Option Name="CreateRefXciForCoreContainers" Val="FALSE"/>
+    <Option Name="IPUserFilesDir" Val="$PPRDIR/DCOOFDMVLCAccDraft.ip_user_files"/>
+    <Option Name="IPStaticSourceDir" Val="$PPRDIR/DCOOFDMVLCAccDraft.ip_user_files/ipstatic"/>
+    <Option Name="EnableBDX" Val="FALSE"/>
+    <Option Name="DSABoardId" Val="arty-z7-20"/>
+    <Option Name="WTXSimLaunchSim" Val="136"/>
+    <Option Name="WTModelSimLaunchSim" Val="0"/>
+    <Option Name="WTQuestaLaunchSim" Val="0"/>
+    <Option Name="WTIesLaunchSim" Val="0"/>
+    <Option Name="WTVcsLaunchSim" Val="0"/>
+    <Option Name="WTRivieraLaunchSim" Val="0"/>
+    <Option Name="WTActivehdlLaunchSim" Val="0"/>
+    <Option Name="WTXSimExportSim" Val="0"/>
+    <Option Name="WTModelSimExportSim" Val="0"/>
+    <Option Name="WTQuestaExportSim" Val="0"/>
+    <Option Name="WTIesExportSim" Val="0"/>
+    <Option Name="WTVcsExportSim" Val="0"/>
+    <Option Name="WTRivieraExportSim" Val="0"/>
+    <Option Name="WTActivehdlExportSim" Val="0"/>
+  </Configuration>
+  <FileSets Version="1" Minor="31">
+    <FileSet Name="sources_1" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
+      <Filter Type="Srcs"/>
+      <File Path="$PSRCDIR/sources_1/bd/TxRx_Design/TxRx_Design.bd">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+        <CompFileExtendedInfo CompFileName="TxRx_Design.bd" FileRelPathName="ip/TxRx_Design_HermitianBuffer_BRAM_0_1/TxRx_Design_HermitianBuffer_BRAM_0_1.xci"/>
+        <CompFileExtendedInfo CompFileName="TxRx_Design.bd" FileRelPathName="ip/TxRx_Design_ShapiroRudinPark_TimeSynchronizer_BRAM_0_0/TxRx_Design_ShapiroRudinPark_TimeSynchronizer_BRAM_0_0.xci"/>
+        <CompFileExtendedInfo CompFileName="TxRx_Design.bd" FileRelPathName="ip/TxRx_Design_ChannelEstimator_Equalizer_BRAM_0_0/TxRx_Design_ChannelEstimator_Equalizer_BRAM_0_0.xci"/>
+        <CompFileExtendedInfo CompFileName="TxRx_Design.bd" FileRelPathName="ip/TxRx_Design_HermitianRemover_BRAM_0_0/TxRx_Design_HermitianRemover_BRAM_0_0.xci"/>
+        <CompFileExtendedInfo CompFileName="TxRx_Design.bd" FileRelPathName="ip/TxRx_Design_xlconcat_0_1/TxRx_Design_xlconcat_0_1.xci"/>
+        <CompFileExtendedInfo CompFileName="TxRx_Design.bd" FileRelPathName="ip/TxRx_Design_xlslice_1_1/TxRx_Design_xlslice_1_1.xci"/>
+        <CompFileExtendedInfo CompFileName="TxRx_Design.bd" FileRelPathName="ip/TxRx_Design_xlconcat_0_0/TxRx_Design_xlconcat_0_0.xci"/>
+        <CompFileExtendedInfo CompFileName="TxRx_Design.bd" FileRelPathName="ip/TxRx_Design_xlconstant_0_1/TxRx_Design_xlconstant_0_1.xci"/>
+        <CompFileExtendedInfo CompFileName="TxRx_Design.bd" FileRelPathName="ip/TxRx_Design_xlconstant_1_0/TxRx_Design_xlconstant_1_0.xci"/>
+        <CompFileExtendedInfo CompFileName="TxRx_Design.bd" FileRelPathName="ip/TxRx_Design_convolution_0_0/TxRx_Design_convolution_0_0.xci"/>
+        <CompFileExtendedInfo CompFileName="TxRx_Design.bd" FileRelPathName="ip/TxRx_Design_xlslice_1_0/TxRx_Design_xlslice_1_0.xci"/>
+        <CompFileExtendedInfo CompFileName="TxRx_Design.bd" FileRelPathName="ip/TxRx_Design_xlslice_0_1/TxRx_Design_xlslice_0_1.xci"/>
+        <CompFileExtendedInfo CompFileName="TxRx_Design.bd" FileRelPathName="ip/TxRx_Design_xfft_0_1/TxRx_Design_xfft_0_1.xci"/>
+        <CompFileExtendedInfo CompFileName="TxRx_Design.bd" FileRelPathName="ip/TxRx_Design_xfft_0_0/TxRx_Design_xfft_0_0.xci"/>
+        <CompFileExtendedInfo CompFileName="TxRx_Design.bd" FileRelPathName="ip/TxRx_Design_xlslice_1_2/TxRx_Design_xlslice_1_2.xci"/>
+        <CompFileExtendedInfo CompFileName="TxRx_Design.bd" FileRelPathName="ip/TxRx_Design_xlconcat_2_1/TxRx_Design_xlconcat_2_1.xci"/>
+        <CompFileExtendedInfo CompFileName="TxRx_Design.bd" FileRelPathName="ip/TxRx_Design_xlconcat_2_0/TxRx_Design_xlconcat_2_0.xci"/>
+        <CompFileExtendedInfo CompFileName="TxRx_Design.bd" FileRelPathName="ip/TxRx_Design_xlslice_2_0/TxRx_Design_xlslice_2_0.xci"/>
+        <CompFileExtendedInfo CompFileName="TxRx_Design.bd" FileRelPathName="ip/TxRx_Design_QPSK_demapper_0_0/TxRx_Design_QPSK_demapper_0_0.xci"/>
+        <CompFileExtendedInfo CompFileName="TxRx_Design.bd" FileRelPathName="ip/TxRx_Design_axis_data_fifo_2_0/TxRx_Design_axis_data_fifo_2_0.xci"/>
+        <CompFileExtendedInfo CompFileName="TxRx_Design.bd" FileRelPathName="ip/TxRx_Design_viterbi_0_2/TxRx_Design_viterbi_0_2.xci"/>
+        <CompFileExtendedInfo CompFileName="TxRx_Design.bd" FileRelPathName="ip/TxRx_Design_axis_data_fifo_3_0/TxRx_Design_axis_data_fifo_3_0.xci"/>
+        <CompFileExtendedInfo CompFileName="TxRx_Design.bd" FileRelPathName="hdl/TxRx_Design.v"/>
+        <CompFileExtendedInfo CompFileName="TxRx_Design.bd" FileRelPathName="ip/TxRx_Design_c_counter_binary_0_0/TxRx_Design_c_counter_binary_0_0.xci"/>
+        <CompFileExtendedInfo CompFileName="TxRx_Design.bd" FileRelPathName="ip/TxRx_Design_FrameAssembler_0_0/TxRx_Design_FrameAssembler_0_0.xci"/>
+        <CompFileExtendedInfo CompFileName="TxRx_Design.bd" FileRelPathName="ip/TxRx_Design_HermitianBuffer_0_0/TxRx_Design_HermitianBuffer_0_0.xci"/>
+        <CompFileExtendedInfo CompFileName="TxRx_Design.bd" FileRelPathName="ip/TxRx_Design_axis_data_fifo_2_1/TxRx_Design_axis_data_fifo_2_1.xci"/>
+        <CompFileExtendedInfo CompFileName="TxRx_Design.bd" FileRelPathName="ip/TxRx_Design_axis_data_fifo_1_1/TxRx_Design_axis_data_fifo_1_1.xci"/>
+        <CompFileExtendedInfo CompFileName="TxRx_Design.bd" FileRelPathName="ip/TxRx_Design_QAM16_mapper_0_0/TxRx_Design_QAM16_mapper_0_0.xci"/>
+        <CompFileExtendedInfo CompFileName="TxRx_Design.bd" FileRelPathName="ip/TxRx_Design_QPSK_mapper_0_0/TxRx_Design_QPSK_mapper_0_0.xci"/>
+        <CompFileExtendedInfo CompFileName="TxRx_Design.bd" FileRelPathName="ip/TxRx_Design_sid_1_0/TxRx_Design_sid_1_0.xci"/>
+        <CompFileExtendedInfo CompFileName="TxRx_Design.bd" FileRelPathName="ip/TxRx_Design_sid_0_1/TxRx_Design_sid_0_1.xci"/>
+        <CompFileExtendedInfo CompFileName="TxRx_Design.bd" FileRelPathName="ip/TxRx_Design_axis_data_fifo_1_0/TxRx_Design_axis_data_fifo_1_0.xci"/>
+        <CompFileExtendedInfo CompFileName="TxRx_Design.bd" FileRelPathName="ip/TxRx_Design_axis_data_fifo_0_0/TxRx_Design_axis_data_fifo_0_0.xci"/>
+        <CompFileExtendedInfo CompFileName="TxRx_Design.bd" FileRelPathName="ip/TxRx_Design_xlconstant_4_0/TxRx_Design_xlconstant_4_0.xci"/>
+        <CompFileExtendedInfo CompFileName="TxRx_Design.bd" FileRelPathName="ip/TxRx_Design_QAM16_demapper_0_1/TxRx_Design_QAM16_demapper_0_1.xci"/>
+        <CompFileExtendedInfo CompFileName="TxRx_Design.bd" FileRelPathName="ip/TxRx_Design_xlconstant_3_0/TxRx_Design_xlconstant_3_0.xci"/>
+        <CompFileExtendedInfo CompFileName="TxRx_Design.bd" FileRelPathName="ip/TxRx_Design_nResetCounter_0_0/TxRx_Design_nResetCounter_0_0.xci"/>
+        <CompFileExtendedInfo CompFileName="TxRx_Design.bd" FileRelPathName="ip/TxRx_Design_xlconcat_1_0/TxRx_Design_xlconcat_1_0.xci"/>
+        <CompFileExtendedInfo CompFileName="TxRx_Design.bd" FileRelPathName="ip/TxRx_Design_xlconstant_2_0/TxRx_Design_xlconstant_2_0.xci"/>
+        <CompFileExtendedInfo CompFileName="TxRx_Design.bd" FileRelPathName="ip/TxRx_Design_FrameAssembler_BRAM_0_1/TxRx_Design_FrameAssembler_BRAM_0_1.xci"/>
+      </File>
+      <File Path="$PSRCDIR/sources_1/bd/TxRx_Design/hdl/TxRx_Design_wrapper.v">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/bd/TxRx_QPSK_test/TxRx_QPSK_test.bd">
+        <FileInfo>
+          <Attr Name="AutoDisabled" Val="1"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+        <CompFileExtendedInfo CompFileName="TxRx_QPSK_test.bd" FileRelPathName="hdl/TxRx_QPSK_test.hwdef"/>
+        <CompFileExtendedInfo CompFileName="TxRx_QPSK_test.bd" FileRelPathName="TxRx_QPSK_test_ooc.xdc"/>
+        <CompFileExtendedInfo CompFileName="TxRx_QPSK_test.bd" FileRelPathName="ip/TxRx_QPSK_test_QPSK_demapper_0_1/TxRx_QPSK_test_QPSK_demapper_0_1.xci"/>
+        <CompFileExtendedInfo CompFileName="TxRx_QPSK_test.bd" FileRelPathName="ip/TxRx_QPSK_test_QPSK_mapper_0_1/TxRx_QPSK_test_QPSK_mapper_0_1.xci"/>
+        <CompFileExtendedInfo CompFileName="TxRx_QPSK_test.bd" FileRelPathName="hw_handoff/TxRx_QPSK_test.hwh"/>
+        <CompFileExtendedInfo CompFileName="TxRx_QPSK_test.bd" FileRelPathName="hw_handoff/TxRx_QPSK_test_bd.tcl"/>
+        <CompFileExtendedInfo CompFileName="TxRx_QPSK_test.bd" FileRelPathName="ip/TxRx_QPSK_test_viterbi_0_0/TxRx_QPSK_test_viterbi_0_0.xci"/>
+        <CompFileExtendedInfo CompFileName="TxRx_QPSK_test.bd" FileRelPathName="ip/TxRx_QPSK_test_xlslice_0_0/TxRx_QPSK_test_xlslice_0_0.xci"/>
+        <CompFileExtendedInfo CompFileName="TxRx_QPSK_test.bd" FileRelPathName="ip/TxRx_QPSK_test_xlconstant_1_0/TxRx_QPSK_test_xlconstant_1_0.xci"/>
+        <CompFileExtendedInfo CompFileName="TxRx_QPSK_test.bd" FileRelPathName="ip/TxRx_QPSK_test_axis_data_fifo_0_1/TxRx_QPSK_test_axis_data_fifo_0_1.xci"/>
+        <CompFileExtendedInfo CompFileName="TxRx_QPSK_test.bd" FileRelPathName="ip/TxRx_QPSK_test_HermitianRemover_0_1/TxRx_QPSK_test_HermitianRemover_0_1.xci"/>
+        <CompFileExtendedInfo CompFileName="TxRx_QPSK_test.bd" FileRelPathName="ip/TxRx_QPSK_test_axis_data_fifo_0_0/TxRx_QPSK_test_axis_data_fifo_0_0.xci"/>
+        <CompFileExtendedInfo CompFileName="TxRx_QPSK_test.bd" FileRelPathName="ip/TxRx_QPSK_test_HermitianBuffer_0_2/TxRx_QPSK_test_HermitianBuffer_0_2.xci"/>
+        <CompFileExtendedInfo CompFileName="TxRx_QPSK_test.bd" FileRelPathName="ip/TxRx_QPSK_test_QPSK_demapper_0_0/TxRx_QPSK_test_QPSK_demapper_0_0.xci"/>
+        <CompFileExtendedInfo CompFileName="TxRx_QPSK_test.bd" FileRelPathName="ip/TxRx_QPSK_test_QPSK_mapper_0_0/TxRx_QPSK_test_QPSK_mapper_0_0.xci"/>
+        <CompFileExtendedInfo CompFileName="TxRx_QPSK_test.bd" FileRelPathName="ip/TxRx_QPSK_test_sid_0_1/TxRx_QPSK_test_sid_0_1.xci"/>
+        <CompFileExtendedInfo CompFileName="TxRx_QPSK_test.bd" FileRelPathName="ip/TxRx_QPSK_test_sid_0_0/TxRx_QPSK_test_sid_0_0.xci"/>
+        <CompFileExtendedInfo CompFileName="TxRx_QPSK_test.bd" FileRelPathName="ip/TxRx_QPSK_test_xlslice_4_0/TxRx_QPSK_test_xlslice_4_0.xci"/>
+        <CompFileExtendedInfo CompFileName="TxRx_QPSK_test.bd" FileRelPathName="ip/TxRx_QPSK_test_xlslice_3_0/TxRx_QPSK_test_xlslice_3_0.xci"/>
+        <CompFileExtendedInfo CompFileName="TxRx_QPSK_test.bd" FileRelPathName="ip/TxRx_QPSK_test_xlconcat_4_0/TxRx_QPSK_test_xlconcat_4_0.xci"/>
+        <CompFileExtendedInfo CompFileName="TxRx_QPSK_test.bd" FileRelPathName="ip/TxRx_QPSK_test_xlconcat_3_0/TxRx_QPSK_test_xlconcat_3_0.xci"/>
+        <CompFileExtendedInfo CompFileName="TxRx_QPSK_test.bd" FileRelPathName="ip/TxRx_QPSK_test_xlconcat_2_0/TxRx_QPSK_test_xlconcat_2_0.xci"/>
+        <CompFileExtendedInfo CompFileName="TxRx_QPSK_test.bd" FileRelPathName="ip/TxRx_QPSK_test_nResetCounter_0_0/TxRx_QPSK_test_nResetCounter_0_0.xci"/>
+        <CompFileExtendedInfo CompFileName="TxRx_QPSK_test.bd" FileRelPathName="ip/TxRx_QPSK_test_xlconstant_0_0/TxRx_QPSK_test_xlconstant_0_0.xci"/>
+        <CompFileExtendedInfo CompFileName="TxRx_QPSK_test.bd" FileRelPathName="ip/TxRx_QPSK_test_convolution_0_0/TxRx_QPSK_test_convolution_0_0.xci"/>
+        <CompFileExtendedInfo CompFileName="TxRx_QPSK_test.bd" FileRelPathName="hdl/TxRx_QPSK_test.v"/>
+        <CompFileExtendedInfo CompFileName="TxRx_QPSK_test.bd" FileRelPathName="ip/TxRx_QPSK_test_xlslice_2_0/TxRx_QPSK_test_xlslice_2_0.xci"/>
+        <CompFileExtendedInfo CompFileName="TxRx_QPSK_test.bd" FileRelPathName="ip/TxRx_QPSK_test_xlslice_1_0/TxRx_QPSK_test_xlslice_1_0.xci"/>
+        <CompFileExtendedInfo CompFileName="TxRx_QPSK_test.bd" FileRelPathName="ip/TxRx_QPSK_test_xlconstant_4_0/TxRx_QPSK_test_xlconstant_4_0.xci"/>
+        <CompFileExtendedInfo CompFileName="TxRx_QPSK_test.bd" FileRelPathName="ip/TxRx_QPSK_test_xlconstant_3_0/TxRx_QPSK_test_xlconstant_3_0.xci"/>
+        <CompFileExtendedInfo CompFileName="TxRx_QPSK_test.bd" FileRelPathName="ip/TxRx_QPSK_test_xlconcat_1_0/TxRx_QPSK_test_xlconcat_1_0.xci"/>
+        <CompFileExtendedInfo CompFileName="TxRx_QPSK_test.bd" FileRelPathName="ip/TxRx_QPSK_test_xlconcat_0_0/TxRx_QPSK_test_xlconcat_0_0.xci"/>
+        <CompFileExtendedInfo CompFileName="TxRx_QPSK_test.bd" FileRelPathName="ip/TxRx_QPSK_test_xfft_1_0/TxRx_QPSK_test_xfft_1_0.xci"/>
+        <CompFileExtendedInfo CompFileName="TxRx_QPSK_test.bd" FileRelPathName="ip/TxRx_QPSK_test_xfft_0_0/TxRx_QPSK_test_xfft_0_0.xci"/>
+        <CompFileExtendedInfo CompFileName="TxRx_QPSK_test.bd" FileRelPathName="ip/TxRx_QPSK_test_c_counter_binary_0_0/TxRx_QPSK_test_c_counter_binary_0_0.xci"/>
+      </File>
+      <File Path="$PSRCDIR/sources_1/bd/TxRx_QPSK_test/hdl/TxRx_QPSK_test_wrapper.v">
+        <FileInfo>
+          <Attr Name="AutoDisabled" Val="1"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <Config>
+        <Option Name="DesignMode" Val="RTL"/>
+        <Option Name="TopModule" Val="TxRx_Design_wrapper"/>
+        <Option Name="TopAutoSet" Val="TRUE"/>
+      </Config>
+    </FileSet>
+    <FileSet Name="constrs_1" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
+      <Filter Type="Constrs"/>
+      <Config>
+        <Option Name="ConstrsType" Val="XDC"/>
+      </Config>
+    </FileSet>
+    <FileSet Name="sim_1" Type="SimulationSrcs" RelSrcDir="$PSRCDIR/sim_1">
+      <Filter Type="Srcs"/>
+      <File Path="$PSRCDIR/sim_1/new/TxRx_sim.v">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sim_1/new/TxRx_QPSK_test_sim.v">
+        <FileInfo>
+          <Attr Name="AutoDisabled" Val="1"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PPRDIR/TxRx_sim_behav.wcfg">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <Config>
+        <Option Name="DesignMode" Val="RTL"/>
+        <Option Name="TopModule" Val="TxRx_sim"/>
+        <Option Name="TopLib" Val="xil_defaultlib"/>
+        <Option Name="TransportPathDelay" Val="0"/>
+        <Option Name="TransportIntDelay" Val="0"/>
+        <Option Name="SrcSet" Val="sources_1"/>
+        <Option Name="XSimWcfgFile" Val="$PPRDIR/TxRx_sim_behav.wcfg"/>
+        <Option Name="xsim.elaborate.xelab.more_options" Val="-cc clang"/>
+      </Config>
+    </FileSet>
+  </FileSets>
+  <Simulators>
+    <Simulator Name="XSim">
+      <Option Name="Description" Val="Vivado Simulator"/>
+      <Option Name="CompiledLib" Val="0"/>
+    </Simulator>
+    <Simulator Name="ModelSim">
+      <Option Name="Description" Val="ModelSim Simulator"/>
+    </Simulator>
+    <Simulator Name="Questa">
+      <Option Name="Description" Val="Questa Advanced Simulator"/>
+    </Simulator>
+    <Simulator Name="IES">
+      <Option Name="Description" Val="Incisive Enterprise Simulator (IES)"/>
+    </Simulator>
+    <Simulator Name="VCS">
+      <Option Name="Description" Val="Verilog Compiler Simulator (VCS)"/>
+    </Simulator>
+    <Simulator Name="Riviera">
+      <Option Name="Description" Val="Riviera-PRO Simulator"/>
+    </Simulator>
+    <Simulator Name="ActiveHDL">
+      <Option Name="Description" Val="Active-HDL Simulator"/>
+    </Simulator>
+  </Simulators>
+  <Runs Version="1" Minor="10">
+    <Run Id="synth_1" Type="Ft3:Synth" SrcSet="sources_1" Part="xc7z020clg400-1" ConstrsSet="constrs_1" Description="Vivado Synthesis Defaults" State="current" IncludeInArchive="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2016"/>
+        <Step Id="synth_design"/>
+      </Strategy>
+    </Run>
+    <Run Id="impl_1" Type="Ft2:EntireDesign" Part="xc7z020clg400-1" ConstrsSet="constrs_1" Description="Default settings for Implementation." State="current" SynthRun="synth_1" IncludeInArchive="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2016"/>
+        <Step Id="init_design"/>
+        <Step Id="opt_design"/>
+        <Step Id="power_opt_design"/>
+        <Step Id="place_design"/>
+        <Step Id="post_place_power_opt_design"/>
+        <Step Id="phys_opt_design"/>
+        <Step Id="route_design"/>
+        <Step Id="post_route_phys_opt_design"/>
+        <Step Id="write_bitstream"/>
+      </Strategy>
+    </Run>
+  </Runs>
+</Project>

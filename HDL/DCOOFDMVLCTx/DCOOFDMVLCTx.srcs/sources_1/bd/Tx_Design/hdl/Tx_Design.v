@@ -1,7 +1,7 @@
 //Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2016.2 (win64) Build 1577090 Thu Jun  2 16:32:40 MDT 2016
-//Date        : Tue Dec 19 10:59:21 2017
+//Date        : Wed Dec 20 20:58:54 2017
 //Host        : Anzunden-UQ running 64-bit major release  (build 9200)
 //Command     : generate_target Tx_Design.bd
 //Design      : Tx_Design
@@ -250,21 +250,21 @@ module Tx_Design
   (* MARK_DEBUG *) wire [7:0]xlslice_0_Dout;
   (* MARK_DEBUG *) wire [7:0]xlslice_1_Dout;
 
-  Tx_Design_FrameAssembler_BRAM_0_1 FrameAssembler_BRAM_0
+  Tx_Design_FrameAssembler_BRAM_0_0 FrameAssembler_BRAM_0
        (.done(1'b0),
         .m00_axis_aclk(processing_system7_0_FCLK_CLK0),
-        .m00_axis_aresetn(rst_processing_system7_0_100M_interconnect_aresetn),
+        .m00_axis_aresetn(rst_processing_system7_0_100M_peripheral_aresetn),
         .m00_axis_tdata(FrameAssembler_BRAM_0_M00_AXIS_TDATA),
         .m00_axis_tlast(FrameAssembler_BRAM_0_M00_AXIS_TLAST),
         .m00_axis_tready(FrameAssembler_BRAM_0_M00_AXIS_TREADY),
         .m00_axis_tvalid(FrameAssembler_BRAM_0_M00_AXIS_TVALID),
         .s00_axis_aclk(processing_system7_0_FCLK_CLK0),
-        .s00_axis_aresetn(rst_processing_system7_0_100M_interconnect_aresetn),
+        .s00_axis_aresetn(rst_processing_system7_0_100M_peripheral_aresetn),
         .s00_axis_tdata(xlslice_0_Dout),
         .s00_axis_tlast(xfft_0_m_axis_data_tlast),
         .s00_axis_tready(FrameAssembler_BRAM_0_s00_axis_tready),
         .s00_axis_tvalid(xfft_0_m_axis_data_tvalid));
-  Tx_Design_HermitianBuffer_BRAM_0_1 HermitianBuffer_BRAM_0
+  Tx_Design_HermitianBuffer_BRAM_0_0 HermitianBuffer_BRAM_0
        (.m00_axis_aclk(processing_system7_0_FCLK_CLK0),
         .m00_axis_aresetn(rst_processing_system7_0_100M_peripheral_aresetn),
         .m00_axis_tdata(HermitianBuffer_BRAM_0_M00_AXIS_TDATA),

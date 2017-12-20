@@ -1,0 +1,3 @@
+22:20:47 INFO  : Launching XSDB server: xsdb.bat -interactive D:\Files\SoCProject\DCOOFDMVLCRx\DCOOFDMVLCRx.sdk\temp_xsdb_launch_script.tcl
+22:20:53 INFO  : XSDB server has started successfully.
+22:21:01 INFO  : Processing command line option -hwspec D:/Files/SoCProject/DCOOFDMVLCRx/DCOOFDMVLCRx.sdk/Rx_Design_wrapper.hdf.

@@ -139,6 +139,7 @@ reg [7:0] sync_time_seq [0:sync_time_seq_num-1] =               // temporary buf
   begin
       if ( tx_done ) begin
           cnt_in <= 0;
+          l <= 0;
       end
       else begin
           if ( (wren == 1) && !in_buff_full ) begin
@@ -192,6 +193,8 @@ reg [7:0] sync_time_seq [0:sync_time_seq_num-1] =               // temporary buf
       if ( tx_done ) begin
           time_seq_done <= 0;
           out_buff_full <= 0;
+          j <= 0;
+          k <= 480;
       end
       else if ( in_buff_full && !time_seq_done  ) begin
           en_out_buff <= 1;
