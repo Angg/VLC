@@ -2,9 +2,9 @@
 <Root MajorVersion="0" MinorVersion="33">
   <CompositeFile CompositeFileTopName="Tx_Design" CanBeSetAsTop="true" CanDisplayChildGraph="true">
     <Description>Composite Fileset</Description>
-    <Generation Name="SYNTHESIS" State="GENERATED" Timestamp="1513778342"/>
-    <Generation Name="IMPLEMENTATION" State="GENERATED" Timestamp="1513778342"/>
-    <Generation Name="SIMULATION" State="GENERATED" Timestamp="1513778342"/>
+    <Generation Name="SYNTHESIS" State="GENERATED" Timestamp="1513839671"/>
+    <Generation Name="IMPLEMENTATION" State="GENERATED" Timestamp="1513839671"/>
+    <Generation Name="SIMULATION" State="GENERATED" Timestamp="1513839671"/>
     <FileCollection Name="SOURCES" Type="SOURCES">
       <File Name="ip\Tx_Design_processing_system7_0_0\Tx_Design_processing_system7_0_0.xci" Type="IP">
         <Instance HierarchyPath="processing_system7_0"/>

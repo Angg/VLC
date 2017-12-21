@@ -175,9 +175,9 @@ ARCHITECTURE Tx_Design_sid_0_0_arch OF Tx_Design_sid_0_0 IS
   ATTRIBUTE CHECK_LICENSE_TYPE : STRING;
   ATTRIBUTE CHECK_LICENSE_TYPE OF Tx_Design_sid_0_0_arch : ARCHITECTURE IS "Tx_Design_sid_0_0,sid_v8_0_9,{sid=bought}";
   ATTRIBUTE CORE_GENERATION_INFO : STRING;
-  ATTRIBUTE CORE_GENERATION_INFO OF Tx_Design_sid_0_0_arch: ARCHITECTURE IS "Tx_Design_sid_0_0,sid_v8_0_9,{x_ipProduct=Vivado 2016.2,x_ipVendor=xilinx.com,x_ipLibrary=ip,x_ipName=sid,x_ipVersion=8.0,x_ipCoreRevision=9,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,x_ipLicense=sid@2013.03(bought),c_xdevicefamily=zynq,c_family=zynq,c_architecture=0,c_mem_init_prefix=Tx_Design_sid_0_0,c_elaboration_dir=./,c_type=0,c_mode=0,c_symbol_width=2,c_row_type=0,c_row_constant=16,c_has_row=0,c_has_row_valid=0,c_min_num_rows=15,c_row_width=4,c_num_selectable_rows=4,c_row_select_file=Tx_De" & 
-"sign_sid_0_0_RS.mif,c_has_row_sel=0,c_has_row_sel_valid=0,c_use_row_permute_file=0,c_row_permute_file=Tx_Design_sid_0_0_RP.mif,c_col_type=0,c_col_constant=14,c_has_col=0,c_has_col_valid=0,c_min_num_cols=15,c_col_width=4,c_num_selectable_cols=4,c_col_select_file=Tx_Design_sid_0_0_CS.mif,c_has_col_sel=0,c_has_col_sel_valid=0,c_use_col_permute_file=0,c_col_permute_file=Tx_Design_sid_0_0_CP.mif,c_block_size_type=3,c_block_size_constant=225,c_has_block_size=0,c_block_size_width=8,c_has_block_size_val" & 
-"id=0,c_num_branches=16,c_branch_length_type=0,c_branch_length_constant=16,c_branch_length_file=Tx_Design_sid_0_0.mif,c_num_configurations=1,c_external_ram=0,c_ext_mem_latency=0,c_ext_addr_width=8,c_memstyle=2,c_pipe_level=2,c_throughput_mode=0,c_has_aclken=0,c_has_aresetn=0,c_has_rdy=0,c_has_block_start=0,c_has_block_end=0,c_has_fdo=0,c_s_axis_ctrl_tdata_width=1,c_s_axis_data_tdata_width=8,c_m_axis_data_tdata_width=8,c_m_axis_data_tuser_width=1,c_has_dout_tready=1}";
+  ATTRIBUTE CORE_GENERATION_INFO OF Tx_Design_sid_0_0_arch: ARCHITECTURE IS "Tx_Design_sid_0_0,sid_v8_0_9,{x_ipProduct=Vivado 2016.2,x_ipVendor=xilinx.com,x_ipLibrary=ip,x_ipName=sid,x_ipVersion=8.0,x_ipCoreRevision=9,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,x_ipLicense=sid@2013.03(bought),c_xdevicefamily=zynq,c_family=zynq,c_architecture=0,c_mem_init_prefix=Tx_Design_sid_0_0,c_elaboration_dir=./,c_type=0,c_mode=0,c_symbol_width=2,c_row_type=0,c_row_constant=28,c_has_row=0,c_has_row_valid=0,c_min_num_rows=15,c_row_width=4,c_num_selectable_rows=4,c_row_select_file=Tx_De" & 
+"sign_sid_0_0_RS.mif,c_has_row_sel=0,c_has_row_sel_valid=0,c_use_row_permute_file=0,c_row_permute_file=Tx_Design_sid_0_0_RP.mif,c_col_type=0,c_col_constant=8,c_has_col=0,c_has_col_valid=0,c_min_num_cols=15,c_col_width=4,c_num_selectable_cols=4,c_col_select_file=Tx_Design_sid_0_0_CS.mif,c_has_col_sel=0,c_has_col_sel_valid=0,c_use_col_permute_file=0,c_col_permute_file=Tx_Design_sid_0_0_CP.mif,c_block_size_type=0,c_block_size_constant=224,c_has_block_size=0,c_block_size_width=8,c_has_block_size_vali" & 
+"d=0,c_num_branches=16,c_branch_length_type=0,c_branch_length_constant=16,c_branch_length_file=Tx_Design_sid_0_0.mif,c_num_configurations=1,c_external_ram=0,c_ext_mem_latency=0,c_ext_addr_width=8,c_memstyle=2,c_pipe_level=2,c_throughput_mode=0,c_has_aclken=0,c_has_aresetn=0,c_has_rdy=0,c_has_block_start=0,c_has_block_end=0,c_has_fdo=0,c_s_axis_ctrl_tdata_width=1,c_s_axis_data_tdata_width=8,c_m_axis_data_tdata_width=8,c_m_axis_data_tuser_width=1,c_has_dout_tready=1}";
   ATTRIBUTE X_INTERFACE_INFO : STRING;
   ATTRIBUTE X_INTERFACE_INFO OF aclk: SIGNAL IS "xilinx.com:signal:clock:1.0 aclk_intf CLK";
   ATTRIBUTE X_INTERFACE_INFO OF s_axis_data_tdata: SIGNAL IS "xilinx.com:interface:axis:1.0 S_AXIS_DATA TDATA";
@@ -203,7 +203,7 @@ BEGIN
       c_mode => 0,
       c_symbol_width => 2,
       c_row_type => 0,
-      c_row_constant => 16,
+      c_row_constant => 28,
       c_has_row => 0,
       c_has_row_valid => 0,
       c_min_num_rows => 15,
@@ -215,7 +215,7 @@ BEGIN
       c_use_row_permute_file => 0,
       c_row_permute_file => "Tx_Design_sid_0_0_RP.mif",
       c_col_type => 0,
-      c_col_constant => 14,
+      c_col_constant => 8,
       c_has_col => 0,
       c_has_col_valid => 0,
       c_min_num_cols => 15,
@@ -226,8 +226,8 @@ BEGIN
       c_has_col_sel_valid => 0,
       c_use_col_permute_file => 0,
       c_col_permute_file => "Tx_Design_sid_0_0_CP.mif",
-      c_block_size_type => 3,
-      c_block_size_constant => 225,
+      c_block_size_type => 0,
+      c_block_size_constant => 224,
       c_has_block_size => 0,
       c_block_size_width => 8,
       c_has_block_size_valid => 0,

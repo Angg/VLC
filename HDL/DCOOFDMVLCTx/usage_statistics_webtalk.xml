@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<webTalkData  fileName='usage_statistics_webtalk.xml'  majorVersion='1' minorVersion='0' timeStamp='Wed Dec 20 21:37:27 2017'>
+<webTalkData  fileName='usage_statistics_webtalk.xml'  majorVersion='1' minorVersion='0' timeStamp='Thu Dec 21 15:19:47 2017'>
 <section name="__ROOT__" level="0" order="1" description="">
  <section name="software_version_and_target_device" level="1" order="1" description="">
   <keyValuePair key="beta" value="FALSE" description="" />
   <keyValuePair key="build_version" value="1577090" description="" />
-  <keyValuePair key="date_generated" value="Wed Dec 20 21:37:27 2017" description="" />
+  <keyValuePair key="date_generated" value="Thu Dec 21 15:19:47 2017" description="" />
   <keyValuePair key="os_platform" value="WIN64" description="" />
   <keyValuePair key="product_version" value="Vivado v2016.2 (64-bit)" description="" />
   <keyValuePair key="project_id" value="c1f3586525a24e9b89b68e35c2d5d46d" description="" />
-  <keyValuePair key="project_iteration" value="2" description="" />
+  <keyValuePair key="project_iteration" value="4" description="" />
   <keyValuePair key="random_id" value="8c1d7e40-eac3-4705-beeb-f3e18c9d276a" description="" />
   <keyValuePair key="registration_id" value="8c1d7e40-eac3-4705-beeb-f3e18c9d276a" description="" />
   <keyValuePair key="route_design" value="TRUE" description="" />
@@ -398,9 +398,9 @@
    <keyValuePair key="c_data_depth" value="4096" description="" />
    <keyValuePair key="c_en_strg_qual" value="false" description="" />
    <keyValuePair key="c_input_pipe_stages" value="0" description="" />
-   <keyValuePair key="c_num_of_probes" value="120" description="" />
+   <keyValuePair key="c_num_of_probes" value="110" description="" />
    <keyValuePair key="c_probe0_type" value="0" description="" />
-   <keyValuePair key="c_probe0_width" value="4" description="" />
+   <keyValuePair key="c_probe0_width" value="8" description="" />
    <keyValuePair key="c_probe100_type" value="0" description="" />
    <keyValuePair key="c_probe100_width" value="1" description="" />
    <keyValuePair key="c_probe101_type" value="0" description="" />
@@ -422,105 +422,85 @@
    <keyValuePair key="c_probe109_type" value="0" description="" />
    <keyValuePair key="c_probe109_width" value="1" description="" />
    <keyValuePair key="c_probe10_type" value="0" description="" />
-   <keyValuePair key="c_probe10_width" value="8" description="" />
-   <keyValuePair key="c_probe110_type" value="0" description="" />
-   <keyValuePair key="c_probe110_width" value="1" description="" />
-   <keyValuePair key="c_probe111_type" value="0" description="" />
-   <keyValuePair key="c_probe111_width" value="1" description="" />
-   <keyValuePair key="c_probe112_type" value="0" description="" />
-   <keyValuePair key="c_probe112_width" value="1" description="" />
-   <keyValuePair key="c_probe113_type" value="0" description="" />
-   <keyValuePair key="c_probe113_width" value="1" description="" />
-   <keyValuePair key="c_probe114_type" value="0" description="" />
-   <keyValuePair key="c_probe114_width" value="1" description="" />
-   <keyValuePair key="c_probe115_type" value="0" description="" />
-   <keyValuePair key="c_probe115_width" value="1" description="" />
-   <keyValuePair key="c_probe116_type" value="0" description="" />
-   <keyValuePair key="c_probe116_width" value="1" description="" />
-   <keyValuePair key="c_probe117_type" value="0" description="" />
-   <keyValuePair key="c_probe117_width" value="1" description="" />
-   <keyValuePair key="c_probe118_type" value="0" description="" />
-   <keyValuePair key="c_probe118_width" value="1" description="" />
-   <keyValuePair key="c_probe119_type" value="0" description="" />
-   <keyValuePair key="c_probe119_width" value="1" description="" />
+   <keyValuePair key="c_probe10_width" value="2" description="" />
    <keyValuePair key="c_probe11_type" value="0" description="" />
-   <keyValuePair key="c_probe11_width" value="4" description="" />
+   <keyValuePair key="c_probe11_width" value="32" description="" />
    <keyValuePair key="c_probe12_type" value="0" description="" />
-   <keyValuePair key="c_probe12_width" value="31" description="" />
+   <keyValuePair key="c_probe12_width" value="32" description="" />
    <keyValuePair key="c_probe13_type" value="0" description="" />
    <keyValuePair key="c_probe13_width" value="3" description="" />
    <keyValuePair key="c_probe14_type" value="0" description="" />
-   <keyValuePair key="c_probe14_width" value="4" description="" />
+   <keyValuePair key="c_probe14_width" value="2" description="" />
    <keyValuePair key="c_probe15_type" value="0" description="" />
    <keyValuePair key="c_probe15_width" value="32" description="" />
    <keyValuePair key="c_probe16_type" value="0" description="" />
-   <keyValuePair key="c_probe16_width" value="30" description="" />
+   <keyValuePair key="c_probe16_width" value="32" description="" />
    <keyValuePair key="c_probe17_type" value="0" description="" />
-   <keyValuePair key="c_probe17_width" value="16" description="" />
+   <keyValuePair key="c_probe17_width" value="4" description="" />
    <keyValuePair key="c_probe18_type" value="0" description="" />
-   <keyValuePair key="c_probe18_width" value="5" description="" />
+   <keyValuePair key="c_probe18_width" value="1" description="" />
    <keyValuePair key="c_probe19_type" value="0" description="" />
-   <keyValuePair key="c_probe19_width" value="3" description="" />
+   <keyValuePair key="c_probe19_width" value="2" description="" />
    <keyValuePair key="c_probe1_type" value="0" description="" />
-   <keyValuePair key="c_probe1_width" value="2" description="" />
+   <keyValuePair key="c_probe1_width" value="8" description="" />
    <keyValuePair key="c_probe20_type" value="0" description="" />
-   <keyValuePair key="c_probe20_width" value="8" description="" />
+   <keyValuePair key="c_probe20_width" value="4" description="" />
    <keyValuePair key="c_probe21_type" value="0" description="" />
-   <keyValuePair key="c_probe21_width" value="8" description="" />
+   <keyValuePair key="c_probe21_width" value="32" description="" />
    <keyValuePair key="c_probe22_type" value="0" description="" />
    <keyValuePair key="c_probe22_width" value="16" description="" />
    <keyValuePair key="c_probe23_type" value="0" description="" />
-   <keyValuePair key="c_probe23_width" value="32" description="" />
+   <keyValuePair key="c_probe23_width" value="16" description="" />
    <keyValuePair key="c_probe24_type" value="0" description="" />
-   <keyValuePair key="c_probe24_width" value="30" description="" />
+   <keyValuePair key="c_probe24_width" value="4" description="" />
    <keyValuePair key="c_probe25_type" value="0" description="" />
-   <keyValuePair key="c_probe25_width" value="32" description="" />
+   <keyValuePair key="c_probe25_width" value="4" description="" />
    <keyValuePair key="c_probe26_type" value="0" description="" />
-   <keyValuePair key="c_probe26_width" value="5" description="" />
+   <keyValuePair key="c_probe26_width" value="2" description="" />
    <keyValuePair key="c_probe27_type" value="0" description="" />
-   <keyValuePair key="c_probe27_width" value="3" description="" />
+   <keyValuePair key="c_probe27_width" value="32" description="" />
    <keyValuePair key="c_probe28_type" value="0" description="" />
    <keyValuePair key="c_probe28_width" value="3" description="" />
    <keyValuePair key="c_probe29_type" value="0" description="" />
-   <keyValuePair key="c_probe29_width" value="32" description="" />
+   <keyValuePair key="c_probe29_width" value="64" description="" />
    <keyValuePair key="c_probe2_type" value="0" description="" />
-   <keyValuePair key="c_probe2_width" value="32" description="" />
+   <keyValuePair key="c_probe2_width" value="2" description="" />
    <keyValuePair key="c_probe30_type" value="0" description="" />
-   <keyValuePair key="c_probe30_width" value="32" description="" />
+   <keyValuePair key="c_probe30_width" value="2" description="" />
    <keyValuePair key="c_probe31_type" value="0" description="" />
-   <keyValuePair key="c_probe31_width" value="3" description="" />
+   <keyValuePair key="c_probe31_width" value="8" description="" />
    <keyValuePair key="c_probe32_type" value="0" description="" />
-   <keyValuePair key="c_probe32_width" value="8" description="" />
+   <keyValuePair key="c_probe32_width" value="16" description="" />
    <keyValuePair key="c_probe33_type" value="0" description="" />
-   <keyValuePair key="c_probe33_width" value="7" description="" />
+   <keyValuePair key="c_probe33_width" value="3" description="" />
    <keyValuePair key="c_probe34_type" value="0" description="" />
-   <keyValuePair key="c_probe34_width" value="16" description="" />
+   <keyValuePair key="c_probe34_width" value="2" description="" />
    <keyValuePair key="c_probe35_type" value="0" description="" />
-   <keyValuePair key="c_probe35_width" value="32" description="" />
+   <keyValuePair key="c_probe35_width" value="4" description="" />
    <keyValuePair key="c_probe36_type" value="0" description="" />
-   <keyValuePair key="c_probe36_width" value="30" description="" />
+   <keyValuePair key="c_probe36_width" value="3" description="" />
    <keyValuePair key="c_probe37_type" value="0" description="" />
-   <keyValuePair key="c_probe37_width" value="32" description="" />
+   <keyValuePair key="c_probe37_width" value="1" description="" />
    <keyValuePair key="c_probe38_type" value="0" description="" />
    <keyValuePair key="c_probe38_width" value="1" description="" />
    <keyValuePair key="c_probe39_type" value="0" description="" />
-   <keyValuePair key="c_probe39_width" value="2" description="" />
+   <keyValuePair key="c_probe39_width" value="1" description="" />
    <keyValuePair key="c_probe3_type" value="0" description="" />
-   <keyValuePair key="c_probe3_width" value="2" description="" />
+   <keyValuePair key="c_probe3_width" value="4" description="" />
    <keyValuePair key="c_probe40_type" value="0" description="" />
-   <keyValuePair key="c_probe40_width" value="32" description="" />
+   <keyValuePair key="c_probe40_width" value="1" description="" />
    <keyValuePair key="c_probe41_type" value="0" description="" />
-   <keyValuePair key="c_probe41_width" value="30" description="" />
+   <keyValuePair key="c_probe41_width" value="1" description="" />
    <keyValuePair key="c_probe42_type" value="0" description="" />
-   <keyValuePair key="c_probe42_width" value="8" description="" />
+   <keyValuePair key="c_probe42_width" value="1" description="" />
    <keyValuePair key="c_probe43_type" value="0" description="" />
-   <keyValuePair key="c_probe43_width" value="3" description="" />
+   <keyValuePair key="c_probe43_width" value="1" description="" />
    <keyValuePair key="c_probe44_type" value="0" description="" />
-   <keyValuePair key="c_probe44_width" value="2" description="" />
+   <keyValuePair key="c_probe44_width" value="1" description="" />
    <keyValuePair key="c_probe45_type" value="0" description="" />
-   <keyValuePair key="c_probe45_width" value="4" description="" />
+   <keyValuePair key="c_probe45_width" value="1" description="" />
    <keyValuePair key="c_probe46_type" value="0" description="" />
-   <keyValuePair key="c_probe46_width" value="8" description="" />
+   <keyValuePair key="c_probe46_width" value="1" description="" />
    <keyValuePair key="c_probe47_type" value="0" description="" />
    <keyValuePair key="c_probe47_width" value="1" description="" />
    <keyValuePair key="c_probe48_type" value="0" description="" />
@@ -528,7 +508,7 @@
    <keyValuePair key="c_probe49_type" value="0" description="" />
    <keyValuePair key="c_probe49_width" value="1" description="" />
    <keyValuePair key="c_probe4_type" value="0" description="" />
-   <keyValuePair key="c_probe4_width" value="4" description="" />
+   <keyValuePair key="c_probe4_width" value="32" description="" />
    <keyValuePair key="c_probe50_type" value="0" description="" />
    <keyValuePair key="c_probe50_width" value="1" description="" />
    <keyValuePair key="c_probe51_type" value="0" description="" />
@@ -572,7 +552,7 @@
    <keyValuePair key="c_probe69_type" value="0" description="" />
    <keyValuePair key="c_probe69_width" value="1" description="" />
    <keyValuePair key="c_probe6_type" value="0" description="" />
-   <keyValuePair key="c_probe6_width" value="3" description="" />
+   <keyValuePair key="c_probe6_width" value="8" description="" />
    <keyValuePair key="c_probe70_type" value="0" description="" />
    <keyValuePair key="c_probe70_width" value="1" description="" />
    <keyValuePair key="c_probe71_type" value="0" description="" />
@@ -594,7 +574,7 @@
    <keyValuePair key="c_probe79_type" value="0" description="" />
    <keyValuePair key="c_probe79_width" value="1" description="" />
    <keyValuePair key="c_probe7_type" value="0" description="" />
-   <keyValuePair key="c_probe7_width" value="4" description="" />
+   <keyValuePair key="c_probe7_width" value="3" description="" />
    <keyValuePair key="c_probe80_type" value="0" description="" />
    <keyValuePair key="c_probe80_width" value="1" description="" />
    <keyValuePair key="c_probe81_type" value="0" description="" />
@@ -616,7 +596,7 @@
    <keyValuePair key="c_probe89_type" value="0" description="" />
    <keyValuePair key="c_probe89_width" value="1" description="" />
    <keyValuePair key="c_probe8_type" value="0" description="" />
-   <keyValuePair key="c_probe8_width" value="3" description="" />
+   <keyValuePair key="c_probe8_width" value="32" description="" />
    <keyValuePair key="c_probe90_type" value="0" description="" />
    <keyValuePair key="c_probe90_width" value="1" description="" />
    <keyValuePair key="c_probe91_type" value="0" description="" />
@@ -638,7 +618,7 @@
    <keyValuePair key="c_probe99_type" value="0" description="" />
    <keyValuePair key="c_probe99_width" value="1" description="" />
    <keyValuePair key="c_probe9_type" value="0" description="" />
-   <keyValuePair key="c_probe9_width" value="64" description="" />
+   <keyValuePair key="c_probe9_width" value="8" description="" />
    <keyValuePair key="c_trigin_en" value="0" description="" />
    <keyValuePair key="c_trigout_en" value="0" description="" />
    <keyValuePair key="component_name" value="u_ila_0_CV" description="" />
@@ -1033,13 +1013,13 @@
   </section>
   <section name="sid_v8_0_9/1" level="2" order="21" description="">
    <keyValuePair key="c_architecture" value="0" description="" />
-   <keyValuePair key="c_block_size_constant" value="225" description="" />
-   <keyValuePair key="c_block_size_type" value="3" description="" />
+   <keyValuePair key="c_block_size_constant" value="224" description="" />
+   <keyValuePair key="c_block_size_type" value="0" description="" />
    <keyValuePair key="c_block_size_width" value="8" description="" />
    <keyValuePair key="c_branch_length_constant" value="16" description="" />
    <keyValuePair key="c_branch_length_file" value="[user-defined]" description="" />
    <keyValuePair key="c_branch_length_type" value="0" description="" />
-   <keyValuePair key="c_col_constant" value="14" description="" />
+   <keyValuePair key="c_col_constant" value="8" description="" />
    <keyValuePair key="c_col_permute_file" value="[user-defined]" description="" />
    <keyValuePair key="c_col_select_file" value="[user-defined]" description="" />
    <keyValuePair key="c_col_type" value="0" description="" />
@@ -1078,7 +1058,7 @@
    <keyValuePair key="c_num_selectable_cols" value="4" description="" />
    <keyValuePair key="c_num_selectable_rows" value="4" description="" />
    <keyValuePair key="c_pipe_level" value="2" description="" />
-   <keyValuePair key="c_row_constant" value="16" description="" />
+   <keyValuePair key="c_row_constant" value="28" description="" />
    <keyValuePair key="c_row_permute_file" value="[user-defined]" description="" />
    <keyValuePair key="c_row_select_file" value="[user-defined]" description="" />
    <keyValuePair key="c_row_type" value="0" description="" />
@@ -1179,76 +1159,7 @@
    <keyValuePair key="x_ipversion" value="1.0" description="" />
   </section>
  </section>
- <section name="phys_opt_design_post_place" level="1" order="4" description="">
-  <section name="command_line_options" level="2" order="1" description="">
-   <keyValuePair key="-bram_register_opt" value="default::[not_specified]" description="" />
-   <keyValuePair key="-clock_opt" value="default::[not_specified]" description="" />
-   <keyValuePair key="-critical_cell_opt" value="default::[not_specified]" description="" />
-   <keyValuePair key="-critical_pin_opt" value="default::[not_specified]" description="" />
-   <keyValuePair key="-directive" value="default::[not_specified]" description="" />
-   <keyValuePair key="-dsp_register_opt" value="default::[not_specified]" description="" />
-   <keyValuePair key="-effort_level" value="default::[not_specified]" description="" />
-   <keyValuePair key="-fanout_opt" value="default::[not_specified]" description="" />
-   <keyValuePair key="-hold_fix" value="default::[not_specified]" description="" />
-   <keyValuePair key="-multi_clock_opt" value="default::[not_specified]" description="" />
-   <keyValuePair key="-placement_opt" value="default::[not_specified]" description="" />
-   <keyValuePair key="-restruct" value="default::[not_specified]" description="" />
-   <keyValuePair key="-retime" value="default::[not_specified]" description="" />
-   <keyValuePair key="-rewire" value="default::[not_specified]" description="" />
-   <keyValuePair key="-shift_register_opt" value="default::[not_specified]" description="" />
-   <keyValuePair key="-verbose" value="default::[not_specified]" description="" />
-   <keyValuePair key="-vhfn" value="default::[not_specified]" description="" />
-  </section>
- </section>
- <section name="power_opt_design" level="1" order="5" description="">
-  <section name="command_line_options_spo" level="2" order="1" description="">
-   <keyValuePair key="-cell_types" value="default::all" description="" />
-   <keyValuePair key="-clocks" value="default::[not_specified]" description="" />
-   <keyValuePair key="-exclude_cells" value="default::[not_specified]" description="" />
-   <keyValuePair key="-include_cells" value="default::[not_specified]" description="" />
-  </section>
-  <section name="usage" level="2" order="2" description="">
-   <keyValuePair key="bram_ports_augmented" value="22" description="" />
-   <keyValuePair key="bram_ports_newly_gated" value="5" description="" />
-   <keyValuePair key="bram_ports_total" value="200" description="" />
-   <keyValuePair key="flow_state" value="default" description="" />
-   <keyValuePair key="slice_registers_augmented" value="0" description="" />
-   <keyValuePair key="slice_registers_newly_gated" value="0" description="" />
-   <keyValuePair key="slice_registers_total" value="15875" description="" />
-   <keyValuePair key="srls_augmented" value="0" description="" />
-   <keyValuePair key="srls_newly_gated" value="0" description="" />
-   <keyValuePair key="srls_total" value="2910" description="" />
-  </section>
- </section>
- <section name="router" level="1" order="6" description="">
-  <section name="usage" level="2" order="1" description="">
-   <keyValuePair key="actual_expansions" value="17070198" description="" />
-   <keyValuePair key="bogomips" value="0" description="" />
-   <keyValuePair key="bram18" value="15" description="" />
-   <keyValuePair key="bram36" value="85" description="" />
-   <keyValuePair key="bufg" value="0" description="" />
-   <keyValuePair key="bufr" value="0" description="" />
-   <keyValuePair key="congestion_level" value="0" description="" />
-   <keyValuePair key="ctrls" value="615" description="" />
-   <keyValuePair key="dsp" value="9" description="" />
-   <keyValuePair key="effort" value="2" description="" />
-   <keyValuePair key="estimated_expansions" value="20678358" description="" />
-   <keyValuePair key="ff" value="15875" description="" />
-   <keyValuePair key="global_clocks" value="3" description="" />
-   <keyValuePair key="high_fanout_nets" value="11" description="" />
-   <keyValuePair key="iob" value="0" description="" />
-   <keyValuePair key="lut" value="11339" description="" />
-   <keyValuePair key="movable_instances" value="32798" description="" />
-   <keyValuePair key="nets" value="37775" description="" />
-   <keyValuePair key="pins" value="207471" description="" />
-   <keyValuePair key="pll" value="0" description="" />
-   <keyValuePair key="router_runtime" value="97.823000" description="" />
-   <keyValuePair key="router_timing_driven" value="1" description="" />
-   <keyValuePair key="threads" value="2" description="" />
-   <keyValuePair key="timing_constraints_exist" value="1" description="" />
-  </section>
- </section>
- <section name="synthesis" level="1" order="7" description="">
+ <section name="synthesis" level="1" order="4" description="">
   <section name="command_line_options" level="2" order="1" description="">
    <keyValuePair key="-assert" value="default::[not_specified]" description="" />
    <keyValuePair key="-bufg" value="default::12" description="" />
@@ -1285,29 +1196,29 @@
    <keyValuePair key="-verilog_define" value="default::[not_specified]" description="" />
   </section>
   <section name="usage" level="2" order="2" description="">
-   <keyValuePair key="elapsed" value="00:11:42s" description="" />
+   <keyValuePair key="elapsed" value="00:10:11s" description="" />
    <keyValuePair key="hls_ip" value="0" description="" />
-   <keyValuePair key="memory_gain" value="54.055MB" description="" />
-   <keyValuePair key="memory_peak" value="8990.066MB" description="" />
+   <keyValuePair key="memory_gain" value="710.352MB" description="" />
+   <keyValuePair key="memory_peak" value="1675.637MB" description="" />
   </section>
  </section>
- <section name="unisim_transformation" level="1" order="8" description="">
+ <section name="unisim_transformation" level="1" order="5" description="">
   <section name="post_unisim_transformation" level="2" order="1" description="">
    <keyValuePair key="bibuf" value="130" description="" />
    <keyValuePair key="bufg" value="1" description="" />
-   <keyValuePair key="carry4" value="512" description="" />
+   <keyValuePair key="carry4" value="513" description="" />
    <keyValuePair key="dsp48e1" value="9" description="" />
    <keyValuePair key="fdce" value="85" description="" />
    <keyValuePair key="fdpe" value="102" description="" />
    <keyValuePair key="fdre" value="5922" description="" />
    <keyValuePair key="fdse" value="157" description="" />
-   <keyValuePair key="gnd" value="672" description="" />
+   <keyValuePair key="gnd" value="673" description="" />
    <keyValuePair key="lut1" value="301" description="" />
    <keyValuePair key="lut2" value="729" description="" />
    <keyValuePair key="lut3" value="1496" description="" />
-   <keyValuePair key="lut4" value="591" description="" />
-   <keyValuePair key="lut5" value="531" description="" />
-   <keyValuePair key="lut6" value="1183" description="" />
+   <keyValuePair key="lut4" value="592" description="" />
+   <keyValuePair key="lut5" value="529" description="" />
+   <keyValuePair key="lut6" value="1184" description="" />
    <keyValuePair key="muxf7" value="33" description="" />
    <keyValuePair key="muxf8" value="13" description="" />
    <keyValuePair key="ps7" value="1" description="" />
@@ -1337,9 +1248,9 @@
    <keyValuePair key="lut1" value="752" description="" />
    <keyValuePair key="lut2" value="729" description="" />
    <keyValuePair key="lut3" value="1496" description="" />
-   <keyValuePair key="lut4" value="591" description="" />
-   <keyValuePair key="lut5" value="531" description="" />
-   <keyValuePair key="lut6" value="1183" description="" />
+   <keyValuePair key="lut4" value="592" description="" />
+   <keyValuePair key="lut5" value="529" description="" />
+   <keyValuePair key="lut6" value="1184" description="" />
    <keyValuePair key="muxcy" value="560" description="" />
    <keyValuePair key="muxf7" value="31" description="" />
    <keyValuePair key="muxf8" value="13" description="" />
@@ -1358,9 +1269,9 @@
    <keyValuePair key="xorcy" value="532" description="" />
   </section>
  </section>
- <section name="vivado_usage" level="1" order="9" description="">
+ <section name="vivado_usage" level="1" order="6" description="">
   <section name="other_data" level="2" order="1" description="">
-   <keyValuePair key="guimode" value="24" description="" />
+   <keyValuePair key="guimode" value="26" description="" />
   </section>
   <section name="project_data" level="2" order="2" description="">
    <keyValuePair key="board" value="Arty Z7-20" description="" />
@@ -1370,13 +1281,13 @@
    <keyValuePair key="currentsynthesisrun" value="synth_1" description="" />
    <keyValuePair key="default_library" value="xil_defaultlib" description="" />
    <keyValuePair key="designmode" value="RTL" description="" />
-   <keyValuePair key="export_simulation_activehdl" value="10" description="" />
-   <keyValuePair key="export_simulation_ies" value="10" description="" />
-   <keyValuePair key="export_simulation_modelsim" value="10" description="" />
-   <keyValuePair key="export_simulation_questa" value="10" description="" />
-   <keyValuePair key="export_simulation_riviera" value="10" description="" />
-   <keyValuePair key="export_simulation_vcs" value="10" description="" />
-   <keyValuePair key="export_simulation_xsim" value="10" description="" />
+   <keyValuePair key="export_simulation_activehdl" value="11" description="" />
+   <keyValuePair key="export_simulation_ies" value="11" description="" />
+   <keyValuePair key="export_simulation_modelsim" value="11" description="" />
+   <keyValuePair key="export_simulation_questa" value="11" description="" />
+   <keyValuePair key="export_simulation_riviera" value="11" description="" />
+   <keyValuePair key="export_simulation_vcs" value="11" description="" />
+   <keyValuePair key="export_simulation_xsim" value="11" description="" />
    <keyValuePair key="implstrategy" value="Vivado Implementation Defaults" description="" />
    <keyValuePair key="launch_simulation_activehdl" value="0" description="" />
    <keyValuePair key="launch_simulation_ies" value="0" description="" />

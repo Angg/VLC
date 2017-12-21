@@ -625,10 +625,10 @@
           <spirit:configurableElementValue spirit:referenceId="sid_type">rectangular</spirit:configurableElementValue>
           <spirit:configurableElementValue spirit:referenceId="number_of_branches">16</spirit:configurableElementValue>
           <spirit:configurableElementValue spirit:referenceId="branch_length_constant">1</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="number_of_rows_constant_value">16</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="block_size_type">rows_columns</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="number_of_rows_constant_value">28</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="block_size_type">constant</spirit:configurableElementValue>
           <spirit:configurableElementValue spirit:referenceId="minimum_rows">15</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="number_of_columns_constant_value">14</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="number_of_columns_constant_value">8</spirit:configurableElementValue>
           <spirit:configurableElementValue spirit:referenceId="col_port_width">4</spirit:configurableElementValue>
           <spirit:configurableElementValue spirit:referenceId="minimum_columns">15</spirit:configurableElementValue>
           <spirit:configurableElementValue spirit:referenceId="block_size_constant_value">224</spirit:configurableElementValue>
@@ -894,6 +894,10 @@
         <spirit:internalPortReference spirit:componentRef="axis_data_fifo_0" spirit:portRef="s_axis_aclk"/>
         <spirit:internalPortReference spirit:componentRef="axis_data_fifo_1" spirit:portRef="s_axis_aclk"/>
         <spirit:internalPortReference spirit:componentRef="axis_data_fifo_2" spirit:portRef="s_axis_aclk"/>
+        <spirit:internalPortReference spirit:componentRef="HermitianBuffer_BRAM_0" spirit:portRef="s00_axis_aclk"/>
+        <spirit:internalPortReference spirit:componentRef="HermitianBuffer_BRAM_0" spirit:portRef="m00_axis_aclk"/>
+        <spirit:internalPortReference spirit:componentRef="FrameAssembler_BRAM_0" spirit:portRef="m00_axis_aclk"/>
+        <spirit:internalPortReference spirit:componentRef="FrameAssembler_BRAM_0" spirit:portRef="s00_axis_aclk"/>
         <spirit:internalPortReference spirit:componentRef="processing_system7_0_axi_periph" spirit:portRef="S00_ACLK"/>
         <spirit:internalPortReference spirit:componentRef="processing_system7_0_axi_periph" spirit:portRef="ACLK"/>
         <spirit:internalPortReference spirit:componentRef="processing_system7_0_axi_periph" spirit:portRef="M00_ACLK"/>
@@ -902,10 +906,6 @@
         <spirit:internalPortReference spirit:componentRef="axi_mem_intercon" spirit:portRef="ACLK"/>
         <spirit:internalPortReference spirit:componentRef="axi_mem_intercon" spirit:portRef="M00_ACLK"/>
         <spirit:internalPortReference spirit:componentRef="processing_system7_0_axi_periph" spirit:portRef="M02_ACLK"/>
-        <spirit:internalPortReference spirit:componentRef="HermitianBuffer_BRAM_0" spirit:portRef="s00_axis_aclk"/>
-        <spirit:internalPortReference spirit:componentRef="HermitianBuffer_BRAM_0" spirit:portRef="m00_axis_aclk"/>
-        <spirit:internalPortReference spirit:componentRef="FrameAssembler_BRAM_0" spirit:portRef="m00_axis_aclk"/>
-        <spirit:internalPortReference spirit:componentRef="FrameAssembler_BRAM_0" spirit:portRef="s00_axis_aclk"/>
       </spirit:adHocConnection>
       <spirit:adHocConnection>
         <spirit:name>processing_system7_0_FCLK_RESET0_N</spirit:name>
@@ -925,16 +925,16 @@
         <spirit:internalPortReference spirit:componentRef="axis_data_fifo_1" spirit:portRef="s_axis_aresetn"/>
         <spirit:internalPortReference spirit:componentRef="xfft_0" spirit:portRef="aresetn"/>
         <spirit:internalPortReference spirit:componentRef="axis_data_fifo_2" spirit:portRef="s_axis_aresetn"/>
+        <spirit:internalPortReference spirit:componentRef="HermitianBuffer_BRAM_0" spirit:portRef="s00_axis_aresetn"/>
+        <spirit:internalPortReference spirit:componentRef="HermitianBuffer_BRAM_0" spirit:portRef="m00_axis_aresetn"/>
+        <spirit:internalPortReference spirit:componentRef="FrameAssembler_BRAM_0" spirit:portRef="m00_axis_aresetn"/>
+        <spirit:internalPortReference spirit:componentRef="FrameAssembler_BRAM_0" spirit:portRef="s00_axis_aresetn"/>
         <spirit:internalPortReference spirit:componentRef="processing_system7_0_axi_periph" spirit:portRef="S00_ARESETN"/>
         <spirit:internalPortReference spirit:componentRef="processing_system7_0_axi_periph" spirit:portRef="M00_ARESETN"/>
         <spirit:internalPortReference spirit:componentRef="processing_system7_0_axi_periph" spirit:portRef="M01_ARESETN"/>
         <spirit:internalPortReference spirit:componentRef="axi_mem_intercon" spirit:portRef="S00_ARESETN"/>
         <spirit:internalPortReference spirit:componentRef="axi_mem_intercon" spirit:portRef="M00_ARESETN"/>
         <spirit:internalPortReference spirit:componentRef="processing_system7_0_axi_periph" spirit:portRef="M02_ARESETN"/>
-        <spirit:internalPortReference spirit:componentRef="HermitianBuffer_BRAM_0" spirit:portRef="s00_axis_aresetn"/>
-        <spirit:internalPortReference spirit:componentRef="HermitianBuffer_BRAM_0" spirit:portRef="m00_axis_aresetn"/>
-        <spirit:internalPortReference spirit:componentRef="FrameAssembler_BRAM_0" spirit:portRef="m00_axis_aresetn"/>
-        <spirit:internalPortReference spirit:componentRef="FrameAssembler_BRAM_0" spirit:portRef="s00_axis_aresetn"/>
       </spirit:adHocConnection>
       <spirit:adHocConnection>
         <spirit:name>rst_processing_system7_0_100M_interconnect_aresetn</spirit:name>

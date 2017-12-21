@@ -584,7 +584,7 @@
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>customizationCRC</spirit:name>
-            <spirit:value>9dd89851</spirit:value>
+            <spirit:value>6cd9d963</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>customizationCRCversion</spirit:name>
@@ -602,7 +602,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Wed Nov 29 08:38:59 UTC 2017</spirit:value>
+            <spirit:value>Thu Dec 21 07:01:03 UTC 2017</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>boundaryCRC</spirit:name>
@@ -614,7 +614,7 @@
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>customizationCRC</spirit:name>
-            <spirit:value>9dd89851</spirit:value>
+            <spirit:value>6cd9d963</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>customizationCRCversion</spirit:name>
@@ -633,7 +633,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Wed Nov 29 08:38:59 UTC 2017</spirit:value>
+            <spirit:value>Thu Dec 21 07:01:03 UTC 2017</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>boundaryCRC</spirit:name>
@@ -645,7 +645,7 @@
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>customizationCRC</spirit:name>
-            <spirit:value>9dd89851</spirit:value>
+            <spirit:value>6cd9d963</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>customizationCRCversion</spirit:name>
@@ -730,7 +730,7 @@
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>customizationCRC</spirit:name>
-            <spirit:value>ba4c31f0</spirit:value>
+            <spirit:value>fc4f0034</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>customizationCRCversion</spirit:name>
@@ -749,7 +749,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Wed Nov 29 08:38:59 UTC 2017</spirit:value>
+            <spirit:value>Thu Dec 21 07:01:03 UTC 2017</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>boundaryCRC</spirit:name>
@@ -761,7 +761,7 @@
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>customizationCRC</spirit:name>
-            <spirit:value>ba4c31f0</spirit:value>
+            <spirit:value>fc4f0034</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>customizationCRCversion</spirit:name>
@@ -1444,7 +1444,7 @@
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>c_row_constant</spirit:name>
-        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.c_row_constant">16</spirit:value>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.c_row_constant">28</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>c_has_row</spirit:name>
@@ -1492,7 +1492,7 @@
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>c_col_constant</spirit:name>
-        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.c_col_constant">14</spirit:value>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.c_col_constant">8</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>c_has_col</spirit:name>
@@ -1536,11 +1536,11 @@
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>c_block_size_type</spirit:name>
-        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.c_block_size_type">3</spirit:value>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.c_block_size_type">0</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>c_block_size_constant</spirit:name>
-        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.c_block_size_constant">225</spirit:value>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.c_block_size_constant">224</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>c_has_block_size</spirit:name>
@@ -2529,7 +2529,7 @@
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>number_of_rows_constant_value</spirit:name>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.number_of_rows_constant_value" spirit:order="14" spirit:minimum="1" spirit:maximum="255" spirit:rangeType="long">16</spirit:value>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.number_of_rows_constant_value" spirit:order="14" spirit:minimum="1" spirit:maximum="255" spirit:rangeType="long">28</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>row_port_width</spirit:name>
@@ -2541,7 +2541,7 @@
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>block_size_type</spirit:name>
-      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.block_size_type" spirit:choiceRef="choice_pairs_a7a86d22" spirit:order="17">rows_columns</spirit:value>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.block_size_type" spirit:choiceRef="choice_pairs_a7a86d22" spirit:order="17">constant</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>minimum_rows</spirit:name>
@@ -2557,7 +2557,7 @@
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>number_of_columns_constant_value</spirit:name>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.number_of_columns_constant_value" spirit:order="21" spirit:minimum="2" spirit:maximum="255" spirit:rangeType="long">14</spirit:value>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.number_of_columns_constant_value" spirit:order="21" spirit:minimum="2" spirit:maximum="255" spirit:rangeType="long">8</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>col_port_width</spirit:name>
@@ -2577,7 +2577,7 @@
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>block_size_constant_value</spirit:name>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.block_size_constant_value" spirit:order="26" spirit:minimum="211" spirit:maximum="224" spirit:rangeType="long">224</spirit:value>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.block_size_constant_value" spirit:order="26" spirit:minimum="217" spirit:maximum="224" spirit:rangeType="long">224</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>coe_file</spirit:name>
