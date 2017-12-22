@@ -1,3 +1,71 @@
 11:30:40 INFO  : Launching XSDB server: xsdb.bat -interactive D:\Files\SoCProject\DCOOFDMVLCTx-back\DCOOFDMVLCTx.sdk\temp_xsdb_launch_script.tcl
 11:30:45 INFO  : XSDB server has started successfully.
 11:30:55 INFO  : Processing command line option -hwspec D:/Files/SoCProject/DCOOFDMVLCTx-back/DCOOFDMVLCTx.sdk/Tx_Design_wrapper.hdf.
+17:46:07 INFO  : Launching XSDB server: xsdb.bat -interactive D:\Files\SoCProject\DCOOFDMVLCTx\DCOOFDMVLCTx.sdk\temp_xsdb_launch_script.tcl
+17:46:10 INFO  : XSDB server has started successfully.
+17:46:23 INFO  : Processing command line option -hwspec D:/Files/SoCProject/DCOOFDMVLCTx/DCOOFDMVLCTx.sdk/Tx_Design_wrapper.hdf.
+17:49:58 INFO  : Launching XSDB server: xsdb.bat -interactive D:\Files\SoCProject\DCOOFDMVLCTx\DCOOFDMVLCTx.sdk\temp_xsdb_launch_script.tcl
+17:49:59 INFO  : XSDB server has started successfully.
+17:49:59 INFO  : Processing command line option -hwspec D:/Files/SoCProject/DCOOFDMVLCTx/DCOOFDMVLCTx.sdk/Tx_Design_wrapper.hdf.
+09:38:54 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+09:38:57 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Arty Z7 003017A4C997A" && level==0} -index 1' command is executed.
+09:39:00 INFO  : FPGA configured successfully with bitstream "D:/Files/SoCProject/DCOOFDMVLCTx/DCOOFDMVLCTx.sdk/Tx_Design_wrapper_hw_platform_0/test1_wrapper.bit"
+09:39:42 INFO  : Processor reset is completed for ps7_cortexa9_0
+09:39:43 ERROR : Unexpected error while launching program.
+java.lang.RuntimeException: Failed to download ELF file
+
+
+    Cannot access DDR: the controller is held in reset
+
+	at com.xilinx.sdk.targetmanager.internal.TM.downloadELF(TM.java:686)
+	at com.xilinx.sdk.debug.core.internal.AppRunner.run(AppRunner.java:129)
+	at com.xilinx.sdk.debug.core.XilinxAppLaunchConfigurationDelegate.runApplication(XilinxAppLaunchConfigurationDelegate.java:637)
+	at com.xilinx.sdk.debug.core.XilinxAppLaunchConfigurationDelegate.launch(XilinxAppLaunchConfigurationDelegate.java:309)
+	at com.xilinx.sdk.debug.ui.XilinxAppLaunchDelegateWrapper.launch(XilinxAppLaunchDelegateWrapper.java:31)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:885)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:739)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1039)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1256)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+09:40:09 ERROR : Unexpected error while parsing XMD response ?: com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: invalid number or unquoted string near 
+09:40:42 INFO  : Launching XSDB server: xsdb.bat -interactive D:\Files\SoCProject\DCOOFDMVLCTx\DCOOFDMVLCTx.sdk\temp_xsdb_launch_script.tcl
+09:40:45 INFO  : XSDB server has started successfully.
+09:40:47 INFO  : Processing command line option -hwspec D:/Files/SoCProject/DCOOFDMVLCTx/DCOOFDMVLCTx.sdk/Tx_Design_wrapper.hdf.
+09:41:08 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+09:41:40 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+09:41:41 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Arty Z7 003017A4C997A" && level==0} -index 1' command is executed.
+09:41:44 INFO  : FPGA configured successfully with bitstream "D:/Files/SoCProject/DCOOFDMVLCTx/DCOOFDMVLCTx.sdk/Tx_Design_wrapper_hw_platform_0/test1_wrapper.bit"
+09:43:05 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+09:43:05 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Arty Z7 003017A4C997A" && level==0} -index 1' command is executed.
+09:43:08 INFO  : FPGA configured successfully with bitstream "D:/Files/SoCProject/DCOOFDMVLCTx/DCOOFDMVLCTx.sdk/Tx_Design_wrapper_hw_platform_0/test1_wrapper.bit"
+09:43:20 INFO  : Processor reset is completed for ps7_cortexa9_0
+09:43:20 ERROR : Unexpected error while launching program.
+java.lang.RuntimeException: Failed to download ELF file
+
+
+    Cannot access DDR: the controller is held in reset
+
+	at com.xilinx.sdk.targetmanager.internal.TM.downloadELF(TM.java:686)
+	at com.xilinx.sdk.debug.core.internal.AppRunner.run(AppRunner.java:129)
+	at com.xilinx.sdk.debug.core.XilinxAppLaunchConfigurationDelegate.runApplication(XilinxAppLaunchConfigurationDelegate.java:637)
+	at com.xilinx.sdk.debug.core.XilinxAppLaunchConfigurationDelegate.launch(XilinxAppLaunchConfigurationDelegate.java:309)
+	at com.xilinx.sdk.debug.ui.XilinxAppLaunchDelegateWrapper.launch(XilinxAppLaunchDelegateWrapper.java:31)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:885)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:739)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1039)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1256)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+09:43:36 ERROR : Unexpected error while parsing XMD response ?: com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: invalid number or unquoted string near 
+09:43:52 INFO  : Launching XSDB server: xsdb.bat -interactive D:\Files\SoCProject\DCOOFDMVLCTx\DCOOFDMVLCTx.sdk\temp_xsdb_launch_script.tcl
+09:43:54 INFO  : XSDB server has started successfully.
+09:43:54 INFO  : Processing command line option -hwspec D:/Files/SoCProject/DCOOFDMVLCTx/DCOOFDMVLCTx.sdk/Tx_Design_wrapper.hdf.
+09:43:54 INFO  : Checking for hwspec changes in the project Tx_Design_wrapper_hw_platform_1.
+09:44:12 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+09:44:16 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Arty Z7 003017A4C997A" && level==0} -index 1' command is executed.
+09:44:19 INFO  : FPGA configured successfully with bitstream "D:/Files/SoCProject/DCOOFDMVLCTx/DCOOFDMVLCTx.sdk/Tx_Design_wrapper_hw_platform_0/test1_wrapper.bit"
+09:44:42 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+09:44:42 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Arty Z7 003017A4C997A" && level==0} -index 1' command is executed.
+09:44:44 INFO  : FPGA configured successfully with bitstream "D:/Files/SoCProject/DCOOFDMVLCTx/DCOOFDMVLCTx.sdk/Tx_Design_wrapper_hw_platform_0/test1_wrapper.bit"
+09:45:12 INFO  : ps7_init is completed.
+09:45:12 INFO  : ps7_post_config is completed.
+09:45:12 INFO  : Processor reset is completed for ps7_cortexa9_0
