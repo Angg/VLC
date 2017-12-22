@@ -1,6 +1,26 @@
 src/main.o src/main.o: ../src/main.c \
+ ../../TxCode_bsp/ps7_cortexa9_0/include/xaxidma.h \
+ ../../TxCode_bsp/ps7_cortexa9_0/include/xaxidma_bdring.h \
+ ../../TxCode_bsp/ps7_cortexa9_0/include/xstatus.h \
+ ../../TxCode_bsp/ps7_cortexa9_0/include/xil_types.h \
+ ../../TxCode_bsp/ps7_cortexa9_0/include/xil_assert.h \
+ ../../TxCode_bsp/ps7_cortexa9_0/include/xaxidma_bd.h \
+ ../../TxCode_bsp/ps7_cortexa9_0/include/xaxidma_hw.h \
+ ../../TxCode_bsp/ps7_cortexa9_0/include/xil_io.h \
+ ../../TxCode_bsp/ps7_cortexa9_0/include/xpseudo_asm.h \
+ ../../TxCode_bsp/ps7_cortexa9_0/include/xreg_cortexa9.h \
+ ../../TxCode_bsp/ps7_cortexa9_0/include/xpseudo_asm_gcc.h \
+ ../../TxCode_bsp/ps7_cortexa9_0/include/xil_printf.h \
  ../../TxCode_bsp/ps7_cortexa9_0/include/xparameters.h \
  ../../TxCode_bsp/ps7_cortexa9_0/include/xparameters_ps.h \
+ ../../TxCode_bsp/ps7_cortexa9_0/include/xdebug.h \
+ ../../TxCode_bsp/ps7_cortexa9_0/include/xil_cache.h \
+ ../../TxCode_bsp/ps7_cortexa9_0/include/xparameters.h \
+ ../../TxCode_bsp/ps7_cortexa9_0/include/xil_exception.h \
+ ../../TxCode_bsp/ps7_cortexa9_0/include/xdebug.h \
+ ../../TxCode_bsp/ps7_cortexa9_0/include/xscugic.h \
+ ../../TxCode_bsp/ps7_cortexa9_0/include/xscugic_hw.h \
+ ../../TxCode_bsp/ps7_cortexa9_0/include/xil_exception.h \
  ../../TxCode_bsp/ps7_cortexa9_0/include/netif/xadapter.h \
  ../../TxCode_bsp/ps7_cortexa9_0/include/lwipopts.h \
  ../../TxCode_bsp/ps7_cortexa9_0/include/lwip/netif.h \
@@ -16,18 +36,58 @@ src/main.o src/main.o: ../src/main.c \
  ../../TxCode_bsp/ps7_cortexa9_0/include/netif/xtopology.h \
  ../src/platform.h ../src/platform_config.h \
  ../../TxCode_bsp/ps7_cortexa9_0/include/xil_printf.h \
- ../../TxCode_bsp/ps7_cortexa9_0/include/xil_types.h \
- ../../TxCode_bsp/ps7_cortexa9_0/include/xparameters.h \
  ../../TxCode_bsp/ps7_cortexa9_0/include/lwip/tcp.h \
  ../../TxCode_bsp/ps7_cortexa9_0/include/lwip/mem.h \
  ../../TxCode_bsp/ps7_cortexa9_0/include/lwip/icmp.h \
  ../../TxCode_bsp/ps7_cortexa9_0/include/xil_cache.h \
+ ../../TxCode_bsp/ps7_cortexa9_0/include/TxInputBuffer.h \
+ ../../TxCode_bsp/ps7_cortexa9_0/include/ResetReg.h \
  ../../TxCode_bsp/ps7_cortexa9_0/include/lwip/dhcp.h \
  ../../TxCode_bsp/ps7_cortexa9_0/include/lwip/udp.h
+
+../../TxCode_bsp/ps7_cortexa9_0/include/xaxidma.h:
+
+../../TxCode_bsp/ps7_cortexa9_0/include/xaxidma_bdring.h:
+
+../../TxCode_bsp/ps7_cortexa9_0/include/xstatus.h:
+
+../../TxCode_bsp/ps7_cortexa9_0/include/xil_types.h:
+
+../../TxCode_bsp/ps7_cortexa9_0/include/xil_assert.h:
+
+../../TxCode_bsp/ps7_cortexa9_0/include/xaxidma_bd.h:
+
+../../TxCode_bsp/ps7_cortexa9_0/include/xaxidma_hw.h:
+
+../../TxCode_bsp/ps7_cortexa9_0/include/xil_io.h:
+
+../../TxCode_bsp/ps7_cortexa9_0/include/xpseudo_asm.h:
+
+../../TxCode_bsp/ps7_cortexa9_0/include/xreg_cortexa9.h:
+
+../../TxCode_bsp/ps7_cortexa9_0/include/xpseudo_asm_gcc.h:
+
+../../TxCode_bsp/ps7_cortexa9_0/include/xil_printf.h:
 
 ../../TxCode_bsp/ps7_cortexa9_0/include/xparameters.h:
 
 ../../TxCode_bsp/ps7_cortexa9_0/include/xparameters_ps.h:
+
+../../TxCode_bsp/ps7_cortexa9_0/include/xdebug.h:
+
+../../TxCode_bsp/ps7_cortexa9_0/include/xil_cache.h:
+
+../../TxCode_bsp/ps7_cortexa9_0/include/xparameters.h:
+
+../../TxCode_bsp/ps7_cortexa9_0/include/xil_exception.h:
+
+../../TxCode_bsp/ps7_cortexa9_0/include/xdebug.h:
+
+../../TxCode_bsp/ps7_cortexa9_0/include/xscugic.h:
+
+../../TxCode_bsp/ps7_cortexa9_0/include/xscugic_hw.h:
+
+../../TxCode_bsp/ps7_cortexa9_0/include/xil_exception.h:
 
 ../../TxCode_bsp/ps7_cortexa9_0/include/netif/xadapter.h:
 
@@ -61,10 +121,6 @@ src/main.o src/main.o: ../src/main.c \
 
 ../../TxCode_bsp/ps7_cortexa9_0/include/xil_printf.h:
 
-../../TxCode_bsp/ps7_cortexa9_0/include/xil_types.h:
-
-../../TxCode_bsp/ps7_cortexa9_0/include/xparameters.h:
-
 ../../TxCode_bsp/ps7_cortexa9_0/include/lwip/tcp.h:
 
 ../../TxCode_bsp/ps7_cortexa9_0/include/lwip/mem.h:
@@ -72,6 +128,10 @@ src/main.o src/main.o: ../src/main.c \
 ../../TxCode_bsp/ps7_cortexa9_0/include/lwip/icmp.h:
 
 ../../TxCode_bsp/ps7_cortexa9_0/include/xil_cache.h:
+
+../../TxCode_bsp/ps7_cortexa9_0/include/TxInputBuffer.h:
+
+../../TxCode_bsp/ps7_cortexa9_0/include/ResetReg.h:
 
 ../../TxCode_bsp/ps7_cortexa9_0/include/lwip/dhcp.h:
 

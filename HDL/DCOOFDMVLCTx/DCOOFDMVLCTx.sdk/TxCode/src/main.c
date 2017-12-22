@@ -30,9 +30,25 @@
 *
 ******************************************************************************/
 
-#include <stdio.h>
+/***************************** Include Files *********************************/
 
+#include "xaxidma.h"
 #include "xparameters.h"
+#include "xil_exception.h"
+#include "xdebug.h"
+
+#ifdef XPAR_UARTNS550_0_BASEADDR
+#include "xuartns550_l.h"       /* to use uartns550 */
+#endif
+
+
+#ifdef XPAR_INTC_0_DEVICE_ID
+ #include "xintc.h"
+#else
+ #include "xscugic.h"
+#endif
+
+#include <stdio.h>
 
 #include "netif/xadapter.h"
 
@@ -45,9 +61,117 @@
 #include "lwip/tcp.h"
 #include "xil_cache.h"
 
+#include "TxInputBuffer.h"
+#include "ResetReg.h"
+
 #if LWIP_DHCP==1
 #include "lwip/dhcp.h"
 #endif
+
+/************************** Constant Definitions *****************************/
+
+/*
+ * Device hardware build related constants.
+ */
+
+#define DMA_DEV_ID		XPAR_AXIDMA_0_DEVICE_ID
+
+#ifdef XPAR_AXI_7SDDR_0_S_AXI_BASEADDR
+#define DDR_BASE_ADDR		XPAR_AXI_7SDDR_0_S_AXI_BASEADDR
+#elif XPAR_MIG7SERIES_0_BASEADDR
+#define DDR_BASE_ADDR	XPAR_MIG7SERIES_0_BASEADDR
+#elif XPAR_MIG_0_BASEADDR
+#define DDR_BASE_ADDR	XPAR_MIG_0_BASEADDR
+#elif XPAR_PSU_DDR_0_S_AXI_BASEADDR
+#define DDR_BASE_ADDR	XPAR_PSU_DDR_0_S_AXI_BASEADDR
+#endif
+
+#ifndef DDR_BASE_ADDR
+#warning CHECK FOR THE VALID DDR ADDRESS IN XPARAMETERS.H, \
+		DEFAULT SET TO 0x01000000
+#define MEM_BASE_ADDR		0x01000000
+#else
+#define MEM_BASE_ADDR		(DDR_BASE_ADDR + 0x1000000)
+#endif
+
+#ifdef XPAR_INTC_0_DEVICE_ID
+#define RX_INTR_ID		XPAR_INTC_0_AXIDMA_0_S2MM_INTROUT_VEC_ID
+#define TX_INTR_ID		XPAR_INTC_0_AXIDMA_0_MM2S_INTROUT_VEC_ID
+#else
+#define RX_INTR_ID		XPAR_FABRIC_AXI_DMA_0_S2MM_INTROUT_INTR
+#define TX_INTR_ID		XPAR_FABRIC_AXI_DMA_0_MM2S_INTROUT_INTR
+#endif
+
+#define TX_BUFFER_BASE		(MEM_BASE_ADDR + 0x00100000)
+#define RX_BUFFER_BASE		(MEM_BASE_ADDR + 0x00300000)
+#define RX_BUFFER_HIGH		(MEM_BASE_ADDR + 0x004FFFFF)
+
+#ifdef XPAR_INTC_0_DEVICE_ID
+#define INTC_DEVICE_ID          XPAR_INTC_0_DEVICE_ID
+#else
+#define INTC_DEVICE_ID          XPAR_SCUGIC_SINGLE_DEVICE_ID
+#endif
+
+#ifdef XPAR_INTC_0_DEVICE_ID
+ #define INTC		XIntc
+ #define INTC_HANDLER	XIntc_InterruptHandler
+#else
+ #define INTC		XScuGic
+ #define INTC_HANDLER	XScuGic_InterruptHandler
+#endif
+
+
+/* Timeout loop counter for reset
+ */
+#define RESET_TIMEOUT_COUNTER	1000000000000
+
+#define TEST_START_VALUE	0xC
+/*
+ * Buffer and Buffer Descriptor related constant definition
+ */
+#define MAX_PKT_LEN		0x8C0	// in decimal : 2240
+
+#define NUMBER_OF_TRANSFERS	10
+
+/* The interrupt coalescing threshold and delay timer threshold
+ * Valid range is 1 to 255
+ *
+ * We set the coalescing threshold to be the total number of packets.
+ * The receive side will only get one completion interrupt for this example.
+ */
+
+/************************** Function Prototypes ******************************/
+#ifndef DEBUG
+extern void xil_printf(const char *format, ...);
+#endif
+
+#ifdef XPAR_UARTNS550_0_BASEADDR
+static void Uart550_Setup(void);
+#endif
+
+#if LWIP_DHCP==1
+extern volatile int dhcp_timoutcntr;
+err_t dhcp_start(struct netif *netif);
+#endif
+
+#if defined (__arm__) && !defined (ARMR5)
+#if XPAR_GIGE_PCS_PMA_SGMII_CORE_PRESENT == 1 || XPAR_GIGE_PCS_PMA_1000BASEX_CORE_PRESENT == 1
+int ProgramSi5324(void);
+int ProgramSfpPhy(void);
+#endif
+#endif
+
+static int CheckData(int Length, u8 StartValue);
+static void TxIntrHandler(void *Callback);
+static void RxIntrHandler(void *Callback);
+
+
+
+
+static int SetupIntrSystem(INTC * IntcInstancePtr,
+			   XAxiDma * AxiDmaPtr, u16 TxIntrId, u16 RxIntrId);
+static void DisableIntrSystem(INTC * IntcInstancePtr,
+					u16 TxIntrId, u16 RxIntrId);
 
 /* defined by each RAW mode application */
 void print_app_header();
@@ -59,10 +183,30 @@ void tcp_slowtmr(void);
 /* missing declaration in lwIP */
 void lwip_init();
 
-#if LWIP_DHCP==1
-extern volatile int dhcp_timoutcntr;
-err_t dhcp_start(struct netif *netif);
-#endif
+/**************************** Type Definitions *******************************/
+
+
+/***************** Macros (Inline Functions) Definitions *********************/
+
+/************************** Variable Definitions *****************************/
+/*
+ * Device instance definitions
+ */
+
+
+static XAxiDma AxiDma;		/* Instance of the XAxiDma */
+
+static INTC Intc;	/* Instance of the Interrupt Controller */
+
+/*
+ * Flags interrupt handlers use to notify the application context the events.
+ */
+volatile int TxDone;
+volatile int RxDone;
+volatile int Error;
+
+int data_odd = 0xFFFFFFFF;
+int data_event = 0;
 
 extern volatile int TcpFastTmrFlag;
 extern volatile int TcpSlowTmrFlag;
@@ -86,14 +230,25 @@ print_ip_settings(struct ip_addr *ip, struct ip_addr *mask, struct ip_addr *gw)
 	print_ip("Gateway : ", gw);
 }
 
-#if defined (__arm__) && !defined (ARMR5)
-#if XPAR_GIGE_PCS_PMA_SGMII_CORE_PRESENT == 1 || XPAR_GIGE_PCS_PMA_1000BASEX_CORE_PRESENT == 1
-int ProgramSi5324(void);
-int ProgramSfpPhy(void);
-#endif
-#endif
 int main()
 {
+	int Status;
+	XAxiDma_Config *Config;
+	u8 *TxBufferPtr;
+	u8 *RxBufferPtr;
+
+	// Reset FPGA accelerator
+	RESETREG_mWriteReg(XPAR_RESETREG_0_S00_AXI_BASEADDR, RESETREG_S00_AXI_SLV_REG0_OFFSET, 1);
+
+	TxBufferPtr = (u8 *)TX_BUFFER_BASE ;
+	RxBufferPtr = (u8 *)RX_BUFFER_BASE;
+	/* Initial setup for Uart16550 */
+#ifdef XPAR_UARTNS550_0_BASEADDR
+
+	Uart550_Setup();
+
+#endif
+
 	struct ip_addr ipaddr, netmask, gw;
 
 	/* the mac address of the board. this should be unique per board */
@@ -167,25 +322,478 @@ int main()
 
 	print_ip_settings(&ipaddr, &netmask, &gw);
 
+	Config = XAxiDma_LookupConfig(DMA_DEV_ID);
+	if (!Config) {
+		xil_printf("No config found for %d\r\n", DMA_DEV_ID);
+
+		return XST_FAILURE;
+	}
+
+	/* Initialize DMA engine */
+	Status = XAxiDma_CfgInitialize(&AxiDma, Config);
+
+	if (Status != XST_SUCCESS) {
+		xil_printf("Initialization failed %d\r\n", Status);
+		return XST_FAILURE;
+	}
+
+	if(XAxiDma_HasSg(&AxiDma)){
+		xil_printf("Device configured as SG mode \r\n");
+		return XST_FAILURE;
+	}
+
+	/* Set up Interrupt system  */
+	Status = SetupIntrSystem(&Intc, &AxiDma, TX_INTR_ID, RX_INTR_ID);
+	if (Status != XST_SUCCESS) {
+
+		xil_printf("Failed intr setup\r\n");
+		return XST_FAILURE;
+	}
+
+	/* Disable all interrupts before setup */
+
+	XAxiDma_IntrDisable(&AxiDma, XAXIDMA_IRQ_ALL_MASK,
+				XAXIDMA_DEVICE_TO_DMA);
+
+	/* Enable all interrupts */
+
+	XAxiDma_IntrEnable(&AxiDma, XAXIDMA_IRQ_ALL_MASK,
+							XAXIDMA_DEVICE_TO_DMA);
+
+	/* Initialize flags before start transfer test  */
+	RxDone = 0;
+	Error = 0;
+
+	/* Flush the SrcBuffer before the DMA transfer, in case the Data Cache
+	 * is enabled
+	 */
+	Xil_DCacheFlushRange((UINTPTR)TxBufferPtr, MAX_PKT_LEN);
+#ifdef __aarch64__
+	Xil_DCacheFlushRange((UINTPTR)RxBufferPtr, MAX_PKT_LEN);
+#endif
+
 	/* start the application (web server, rxtest, txtest, etc..) */
-	start_application();
+//	start_application();
 
 	/* receive and process packets */
-	while (1) {
-		if (TcpFastTmrFlag) {
-			tcp_fasttmr();
-			TcpFastTmrFlag = 0;
-		}
-		if (TcpSlowTmrFlag) {
-			tcp_slowtmr();
-			TcpSlowTmrFlag = 0;
-		}
-		xemacif_input(echo_netif);
-		transfer_data();
+//	while (1) {
+//		if (TcpFastTmrFlag) {
+//			tcp_fasttmr();
+//			TcpFastTmrFlag = 0;
+//		}
+//		if (TcpSlowTmrFlag) {
+//			tcp_slowtmr();
+//			TcpSlowTmrFlag = 0;
+//		}
+//		xemacif_input(echo_netif);
+//		transfer_data();
+//	}
+
+	Status = XAxiDma_SimpleTransfer(&AxiDma,(UINTPTR) RxBufferPtr,
+				MAX_PKT_LEN, XAXIDMA_DEVICE_TO_DMA);
+
+	if (Status != XST_SUCCESS) {
+		return XST_FAILURE;
 	}
-  
+
+	print("--- Transmit data ---\n\r");
+	TXINPUTBUFFER_mWriteReg(XPAR_TXINPUTBUFFER_0_S00_AXI_BASEADDR, TXINPUTBUFFER_S00_AXI_SLV_REG0_OFFSET, data_odd);
+	TXINPUTBUFFER_mWriteReg(XPAR_TXINPUTBUFFER_0_S00_AXI_BASEADDR, TXINPUTBUFFER_S00_AXI_SLV_REG0_OFFSET, data_event);
+	TXINPUTBUFFER_mWriteReg(XPAR_TXINPUTBUFFER_0_S00_AXI_BASEADDR, TXINPUTBUFFER_S00_AXI_SLV_REG0_OFFSET, data_odd);
+	TXINPUTBUFFER_mWriteReg(XPAR_TXINPUTBUFFER_0_S00_AXI_BASEADDR, TXINPUTBUFFER_S00_AXI_SLV_REG0_OFFSET, data_event);
+	TXINPUTBUFFER_mWriteReg(XPAR_TXINPUTBUFFER_0_S00_AXI_BASEADDR, TXINPUTBUFFER_S00_AXI_SLV_REG0_OFFSET, data_odd);
+	TXINPUTBUFFER_mWriteReg(XPAR_TXINPUTBUFFER_0_S00_AXI_BASEADDR, TXINPUTBUFFER_S00_AXI_SLV_REG0_OFFSET, data_event);
+	TXINPUTBUFFER_mWriteReg(XPAR_TXINPUTBUFFER_0_S00_AXI_BASEADDR, TXINPUTBUFFER_S00_AXI_SLV_REG0_OFFSET, data_odd);
+	print("--- Transmit complete ---\n\r");
+
+	/*
+	 * Wait TX done and RX done
+	 */
+	while (!RxDone) {
+			/* NOP */
+	}
+
+	if (Error) {
+		xil_printf("Failed test receive%s done\r\n", RxDone? "":" not");
+		goto Done;
+	}
+
+	/*
+	 * Test finished, check data
+	 */
+	Status = CheckData(MAX_PKT_LEN, 0xC);
+	if (Status != XST_SUCCESS) {
+		xil_printf("Data check failed\r\n");
+		goto Done;
+	}
+
+	/* Disable TX and RX Ring interrupts and return success */
+	DisableIntrSystem(&Intc, TX_INTR_ID, RX_INTR_ID);
+
 	/* never reached */
 	cleanup_platform();
 
+	Done:
+		xil_printf("--- Exiting main() --- \r\n");
+
 	return 0;
 }
+
+#ifdef XPAR_UARTNS550_0_BASEADDR
+/*****************************************************************************/
+/*
+*
+* Uart16550 setup routine, need to set baudrate to 9600 and data bits to 8
+*
+* @param	None
+*
+* @return	None
+*
+* @note		None.
+*
+******************************************************************************/
+static void Uart550_Setup(void)
+{
+
+	XUartNs550_SetBaud(XPAR_UARTNS550_0_BASEADDR,
+			XPAR_XUARTNS550_CLOCK_HZ, 9600);
+
+	XUartNs550_SetLineControlReg(XPAR_UARTNS550_0_BASEADDR,
+			XUN_LCR_8_DATA_BITS);
+}
+#endif
+
+/*****************************************************************************/
+/*
+*
+* This function checks data buffer after the DMA transfer is finished.
+*
+* We use the static tx/rx buffers.
+*
+* @param	Length is the length to check
+* @param	StartValue is the starting value of the first byte
+*
+* @return
+*		- XST_SUCCESS if validation is successful
+*		- XST_FAILURE if validation is failure.
+*
+* @note		None.
+*
+******************************************************************************/
+static int CheckData(int Length, u8 StartValue)
+{
+	u8 *RxPacket;
+	int Index = 0;
+
+	RxPacket = (u8 *) RX_BUFFER_BASE;
+
+	/* Invalidate the DestBuffer before receiving the data, in case the
+	 * Data Cache is enabled
+	 */
+#ifndef __aarch64__
+	Xil_DCacheInvalidateRange((u32)RxPacket, Length);
+#endif
+
+	xil_printf("==== Received Data ====\r\n\n");
+
+	for(Index = 0; Index < Length; Index++) {
+		xil_printf("%d\r\n", RxPacket[Index]);
+	}
+
+	return XST_SUCCESS;
+}
+
+/*****************************************************************************/
+/*
+*
+* This is the DMA TX Interrupt handler function.
+*
+* It gets the interrupt status from the hardware, acknowledges it, and if any
+* error happens, it resets the hardware. Otherwise, if a completion interrupt
+* is present, then sets the TxDone.flag
+*
+* @param	Callback is a pointer to TX channel of the DMA engine.
+*
+* @return	None.
+*
+* @note		None.
+*
+******************************************************************************/
+static void TxIntrHandler(void *Callback)
+{
+
+	u32 IrqStatus;
+	int TimeOut;
+	XAxiDma *AxiDmaInst = (XAxiDma *)Callback;
+
+	/* Read pending interrupts */
+	IrqStatus = XAxiDma_IntrGetIrq(AxiDmaInst, XAXIDMA_DMA_TO_DEVICE);
+
+	/* Acknowledge pending interrupts */
+
+
+	XAxiDma_IntrAckIrq(AxiDmaInst, IrqStatus, XAXIDMA_DMA_TO_DEVICE);
+
+	/*
+	 * If no interrupt is asserted, we do not do anything
+	 */
+	if (!(IrqStatus & XAXIDMA_IRQ_ALL_MASK)) {
+
+		return;
+	}
+
+	/*
+	 * If error interrupt is asserted, raise error flag, reset the
+	 * hardware to recover from the error, and return with no further
+	 * processing.
+	 */
+	if ((IrqStatus & XAXIDMA_IRQ_ERROR_MASK)) {
+
+		Error = 1;
+
+		/*
+		 * Reset should never fail for transmit channel
+		 */
+		XAxiDma_Reset(AxiDmaInst);
+
+		TimeOut = RESET_TIMEOUT_COUNTER;
+
+		while (TimeOut) {
+			if (XAxiDma_ResetIsDone(AxiDmaInst)) {
+				break;
+			}
+
+			TimeOut -= 1;
+		}
+
+		return;
+	}
+
+	/*
+	 * If Completion interrupt is asserted, then set the TxDone flag
+	 */
+	if ((IrqStatus & XAXIDMA_IRQ_IOC_MASK)) {
+
+		TxDone = 1;
+	}
+}
+
+/*****************************************************************************/
+/*
+*
+* This is the DMA RX interrupt handler function
+*
+* It gets the interrupt status from the hardware, acknowledges it, and if any
+* error happens, it resets the hardware. Otherwise, if a completion interrupt
+* is present, then it sets the RxDone flag.
+*
+* @param	Callback is a pointer to RX channel of the DMA engine.
+*
+* @return	None.
+*
+* @note		None.
+*
+******************************************************************************/
+static void RxIntrHandler(void *Callback)
+{
+	u32 IrqStatus;
+	int TimeOut;
+	XAxiDma *AxiDmaInst = (XAxiDma *)Callback;
+
+	/* Read pending interrupts */
+	IrqStatus = XAxiDma_IntrGetIrq(AxiDmaInst, XAXIDMA_DEVICE_TO_DMA);
+
+	/* Acknowledge pending interrupts */
+	XAxiDma_IntrAckIrq(AxiDmaInst, IrqStatus, XAXIDMA_DEVICE_TO_DMA);
+
+	/*
+	 * If no interrupt is asserted, we do not do anything
+	 */
+	if (!(IrqStatus & XAXIDMA_IRQ_ALL_MASK)) {
+		return;
+	}
+
+	/*
+	 * If error interrupt is asserted, raise error flag, reset the
+	 * hardware to recover from the error, and return with no further
+	 * processing.
+	 */
+	if ((IrqStatus & XAXIDMA_IRQ_ERROR_MASK)) {
+
+		Error = 1;
+
+		/* Reset could fail and hang
+		 * NEED a way to handle this or do not call it??
+		 */
+		XAxiDma_Reset(AxiDmaInst);
+
+		TimeOut = RESET_TIMEOUT_COUNTER;
+
+		while (TimeOut) {
+			if(XAxiDma_ResetIsDone(AxiDmaInst)) {
+				break;
+			}
+
+			TimeOut -= 1;
+		}
+
+		return;
+	}
+
+	/*
+	 * If completion interrupt is asserted, then set RxDone flag
+	 */
+	if ((IrqStatus & XAXIDMA_IRQ_IOC_MASK)) {
+
+		RxDone = 1;
+	}
+}
+
+/*****************************************************************************/
+/*
+*
+* This function setups the interrupt system so interrupts can occur for the
+* DMA, it assumes INTC component exists in the hardware system.
+*
+* @param	IntcInstancePtr is a pointer to the instance of the INTC.
+* @param	AxiDmaPtr is a pointer to the instance of the DMA engine
+* @param	TxIntrId is the TX channel Interrupt ID.
+* @param	RxIntrId is the RX channel Interrupt ID.
+*
+* @return
+*		- XST_SUCCESS if successful,
+*		- XST_FAILURE.if not succesful
+*
+* @note		None.
+*
+******************************************************************************/
+static int SetupIntrSystem(INTC * IntcInstancePtr,
+			   XAxiDma * AxiDmaPtr, u16 TxIntrId, u16 RxIntrId)
+{
+	int Status;
+
+#ifdef XPAR_INTC_0_DEVICE_ID
+
+	/* Initialize the interrupt controller and connect the ISRs */
+	Status = XIntc_Initialize(IntcInstancePtr, INTC_DEVICE_ID);
+	if (Status != XST_SUCCESS) {
+
+		xil_printf("Failed init intc\r\n");
+		return XST_FAILURE;
+	}
+
+//	Status = XIntc_Connect(IntcInstancePtr, TxIntrId,
+//			       (XInterruptHandler) TxIntrHandler, AxiDmaPtr);
+//	if (Status != XST_SUCCESS) {
+//
+//		xil_printf("Failed tx connect intc\r\n");
+//		return XST_FAILURE;
+//	}
+
+	Status = XIntc_Connect(IntcInstancePtr, RxIntrId,
+			       (XInterruptHandler) RxIntrHandler, AxiDmaPtr);
+	if (Status != XST_SUCCESS) {
+
+		xil_printf("Failed rx connect intc\r\n");
+		return XST_FAILURE;
+	}
+
+	/* Start the interrupt controller */
+	Status = XIntc_Start(IntcInstancePtr, XIN_REAL_MODE);
+	if (Status != XST_SUCCESS) {
+
+		xil_printf("Failed to start intc\r\n");
+		return XST_FAILURE;
+	}
+
+//	XIntc_Enable(IntcInstancePtr, TxIntrId);
+	XIntc_Enable(IntcInstancePtr, RxIntrId);
+
+#else
+
+	XScuGic_Config *IntcConfig;
+
+
+	/*
+	 * Initialize the interrupt controller driver so that it is ready to
+	 * use.
+	 */
+	IntcConfig = XScuGic_LookupConfig(INTC_DEVICE_ID);
+	if (NULL == IntcConfig) {
+		return XST_FAILURE;
+	}
+
+	Status = XScuGic_CfgInitialize(IntcInstancePtr, IntcConfig,
+					IntcConfig->CpuBaseAddress);
+	if (Status != XST_SUCCESS) {
+		return XST_FAILURE;
+	}
+
+
+//	XScuGic_SetPriorityTriggerType(IntcInstancePtr, TxIntrId, 0xA0, 0x3);
+
+	XScuGic_SetPriorityTriggerType(IntcInstancePtr, RxIntrId, 0xA0, 0x3);
+	/*
+	 * Connect the device driver handler that will be called when an
+	 * interrupt for the device occurs, the handler defined above performs
+	 * the specific interrupt processing for the device.
+	 */
+//	Status = XScuGic_Connect(IntcInstancePtr, TxIntrId,
+//				(Xil_InterruptHandler)TxIntrHandler,
+//				AxiDmaPtr);
+//	if (Status != XST_SUCCESS) {
+//		return Status;
+//	}
+
+	Status = XScuGic_Connect(IntcInstancePtr, RxIntrId,
+				(Xil_InterruptHandler)RxIntrHandler,
+				AxiDmaPtr);
+	if (Status != XST_SUCCESS) {
+		return Status;
+	}
+
+//	XScuGic_Enable(IntcInstancePtr, TxIntrId);
+	XScuGic_Enable(IntcInstancePtr, RxIntrId);
+
+
+#endif
+
+	/* Enable interrupts from the hardware */
+
+	Xil_ExceptionInit();
+	Xil_ExceptionRegisterHandler(XIL_EXCEPTION_ID_INT,
+			(Xil_ExceptionHandler)INTC_HANDLER,
+			(void *)IntcInstancePtr);
+
+	Xil_ExceptionEnable();
+
+	return XST_SUCCESS;
+}
+
+/*****************************************************************************/
+/**
+*
+* This function disables the interrupts for DMA engine.
+*
+* @param	IntcInstancePtr is the pointer to the INTC component instance
+* @param	TxIntrId is interrupt ID associated w/ DMA TX channel
+* @param	RxIntrId is interrupt ID associated w/ DMA RX channel
+*
+* @return	None.
+*
+* @note		None.
+*
+******************************************************************************/
+static void DisableIntrSystem(INTC * IntcInstancePtr,
+					u16 TxIntrId, u16 RxIntrId)
+{
+#ifdef XPAR_INTC_0_DEVICE_ID
+	/* Disconnect the interrupts for the DMA TX and RX channels */
+//	XIntc_Disconnect(IntcInstancePtr, TxIntrId);
+	XIntc_Disconnect(IntcInstancePtr, RxIntrId);
+#else
+//	XScuGic_Disconnect(IntcInstancePtr, TxIntrId);
+	XScuGic_Disconnect(IntcInstancePtr, RxIntrId);
+#endif
+}
+

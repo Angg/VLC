@@ -69,3 +69,61 @@ java.lang.RuntimeException: Failed to download ELF file
 09:45:12 INFO  : ps7_init is completed.
 09:45:12 INFO  : ps7_post_config is completed.
 09:45:12 INFO  : Processor reset is completed for ps7_cortexa9_0
+09:58:37 ERROR : Unexpected error while parsing XMD response ?: com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: invalid number or unquoted string near 
+10:01:52 INFO  : Launching XSDB server: xsdb.bat -interactive D:\Files\SoCProject\DCOOFDMVLCTx\DCOOFDMVLCTx.sdk\temp_xsdb_launch_script.tcl
+10:01:55 INFO  : XSDB server has started successfully.
+10:01:57 INFO  : Processing command line option -hwspec D:/Files/SoCProject/DCOOFDMVLCTx/DCOOFDMVLCTx.sdk/Tx_Design_wrapper.hdf.
+13:21:54 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+13:21:57 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Arty Z7 003017A4C997A" && level==0} -index 1' command is executed.
+13:22:00 INFO  : FPGA configured successfully with bitstream "D:/Files/SoCProject/DCOOFDMVLCTx/DCOOFDMVLCTx.sdk/Tx_Design_wrapper_hw_platform_0/test1_wrapper.bit"
+13:22:13 INFO  : ps7_init is completed.
+13:22:13 INFO  : ps7_post_config is completed.
+13:22:13 INFO  : Processor reset is completed for ps7_cortexa9_0
+13:24:02 INFO  : Processor reset is completed for ps7_cortexa9_0
+13:25:13 INFO  : Processor reset is completed for ps7_cortexa9_0
+14:00:27 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+14:00:28 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Arty Z7 003017A4C997A" && level==0} -index 1' command is executed.
+14:00:31 INFO  : FPGA configured successfully with bitstream "D:/Files/SoCProject/DCOOFDMVLCTx/DCOOFDMVLCTx.sdk/Tx_Design_wrapper_hw_platform_0/test1_wrapper.bit"
+14:00:46 INFO  : ps7_init is completed.
+14:00:46 INFO  : ps7_post_config is completed.
+14:00:46 INFO  : Processor reset is completed for ps7_cortexa9_0
+14:02:41 INFO  : Processor reset is completed for ps7_cortexa9_0
+14:04:33 INFO  : Processor reset is completed for ps7_cortexa9_0
+14:07:40 INFO  : ps7_cortexa9_0 Processor is in use. Please stop existing Run or Debug sessions before launching.
+14:07:45 INFO  : ps7_cortexa9_0 Processor is in use. Please stop existing Run or Debug sessions before launching.
+14:07:51 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+14:07:51 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Arty Z7 003017A4C997A" && level==0} -index 1' command is executed.
+14:07:53 INFO  : FPGA configured successfully with bitstream "D:/Files/SoCProject/DCOOFDMVLCTx/DCOOFDMVLCTx.sdk/Tx_Design_wrapper_hw_platform_0/test1_wrapper.bit"
+14:07:57 INFO  : ps7_init is completed.
+14:07:57 INFO  : ps7_post_config is completed.
+14:07:58 INFO  : Processor reset is completed for ps7_cortexa9_0
+14:11:37 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+14:11:37 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Arty Z7 003017A4C997A" && level==0} -index 1' command is executed.
+14:11:40 INFO  : FPGA configured successfully with bitstream "D:/Files/SoCProject/DCOOFDMVLCTx/DCOOFDMVLCTx.sdk/Tx_Design_wrapper_hw_platform_0/test1_wrapper.bit"
+14:11:43 INFO  : ps7_init is completed.
+14:11:44 INFO  : ps7_post_config is completed.
+14:11:44 INFO  : Processor reset is completed for ps7_cortexa9_0
+15:54:17 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+15:54:21 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Arty Z7 003017A4C997A" && level==0} -index 1' command is executed.
+15:54:24 INFO  : FPGA configured successfully with bitstream "D:/Files/SoCProject/DCOOFDMVLCTx/DCOOFDMVLCTx.sdk/Tx_Design_wrapper_hw_platform_0/test1_wrapper.bit"
+15:54:30 INFO  : ps7_init is completed.
+15:54:30 INFO  : ps7_post_config is completed.
+15:54:31 INFO  : Processor reset is completed for ps7_cortexa9_0
+15:56:19 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+15:56:38 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+15:56:38 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Arty Z7 003017A4C997A" && level==0} -index 1' command is executed.
+15:56:41 INFO  : FPGA configured successfully with bitstream "D:/Files/SoCProject/DCOOFDMVLCTx/DCOOFDMVLCTx.sdk/Tx_Design_wrapper_hw_platform_0/test1_wrapper.bit"
+15:56:46 INFO  : ps7_init is completed.
+15:56:46 INFO  : ps7_post_config is completed.
+15:56:46 INFO  : Processor reset is completed for ps7_cortexa9_0
+15:57:35 INFO  : Processor reset is completed for ps7_cortexa9_0
+15:58:37 INFO  : Processor reset is completed for ps7_cortexa9_0
+15:59:58 INFO  : System reset is completed.
+16:00:02 INFO  : FPGA configured successfully with bitstream "D:/Files/SoCProject/DCOOFDMVLCTx/DCOOFDMVLCTx.sdk/Tx_Design_wrapper_hw_platform_0/test1_wrapper.bit"
+16:00:04 INFO  : ps7_init is completed.
+16:00:04 INFO  : ps7_post_config is completed.
+16:02:40 INFO  : System reset is completed.
+16:02:43 INFO  : FPGA configured successfully with bitstream "D:/Files/SoCProject/DCOOFDMVLCTx/DCOOFDMVLCTx.sdk/Tx_Design_wrapper_hw_platform_0/test1_wrapper.bit"
+16:02:45 INFO  : ps7_init is completed.
+16:02:45 INFO  : ps7_post_config is completed.
+16:03:28 ERROR : Unexpected error while parsing XMD response ?: com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: invalid number or unquoted string near 
