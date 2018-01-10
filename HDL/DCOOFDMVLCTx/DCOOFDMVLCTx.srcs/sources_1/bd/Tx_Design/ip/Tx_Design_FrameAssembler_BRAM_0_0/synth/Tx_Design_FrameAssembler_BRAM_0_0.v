@@ -1,4 +1,4 @@
-// (c) Copyright 1995-2017 Xilinx, Inc. All rights reserved.
+// (c) Copyright 1995-2018 Xilinx, Inc. All rights reserved.
 // 
 // This file contains confidential and proprietary information
 // of Xilinx, Inc. and is protected under U.S. and
@@ -48,11 +48,11 @@
 
 
 // IP VLNV: xilinx.com:user:FrameAssembler_BRAM:1.0
-// IP Revision: 13
+// IP Revision: 18
 
 (* X_CORE_INFO = "FrameAssembler_BRAM_v1_0,Vivado 2016.2" *)
 (* CHECK_LICENSE_TYPE = "Tx_Design_FrameAssembler_BRAM_0_0,FrameAssembler_BRAM_v1_0,{}" *)
-(* CORE_GENERATION_INFO = "Tx_Design_FrameAssembler_BRAM_0_0,FrameAssembler_BRAM_v1_0,{x_ipProduct=Vivado 2016.2,x_ipVendor=xilinx.com,x_ipLibrary=user,x_ipName=FrameAssembler_BRAM,x_ipVersion=1.0,x_ipCoreRevision=13,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,C_M00_AXIS_TDATA_WIDTH=8,C_M00_AXIS_START_COUNT=32,C_S00_AXIS_TDATA_WIDTH=8}" *)
+(* CORE_GENERATION_INFO = "Tx_Design_FrameAssembler_BRAM_0_0,FrameAssembler_BRAM_v1_0,{x_ipProduct=Vivado 2016.2,x_ipVendor=xilinx.com,x_ipLibrary=user,x_ipName=FrameAssembler_BRAM,x_ipVersion=1.0,x_ipCoreRevision=18,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,C_M00_AXIS_TDATA_WIDTH=8,C_M00_AXIS_START_COUNT=32,C_S00_AXIS_TDATA_WIDTH=8}" *)
 (* DowngradeIPIdentifiedWarnings = "yes" *)
 module Tx_Design_FrameAssembler_BRAM_0_0 (
   m00_axis_tdata,

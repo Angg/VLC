@@ -10,15 +10,16 @@
     <Option Name="Part" Val="xc7z020clg400-1"/>
     <Option Name="CompiledLibDir" Val="$PCACHEDIR/compile_simlib"/>
     <Option Name="CompiledLibDirXSim" Val=""/>
-    <Option Name="CompiledLibDirModelSim" Val="$PCACHEDIR/compile_simlib/modelsim"/>
-    <Option Name="CompiledLibDirQuesta" Val="$PCACHEDIR/compile_simlib/questa"/>
-    <Option Name="CompiledLibDirIES" Val="$PCACHEDIR/compile_simlib/ies"/>
-    <Option Name="CompiledLibDirVCS" Val="$PCACHEDIR/compile_simlib/vcs"/>
-    <Option Name="CompiledLibDirRiviera" Val="$PCACHEDIR/compile_simlib/riviera"/>
-    <Option Name="CompiledLibDirActivehdl" Val="$PCACHEDIR/compile_simlib/activehdl"/>
+    <Option Name="CompiledLibDirModelSim" Val="D:/Files/SoCProject/DCOOFDMVLCTx/DCOOFDMVLCTx.cache/compile_simlib/modelsim"/>
+    <Option Name="CompiledLibDirQuesta" Val="D:/Files/SoCProject/DCOOFDMVLCTx/DCOOFDMVLCTx.cache/compile_simlib/questa"/>
+    <Option Name="CompiledLibDirIES" Val="D:/Files/SoCProject/DCOOFDMVLCTx/DCOOFDMVLCTx.cache/compile_simlib/ies"/>
+    <Option Name="CompiledLibDirVCS" Val="D:/Files/SoCProject/DCOOFDMVLCTx/DCOOFDMVLCTx.cache/compile_simlib/vcs"/>
+    <Option Name="CompiledLibDirRiviera" Val="D:/Files/SoCProject/DCOOFDMVLCTx/DCOOFDMVLCTx.cache/compile_simlib/riviera"/>
+    <Option Name="CompiledLibDirActivehdl" Val="D:/Files/SoCProject/DCOOFDMVLCTx/DCOOFDMVLCTx.cache/compile_simlib/activehdl"/>
     <Option Name="BoardPart" Val="digilentinc.com:arty-z7-20:part0:1.0"/>
     <Option Name="ActiveSimSet" Val="sim_1"/>
     <Option Name="DefaultLib" Val="xil_defaultlib"/>
+    <Option Name="IPRepoPath" Val="$PPRDIR/../ip_repo/OFDMTxTest_RecvBuffer_1.0"/>
     <Option Name="IPRepoPath" Val="$PPRDIR/../ip_repo/HermitianBuffer_1.0"/>
     <Option Name="IPRepoPath" Val="$PPRDIR/../ip_repo/FrameAssembler_BRAM_1.0"/>
     <Option Name="IPRepoPath" Val="$PPRDIR/../ip_repo/HermitianBuffer_BRAM_1.0"/>
@@ -42,13 +43,13 @@
     <Option Name="WTVcsLaunchSim" Val="0"/>
     <Option Name="WTRivieraLaunchSim" Val="0"/>
     <Option Name="WTActivehdlLaunchSim" Val="0"/>
-    <Option Name="WTXSimExportSim" Val="11"/>
-    <Option Name="WTModelSimExportSim" Val="11"/>
-    <Option Name="WTQuestaExportSim" Val="11"/>
-    <Option Name="WTIesExportSim" Val="11"/>
-    <Option Name="WTVcsExportSim" Val="11"/>
-    <Option Name="WTRivieraExportSim" Val="11"/>
-    <Option Name="WTActivehdlExportSim" Val="11"/>
+    <Option Name="WTXSimExportSim" Val="17"/>
+    <Option Name="WTModelSimExportSim" Val="17"/>
+    <Option Name="WTQuestaExportSim" Val="17"/>
+    <Option Name="WTIesExportSim" Val="17"/>
+    <Option Name="WTVcsExportSim" Val="17"/>
+    <Option Name="WTRivieraExportSim" Val="17"/>
+    <Option Name="WTActivehdlExportSim" Val="17"/>
   </Configuration>
   <FileSets Version="1" Minor="31">
     <FileSet Name="sources_1" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
@@ -59,35 +60,35 @@
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
-        <CompFileExtendedInfo CompFileName="Tx_Design.bd" FileRelPathName="ip/Tx_Design_xlslice_0_0/Tx_Design_xlslice_0_0.xci"/>
-        <CompFileExtendedInfo CompFileName="Tx_Design.bd" FileRelPathName="ip/Tx_Design_axis_data_fifo_0_0/Tx_Design_axis_data_fifo_0_0.xci"/>
+        <CompFileExtendedInfo CompFileName="Tx_Design.bd" FileRelPathName="ip/Tx_Design_rst_processing_system7_0_100M_0/Tx_Design_rst_processing_system7_0_100M_0.xci"/>
+        <CompFileExtendedInfo CompFileName="Tx_Design.bd" FileRelPathName="ip/Tx_Design_TxInputBuffer_0_0/Tx_Design_TxInputBuffer_0_0.xci"/>
+        <CompFileExtendedInfo CompFileName="Tx_Design.bd" FileRelPathName="ip/Tx_Design_ResetReg_0_0/Tx_Design_ResetReg_0_0.xci"/>
+        <CompFileExtendedInfo CompFileName="Tx_Design.bd" FileRelPathName="ip/Tx_Design_xlconstant_1_0/Tx_Design_xlconstant_1_0.xci"/>
+        <CompFileExtendedInfo CompFileName="Tx_Design.bd" FileRelPathName="ip/Tx_Design_xlconstant_0_0/Tx_Design_xlconstant_0_0.xci"/>
+        <CompFileExtendedInfo CompFileName="Tx_Design.bd" FileRelPathName="ip/Tx_Design_xfft_0_0/Tx_Design_xfft_0_0.xci"/>
+        <CompFileExtendedInfo CompFileName="Tx_Design.bd" FileRelPathName="ip/Tx_Design_sid_0_0/Tx_Design_sid_0_0.xci"/>
+        <CompFileExtendedInfo CompFileName="Tx_Design.bd" FileRelPathName="ip/Tx_Design_convolution_0_0/Tx_Design_convolution_0_0.xci"/>
+        <CompFileExtendedInfo CompFileName="Tx_Design.bd" FileRelPathName="ip/Tx_Design_processing_system7_0_axi_periph_0/Tx_Design_processing_system7_0_axi_periph_0.xci"/>
+        <CompFileExtendedInfo CompFileName="Tx_Design.bd" FileRelPathName="ip/Tx_Design_processing_system7_0_0/Tx_Design_processing_system7_0_0.xci"/>
+        <CompFileExtendedInfo CompFileName="Tx_Design.bd" FileRelPathName="hdl/Tx_Design.v"/>
+        <CompFileExtendedInfo CompFileName="Tx_Design.bd" FileRelPathName="ip/Tx_Design_HermitianBuffer_BRAM_0_0/Tx_Design_HermitianBuffer_BRAM_0_0.xci"/>
         <CompFileExtendedInfo CompFileName="Tx_Design.bd" FileRelPathName="ip/Tx_Design_axis_data_fifo_1_0/Tx_Design_axis_data_fifo_1_0.xci"/>
         <CompFileExtendedInfo CompFileName="Tx_Design.bd" FileRelPathName="ip/Tx_Design_axis_data_fifo_0_1/Tx_Design_axis_data_fifo_0_1.xci"/>
-        <CompFileExtendedInfo CompFileName="Tx_Design.bd" FileRelPathName="ip/Tx_Design_xlslice_1_0/Tx_Design_xlslice_1_0.xci"/>
-        <CompFileExtendedInfo CompFileName="Tx_Design.bd" FileRelPathName="hdl/Tx_Design.v"/>
+        <CompFileExtendedInfo CompFileName="Tx_Design.bd" FileRelPathName="ip/Tx_Design_axis_data_fifo_0_0/Tx_Design_axis_data_fifo_0_0.xci"/>
         <CompFileExtendedInfo CompFileName="Tx_Design.bd" FileRelPathName="ip/Tx_Design_QPSK_mapper_0_1/Tx_Design_QPSK_mapper_0_1.xci"/>
-        <CompFileExtendedInfo CompFileName="Tx_Design.bd" FileRelPathName="ip/Tx_Design_TxInputBuffer_0_0/Tx_Design_TxInputBuffer_0_0.xci"/>
+        <CompFileExtendedInfo CompFileName="Tx_Design.bd" FileRelPathName="ip/Tx_Design_xlslice_1_0/Tx_Design_xlslice_1_0.xci"/>
+        <CompFileExtendedInfo CompFileName="Tx_Design.bd" FileRelPathName="ip/Tx_Design_xlslice_0_0/Tx_Design_xlslice_0_0.xci"/>
         <CompFileExtendedInfo CompFileName="Tx_Design.bd" FileRelPathName="ip/Tx_Design_xbar_0/Tx_Design_xbar_0.xci"/>
-        <CompFileExtendedInfo CompFileName="Tx_Design.bd" FileRelPathName="ip/Tx_Design_axi_mem_intercon_0/Tx_Design_axi_mem_intercon_0.xci"/>
         <CompFileExtendedInfo CompFileName="Tx_Design.bd" FileRelPathName="ip/Tx_Design_axi_dma_0_0/Tx_Design_axi_dma_0_0.xci"/>
-        <CompFileExtendedInfo CompFileName="Tx_Design.bd" FileRelPathName="ip/Tx_Design_convolution_0_0/Tx_Design_convolution_0_0.xci"/>
-        <CompFileExtendedInfo CompFileName="Tx_Design.bd" FileRelPathName="ip/Tx_Design_sid_0_0/Tx_Design_sid_0_0.xci"/>
-        <CompFileExtendedInfo CompFileName="Tx_Design.bd" FileRelPathName="ip/Tx_Design_xfft_0_0/Tx_Design_xfft_0_0.xci"/>
-        <CompFileExtendedInfo CompFileName="Tx_Design.bd" FileRelPathName="ip/Tx_Design_processing_system7_0_0/Tx_Design_processing_system7_0_0.xci"/>
-        <CompFileExtendedInfo CompFileName="Tx_Design.bd" FileRelPathName="ip/Tx_Design_xlconstant_0_0/Tx_Design_xlconstant_0_0.xci"/>
-        <CompFileExtendedInfo CompFileName="Tx_Design.bd" FileRelPathName="ip/Tx_Design_xlconstant_1_0/Tx_Design_xlconstant_1_0.xci"/>
-        <CompFileExtendedInfo CompFileName="Tx_Design.bd" FileRelPathName="ip/Tx_Design_ResetReg_0_0/Tx_Design_ResetReg_0_0.xci"/>
-        <CompFileExtendedInfo CompFileName="Tx_Design.bd" FileRelPathName="ip/Tx_Design_processing_system7_0_axi_periph_0/Tx_Design_processing_system7_0_axi_periph_0.xci"/>
-        <CompFileExtendedInfo CompFileName="Tx_Design.bd" FileRelPathName="ip/Tx_Design_rst_processing_system7_0_100M_0/Tx_Design_rst_processing_system7_0_100M_0.xci"/>
-        <CompFileExtendedInfo CompFileName="Tx_Design.bd" FileRelPathName="Tx_Design_ooc.xdc"/>
-        <CompFileExtendedInfo CompFileName="Tx_Design.bd" FileRelPathName="hdl/Tx_Design.hwdef"/>
+        <CompFileExtendedInfo CompFileName="Tx_Design.bd" FileRelPathName="ip/Tx_Design_axi_mem_intercon_0/Tx_Design_axi_mem_intercon_0.xci"/>
         <CompFileExtendedInfo CompFileName="Tx_Design.bd" FileRelPathName="hw_handoff/Tx_Design_bd.tcl"/>
         <CompFileExtendedInfo CompFileName="Tx_Design.bd" FileRelPathName="hw_handoff/Tx_Design.hwh"/>
+        <CompFileExtendedInfo CompFileName="Tx_Design.bd" FileRelPathName="hdl/Tx_Design.hwdef"/>
         <CompFileExtendedInfo CompFileName="Tx_Design.bd" FileRelPathName="ip/Tx_Design_auto_us_0/Tx_Design_auto_us_0.xci"/>
-        <CompFileExtendedInfo CompFileName="Tx_Design.bd" FileRelPathName="ip/Tx_Design_FrameAssembler_BRAM_0_0/Tx_Design_FrameAssembler_BRAM_0_0.xci"/>
-        <CompFileExtendedInfo CompFileName="Tx_Design.bd" FileRelPathName="ip/Tx_Design_HermitianBuffer_BRAM_0_0/Tx_Design_HermitianBuffer_BRAM_0_0.xci"/>
-        <CompFileExtendedInfo CompFileName="Tx_Design.bd" FileRelPathName="ip/Tx_Design_auto_pc_1/Tx_Design_auto_pc_1.xci"/>
         <CompFileExtendedInfo CompFileName="Tx_Design.bd" FileRelPathName="ip/Tx_Design_auto_pc_0/Tx_Design_auto_pc_0.xci"/>
+        <CompFileExtendedInfo CompFileName="Tx_Design.bd" FileRelPathName="ip/Tx_Design_auto_pc_1/Tx_Design_auto_pc_1.xci"/>
+        <CompFileExtendedInfo CompFileName="Tx_Design.bd" FileRelPathName="ip/Tx_Design_FrameAssembler_BRAM_0_0/Tx_Design_FrameAssembler_BRAM_0_0.xci"/>
+        <CompFileExtendedInfo CompFileName="Tx_Design.bd" FileRelPathName="Tx_Design_ooc.xdc"/>
       </File>
       <File Path="$PSRCDIR/sources_1/bd/Tx_Design/hdl/Tx_Design_wrapper.v">
         <FileInfo>

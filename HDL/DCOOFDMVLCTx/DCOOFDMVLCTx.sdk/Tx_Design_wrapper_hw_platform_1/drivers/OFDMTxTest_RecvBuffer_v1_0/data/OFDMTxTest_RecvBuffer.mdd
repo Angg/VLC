@@ -1,0 +1,10 @@
+
+
+OPTION psf_version = 2.1;
+
+BEGIN DRIVER OFDMTxTest_RecvBuffer
+	OPTION supported_peripherals = (OFDMTxTest_RecvBuffer);
+	OPTION copyfiles = all;
+	OPTION VERSION = 1.0;
+	OPTION NAME = OFDMTxTest_RecvBuffer;
+END DRIVER

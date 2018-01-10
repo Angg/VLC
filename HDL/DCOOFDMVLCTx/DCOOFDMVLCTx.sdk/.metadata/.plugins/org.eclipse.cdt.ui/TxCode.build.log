@@ -1,8 +1,8 @@
-16:02:38 **** Incremental Build of configuration Debug for project TxCode ****
+14:47:29 **** Incremental Build of configuration Debug for project TxCode ****
 make pre-build main-build 
 a9-linaro-pre-build-step
 ' '
 make: Nothing to be done for `main-build'.
 
-16:02:38 Build Finished (took 181ms)
+14:47:29 Build Finished (took 200ms)
 

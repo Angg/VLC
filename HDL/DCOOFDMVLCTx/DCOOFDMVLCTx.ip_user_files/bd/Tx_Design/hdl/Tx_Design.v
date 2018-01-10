@@ -1,7 +1,7 @@
 //Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2016.2 (win64) Build 1577090 Thu Jun  2 16:32:40 MDT 2016
-//Date        : Thu Dec 21 14:01:02 2017
+//Date        : Wed Jan 10 11:36:27 2018
 //Host        : Anzunden-UQ running 64-bit major release  (build 9200)
 //Command     : generate_target Tx_Design.bd
 //Design      : Tx_Design
@@ -9,7 +9,7 @@
 //--------------------------------------------------------------------------------
 `timescale 1 ps / 1 ps
 
-(* CORE_GENERATION_INFO = "Tx_Design,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=Tx_Design,x_ipVersion=1.00.a,x_ipLanguage=VERILOG,numBlks=29,numReposBlks=22,numNonXlnxBlks=0,numHierBlks=7,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=0,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=4,da_ps7_cnt=2,synth_mode=Global}" *) (* HW_HANDOFF = "Tx_Design.hwdef" *) 
+(* CORE_GENERATION_INFO = "Tx_Design,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=Tx_Design,x_ipVersion=1.00.a,x_ipLanguage=VERILOG,numBlks=29,numReposBlks=22,numNonXlnxBlks=0,numHierBlks=7,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=0,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=8,da_ps7_cnt=2,synth_mode=Global}" *) (* HW_HANDOFF = "Tx_Design.hwdef" *) 
 module Tx_Design
    (DDR_addr,
     DDR_ba,
@@ -220,22 +220,22 @@ module Tx_Design
   (* MARK_DEBUG *) wire processing_system7_0_axi_periph_M01_AXI_WREADY;
   (* MARK_DEBUG *) wire [3:0]processing_system7_0_axi_periph_M01_AXI_WSTRB;
   (* MARK_DEBUG *) wire processing_system7_0_axi_periph_M01_AXI_WVALID;
-  (* MARK_DEBUG *) wire [31:0]processing_system7_0_axi_periph_M02_AXI_ARADDR;
-  (* MARK_DEBUG *) wire processing_system7_0_axi_periph_M02_AXI_ARREADY;
-  (* MARK_DEBUG *) wire processing_system7_0_axi_periph_M02_AXI_ARVALID;
-  (* MARK_DEBUG *) wire [31:0]processing_system7_0_axi_periph_M02_AXI_AWADDR;
-  (* MARK_DEBUG *) wire processing_system7_0_axi_periph_M02_AXI_AWREADY;
-  (* MARK_DEBUG *) wire processing_system7_0_axi_periph_M02_AXI_AWVALID;
-  (* MARK_DEBUG *) wire processing_system7_0_axi_periph_M02_AXI_BREADY;
-  (* MARK_DEBUG *) wire [1:0]processing_system7_0_axi_periph_M02_AXI_BRESP;
-  (* MARK_DEBUG *) wire processing_system7_0_axi_periph_M02_AXI_BVALID;
-  (* MARK_DEBUG *) wire [31:0]processing_system7_0_axi_periph_M02_AXI_RDATA;
-  (* MARK_DEBUG *) wire processing_system7_0_axi_periph_M02_AXI_RREADY;
-  (* MARK_DEBUG *) wire [1:0]processing_system7_0_axi_periph_M02_AXI_RRESP;
-  (* MARK_DEBUG *) wire processing_system7_0_axi_periph_M02_AXI_RVALID;
-  (* MARK_DEBUG *) wire [31:0]processing_system7_0_axi_periph_M02_AXI_WDATA;
-  (* MARK_DEBUG *) wire processing_system7_0_axi_periph_M02_AXI_WREADY;
-  (* MARK_DEBUG *) wire processing_system7_0_axi_periph_M02_AXI_WVALID;
+  wire [31:0]processing_system7_0_axi_periph_M02_AXI_ARADDR;
+  wire processing_system7_0_axi_periph_M02_AXI_ARREADY;
+  wire processing_system7_0_axi_periph_M02_AXI_ARVALID;
+  wire [31:0]processing_system7_0_axi_periph_M02_AXI_AWADDR;
+  wire processing_system7_0_axi_periph_M02_AXI_AWREADY;
+  wire processing_system7_0_axi_periph_M02_AXI_AWVALID;
+  wire processing_system7_0_axi_periph_M02_AXI_BREADY;
+  wire [1:0]processing_system7_0_axi_periph_M02_AXI_BRESP;
+  wire processing_system7_0_axi_periph_M02_AXI_BVALID;
+  wire [31:0]processing_system7_0_axi_periph_M02_AXI_RDATA;
+  wire processing_system7_0_axi_periph_M02_AXI_RREADY;
+  wire [1:0]processing_system7_0_axi_periph_M02_AXI_RRESP;
+  wire processing_system7_0_axi_periph_M02_AXI_RVALID;
+  wire [31:0]processing_system7_0_axi_periph_M02_AXI_WDATA;
+  wire processing_system7_0_axi_periph_M02_AXI_WREADY;
+  wire processing_system7_0_axi_periph_M02_AXI_WVALID;
   wire [0:0]rst_processing_system7_0_100M_interconnect_aresetn;
   wire [0:0]rst_processing_system7_0_100M_peripheral_aresetn;
   (* MARK_DEBUG *) wire [7:0]sid_0_M_AXIS_DATA_TDATA;

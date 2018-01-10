@@ -92,7 +92,7 @@
         .tx_done(tdone),
         .read_ptr(rptr),
         .dout(dbuff),
-        .out_buff_full(bfull)
+        .in_buff_full(bfull)
         );
 	// User logic ends
 

@@ -127,3 +127,288 @@ java.lang.RuntimeException: Failed to download ELF file
 16:02:45 INFO  : ps7_init is completed.
 16:02:45 INFO  : ps7_post_config is completed.
 16:03:28 ERROR : Unexpected error while parsing XMD response ?: com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: invalid number or unquoted string near 
+08:02:17 INFO  : Launching XSDB server: xsdb.bat -interactive D:\Files\SoCProject\DCOOFDMVLCTx\DCOOFDMVLCTx.sdk\temp_xsdb_launch_script.tcl
+08:02:21 INFO  : XSDB server has started successfully.
+08:02:24 INFO  : Processing command line option -hwspec D:/Files/SoCProject/DCOOFDMVLCTx/DCOOFDMVLCTx.sdk/Tx_Design_wrapper.hdf.
+08:02:24 INFO  : Checking for hwspec changes in the project Tx_Design_wrapper_hw_platform_1.
+08:08:06 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+08:08:13 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Arty Z7 003017A4C997A" && level==0} -index 1' command is executed.
+08:08:15 INFO  : FPGA configured successfully with bitstream "D:/Files/SoCProject/DCOOFDMVLCTx/DCOOFDMVLCTx.sdk/Tx_Design_wrapper_hw_platform_0/test1_wrapper.bit"
+08:08:26 INFO  : System reset is completed.
+08:08:30 INFO  : FPGA configured successfully with bitstream "D:/Files/SoCProject/DCOOFDMVLCTx/DCOOFDMVLCTx.sdk/Tx_Design_wrapper_hw_platform_0/test1_wrapper.bit"
+08:08:33 INFO  : ps7_init is completed.
+08:08:33 INFO  : ps7_post_config is completed.
+08:09:29 INFO  : System reset is completed.
+08:09:33 INFO  : FPGA configured successfully with bitstream "D:/Files/SoCProject/DCOOFDMVLCTx/DCOOFDMVLCTx.sdk/Tx_Design_wrapper_hw_platform_0/test1_wrapper.bit"
+08:09:35 INFO  : ps7_init is completed.
+08:09:35 INFO  : ps7_post_config is completed.
+08:10:13 INFO  : System reset is completed.
+08:10:17 INFO  : FPGA configured successfully with bitstream "D:/Files/SoCProject/DCOOFDMVLCTx/DCOOFDMVLCTx.sdk/Tx_Design_wrapper_hw_platform_0/test1_wrapper.bit"
+08:10:18 INFO  : ps7_init is completed.
+08:10:18 INFO  : ps7_post_config is completed.
+08:11:44 INFO  : System reset is completed.
+08:11:47 INFO  : FPGA configured successfully with bitstream "D:/Files/SoCProject/DCOOFDMVLCTx/DCOOFDMVLCTx.sdk/Tx_Design_wrapper_hw_platform_0/test1_wrapper.bit"
+08:11:48 INFO  : ps7_init is completed.
+08:11:48 INFO  : ps7_post_config is completed.
+08:18:30 ERROR : Unexpected error while parsing XMD response ?: com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: invalid number or unquoted string near 
+00:19:34 INFO  : Launching XSDB server: xsdb.bat -interactive D:\Files\SoCProject\DCOOFDMVLCTx\DCOOFDMVLCTx.sdk\temp_xsdb_launch_script.tcl
+00:19:36 INFO  : XSDB server has started successfully.
+00:19:39 INFO  : Processing command line option -hwspec D:/Files/SoCProject/DCOOFDMVLCTx/DCOOFDMVLCTx.sdk/Tx_Design_wrapper.hdf.
+00:19:39 INFO  : Checking for hwspec changes in the project Tx_Design_wrapper_hw_platform_1.
+18:04:25 INFO  : Launching XSDB server: xsdb.bat -interactive D:\Files\SoCProject\DCOOFDMVLCTx\DCOOFDMVLCTx.sdk\temp_xsdb_launch_script.tcl
+18:04:32 INFO  : XSDB server has started successfully.
+18:04:34 INFO  : Processing command line option -hwspec D:/Files/SoCProject/DCOOFDMVLCTx/DCOOFDMVLCTx.sdk/Tx_Design_wrapper.hdf.
+18:04:34 INFO  : Checking for hwspec changes in the project Tx_Design_wrapper_hw_platform_1.
+11:23:22 INFO  : Launching XSDB server: xsdb.bat -interactive D:\Files\SoCProject\DCOOFDMVLCTx\DCOOFDMVLCTx.sdk\temp_xsdb_launch_script.tcl
+11:23:25 INFO  : XSDB server has started successfully.
+11:23:29 INFO  : Processing command line option -hwspec D:/Files/SoCProject/DCOOFDMVLCTx/DCOOFDMVLCTx.sdk/Tx_Design_wrapper.hdf.
+08:07:46 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+08:07:50 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Arty Z7 003017A4C997A" && level==0} -index 1' command is executed.
+08:07:53 INFO  : FPGA configured successfully with bitstream "D:/Files/SoCProject/DCOOFDMVLCTx/DCOOFDMVLCTx.sdk/Tx_Design_wrapper_hw_platform_0/test1_wrapper.bit"
+08:08:12 INFO  : System reset is completed.
+08:08:17 INFO  : FPGA configured successfully with bitstream "D:/Files/SoCProject/DCOOFDMVLCTx/DCOOFDMVLCTx.sdk/Tx_Design_wrapper_hw_platform_0/test1_wrapper.bit"
+08:08:20 INFO  : ps7_init is completed.
+08:08:20 INFO  : ps7_post_config is completed.
+08:11:03 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+08:11:05 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Arty Z7 003017A4C997A" && level==0} -index 1' command is executed.
+08:11:07 INFO  : FPGA configured successfully with bitstream "D:/Files/SoCProject/DCOOFDMVLCTx/DCOOFDMVLCTx.sdk/Tx_Design_wrapper_hw_platform_0/test1_wrapper.bit"
+08:11:10 INFO  : System reset is completed.
+08:11:13 INFO  : FPGA configured successfully with bitstream "D:/Files/SoCProject/DCOOFDMVLCTx/DCOOFDMVLCTx.sdk/Tx_Design_wrapper_hw_platform_0/test1_wrapper.bit"
+08:11:15 INFO  : ps7_init is completed.
+08:11:15 INFO  : ps7_post_config is completed.
+08:19:59 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+08:20:00 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Arty Z7 003017A4C997A" && level==0} -index 1' command is executed.
+08:20:03 INFO  : FPGA configured successfully with bitstream "D:/Files/SoCProject/DCOOFDMVLCTx/DCOOFDMVLCTx.sdk/Tx_Design_wrapper_hw_platform_1/test1_wrapper.bit"
+08:20:30 INFO  : ps7_init is completed.
+08:20:30 INFO  : ps7_post_config is completed.
+08:20:31 INFO  : Processor reset is completed for ps7_cortexa9_0
+08:23:35 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+08:23:36 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Arty Z7 003017A4C997A" && level==0} -index 1' command is executed.
+08:23:40 INFO  : FPGA configured successfully with bitstream "D:/Files/SoCProject/DCOOFDMVLCTx/DCOOFDMVLCTx.sdk/Tx_Design_wrapper_hw_platform_1/test1_wrapper.bit"
+08:23:47 INFO  : ps7_init is completed.
+08:23:47 INFO  : ps7_post_config is completed.
+08:23:47 INFO  : Processor reset is completed for ps7_cortexa9_0
+08:28:57 ERROR : Unexpected error while parsing XMD response ?: com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: invalid number or unquoted string near 
+08:29:24 INFO  : Launching XSDB server: xsdb.bat -interactive D:\Files\SoCProject\DCOOFDMVLCTx\DCOOFDMVLCTx.sdk\temp_xsdb_launch_script.tcl
+08:29:26 INFO  : XSDB server has started successfully.
+08:29:27 INFO  : Processing command line option -hwspec D:/Files/SoCProject/DCOOFDMVLCTx/DCOOFDMVLCTx.sdk/Tx_Design_wrapper.hdf.
+08:29:28 INFO  : Checking for hwspec changes in the project Tx_Design_wrapper_hw_platform_1.
+08:31:13 INFO  : Launching XSDB server: xsdb.bat -interactive D:\Files\SoCProject\DCOOFDMVLCTx\DCOOFDMVLCTx.sdk\temp_xsdb_launch_script.tcl
+08:31:15 INFO  : XSDB server has started successfully.
+08:31:15 INFO  : Processing command line option -hwspec D:/Files/SoCProject/DCOOFDMVLCTx/DCOOFDMVLCTx.sdk/Tx_Design_wrapper.hdf.
+08:31:15 INFO  : Checking for hwspec changes in the project Tx_Design_wrapper_hw_platform_1.
+08:32:13 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+08:32:16 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Arty Z7 003017A4C997A" && level==0} -index 1' command is executed.
+08:32:19 INFO  : FPGA configured successfully with bitstream "D:/Files/SoCProject/DCOOFDMVLCTx/DCOOFDMVLCTx.sdk/Tx_Design_wrapper_hw_platform_1/test1_wrapper.bit"
+08:32:37 INFO  : ps7_init is completed.
+08:32:38 INFO  : ps7_post_config is completed.
+08:32:38 INFO  : Processor reset is completed for ps7_cortexa9_0
+13:32:31 ERROR : Unexpected error while parsing XMD response ?: com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: invalid number or unquoted string near 
+15:44:29 INFO  : Launching XSDB server: xsdb.bat -interactive D:\Files\SoCProject\DCOOFDMVLCTx\DCOOFDMVLCTx.sdk\temp_xsdb_launch_script.tcl
+15:44:33 INFO  : XSDB server has started successfully.
+15:44:35 INFO  : Processing command line option -hwspec D:/Files/SoCProject/DCOOFDMVLCTx/DCOOFDMVLCTx.sdk/Tx_Design_wrapper.hdf.
+15:44:35 INFO  : Checking for hwspec changes in the project Tx_Design_wrapper_hw_platform_1.
+15:44:41 INFO  : SDK has detected change in the last modified timestamps for source hardware specification file Source:1515401026473,  Project:1515298843648
+15:44:41 INFO  : The hardware specification for project 'Tx_Design_wrapper_hw_platform_1' is different from D:/Files/SoCProject/DCOOFDMVLCTx/DCOOFDMVLCTx.sdk/Tx_Design_wrapper.hdf.
+15:44:41 INFO  : Copied contents of D:/Files/SoCProject/DCOOFDMVLCTx/DCOOFDMVLCTx.sdk/Tx_Design_wrapper.hdf into \Tx_Design_wrapper_hw_platform_1\system.hdf.
+15:44:46 INFO  : Synchronizing projects in the workspace with the hardware platform specification changes.
+15:44:46 INFO  : Clearing existing target manager status.
+15:44:48 INFO  : Workspace synchronized with the new hardware specification file. Cleaning dependent projects...
+15:44:48 WARN  : Linker script will not be updated automatically. Users need to update it manually.
+15:48:15 INFO  : SDK has detected change in the last modified timestamps for source hardware specification file Source:1515401292260,  Project:1515401026473
+15:48:15 INFO  : Project Tx_Design_wrapper_hw_platform_1's source hardware specification located at D:/Files/SoCProject/DCOOFDMVLCTx/DCOOFDMVLCTx.sdk/Tx_Design_wrapper.hdf is now different from the local copy.
+		 The local copy will be replaced with the source specification and your workspace will be updated.
+15:48:22 INFO  : Copied contents of D:/Files/SoCProject/DCOOFDMVLCTx/DCOOFDMVLCTx.sdk/Tx_Design_wrapper.hdf into \Tx_Design_wrapper_hw_platform_1\system.hdf.
+15:48:27 INFO  : Synchronizing projects in the workspace with the hardware platform specification changes.
+15:48:27 INFO  : Clearing existing target manager status.
+15:48:27 INFO  : Workspace synchronized with the new hardware specification file. Cleaning dependent projects...
+15:48:27 WARN  : Linker script will not be updated automatically. Users need to update it manually.
+16:37:39 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+16:37:42 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Arty Z7 003017A4C997A" && level==0} -index 1' command is executed.
+16:37:46 INFO  : FPGA configured successfully with bitstream "D:/Files/SoCProject/DCOOFDMVLCTx/DCOOFDMVLCTx.sdk/Tx_Design_wrapper_hw_platform_1/test1_wrapper.bit"
+16:37:57 INFO  : ps7_init is completed.
+16:37:57 INFO  : ps7_post_config is completed.
+16:37:58 INFO  : Processor reset is completed for ps7_cortexa9_0
+16:38:39 INFO  : Processor reset is completed for ps7_cortexa9_0
+17:25:15 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+17:25:16 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Arty Z7 003017A4C997A" && level==0} -index 1' command is executed.
+17:25:20 INFO  : FPGA configured successfully with bitstream "D:/Files/SoCProject/DCOOFDMVLCTx/DCOOFDMVLCTx.sdk/Tx_Design_wrapper_hw_platform_1/test1_wrapper.bit"
+17:25:26 INFO  : ps7_init is completed.
+17:25:26 INFO  : ps7_post_config is completed.
+17:25:27 INFO  : Processor reset is completed for ps7_cortexa9_0
+17:27:36 INFO  : Processor reset is completed for ps7_cortexa9_0
+17:28:55 INFO  : Processor reset is completed for ps7_cortexa9_0
+17:30:55 INFO  : Processor reset is completed for ps7_cortexa9_0
+04:55:34 ERROR : Unexpected error while parsing XMD response ?: com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: invalid number or unquoted string near 
+05:40:30 INFO  : Launching XSDB server: xsdb.bat -interactive D:\Files\SoCProject\DCOOFDMVLCTx\DCOOFDMVLCTx.sdk\temp_xsdb_launch_script.tcl
+05:40:36 INFO  : XSDB server has started successfully.
+05:40:39 INFO  : Processing command line option -hwspec D:/Files/SoCProject/DCOOFDMVLCTx/DCOOFDMVLCTx.sdk/Tx_Design_wrapper.hdf.
+05:40:39 INFO  : Checking for hwspec changes in the project Tx_Design_wrapper_hw_platform_1.
+05:40:42 INFO  : SDK has detected change in the last modified timestamps for source hardware specification file Source:1515451174523,  Project:1515401292260
+05:40:42 INFO  : The hardware specification for project 'Tx_Design_wrapper_hw_platform_1' is different from D:/Files/SoCProject/DCOOFDMVLCTx/DCOOFDMVLCTx.sdk/Tx_Design_wrapper.hdf.
+05:40:42 INFO  : Copied contents of D:/Files/SoCProject/DCOOFDMVLCTx/DCOOFDMVLCTx.sdk/Tx_Design_wrapper.hdf into \Tx_Design_wrapper_hw_platform_1\system.hdf.
+05:40:47 INFO  : Synchronizing projects in the workspace with the hardware platform specification changes.
+05:41:19 INFO  : 
+05:41:19 INFO  : Updating hardware inferred compiler options for TxCode_test.
+05:41:19 INFO  : Clearing existing target manager status.
+05:43:11 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+05:43:13 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Arty Z7 003017A4C997A" && level==0} -index 1' command is executed.
+05:43:16 INFO  : FPGA configured successfully with bitstream "D:/Files/SoCProject/DCOOFDMVLCTx/DCOOFDMVLCTx.sdk/Tx_Design_wrapper_hw_platform_1/test1_wrapper.bit"
+05:43:39 INFO  : ps7_init is completed.
+05:43:39 INFO  : ps7_post_config is completed.
+05:43:39 INFO  : Processor reset is completed for ps7_cortexa9_0
+05:44:55 ERROR : Unexpected error while parsing XMD response ?: com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: invalid number or unquoted string near 
+05:45:34 INFO  : Launching XSDB server: xsdb.bat -interactive D:\Files\SoCProject\DCOOFDMVLCTx\DCOOFDMVLCTx.sdk\temp_xsdb_launch_script.tcl
+05:45:36 INFO  : XSDB server has started successfully.
+05:45:36 INFO  : Processing command line option -hwspec D:/Files/SoCProject/DCOOFDMVLCTx/DCOOFDMVLCTx.sdk/Tx_Design_wrapper.hdf.
+05:45:36 INFO  : Checking for hwspec changes in the project Tx_Design_wrapper_hw_platform_1.
+05:46:32 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+05:46:37 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Arty Z7 003017A4C997A" && level==0} -index 1' command is executed.
+05:46:40 INFO  : FPGA configured successfully with bitstream "D:/Files/SoCProject/DCOOFDMVLCTx/DCOOFDMVLCTx.sdk/Tx_Design_wrapper_hw_platform_1/test1_wrapper.bit"
+05:46:48 INFO  : Processor reset is completed for ps7_cortexa9_0
+11:25:33 ERROR : Unexpected error while parsing XMD response ?: com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: invalid number or unquoted string near 
+13:49:08 INFO  : Launching XSDB server: xsdb.bat -interactive D:\Files\SoCProject\DCOOFDMVLCTx\DCOOFDMVLCTx.sdk\temp_xsdb_launch_script.tcl
+13:49:15 INFO  : XSDB server has started successfully.
+13:49:17 INFO  : Processing command line option -hwspec D:/Files/SoCProject/DCOOFDMVLCTx/DCOOFDMVLCTx.sdk/Tx_Design_wrapper.hdf.
+13:49:18 INFO  : Checking for hwspec changes in the project Tx_Design_wrapper_hw_platform_1.
+13:49:20 INFO  : SDK has detected change in the last modified timestamps for source hardware specification file Source:1515566799632,  Project:1515451174523
+13:49:20 INFO  : The hardware specification for project 'Tx_Design_wrapper_hw_platform_1' is different from D:/Files/SoCProject/DCOOFDMVLCTx/DCOOFDMVLCTx.sdk/Tx_Design_wrapper.hdf.
+13:49:21 INFO  : Copied contents of D:/Files/SoCProject/DCOOFDMVLCTx/DCOOFDMVLCTx.sdk/Tx_Design_wrapper.hdf into \Tx_Design_wrapper_hw_platform_1\system.hdf.
+13:49:25 INFO  : Synchronizing projects in the workspace with the hardware platform specification changes.
+13:49:57 INFO  : 
+13:49:58 INFO  : Updating hardware inferred compiler options for TxCode_test.
+13:49:58 INFO  : Clearing existing target manager status.
+13:52:16 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+13:52:18 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Arty Z7 003017A4C997A" && level==0} -index 1' command is executed.
+13:52:22 INFO  : FPGA configured successfully with bitstream "D:/Files/SoCProject/DCOOFDMVLCTx/DCOOFDMVLCTx.sdk/Tx_Design_wrapper_hw_platform_1/test1_wrapper.bit"
+13:54:13 ERROR : Unexpected error while parsing XMD response ?: com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: invalid number or unquoted string near 
+13:54:26 INFO  : Launching XSDB server: xsdb.bat -interactive D:\Files\SoCProject\DCOOFDMVLCTx\DCOOFDMVLCTx.sdk\temp_xsdb_launch_script.tcl
+13:54:29 INFO  : XSDB server has started successfully.
+13:54:29 INFO  : Processing command line option -hwspec D:/Files/SoCProject/DCOOFDMVLCTx/DCOOFDMVLCTx.sdk/Tx_Design_wrapper.hdf.
+13:54:29 INFO  : Checking for hwspec changes in the project Tx_Design_wrapper_hw_platform_1.
+14:01:52 INFO  : Launching XSDB server: xsdb.bat -interactive D:\Files\SoCProject\DCOOFDMVLCTx\DCOOFDMVLCTx.sdk\temp_xsdb_launch_script.tcl
+14:01:55 INFO  : XSDB server has started successfully.
+14:01:55 INFO  : Processing command line option -hwspec D:/Files/SoCProject/DCOOFDMVLCTx/DCOOFDMVLCTx.sdk/Tx_Design_wrapper.hdf.
+14:01:55 INFO  : Checking for hwspec changes in the project Tx_Design_wrapper_hw_platform_1.
+14:07:07 INFO  : ps7_init is completed.
+14:07:08 INFO  : ps7_post_config is completed.
+14:07:09 INFO  : Processor reset is completed for ps7_cortexa9_0
+14:08:04 INFO  : Processor reset is completed for ps7_cortexa9_0
+14:08:05 ERROR : Port COM4 is already in use.
+14:08:17 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+14:08:40 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+14:08:41 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Arty Z7 003017A4C997A" && level==0} -index 1' command is executed.
+14:08:44 INFO  : FPGA configured successfully with bitstream "D:/Files/SoCProject/DCOOFDMVLCTx/DCOOFDMVLCTx.sdk/Tx_Design_wrapper_hw_platform_1/test1_wrapper.bit"
+14:08:49 INFO  : ps7_init is completed.
+14:08:49 INFO  : ps7_post_config is completed.
+14:08:50 INFO  : Processor reset is completed for ps7_cortexa9_0
+14:11:15 INFO  : Processor reset is completed for ps7_cortexa9_0
+14:12:10 INFO  : Processor reset is completed for ps7_cortexa9_0
+14:12:41 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+14:12:41 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Arty Z7 003017A4C997A" && level==0} -index 1' command is executed.
+14:12:45 INFO  : FPGA configured successfully with bitstream "D:/Files/SoCProject/DCOOFDMVLCTx/DCOOFDMVLCTx.sdk/Tx_Design_wrapper_hw_platform_1/test1_wrapper.bit"
+14:12:56 INFO  : ps7_init is completed.
+14:12:56 INFO  : ps7_post_config is completed.
+14:12:57 INFO  : Processor reset is completed for ps7_cortexa9_0
+14:14:28 INFO  : Processor reset is completed for ps7_cortexa9_0
+14:38:02 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+14:38:05 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Arty Z7 003017A4C997A" && level==0} -index 1' command is executed.
+14:38:09 INFO  : FPGA configured successfully with bitstream "D:/Files/SoCProject/DCOOFDMVLCTx/DCOOFDMVLCTx.sdk/Tx_Design_wrapper_hw_platform_1/test1_wrapper.bit"
+14:38:28 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Arty Z7 003017A4C997A" && level==0} -index 1' command is executed.
+14:38:28 INFO  : 'fpga -state' command is executed.
+14:38:28 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+14:38:29 INFO  : Jtag cable 'Digilent Arty Z7 003017A4C997A' is selected.
+14:38:29 INFO  : 'jtag frequency' command is executed.
+14:38:29 INFO  : Sourcing of 'D:/Files/SoCProject/DCOOFDMVLCTx/DCOOFDMVLCTx.sdk/Tx_Design_wrapper_hw_platform_1/ps7_init.tcl' is done.
+14:38:29 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Arty Z7 003017A4C997A"} -index 0' command is executed.
+14:38:29 INFO  : Hardware design information is loaded from 'D:/Files/SoCProject/DCOOFDMVLCTx/DCOOFDMVLCTx.sdk/Tx_Design_wrapper_hw_platform_1/system.hdf'.
+14:38:29 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Arty Z7 003017A4C997A"} -index 0' command is executed.
+14:38:29 INFO  : 'stop' command is executed.
+14:38:40 INFO  : 'ps7_init' command is executed.
+14:38:40 INFO  : 'ps7_post_config' command is executed.
+14:38:40 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:38:40 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+14:38:40 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:38:41 INFO  : The application 'D:/Files/SoCProject/DCOOFDMVLCTx/DCOOFDMVLCTx.sdk/TxTestCode/Debug/TxTestCode.elf' is downloaded to processor 'ps7_cortexa9_0'.
+14:38:41 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source D:/Files/SoCProject/DCOOFDMVLCTx/DCOOFDMVLCTx.sdk/Tx_Design_wrapper_hw_platform_1/ps7_init.tcl
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Arty Z7 003017A4C997A"} -index 0
+loadhw D:/Files/SoCProject/DCOOFDMVLCTx/DCOOFDMVLCTx.sdk/Tx_Design_wrapper_hw_platform_1/system.hdf
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Arty Z7 003017A4C997A"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Arty Z7 003017A4C997A"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Arty Z7 003017A4C997A"} -index 0
+dow D:/Files/SoCProject/DCOOFDMVLCTx/DCOOFDMVLCTx.sdk/TxTestCode/Debug/TxTestCode.elf
+----------------End of Script----------------
+
+14:38:41 INFO  : Memory regions updated for context APU
+14:38:41 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:38:42 INFO  : 'con' command is executed.
+14:38:42 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Arty Z7 003017A4C997A"} -index 0
+con
+----------------End of Script----------------
+
+14:38:42 INFO  : Launch script is exported to file 'D:\Files\SoCProject\DCOOFDMVLCTx\DCOOFDMVLCTx.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_on_local_txtestcode.elf.tcl'
+14:39:08 INFO  : Disconnected from the channel tcfchan#1.
+14:39:14 INFO  : ps7_init is completed.
+14:39:14 INFO  : ps7_post_config is completed.
+14:39:15 INFO  : Processor reset is completed for ps7_cortexa9_0
+14:41:42 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+14:41:49 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Arty Z7 003017A4C997A" && level==0} -index 1' command is executed.
+14:41:52 INFO  : FPGA configured successfully with bitstream "D:/Files/SoCProject/DCOOFDMVLCTx/DCOOFDMVLCTx.sdk/Tx_Design_wrapper_hw_platform_1/test1_wrapper.bit"
+14:42:23 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Arty Z7 003017A4C997A" && level==0} -index 1' command is executed.
+14:42:23 INFO  : 'fpga -state' command is executed.
+14:42:23 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+14:42:23 INFO  : Jtag cable 'Digilent Arty Z7 003017A4C997A' is selected.
+14:42:23 INFO  : 'jtag frequency' command is executed.
+14:42:23 INFO  : Sourcing of 'D:/Files/SoCProject/DCOOFDMVLCTx/DCOOFDMVLCTx.sdk/Tx_Design_wrapper_hw_platform_1/ps7_init.tcl' is done.
+14:42:23 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Arty Z7 003017A4C997A"} -index 0' command is executed.
+14:42:23 INFO  : Hardware design information is loaded from 'D:/Files/SoCProject/DCOOFDMVLCTx/DCOOFDMVLCTx.sdk/Tx_Design_wrapper_hw_platform_1/system.hdf'.
+14:42:24 INFO  : 'targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Arty Z7 003017A4C997A"} -index 0' command is executed.
+14:42:24 INFO  : 'stop' command is executed.
+14:42:34 INFO  : 'ps7_init' command is executed.
+14:42:34 INFO  : 'ps7_post_config' command is executed.
+14:42:34 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:42:34 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+14:42:34 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:42:37 INFO  : The application 'D:/Files/SoCProject/DCOOFDMVLCTx/DCOOFDMVLCTx.sdk/TxTestCode/Debug/TxTestCode.elf' is downloaded to processor 'ps7_cortexa9_0'.
+14:42:37 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source D:/Files/SoCProject/DCOOFDMVLCTx/DCOOFDMVLCTx.sdk/Tx_Design_wrapper_hw_platform_1/ps7_init.tcl
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Arty Z7 003017A4C997A"} -index 0
+loadhw D:/Files/SoCProject/DCOOFDMVLCTx/DCOOFDMVLCTx.sdk/Tx_Design_wrapper_hw_platform_1/system.hdf
+targets -set -filter {name =~"APU" && jtag_cable_name =~ "Digilent Arty Z7 003017A4C997A"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Arty Z7 003017A4C997A"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Arty Z7 003017A4C997A"} -index 0
+dow D:/Files/SoCProject/DCOOFDMVLCTx/DCOOFDMVLCTx.sdk/TxTestCode/Debug/TxTestCode.elf
+----------------End of Script----------------
+
+14:42:37 INFO  : Memory regions updated for context APU
+14:42:37 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:42:37 INFO  : 'con' command is executed.
+14:42:37 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Arty Z7 003017A4C997A"} -index 0
+con
+----------------End of Script----------------
+
+14:42:37 INFO  : Launch script is exported to file 'D:\Files\SoCProject\DCOOFDMVLCTx\DCOOFDMVLCTx.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_on_local_txtestcode.elf.tcl'
+14:45:36 INFO  : Disconnected from the channel tcfchan#2.
+14:45:39 INFO  : ps7_init is completed.
+14:45:39 INFO  : ps7_post_config is completed.
+14:45:40 INFO  : Processor reset is completed for ps7_cortexa9_0
+14:46:03 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+14:46:04 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Arty Z7 003017A4C997A" && level==0} -index 1' command is executed.
+14:46:07 INFO  : FPGA configured successfully with bitstream "D:/Files/SoCProject/DCOOFDMVLCTx/DCOOFDMVLCTx.sdk/Tx_Design_wrapper_hw_platform_1/test1_wrapper.bit"
+14:46:15 INFO  : ps7_init is completed.
+14:46:15 INFO  : ps7_post_config is completed.
+14:46:16 INFO  : Processor reset is completed for ps7_cortexa9_0
+14:47:32 INFO  : Processor reset is completed for ps7_cortexa9_0
