@@ -224,7 +224,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>95d78a4f</spirit:value>
+            <spirit:value>72ad5ee0</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -240,7 +240,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>95d78a4f</spirit:value>
+            <spirit:value>72ad5ee0</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -510,7 +510,7 @@
       <spirit:file>
         <spirit:name>hdl/FrameAssembler_BRAM_v1_0.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
-        <spirit:userFileType>CHECKSUM_660d96f7</spirit:userFileType>
+        <spirit:userFileType>CHECKSUM_7a57b736</spirit:userFileType>
       </spirit:file>
     </spirit:fileSet>
     <spirit:fileSet>
@@ -605,8 +605,8 @@
         <xilinx:taxonomy>AXI_Peripheral</xilinx:taxonomy>
       </xilinx:taxonomies>
       <xilinx:displayName>FrameAssembler_BRAM_v1.0</xilinx:displayName>
-      <xilinx:coreRevision>13</xilinx:coreRevision>
-      <xilinx:coreCreationDateTime>2017-12-20T13:38:48Z</xilinx:coreCreationDateTime>
+      <xilinx:coreRevision>18</xilinx:coreRevision>
+      <xilinx:coreCreationDateTime>2018-01-10T02:41:34Z</xilinx:coreCreationDateTime>
       <xilinx:tags>
         <xilinx:tag xilinx:name="xilinx.com:user:FrameAssembler_BRAM:1.0_ARCHIVE_LOCATION">D:/Files/SoCProject/ip_repo/FrameAssembler_BRAM_1.0</xilinx:tag>
       </xilinx:tags>
@@ -614,7 +614,7 @@
     <xilinx:packagingInfo>
       <xilinx:xilinxVersion>2016.2</xilinx:xilinxVersion>
       <xilinx:checksum xilinx:scope="busInterfaces" xilinx:value="1ee2d442"/>
-      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="52368686"/>
+      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="594484bd"/>
       <xilinx:checksum xilinx:scope="ports" xilinx:value="fc9a40b9"/>
       <xilinx:checksum xilinx:scope="hdlParameters" xilinx:value="271585de"/>
       <xilinx:checksum xilinx:scope="parameters" xilinx:value="c055e6ee"/>
